@@ -87,6 +87,40 @@ export function loadSpells(): Promise<Map<string, SrdSpell>> {
   return cache
 }
 
+export interface SrdFeature {
+  key: string
+  /** Class, species, "Výsady", "Původy", ... */
+  group: string
+  groupEn?: string
+  name: string
+  nameCs?: string
+  text: string
+  textCs?: string
+  level?: number
+  prerequisite?: string
+}
+
+let featureCache: Promise<SrdFeature[]> | null = null
+
+export function useFeatures(enabled = true) {
+  const [list, setList] = useState<SrdFeature[] | null>(null)
+  useEffect(() => {
+    if (!enabled) return
+    let live = true
+    featureCache ??= fetch('/srd/features.json')
+      .then((r) => r.json() as Promise<SrdFeature[]>)
+      .catch((e) => {
+        featureCache = null
+        throw e
+      })
+    featureCache.then((l) => live && setList(l), () => {})
+    return () => {
+      live = false
+    }
+  }, [enabled])
+  return list
+}
+
 export function useSpells(enabled = true) {
   const [spells, setSpells] = useState<Map<string, SrdSpell> | null>(null)
   useEffect(() => {

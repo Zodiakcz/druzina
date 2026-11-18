@@ -28,8 +28,16 @@ the table needs it mid-session. Default answer: no; a free-text field beats a ru
 ## Content
 
 `scripts/fetch-srd.mjs` pulls SRD 5.2 (+ SRD 5.1 legacy races) from Open5e into
-`data/srd-en/`. Translations go to `data/srd-cs/`. Both SRDs are CC-BY-4.0; the attribution
-is in the footer and README. Text from outside the SRD (Rune Knight, Light Domain, ...) is
+`data/srd-en/`. Both SRDs are CC-BY-4.0; the attribution is in the footer and README.
+
+Translation pipeline: batches in `data/srd-cs/_in/<batch>.json` (gitignored), translated per
+[docs/preklad.md](docs/preklad.md) into `_out/<batch>.json`, then
+`node scripts/merge-translations.mjs` checks each batch against its input (same keys, no long
+dashes, no English dice or feet, nothing suspiciously short) and folds it into the committed
+`data/srd-cs/{spells,features,misc}.json`. Spell names are fixed up front in
+`data/srd-cs/spell-names.json` so every batch names cross-referenced spells the same way.
+`node scripts/build-content.mjs` then writes `client/public/srd/{spells,features}.json`
+(English with Czech fields merged in; the UI prefers Czech and labels what is still English). Text from outside the SRD (Rune Knight, Light Domain, ...) is
 never committed: it lives only in the campaign database.
 
 ## Stack and layout

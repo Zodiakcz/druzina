@@ -9,7 +9,7 @@ const barbar: Sheet = sheetSchema.parse({
   player: 'demo',
   species: 'Půlork',
   background: 'Voják',
-  classes: [{ name: 'Barbar', subclass: 'Stezka berserkra', level: 5 }],
+  classes: [{ name: 'Barbar', subclass: 'Stezka berserkera', level: 5 }],
   abilities: { str: 17, dex: 14, con: 16, int: 8, wis: 12, cha: 10 },
   saves: ['str', 'con'],
   skills: { athletics: 1, intimidation: 1, perception: 1, survival: 1 },
@@ -28,7 +28,7 @@ const barbar: Sheet = sheetSchema.parse({
     { id: 'f1', name: 'Zuřivost', source: 'Barbar 1', text: 'Bonusovou akcí. Výhoda k ověřením a záchranným hodům Síly, +2 ke zranění útoky Síly, rezistence vůči drtivému, bodnému a sečnému zranění. Nemůžeš sesílat kouzla ani se soustředit. Trvá do konce tvého dalšího tahu, prodlužuje se útokem, záchranným hodem nebo bonusovou akcí, nejvýš 10 minut. Krátký odpočinek vrátí jedno použití.' },
     { id: 'f2', name: 'Obrana bez zbroje', source: 'Barbar 1', text: 'Bez zbroje je tvá TZ 10 + OBR + ODL. Štít smíš mít.' },
     { id: 'f3', name: 'Bezohledný útok', source: 'Barbar 2', text: 'Při prvním útoku v tahu si můžeš vzít výhodu k útokům Síly do začátku dalšího tahu. Útoky proti tobě mají do té doby taky výhodu.' },
-    { id: 'f4', name: 'Šílenství', source: 'Stezka berserkra 3', text: 'Když v zuřivosti použiješ bezohledný útok, první zásah v tahu přidá tolik k6, kolik je tvůj bonus za zuřivost.' },
+    { id: 'f4', name: 'Běsnění', source: 'Stezka berserkera 3', text: 'Když v zuřivosti použiješ bezohledný útok, první zásah v tahu přidá tolik k6, kolik je tvůj bonus za zuřivost.' },
     { id: 'f5', name: 'Útok navíc', source: 'Barbar 5', text: 'Akcí Útok útočíš dvakrát.' },
   ],
 })
@@ -64,9 +64,9 @@ const kouzelnik: Sheet = sheetSchema.parse({
       { id: 's10', name: 'Protikouzlo', level: 3, srd: 'srd-2024_counterspell', prepared: false },
     ],
   },
-  resources: [{ id: 'recovery', name: 'Tajemné zotavení', max: 1, reset: 'long' }],
+  resources: [{ id: 'recovery', name: 'Tajemná obnova', max: 1, reset: 'long' }],
   features: [
-    { id: 'f1', name: 'Tajemné zotavení', source: 'Kouzelník 1', text: 'Jednou za den po krátkém odpočinku obnovíš pozice kouzel v součtu úrovní nejvýš poloviny tvé úrovně kouzelníka (zaokrouhleno nahoru), žádnou 6. a vyšší úrovně.' },
+    { id: 'f1', name: 'Tajemná obnova', source: 'Kouzelník 1', text: 'Jednou za den po krátkém odpočinku obnovíš pozice kouzel v součtu úrovní nejvýš poloviny tvé úrovně kouzelníka (zaokrouhleno nahoru), žádnou 6. a vyšší úrovně.' },
   ],
 })
 

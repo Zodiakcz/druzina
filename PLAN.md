@@ -36,6 +36,12 @@ v databázi kampaně, nikdy v repozitáři.
 | 4 | PJ: iniciativa, nestvůry (anglicky stačí), skryté hody | jedno sezení odehrané souběžně s D&D Beyond |
 | 5 | Pomocník pro postup na úroveň | jen pokud ruční úpravy začnou zdržovat |
 
+**Stav 18. 11. 2026:** fáze 1 hotová (lokálně, nenasazeno). Fáze 2 první dávka: kouzla úrovně 0
+až 3 (183), schopnosti všech povolání a SRD specializací do 5. úrovně (130), všechny druhy včetně
+ras z 2014, výsady, původy a vlastnosti zbraní. Čeká na revizi rodilým hráčem. Zbývá: kouzla 4. až
+9. úrovně, schopnosti od 6. úrovně. Známé díry ve zdroji (Open5e): seznam druidských kouzel je
+useknutý, tabulka počtu divokých podob chybí.
+
 Kontrolní bod po fázi 4: jedno sezení s oběma appkami vedle sebe, teprve pak D&D Beyond pustit.
 
 ## Architektura

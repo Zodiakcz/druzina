@@ -1,0 +1,1033 @@
+[
+ {
+  "key": "srd_dragonborn",
+  "name": "Drakorozený",
+  "text": "Tvé dračí dědictví se projevuje řadou rysů, které sdílíš s ostatními drakorozenými."
+ },
+ {
+  "key": "srd_dragonborn#Ability Score Increase",
+  "name": "Zvýšení vlastností",
+  "text": "Tvá hodnota Síly se zvýší o 2 a tvá hodnota Charismatu o 1."
+ },
+ {
+  "key": "srd_dragonborn#Age",
+  "name": "Věk",
+  "text": "Mladí drakorození rostou rychle. Chodí už pár hodin po vylíhnutí, ve 3 letech dosahují velikosti a vývoje 10letého lidského dítěte a dospělosti dosahují v 15 letech. Dožívají se asi 80 let."
+ },
+ {
+  "key": "srd_dragonborn#Alignment",
+  "name": "Přesvědčení",
+  "text": "Drakorození tíhnou k extrémům a v kosmické válce mezi dobrem a zlem se vědomě přiklánějí k jedné, nebo druhé straně. Většina drakorozených je dobrých, ale ti, kdo se přidají ke zlu, z nich mohou být strašliví padouši."
+ },
+ {
+  "key": "srd_dragonborn#Breath Weapon",
+  "name": "Dechová zbraň",
+  "text": "Svou akcí můžeš vydechnout ničivou energii. Tvoji dračí předci určují velikost, tvar a typ zranění výdechu.\r\nKdyž použiješ dechovou zbraň, každý tvor v oblasti výdechu si musí hodit záchranný hod, jehož druh určují tvoji dračí předci. SO tohoto záchranného hodu je 8 + tvůj modifikátor Odolnosti + tvůj zdatnostní bonus. Tvor při neúspěchu utrpí 2k6 zranění, při úspěchu poloviční zranění. Zranění se zvýší na 3k6 na 6. úrovni, na 4k6 na 11. úrovni a na 5k6 na 16. úrovni."
+ },
+ {
+  "key": "srd_dragonborn#Damage Resistance",
+  "name": "Rezistence vůči zranění",
+  "text": "Máš rezistenci vůči typu zranění spojenému s tvými dračími předky."
+ },
+ {
+  "key": "srd_dragonborn#Draconic Ancestry",
+  "name": "Dračí předci",
+  "text": "Máš dračí předky. Zvol jeden druh draka z tabulky dračích předků. Tvá dechová zbraň a rezistence vůči zranění se řídí druhem draka, jak ukazuje tabulka."
+ },
+ {
+  "key": "srd_dragonborn#Draconic Ancestry table",
+  "name": "Tabulka dračích předků",
+  "text": "| Drak         | Typ zranění       | Dechová zbraň                |\r\n|--------------|-------------------|------------------------------|\r\n| Černý        | Kyselinové        | přímka 5 × 30 stop (ZH OBR)  |\r\n| Modrý        | Bleskové          | přímka 5 × 30 stop (ZH OBR)  |\r\n| Mosazný      | Ohnivé            | přímka 5 × 30 stop (ZH OBR)  |\r\n| Bronzový     | Bleskové          | přímka 5 × 30 stop (ZH OBR)  |\r\n| Měděný       | Kyselinové        | přímka 5 × 30 stop (ZH OBR)  |\r\n| Zlatý        | Ohnivé            | kužel 15 stop (ZH OBR)       |\r\n| Zelený       | Jedové            | kužel 15 stop (ZH ODL)       |\r\n| Červený      | Ohnivé            | kužel 15 stop (ZH OBR)       |\r\n| Stříbrný     | Chladné           | kužel 15 stop (ZH ODL)       |\r\n| Bílý         | Chladné           | kužel 15 stop (ZH ODL)       |"
+ },
+ {
+  "key": "srd_dragonborn#Languages",
+  "name": "Jazyky",
+  "text": "Umíš mluvit, číst a psát obecnou řečí a dračím jazykem. Dračí jazyk je považován za jeden z nejstarších jazyků a často se používá při studiu magie. Většině ostatních tvorů zní drsně a obsahuje mnoho tvrdých souhlásek a sykavek."
+ },
+ {
+  "key": "srd_dragonborn#Size",
+  "name": "Velikost",
+  "text": "Drakorození jsou vyšší a těžší než lidé, měří přes 6 stop a váží v průměru téměř 250 liber. Tvá velikost je střední."
+ },
+ {
+  "key": "srd_dragonborn#Speed",
+  "name": "Rychlost",
+  "text": "Tvá základní rychlost chůze je 30 stop."
+ },
+ {
+  "key": "srd_dwarf",
+  "name": "Trpaslík",
+  "text": "Tvůj trpasličí hrdina má řadu vrozených schopností, které jsou nedílnou součástí trpasličí povahy."
+ },
+ {
+  "key": "srd_dwarf#Ability Score Increase",
+  "name": "Zvýšení vlastností",
+  "text": "Tvá hodnota Odolnosti se zvýší o 2."
+ },
+ {
+  "key": "srd_dwarf#Age",
+  "name": "Věk",
+  "text": "Trpaslíci dospívají stejně rychle jako lidé, ale za mladé se považují, dokud nedosáhnou 50 let. Dožívají se v průměru asi 350 let."
+ },
+ {
+  "key": "srd_dwarf#Alignment",
+  "name": "Přesvědčení",
+  "text": "Většina trpaslíků je zákonných a pevně věří v přínos dobře uspořádané společnosti. Tíhnou také k dobru, mají silný smysl pro férovost a věří, že každý si zaslouží podíl na výhodách spravedlivého řádu."
+ },
+ {
+  "key": "srd_dwarf#Darkvision",
+  "name": "Vidění ve tmě",
+  "text": "Jsi zvyklý na život pod zemí. Máš lepší zrak ve tmě a šeru. V šeru do 60 stop od sebe vidíš, jako by bylo jasné světlo, a ve tmě, jako by bylo šero. Ve tmě nerozeznáš barvy, jen odstíny šedi."
+ },
+ {
+  "key": "srd_dwarf#Dwarven Combat Training",
+  "name": "Trpasličí bojový výcvik",
+  "text": "Máš zdatnost s bitevní sekerou, sekerkou, lehkým kladivem a válečným kladivem."
+ },
+ {
+  "key": "srd_dwarf#Dwarven Resilience",
+  "name": "Trpasličí houževnatost",
+  "text": "Máš výhodu k záchranným hodům proti jedu a máš rezistenci vůči jedovému zranění."
+ },
+ {
+  "key": "srd_dwarf#Languages",
+  "name": "Jazyky",
+  "text": "Umíš mluvit, číst a psát obecnou řečí a trpasličtinou. Trpasličtina je plná tvrdých souhlásek a hrdelních zvuků a tyto rysy se přenášejí do kteréhokoli jiného jazyka, kterým trpaslík mluví."
+ },
+ {
+  "key": "srd_dwarf#Size",
+  "name": "Velikost",
+  "text": "Trpaslíci měří 4 až 5 stop a váží v průměru asi 150 liber. Tvá velikost je střední."
+ },
+ {
+  "key": "srd_dwarf#Speed",
+  "name": "Rychlost",
+  "text": "Tvá základní rychlost chůze je 25 stop. Tvá rychlost se nesnižuje, když nosíš těžkou zbroj."
+ },
+ {
+  "key": "srd_dwarf#Stonecunning",
+  "name": "Znalost kamene",
+  "text": "Kdykoli si házíš ověření Inteligence (Historie) týkající se původu kamenické práce, počítáš se jako zdatný v dovednosti Historie a k ověření přičteš dvojnásobek svého zdatnostního bonusu místo obvyklého zdatnostního bonusu."
+ },
+ {
+  "key": "srd_dwarf#Tool Proficiency",
+  "name": "Zdatnost s nástroji",
+  "text": "Získáš zdatnost s řemeslnickými nástroji podle své volby: kovářské nářadí, sládkovské potřeby, nebo kamenické nářadí."
+ },
+ {
+  "key": "srd_elf",
+  "name": "Elf",
+  "text": "Tvůj elfí hrdina má řadu přirozených schopností, výsledek tisíců let elfího zušlechťování."
+ },
+ {
+  "key": "srd_elf#Ability Score Increase",
+  "name": "Zvýšení vlastností",
+  "text": "Tvá hodnota Obratnosti se zvýší o 2."
+ },
+ {
+  "key": "srd_elf#Age",
+  "name": "Věk",
+  "text": "Ačkoli elfové fyzicky dospívají zhruba ve stejném věku jako lidé, elfí chápání dospělosti přesahuje tělesný růst a zahrnuje i životní zkušenost. Elf se obvykle prohlásí za dospělého a přijme dospělé jméno kolem 100 let a může se dožít 750 let."
+ },
+ {
+  "key": "srd_elf#Alignment",
+  "name": "Přesvědčení",
+  "text": "Elfové milují svobodu, rozmanitost a sebevyjádření, proto silně tíhnou k mírnějším stránkám chaosu. Cení si svobody druhých stejně jako své vlastní a chrání ji, a častěji bývají dobří než ne."
+ },
+ {
+  "key": "srd_elf#Darkvision",
+  "name": "Vidění ve tmě",
+  "text": "Jsi zvyklý na lesy za soumraku a noční oblohu. Máš lepší zrak ve tmě a šeru. V šeru do 60 stop od sebe vidíš, jako by bylo jasné světlo, a ve tmě, jako by bylo šero. Ve tmě nerozeznáš barvy, jen odstíny šedi."
+ },
+ {
+  "key": "srd_elf#Fey Ancestry",
+  "name": "Vílí předci",
+  "text": "Máš výhodu k záchranným hodům proti okouzlení a magie tě nemůže uspat."
+ },
+ {
+  "key": "srd_elf#Keen Senses",
+  "name": "Bystré smysly",
+  "text": "Máš zdatnost v dovednosti Vnímání."
+ },
+ {
+  "key": "srd_elf#Languages",
+  "name": "Jazyky",
+  "text": "Umíš mluvit, číst a psát obecnou řečí a elfštinou. Elfština je plynulá, s jemnou intonací a složitou gramatikou. Elfí literatura je bohatá a rozmanitá a jejich písně a básně jsou slavné i mezi jinými rasami. Mnoho bardů se jejich jazyk učí, aby mohli do svého repertoáru přidat elfí balady."
+ },
+ {
+  "key": "srd_elf#Size",
+  "name": "Velikost",
+  "text": "Elfové měří od necelých 5 do více než 6 stop a mají štíhlou postavu. Tvá velikost je střední."
+ },
+ {
+  "key": "srd_elf#Speed",
+  "name": "Rychlost",
+  "text": "Tvá základní rychlost chůze je 30 stop."
+ },
+ {
+  "key": "srd_elf#Trance",
+  "name": "Trans",
+  "text": "Elfové nepotřebují spát. Místo toho 4 hodiny denně hluboce meditují a zůstávají v polovědomí. (V obecné řeči se takové meditaci říká „trans“.) Během meditace se ti mohou svým způsobem zdát sny; tyto sny jsou ve skutečnosti duševní cvičení, která se léty praxe stala reflexem. Po takovém odpočinku získáš stejný užitek, jaký má člověk z 8 hodin spánku."
+ },
+ {
+  "key": "srd_gnome",
+  "name": "Gnóm",
+  "text": "Tvůj gnómí hrdina má určité vlastnosti společné se všemi ostatními gnómy."
+ },
+ {
+  "key": "srd_gnome#Ability Score Increase",
+  "name": "Zvýšení vlastností",
+  "text": "Tvá hodnota Inteligence se zvýší o 2."
+ },
+ {
+  "key": "srd_gnome#Age",
+  "name": "Věk",
+  "text": "Gnómové dospívají stejně rychle jako lidé a od většiny se čeká, že se kolem 40 let usadí v dospělém životě. Dožívají se 350 až téměř 500 let."
+ },
+ {
+  "key": "srd_gnome#Alignment",
+  "name": "Přesvědčení",
+  "text": "Gnómové jsou nejčastěji dobří. Ti, kdo tíhnou k zákonu, bývají mudrci, inženýři, badatelé, učenci, vyšetřovatelé nebo vynálezci. Ti, kdo tíhnou k chaosu, bývají potulní pěvci, šibalové, poutníci nebo fantazijní klenotníci. Gnómové mají dobré srdce a i šibalové mezi nimi jsou spíš hraví než zlomyslní."
+ },
+ {
+  "key": "srd_gnome#Darkvision",
+  "name": "Vidění ve tmě",
+  "text": "Jsi zvyklý na život pod zemí. Máš lepší zrak ve tmě a šeru. V šeru do 60 stop od sebe vidíš, jako by bylo jasné světlo, a ve tmě, jako by bylo šero. Ve tmě nerozeznáš barvy, jen odstíny šedi."
+ },
+ {
+  "key": "srd_gnome#Gnome Cunning",
+  "name": "Gnómí lstivost",
+  "text": "Máš výhodu ke všem záchranným hodům na Inteligenci, Moudrost a Charisma proti magii."
+ },
+ {
+  "key": "srd_gnome#Languages",
+  "name": "Jazyky",
+  "text": "Umíš mluvit, číst a psát obecnou řečí a gnómštinou. Gnómština, která se píše trpasličím písmem, je proslulá svými odbornými pojednáními a katalogy znalostí o přírodním světě."
+ },
+ {
+  "key": "srd_gnome#Size",
+  "name": "Velikost",
+  "text": "Gnómové měří 3 až 4 stopy a váží v průměru asi 40 liber. Tvá velikost je malá."
+ },
+ {
+  "key": "srd_gnome#Speed",
+  "name": "Rychlost",
+  "text": "Tvá základní rychlost chůze je 25 stop."
+ },
+ {
+  "key": "srd_half-elf",
+  "name": "Půlelf",
+  "text": "Tvůj půlelfí hrdina má některé vlastnosti společné s elfy a některé, které mají jen půlelfové."
+ },
+ {
+  "key": "srd_half-elf#Ability Score Increase",
+  "name": "Zvýšení vlastností",
+  "text": "Tvá hodnota Charismatu se zvýší o 2 a dvě jiné hodnoty vlastností podle tvé volby se zvýší o 1."
+ },
+ {
+  "key": "srd_half-elf#Age",
+  "name": "Věk",
+  "text": "Půlelfové dospívají stejně rychle jako lidé a dospělosti dosahují kolem 20 let. Žijí ale mnohem déle než lidé, často přes 180 let."
+ },
+ {
+  "key": "srd_half-elf#Alignment",
+  "name": "Přesvědčení",
+  "text": "Půlelfové sdílejí chaotický sklon svého elfího dědictví. Cení si osobní svobody i tvůrčího vyjádření a nestojí o vůdce ani o následovníky. Pravidla je dráždí, nesnášejí, když po nich druzí něco chtějí, a občas se ukážou jako nespolehliví, nebo přinejmenším nevyzpytatelní."
+ },
+ {
+  "key": "srd_half-elf#Darkvision",
+  "name": "Vidění ve tmě",
+  "text": "Díky své elfí krvi máš lepší zrak ve tmě a šeru. V šeru do 60 stop od sebe vidíš, jako by bylo jasné světlo, a ve tmě, jako by bylo šero. Ve tmě nerozeznáš barvy, jen odstíny šedi."
+ },
+ {
+  "key": "srd_half-elf#Fey Ancestry",
+  "name": "Vílí předci",
+  "text": "Máš výhodu k záchranným hodům proti okouzlení a magie tě nemůže uspat."
+ },
+ {
+  "key": "srd_half-elf#Languages",
+  "name": "Jazyky",
+  "text": "Umíš mluvit, číst a psát obecnou řečí, elfštinou a jedním dalším jazykem podle své volby."
+ },
+ {
+  "key": "srd_half-elf#Size",
+  "name": "Velikost",
+  "text": "Půlelfové jsou zhruba stejně velcí jako lidé, měří 5 až 6 stop. Tvá velikost je střední."
+ },
+ {
+  "key": "srd_half-elf#Skill Versatility",
+  "name": "Všestranné dovednosti",
+  "text": "Získáš zdatnost ve dvou dovednostech podle své volby."
+ },
+ {
+  "key": "srd_half-elf#Speed",
+  "name": "Rychlost",
+  "text": "Tvá základní rychlost chůze je 30 stop."
+ },
+ {
+  "key": "srd_half-orc",
+  "name": "Půlork",
+  "text": "Tvůj půlorčí hrdina má určité rysy odvozené od orčích předků."
+ },
+ {
+  "key": "srd_half-orc#Ability Score Increase",
+  "name": "Zvýšení vlastností",
+  "text": "Tvá hodnota Síly se zvýší o 2 a tvá hodnota Odolnosti o 1."
+ },
+ {
+  "key": "srd_half-orc#Age",
+  "name": "Věk",
+  "text": "Půlorkové dospívají o něco rychleji než lidé a dospělosti dosahují kolem 14 let. Stárnou znatelně rychleji a jen zřídka se dožijí více než 75 let."
+ },
+ {
+  "key": "srd_half-orc#Alignment",
+  "name": "Přesvědčení",
+  "text": "Půlorkové dědí po svých orčích rodičích sklon k chaosu a k dobru příliš netíhnou. Půlorkové vychovaní mezi orky, kteří jsou ochotni mezi nimi prožít život, bývají obvykle zlí."
+ },
+ {
+  "key": "srd_half-orc#Darkvision",
+  "name": "Vidění ve tmě",
+  "text": "Díky své orčí krvi máš lepší zrak ve tmě a šeru. V šeru do 60 stop od sebe vidíš, jako by bylo jasné světlo, a ve tmě, jako by bylo šero. Ve tmě nerozeznáš barvy, jen odstíny šedi."
+ },
+ {
+  "key": "srd_half-orc#Languages",
+  "name": "Jazyky",
+  "text": "Umíš mluvit, číst a psát obecnou řečí a orkštinou. Orkština je drsný, skřípavý jazyk s tvrdými souhláskami. Nemá vlastní písmo, píše se trpasličím písmem."
+ },
+ {
+  "key": "srd_half-orc#Menacing",
+  "name": "Hrozivý",
+  "text": "Získáš zdatnost v dovednosti Zastrašování."
+ },
+ {
+  "key": "srd_half-orc#Relentless Endurance",
+  "name": "Neúprosná výdrž",
+  "text": "Když klesneš na 0 životů, ale nejsi na místě zabit, můžeš místo toho klesnout na 1 život. Tuto schopnost nemůžeš znovu použít, dokud nedokončíš dlouhý odpočinek."
+ },
+ {
+  "key": "srd_half-orc#Savage Attacks",
+  "name": "Divoké útoky",
+  "text": "Když dosáhneš kritického zásahu útokem zbraní na blízko, můžeš jednou z kostek zranění zbraně hodit ještě jednou a přičíst ji k dodatečnému zranění kritického zásahu."
+ },
+ {
+  "key": "srd_half-orc#Size",
+  "name": "Velikost",
+  "text": "Půlorkové jsou o něco větší a mohutnější než lidé a měří od 5 do více než 6 stop. Tvá velikost je střední."
+ },
+ {
+  "key": "srd_half-orc#Speed",
+  "name": "Rychlost",
+  "text": "Tvá základní rychlost chůze je 30 stop."
+ },
+ {
+  "key": "srd_halfling",
+  "name": "Půlčík",
+  "text": "Tvůj půlčičí hrdina má řadu rysů společných se všemi ostatními půlčíky."
+ },
+ {
+  "key": "srd_halfling#Ability Score Increase",
+  "name": "Zvýšení vlastností",
+  "text": "Tvá hodnota Obratnosti se zvýší o 2."
+ },
+ {
+  "key": "srd_halfling#Age",
+  "name": "Věk",
+  "text": "Půlčík dosahuje dospělosti ve 20 letech a obvykle se dožívá poloviny svého druhého století."
+ },
+ {
+  "key": "srd_halfling#Alignment",
+  "name": "Přesvědčení",
+  "text": "Většina půlčíků je zákonně dobrých. Zpravidla mají dobré srdce a jsou laskaví, nesnesou pohled na cizí bolest a netolerují útlak. Jsou také velmi spořádaní a lpí na tradicích, silně se opírají o podporu své komunity a o pohodlí starých zvyků."
+ },
+ {
+  "key": "srd_halfling#Brave",
+  "name": "Statečný",
+  "text": "Máš výhodu k záchranným hodům proti vystrašení."
+ },
+ {
+  "key": "srd_halfling#Halfling Nimbleness",
+  "name": "Půlčičí hbitost",
+  "text": "Můžeš procházet prostorem každého tvora, který je větší než ty."
+ },
+ {
+  "key": "srd_halfling#Languages",
+  "name": "Jazyky",
+  "text": "Umíš mluvit, číst a psát obecnou řečí a půlčičtinou. Půlčičtina není tajná, ale půlčíci se o ni s ostatními neradi dělí. Píšou velmi málo, takže nemají bohatou literaturu. Jejich ústní tradice je však velmi silná. Téměř všichni půlčíci mluví obecnou řečí, aby se domluvili s lidmi, v jejichž zemích žijí nebo kterými cestují."
+ },
+ {
+  "key": "srd_halfling#Lucky",
+  "name": "Šťastlivec",
+  "text": "Když ti při hodu na útok, ověření vlastnosti nebo záchranném hodu padne na k20 číslo 1, můžeš kostkou hodit znovu a musíš použít nový hod."
+ },
+ {
+  "key": "srd_halfling#Size",
+  "name": "Velikost",
+  "text": "Půlčíci měří v průměru asi 3 stopy a váží asi 40 liber. Tvá velikost je malá."
+ },
+ {
+  "key": "srd_halfling#Speed",
+  "name": "Rychlost",
+  "text": "Tvá základní rychlost chůze je 25 stop."
+ },
+ {
+  "key": "srd_high-elf",
+  "name": "Vznešený elf",
+  "text": "Jako vznešený elf máš bystrou mysl a ovládáš přinejmenším základy magie. V mnoha fantasy herních světech existují dva druhy vznešených elfů. Jeden je povýšený a uzavřený a považuje se za nadřazený neelfům, a dokonce i jiným elfům. Druhý je běžnější a přátelštější a často ho lze potkat mezi lidmi a jinými rasami."
+ },
+ {
+  "key": "srd_high-elf#Ability Score Increase",
+  "name": "Zvýšení vlastností",
+  "text": "Tvá hodnota Inteligence se zvýší o 1."
+ },
+ {
+  "key": "srd_high-elf#Cantrip",
+  "name": "Trik",
+  "text": "Znáš jeden trik podle své volby ze seznamu kouzel kouzelníka. Tvá sesílací vlastnost pro něj je Inteligence."
+ },
+ {
+  "key": "srd_high-elf#Elf Weapon Training",
+  "name": "Elfí výcvik se zbraněmi",
+  "text": "Máš zdatnost s dlouhým mečem, krátkým mečem, krátkým lukem a dlouhým lukem."
+ },
+ {
+  "key": "srd_high-elf#Extra Language",
+  "name": "Jazyk navíc",
+  "text": "Umíš mluvit, číst a psát jedním dalším jazykem podle své volby."
+ },
+ {
+  "key": "srd_hill-dwarf",
+  "name": "Kopcový trpaslík",
+  "text": "Jako kopcový trpaslík máš bystré smysly, hlubokou intuici a pozoruhodnou houževnatost."
+ },
+ {
+  "key": "srd_hill-dwarf#Ability Score Increase",
+  "name": "Zvýšení vlastností",
+  "text": "Tvá hodnota Moudrosti se zvýší o 1."
+ },
+ {
+  "key": "srd_hill-dwarf#Dwarven Toughness",
+  "name": "Trpasličí tuhost",
+  "text": "Tvé maximum životů se zvýší o 1 a o další 1 se zvýší pokaždé, když získáš úroveň."
+ },
+ {
+  "key": "srd_human",
+  "name": "Člověk",
+  "text": "O lidech se těžko zobecňuje, ale tvůj lidský hrdina má tyto rysy."
+ },
+ {
+  "key": "srd_human#Ability Score Increase",
+  "name": "Zvýšení vlastností",
+  "text": "Každá tvá hodnota vlastnosti se zvýší o 1."
+ },
+ {
+  "key": "srd_human#Age",
+  "name": "Věk",
+  "text": "Lidé dospívají koncem druhého desetiletí života a žijí méně než sto let."
+ },
+ {
+  "key": "srd_human#Alignment",
+  "name": "Přesvědčení",
+  "text": "Lidé netíhnou k žádnému konkrétnímu přesvědčení. Najdou se mezi nimi ti nejlepší i ti nejhorší."
+ },
+ {
+  "key": "srd_human#Languages",
+  "name": "Jazyky",
+  "text": "Umíš mluvit, číst a psát obecnou řečí a jedním dalším jazykem podle své volby. Lidé se obvykle učí jazyky jiných národů, se kterými jednají, včetně málo známých nářečí. Rádi prokládají řeč slovy vypůjčenými z jiných jazyků: orčími kletbami, elfími hudebními výrazy, trpasličími vojenskými frázemi a podobně."
+ },
+ {
+  "key": "srd_human#Size",
+  "name": "Velikost",
+  "text": "Lidé se výrazně liší výškou i postavou, měří od sotva 5 do více než 6 stop. Bez ohledu na to, kam v tomto rozpětí patříš, tvá velikost je střední."
+ },
+ {
+  "key": "srd_human#Speed",
+  "name": "Rychlost",
+  "text": "Tvá základní rychlost chůze je 30 stop."
+ },
+ {
+  "key": "srd_lightfoot",
+  "name": "Lehkonohý půlčík",
+  "text": "Jako lehkonohý půlčík se snadno skryješ před pozorností, a dokonce ti jako úkryt poslouží i jiní lidé. Jsi spíš přívětivý a dobře vycházíš s ostatními. Lehkonozí mají větší sklon k touze po cestování než jiní půlčíci a často žijí po boku jiných ras nebo vedou kočovný život.",
+  "poznamka": "Lightfoot = lehkonohý půlčík, není ve slovníku"
+ },
+ {
+  "key": "srd_lightfoot#Ability Score Increase",
+  "name": "Zvýšení vlastností",
+  "text": "Tvá hodnota Charismatu se zvýší o 1."
+ },
+ {
+  "key": "srd_lightfoot#Naturally Stealthy",
+  "name": "Přirozeně nenápadný",
+  "text": "Můžeš se pokusit schovat, i když tě zakrývá jen tvor, který je aspoň o jednu velikost větší než ty."
+ },
+ {
+  "key": "srd_rock-gnome",
+  "name": "Skalní gnóm",
+  "text": "Jako skalní gnóm máš přirozenou vynalézavost a houževnatost, která převyšuje ostatní gnómy."
+ },
+ {
+  "key": "srd_rock-gnome#Ability Score Increase",
+  "name": "Zvýšení vlastností",
+  "text": "Tvá hodnota Odolnosti se zvýší o 1."
+ },
+ {
+  "key": "srd_rock-gnome#Artificer's Lore",
+  "name": "Vynálezcovy znalosti",
+  "text": "Kdykoli si házíš ověření Inteligence (Historie) týkající se magických předmětů, alchymistických předmětů nebo technických zařízení, můžeš přičíst dvojnásobek svého zdatnostního bonusu místo zdatnostního bonusu, který bys normálně použil."
+ },
+ {
+  "key": "srd_rock-gnome#Tinker",
+  "name": "Kutil",
+  "text": "Máš zdatnost s řemeslnickými nástroji (kutilské nářadí). Pomocí tohoto nářadí můžeš strávit 1 hodinu a spotřebovat materiál v hodnotě 10 zl a sestrojit drobné hodinové zařízení (TZ 5, 1 ŽV). Zařízení přestane fungovat po 24 hodinách (pokud nestrávíš 1 hodinu jeho opravou, aby fungovalo dál), nebo když ho svou akcí rozebereš; v tu chvíli můžeš získat zpět materiál použitý na jeho výrobu. Najednou můžeš mít až tři taková zařízení v činnosti.\r\n\r\nKdyž zařízení vytváříš, zvol jednu z následujících možností:\r\n* _Hodinová hračka._ Tato hračka je natahovací zvíře, netvor nebo osoba, například žába, myš, pták, drak nebo voják. Když ji postavíš na zem, v každém tvém tahu se posune o 5 stop po zemi náhodným směrem. Vydává zvuky odpovídající tvorovi, kterého představuje.\r\n* _Křesadlo._ Zařízení vytvoří drobný plamínek, kterým můžeš zapálit svíčku, pochodeň nebo táborák. Použití zařízení vyžaduje tvou akci.\r\n* _Hrací skříňka._ Po otevření tato hrací skříňka zahraje jednu píseň středně hlasitě. Přestane hrát, když píseň skončí nebo když se skříňka zavře."
+ },
+ {
+  "key": "srd_tiefling",
+  "name": "Tiefling",
+  "text": "Tieflingové sdílejí určité rasové rysy, které jsou důsledkem jejich pekelného původu."
+ },
+ {
+  "key": "srd_tiefling#Ability Score Increase",
+  "name": "Zvýšení vlastností",
+  "text": "Tvá hodnota Inteligence se zvýší o 1 a tvá hodnota Charismatu o 2."
+ },
+ {
+  "key": "srd_tiefling#Age",
+  "name": "Věk",
+  "text": "Tieflingové dospívají stejně rychle jako lidé, ale žijí o pár let déle."
+ },
+ {
+  "key": "srd_tiefling#Alignment",
+  "name": "Přesvědčení",
+  "text": "Tieflingové možná nemají vrozený sklon ke zlu, ale mnoho z nich u něj skončí. Ať zlí jsou, nebo ne, nezávislá povaha přivádí mnoho tieflingů k chaotickému přesvědčení."
+ },
+ {
+  "key": "srd_tiefling#Darkvision",
+  "name": "Vidění ve tmě",
+  "text": "Díky svému pekelnému dědictví máš lepší zrak ve tmě a šeru. V šeru do 60 stop od sebe vidíš, jako by bylo jasné světlo, a ve tmě, jako by bylo šero. Ve tmě nerozeznáš barvy, jen odstíny šedi."
+ },
+ {
+  "key": "srd_tiefling#Hellish Resistance",
+  "name": "Pekelná rezistence",
+  "text": "Máš rezistenci vůči ohnivému zranění."
+ },
+ {
+  "key": "srd_tiefling#Infernal Legacy",
+  "name": "Pekelný odkaz",
+  "text": "Znáš trik _Divotvorba_. Když dosáhneš 3. úrovně, můžeš díky tomuto rysu jednou seslat kouzlo _Pekelná odplata_ jako kouzlo 2. úrovně a tuto možnost obnovíš, když dokončíš dlouhý odpočinek. Když dosáhneš 5. úrovně, můžeš díky tomuto rysu jednou seslat kouzlo _Tma_ a tuto možnost obnovíš, když dokončíš dlouhý odpočinek. Tvá sesílací vlastnost pro tato kouzla je Charisma."
+ },
+ {
+  "key": "srd_tiefling#Languages",
+  "name": "Jazyky",
+  "text": "Umíš mluvit, číst a psát obecnou řečí a pekelštinou."
+ },
+ {
+  "key": "srd_tiefling#Size",
+  "name": "Velikost",
+  "text": "Tieflingové mají zhruba stejnou velikost a postavu jako lidé. Tvá velikost je střední."
+ },
+ {
+  "key": "srd_tiefling#Speed",
+  "name": "Rychlost",
+  "text": "Tvá základní rychlost chůze je 30 stop."
+ },
+ {
+  "key": "srd-2024_ability-score-improvement",
+  "name": "Zvýšení vlastností",
+  "text": "- Zvyš jednu hodnotu vlastnosti podle své volby o 2, nebo zvyš dvě hodnoty vlastností podle své volby o 1. Tato výsada nemůže zvýšit hodnotu vlastnosti nad 20.\n- Tuto výsadu si můžeš vzít víckrát.",
+  "prerequisite": "Úroveň 4+"
+ },
+ {
+  "key": "srd-2024_acolyte",
+  "name": "Akolyta",
+  "text": "**Hodnoty vlastností:** Inteligence, Moudrost, Charisma\n**Vybavení:** *Zvol A nebo B:* (A) kaligrafické potřeby, kniha (modlitby), svatý symbol, pergamen (10 listů), roucho, 8 zl; nebo (B) 50 zl\n**Výsada:** Zasvěcenec magie (klerik)\n**Zdatnosti v dovednostech:** Vhled a Náboženství\n**Zdatnost s nástroji:** kaligrafické potřeby",
+  "poznamka": "GP = zl (zlaťáky), není ve slovníku"
+ },
+ {
+  "key": "srd-2024_alert",
+  "name": "Ostražitost",
+  "text": "Získáš následující výhody.\n- Když si házíš na iniciativu, můžeš k hodu přičíst svůj zdatnostní bonus.\n- Hned poté, co si hodíš na iniciativu, si můžeš svou iniciativu vyměnit s iniciativou jednoho ochotného spojence ve stejném boji. Výměnu nemůžeš provést, pokud jsi ty nebo spojenec neschopný."
+ },
+ {
+  "key": "srd-2024_ammunition-wp",
+  "name": "Střelivo",
+  "text": "Zbraň s vlastností Střelivo můžeš použít k útoku na dálku, jen pokud máš střelivo, které z ní můžeš vystřelit. Potřebný druh střeliva je uveden u dostřelu zbraně. Každý útok spotřebuje jeden kus střeliva. Vytažení střeliva je součástí útoku (k nabití jednoruční zbraně potřebuješ volnou ruku). Po boji můžeš strávit 1 minutu a posbírat polovinu střeliva (zaokrouhleno dolů), které jsi v boji použil; zbytek je ztracen."
+ },
+ {
+  "key": "srd-2024_archery",
+  "name": "Lukostřelba",
+  "text": "- Získáš bonus +2 k hodům na útok, které provádíš zbraněmi na dálku.",
+  "prerequisite": "Schopnost Bojový styl"
+ },
+ {
+  "key": "srd-2024_boon-of-combat-prowess",
+  "name": "Dar bojové udatnosti",
+  "text": "Získáš následující výhody.\n- Zvyš jednu hodnotu vlastnosti podle své volby o 1, nejvýše na 30.\n- Když hodem na útok mineš, můžeš místo toho zasáhnout. Jakmile tuto výhodu použiješ, nemůžeš ji znovu použít do začátku svého příštího tahu.",
+  "prerequisite": "Úroveň 19+"
+ },
+ {
+  "key": "srd-2024_boon-of-dimensional-travel",
+  "name": "Dar dimenzionálního cestování",
+  "text": "Získáš následující výhody.\n- Zvyš jednu hodnotu vlastnosti podle své volby o 1, nejvýše na 30.\n- Hned poté, co provedeš akci Útok nebo akci Magie, se můžeš teleportovat až o 30 stop na neobsazené místo, které vidíš.",
+  "prerequisite": "Úroveň 19+"
+ },
+ {
+  "key": "srd-2024_boon-of-fate",
+  "name": "Dar osudu",
+  "text": "Získáš následující výhody.\n- Zvyš jednu hodnotu vlastnosti podle své volby o 1, nejvýše na 30.\n- Když ty nebo jiný tvor do 60 stop od tebe uspěje nebo neuspěje v testu k20, můžeš hodit 2k4 a výsledek použít jako bonus nebo postih k hodu k20. Jakmile tuto výhodu použiješ, nemůžeš ji znovu použít, dokud si nehodíš na iniciativu nebo nedokončíš krátký či dlouhý odpočinek.",
+  "prerequisite": "Úroveň 19+"
+ },
+ {
+  "key": "srd-2024_boon-of-irresistible-offense",
+  "name": "Dar neodolatelného útoku",
+  "text": "Získáš následující výhody.\n- Zvyš jednu hodnotu vlastnosti podle své volby o 1, nejvýše na 30.\n- Drtivé, bodné a sečné zranění, které způsobíš, vždy ignoruje rezistenci.\n- Když ti při hodu na útok padne na k20 číslo 20, můžeš cíli způsobit dodatečné zranění rovné hodnotě vlastnosti zvýšené touto výsadou. Typ dodatečného zranění je stejný jako typ útoku.",
+  "prerequisite": "Úroveň 19+"
+ },
+ {
+  "key": "srd-2024_boon-of-spell-recall",
+  "name": "Dar obnovy kouzel",
+  "text": "Získáš následující výhody.\n- Zvyš jednu hodnotu vlastnosti podle své volby o 1, nejvýše na 30.\n- Kdykoli sešleš kouzlo pomocí pozice kouzla 1.–4. úrovně, hoď 1k4. Pokud hodíš číslo shodné s úrovní pozice, pozice se nespotřebuje.",
+  "prerequisite": "Úroveň 19+, schopnost Sesílání kouzel"
+ },
+ {
+  "key": "srd-2024_boon-of-the-night-spirit",
+  "name": "Dar nočního ducha",
+  "text": "Získáš následující výhody.\n- Zvyš jednu hodnotu vlastnosti podle své volby o 1, nejvýše na 30.\n- Když jsi v šeru nebo ve tmě, můžeš se bonusovou akcí učinit neviditelným. Tento stav pro tebe skončí hned poté, co provedeš akci, bonusovou akci nebo reakci.\n- Když jsi v šeru nebo ve tmě, máš rezistenci vůči všem zraněním kromě psychického a zářivého.",
+  "prerequisite": "Úroveň 19+"
+ },
+ {
+  "key": "srd-2024_boon-of-truesight",
+  "name": "Dar pravého vidění",
+  "text": "Získáš následující výhody.\n- Zvyš jednu hodnotu vlastnosti podle své volby o 1, nejvýše na 30.\n- Máš pravé vidění na vzdálenost 60 stop.",
+  "prerequisite": "Úroveň 19+",
+  "poznamka": "Truesight = pravdivé vidění (není ve slovníku)"
+ },
+ {
+  "key": "srd-2024_cleave-mastery",
+  "name": "Rozetnutí",
+  "text": "Když touto zbraní zasáhneš tvora hodem na útok na blízko, můžeš touto zbraní hodit na útok na blízko proti druhému tvorovi do 5 stop od prvního, který je také v tvém dosahu. Při zásahu utrpí druhý tvor zranění zbraně, ale nepřičítej k němu svůj modifikátor vlastnosti, pokud není záporný. Tento útok navíc můžeš provést jen jednou za tah."
+ },
+ {
+  "key": "srd-2024_criminal",
+  "name": "Zločinec",
+  "text": "**Hodnoty vlastností:** Obratnost, Odolnost, Inteligence\n**Vybavení:** *Zvol A nebo B:* (A) 2 dýky, zlodějské náčiní, páčidlo, 2 váčky, cestovní oděv, 16 zl; nebo (B) 50 zl\n**Výsada:** Ostražitost\n**Zdatnosti v dovednostech:** Zručnost a Nenápadnost\n**Zdatnost s nástroji:** zlodějské náčiní"
+ },
+ {
+  "key": "srd-2024_defense",
+  "name": "Obrana",
+  "text": "- Když máš na sobě lehkou, střední nebo těžkou zbroj, získáš bonus +1 k třídě zbroje.",
+  "prerequisite": "Schopnost Bojový styl"
+ },
+ {
+  "key": "srd-2024_dragonborn",
+  "name": "Drakorozený"
+ },
+ {
+  "key": "srd-2024_dragonborn#Breath Weapon",
+  "name": "Dechová zbraň",
+  "text": "Když ve svém tahu provedeš akci Útok, můžeš jeden ze svých útoků nahradit výdechem magické energie, buď v 15stopém kuželu, nebo ve 30stopé přímce široké 5 stop (tvar zvol pokaždé). Každý tvor v této oblasti si musí hodit záchranný hod na Obratnost (SO 8 plus tvůj modifikátor Odolnosti a tvůj zdatnostní bonus). Při neúspěchu utrpí tvor 1k10 zranění typu určeného tvým rysem Dračí předci. Při úspěchu utrpí poloviční zranění. Toto zranění se zvýší o 1k10, když dosáhneš 5. úrovně postavy (2k10), 11. úrovně (3k10) a 17. úrovně (4k10).\n\nDechovou zbraň můžeš použít tolikrát, kolik je tvůj zdatnostní bonus, a všechna použití obnovíš, když dokončíš dlouhý odpočinek."
+ },
+ {
+  "key": "srd-2024_dragonborn#Damage Resistance",
+  "name": "Rezistence vůči zranění",
+  "text": "Máš rezistenci vůči typu zranění určenému tvým rysem Dračí předci."
+ },
+ {
+  "key": "srd-2024_dragonborn#Darkvision",
+  "name": "Vidění ve tmě",
+  "text": "Máš vidění ve tmě na vzdálenost 60 stop"
+ },
+ {
+  "key": "srd-2024_dragonborn#Draconic Ancestry",
+  "name": "Dračí předci",
+  "text": "Tvůj rod pochází od dračího praotce. Zvol druh draka z tabulky Dračí předci. Tvá volba ovlivní tvé rysy Dechová zbraň a Rezistence vůči zranění i tvůj vzhled.\n\nTabulka: Dračí předci\n\n| Drak | Typ zranění |\n|---|---|\n| Černý | Kyselinové |\n| Modrý | Bleskové |\n| Mosazný |Ohnivé |\n| Bronzový | Bleskové |\n| Měděný | Kyselinové|\n|Zlatý|Ohnivé|\n|Zelený|Jedové|\n|Červený|Ohnivé|\n|Stříbrný|Chladné|\n|Bílý|Chladné|"
+ },
+ {
+  "key": "srd-2024_dragonborn#Draconic Flight",
+  "name": "Dračí let",
+  "text": "Když dosáhneš 5. úrovně postavy, můžeš usměrnit dračí magii a dočasně si propůjčit schopnost létat. Bonusovou akcí ti na zádech vyrostou přízračná křídla, která vydrží 10 minut, nebo dokud je nesložíš (bez akce), nebo dokud nejsi neschopný. Po tu dobu máš rychlost létání rovnou své rychlosti. Tvá křídla vypadají, jako by byla ze stejné energie jako tvá Dechová zbraň. Jakmile tento rys použiješ, nemůžeš ho znovu použít, dokud nedokončíš dlouhý odpočinek."
+ },
+ {
+  "key": "srd-2024_dragonborn#Size",
+  "name": "Velikost",
+  "text": "Střední (vysoký asi 5–7 stop)"
+ },
+ {
+  "key": "srd-2024_dragonborn#Speed",
+  "name": "Rychlost",
+  "text": "30 stop"
+ },
+ {
+  "key": "srd-2024_dwarf",
+  "name": "Trpaslík"
+ },
+ {
+  "key": "srd-2024_dwarf#Darkvision",
+  "name": "Vidění ve tmě",
+  "text": "Máš vidění ve tmě na vzdálenost 120 stop."
+ },
+ {
+  "key": "srd-2024_dwarf#Dwarven Resilience",
+  "name": "Trpasličí houževnatost",
+  "text": "Máš rezistenci vůči jedovému zranění. Máš také výhodu k záchranným hodům, kterými se snažíš vyhnout stavu otrávený nebo ho ukončit."
+ },
+ {
+  "key": "srd-2024_dwarf#Dwarven Toughness",
+  "name": "Trpasličí tuhost",
+  "text": "Tvé maximum životů se zvýší o 1 a o další 1 se zvýší pokaždé, když získáš úroveň."
+ },
+ {
+  "key": "srd-2024_dwarf#Size",
+  "name": "Velikost",
+  "text": "Střední (vysoký asi 4–5 stop) "
+ },
+ {
+  "key": "srd-2024_dwarf#Speed",
+  "name": "Rychlost",
+  "text": "30 stop"
+ },
+ {
+  "key": "srd-2024_dwarf#Stonecunning",
+  "name": "Znalost kamene",
+  "text": "Bonusovou akcí získáš na 10 minut vnímání otřesů na vzdálenost 60 stop. Abys toto vnímání otřesů mohl používat, musíš stát na kamenném povrchu nebo se kamenného povrchu dotýkat. Kámen může být přírodní i opracovaný.\n\nTuto bonusovou akci můžeš použít tolikrát, kolik je tvůj zdatnostní bonus, a všechna použití obnovíš, když dokončíš dlouhý odpočinek.",
+  "poznamka": "Tremorsense = vnímání otřesů (není ve slovníku)"
+ },
+ {
+  "key": "srd-2024_elf",
+  "name": "Elf"
+ },
+ {
+  "key": "srd-2024_elf#Darkvision",
+  "name": "Vidění ve tmě",
+  "text": "Máš vidění ve tmě na vzdálenost 60 stop."
+ },
+ {
+  "key": "srd-2024_elf#Elven Lineage",
+  "name": "Elfí linie",
+  "text": "Patříš k linii, která ti dává nadpřirozené schopnosti. Zvol linii z tabulky Elfí linie. Získáš výhodu 1. úrovně této linie.\n\nKdyž dosáhneš 3. a 5. úrovně postavy, naučíš se kouzlo vyšší úrovně podle tabulky. Toto kouzlo máš vždy připravené. Jednou ho můžeš seslat bez pozice kouzla a tuto možnost obnovíš, když dokončíš dlouhý odpočinek. Kouzlo můžeš seslat i pomocí kterékoli své pozice kouzla odpovídající úrovně.\n\nTabulka: Elfí linie\n\n|Linie|Úroveň 1|Úroveň 3|Úroveň 5|\n|---|---|---|---|\n|Drow|Dosah tvého vidění ve tmě se zvýší na 120 stop. Znáš také trik _Tančící světla_.|_Vílí oheň_|_Tma_|\n|Vznešený elf|Znáš trik _Kouzelnické kousky_. Kdykoli dokončíš dlouhý odpočinek, můžeš tento trik nahradit jiným trikem ze seznamu kouzel kouzelníka.|_Odhalení magie_|_Mlžný krok_|\n|Lesní elf|Tvá rychlost se zvýší na 35 stop. Znáš také trik _Druidské kousky_.|_Dlouhý krok_|_Průchod beze stopy_|\n\nInteligence, Moudrost nebo Charisma je tvá sesílací vlastnost pro kouzla, která sesíláš díky tomuto rysu (vlastnost zvol při výběru linie)."
+ },
+ {
+  "key": "srd-2024_elf#Fey Ancestry",
+  "name": "Vílí předci",
+  "text": "Máš výhodu k záchranným hodům, kterými se snažíš vyhnout stavu okouzlený nebo ho ukončit."
+ },
+ {
+  "key": "srd-2024_elf#Keen Senses",
+  "name": "Bystré smysly",
+  "text": "Máš zdatnost v dovednosti Vhled, Vnímání nebo Přežití (podle své volby)."
+ },
+ {
+  "key": "srd-2024_elf#Size",
+  "name": "Velikost",
+  "text": "Střední (vysoký asi 5–6 stop)"
+ },
+ {
+  "key": "srd-2024_elf#Speed",
+  "name": "Rychlost",
+  "text": "30 stop"
+ },
+ {
+  "key": "srd-2024_elf#Trance",
+  "name": "Trans",
+  "text": "Nepotřebuješ spát a magie tě nemůže uspat. Dlouhý odpočinek můžeš dokončit za 4 hodiny, pokud je strávíš v meditaci podobné transu, během níž zůstáváš při vědomí."
+ },
+ {
+  "key": "srd-2024_finesse-wp",
+  "name": "Finesa",
+  "text": "Když útočíš zbraní s vlastností Finesa, použij pro hod na útok i na zranění podle své volby modifikátor Síly, nebo Obratnosti. Pro oba hody musíš použít stejný modifikátor.",
+  "poznamka": "vlastnosti zbraní (Finesa, Těžká, Lehká, Nabíjení, Dosah, Vrhací, Obouruční, Univerzální, Střelivo) nejsou ve slovníku"
+ },
+ {
+  "key": "srd-2024_gnome",
+  "name": "Gnóm"
+ },
+ {
+  "key": "srd-2024_gnome#Darkvision",
+  "name": "Vidění ve tmě",
+  "text": "Máš vidění ve tmě na vzdálenost 60 stop."
+ },
+ {
+  "key": "srd-2024_gnome#Gnomish Cunning",
+  "name": "Gnómí lstivost",
+  "text": "Máš výhodu k záchranným hodům na Inteligenci, Moudrost a Charisma."
+ },
+ {
+  "key": "srd-2024_gnome#Gnomish Lineage",
+  "name": "Gnómí linie",
+  "text": "Patříš k linii, která ti dává nadpřirozené schopnosti. Zvol jednu z následujících možností. Ať zvolíš kteroukoli, Inteligence, Moudrost nebo Charisma je tvá sesílací vlastnost pro kouzla, která sesíláš díky tomuto rysu (vlastnost zvol při výběru linie):\n\n**Lesní gnóm.** Znáš trik *Malá iluze*. Také máš vždy připravené kouzlo *Řeč se zvířaty*. Bez pozice kouzla ho můžeš seslat tolikrát, kolik je tvůj zdatnostní bonus, a všechna použití obnovíš, když dokončíš dlouhý odpočinek. Kouzlo můžeš seslat i pomocí kterékoli své pozice kouzla.\n\n**Skalní gnóm.** Znáš triky *Oprava* a *Kouzelnické kousky*. Navíc můžeš strávit 10 minut sesíláním *Kouzelnických kousků* a vytvořit drobné hodinové zařízení (TZ 5, 1 ŽV), například hračku, křesadlo nebo hrací skříňku. Při vytvoření zařízení určíš jeho funkci tak, že zvolíš jeden efekt z *Kouzelnických kousků*. Zařízení tento efekt vyvolá, kdykoli ty nebo jiný tvor použije bonusovou akci a aktivuje ho dotykem. Pokud zvolený efekt nabízí více možností, při vytvoření zařízení zvolíš jednu z nich. Pokud například zvolíš efekt kouzla zapálení a uhašení, určíš, zda zařízení oheň zapaluje, nebo hasí; obojí neumí. Najednou můžeš mít tři taková zařízení a každé se rozpadne 8 hodin po vytvoření, nebo když ho dotykem rozebereš akcí Použití."
+ },
+ {
+  "key": "srd-2024_gnome#Size",
+  "name": "Velikost",
+  "text": "Malá (vysoký asi 3–4 stopy)"
+ },
+ {
+  "key": "srd-2024_gnome#Speed",
+  "name": "Rychlost",
+  "text": "30 stop"
+ },
+ {
+  "key": "srd-2024_goliath",
+  "name": "Goliáš"
+ },
+ {
+  "key": "srd-2024_goliath#Giant Ancestry",
+  "name": "Obří předci",
+  "text": "Pocházíš z obrů. Zvol jednu z následujících výhod, nadpřirozený dar od tvých předků. Zvolenou výhodu můžeš použít tolikrát, kolik je tvůj zdatnostní bonus, a všechna použití obnovíš, když dokončíš dlouhý odpočinek:\n\n- **Oblačný skok (oblačný obr)**. Bonusovou akcí se magicky teleportuješ až o 30 stop na neobsazené místo, které vidíš.\n- **Ohnivý žár (ohnivý obr)**. Když zasáhneš cíl hodem na útok a způsobíš mu zranění, můžeš mu způsobit také 1k10 ohnivého zranění.\n- **Mrazivý chlad (mrazivý obr)**. Když zasáhneš cíl hodem na útok a způsobíš mu zranění, můžeš mu způsobit také 1k6 chladného zranění a snížit jeho rychlost o 10 stop do začátku svého příštího tahu.\n- **Kopcový pád (kopcový obr)**. Když zasáhneš velkého nebo menšího tvora hodem na útok a způsobíš mu zranění, můžeš ho srazit, takže je ležící.\n- **Kamenná výdrž (kamenný obr)**. Když utrpíš zranění, můžeš reakcí hodit 1k12. K hozenému číslu přičti svůj modifikátor Odolnosti a o tento součet zranění sniž.\n- **Bouřný hrom (bouřný obr)**. Když utrpíš zranění od tvora do 60 stop od tebe, můžeš reakcí tomuto tvorovi způsobit 1k8 hromového zranění."
+ },
+ {
+  "key": "srd-2024_goliath#Large Form",
+  "name": "Velká podoba",
+  "text": "Od 5. úrovně postavy můžeš bonusovou akcí změnit svou velikost na velkou, pokud jsi v dost velkém prostoru. Tato proměna trvá 10 minut, nebo dokud ji neukončíš (bez akce). Po tu dobu máš výhodu k ověřením Síly a tvá rychlost se zvýší o 10 stop. Jakmile tento rys použiješ, nemůžeš ho znovu použít, dokud nedokončíš dlouhý odpočinek."
+ },
+ {
+  "key": "srd-2024_goliath#Powerful Build",
+  "name": "Mohutná postava",
+  "text": "Máš výhodu ke každému ověření vlastnosti, kterým se snažíš ukončit stav sevřený. Při určování nosnosti se také počítáš o jednu velikost větší."
+ },
+ {
+  "key": "srd-2024_goliath#Size",
+  "name": "Velikost",
+  "text": "Střední (vysoký asi 7–8 stop)"
+ },
+ {
+  "key": "srd-2024_goliath#Speed",
+  "name": "Rychlost",
+  "text": "35 stop"
+ },
+ {
+  "key": "srd-2024_grappler",
+  "name": "Zápasník",
+  "text": "Získáš následující výhody.\n- Zvyš svou hodnotu Síly nebo Obratnosti o 1, nejvýše na 20.\n- Když ve svém tahu zasáhneš tvora úderem beze zbraně v rámci akce Útok, můžeš použít možnost Zranění i možnost Chvat zároveň. Tuto výhodu můžeš použít jen jednou za tah.\n- Máš výhodu k hodům na útok proti tvorovi, kterého držíš ve stavu sevřený.\n- Za přesun tvora, kterého držíš ve stavu sevřený, nemusíš utrácet pohyb navíc, pokud je stejně velký nebo menší než ty.",
+  "prerequisite": "Úroveň 4+, Síla nebo Obratnost 13+"
+ },
+ {
+  "key": "srd-2024_graze-mastery",
+  "name": "Škrábnutí",
+  "text": "Když hodem na útok touto zbraní tvora mineš, můžeš mu způsobit zranění rovné modifikátoru vlastnosti, který jsi pro hod na útok použil. Toto zranění je stejného typu jako zranění zbraně a zvýšit ho lze jen zvýšením modifikátoru vlastnosti."
+ },
+ {
+  "key": "srd-2024_great-weapon-fighting",
+  "name": "Boj s velkou zbraní",
+  "text": "- Když si házíš na zranění útoku zbraní na blízko, kterou držíš oběma rukama, můžeš s každou 1 nebo 2 na kostce zranění zacházet jako se 3. Aby ses této výhody dočkal, musí mít zbraň vlastnost Obouruční nebo Univerzální.",
+  "prerequisite": "Schopnost Bojový styl"
+ },
+ {
+  "key": "srd-2024_halfling",
+  "name": "Půlčík"
+ },
+ {
+  "key": "srd-2024_halfling#Brave",
+  "name": "Statečný",
+  "text": "Máš výhodu k záchranným hodům, kterými se snažíš vyhnout stavu vystrašený nebo ho ukončit."
+ },
+ {
+  "key": "srd-2024_halfling#Halfling Nimbleness",
+  "name": "Půlčičí hbitost",
+  "text": "Můžeš procházet prostorem každého tvora, který je o velikost větší než ty, ale nemůžeš se ve stejném prostoru zastavit."
+ },
+ {
+  "key": "srd-2024_halfling#Luck",
+  "name": "Štěstí",
+  "text": "Když ti při testu k20 padne na k20 číslo 1, můžeš kostkou hodit znovu a musíš použít nový hod."
+ },
+ {
+  "key": "srd-2024_halfling#Naturally Stealthy",
+  "name": "Přirozeně nenápadný",
+  "text": "Akci Skrytí můžeš provést, i když tě zakrývá jen tvor, který je aspoň o jednu velikost větší než ty."
+ },
+ {
+  "key": "srd-2024_halfling#Size",
+  "name": "Velikost",
+  "text": "Malá (vysoký asi 2–3 stopy) "
+ },
+ {
+  "key": "srd-2024_halfling#Speed",
+  "name": "Rychlost",
+  "text": "30 stop"
+ },
+ {
+  "key": "srd-2024_heavy-wp",
+  "name": "Těžká",
+  "text": "Máš nevýhodu k hodům na útok těžkou zbraní, pokud jde o zbraň na blízko a tvá hodnota Síly není aspoň 13, nebo pokud jde o zbraň na dálku a tvá hodnota Obratnosti není aspoň 13."
+ },
+ {
+  "key": "srd-2024_human",
+  "name": "Člověk"
+ },
+ {
+  "key": "srd-2024_human#Resourceful",
+  "name": "Vynalézavý",
+  "text": "Kdykoli dokončíš dlouhý odpočinek, získáš hrdinskou inspiraci."
+ },
+ {
+  "key": "srd-2024_human#Size",
+  "name": "Velikost",
+  "text": "Střední (vysoký asi 4–7 stop) nebo malá (vysoký asi 2–4 stopy), zvolíš při výběru tohoto druhu"
+ },
+ {
+  "key": "srd-2024_human#Skillful",
+  "name": "Šikovný",
+  "text": "Získáš zdatnost v jedné dovednosti podle své volby."
+ },
+ {
+  "key": "srd-2024_human#Speed",
+  "name": "Rychlost",
+  "text": "30 stop"
+ },
+ {
+  "key": "srd-2024_human#Versatile",
+  "name": "Všestranný",
+  "text": "Získáš výsadu původu podle své volby (viz „Výsady“). Doporučuje se výsada Zběhlý."
+ },
+ {
+  "key": "srd-2024_light-wp",
+  "name": "Lehká",
+  "text": "Když ve svém tahu provedeš akci Útok a zaútočíš lehkou zbraní, můžeš později v tomtéž tahu provést bonusovou akcí jeden útok navíc. Tento útok navíc musíš provést jinou lehkou zbraní a k jeho zranění nepřičítáš svůj modifikátor vlastnosti, pokud není záporný."
+ },
+ {
+  "key": "srd-2024_loading-wp",
+  "name": "Nabíjení",
+  "text": "Ze zbraně s vlastností Nabíjení můžeš vystřelit jen jeden kus střeliva, když k výstřelu použiješ akci, bonusovou akci nebo reakci, bez ohledu na to, kolik útoků můžeš normálně provést."
+ },
+ {
+  "key": "srd-2024_magic-initiate",
+  "name": "Zasvěcenec magie",
+  "text": "Získáš následující výhody.\n- Naučíš se dva triky podle své volby ze seznamu kouzel klerika, druida nebo kouzelníka. Inteligence, Moudrost nebo Charisma je tvá sesílací vlastnost pro kouzla z této výsady (zvol ji při výběru této výsady).\n- Zvol kouzlo 1. úrovně ze stejného seznamu, ze kterého jsi vybral triky této výsady. Toto kouzlo máš vždy připravené. Jednou ho můžeš seslat bez pozice kouzla a tuto možnost obnovíš, když dokončíš dlouhý odpočinek. Kouzlo můžeš seslat i pomocí kterékoli své pozice kouzla.\n- Kdykoli získáš novou úroveň, můžeš jedno z kouzel zvolených pro tuto výsadu nahradit jiným kouzlem stejné úrovně ze zvoleného seznamu kouzel.\n- Tuto výsadu si můžeš vzít víckrát, ale pokaždé musíš zvolit jiný seznam kouzel."
+ },
+ {
+  "key": "srd-2024_nick-mastery",
+  "name": "Rychlý zásah",
+  "text": "Útok navíc z vlastnosti Lehká můžeš provést v rámci akce Útok místo bonusovou akcí. Tento útok navíc můžeš provést jen jednou za tah."
+ },
+ {
+  "key": "srd-2024_orc",
+  "name": "Ork"
+ },
+ {
+  "key": "srd-2024_orc#Adrenaline Rush",
+  "name": "Adrenalinový nával",
+  "text": "Akci Sprint můžeš provést jako bonusovou akci. Když to uděláš, získáš dočasné životy v počtu rovném svému zdatnostnímu bonusu.\n\nTento rys můžeš použít tolikrát, kolik je tvůj zdatnostní bonus, a všechna použití obnovíš, když dokončíš krátký nebo dlouhý odpočinek.",
+  "poznamka": "Dash action = akce Sprint; názvy akcí (Hide = Schování, Magic = Magie, Utilize = Použití) nejsou ve slovníku"
+ },
+ {
+  "key": "srd-2024_orc#Darkvision",
+  "name": "Vidění ve tmě",
+  "text": "Máš vidění ve tmě na vzdálenost 120 stop."
+ },
+ {
+  "key": "srd-2024_orc#Relentless Endurance",
+  "name": "Neúprosná výdrž",
+  "text": "Když klesneš na 0 životů, ale nejsi na místě zabit, můžeš místo toho klesnout na 1 život. Jakmile tento rys použiješ, nemůžeš ho znovu použít, dokud nedokončíš dlouhý odpočinek."
+ },
+ {
+  "key": "srd-2024_orc#Size",
+  "name": "Velikost",
+  "text": "Střední (vysoký asi 6–7 stop)"
+ },
+ {
+  "key": "srd-2024_orc#Speed",
+  "name": "Rychlost",
+  "text": "30 stop"
+ },
+ {
+  "key": "srd-2024_push-mastery",
+  "name": "Odhození",
+  "text": "Když touto zbraní zasáhneš tvora, který je velký nebo menší, můžeš ho odstrčit až o 10 stop přímo od sebe."
+ },
+ {
+  "key": "srd-2024_reach-wp",
+  "name": "Dosah",
+  "text": "Zbraň s vlastností Dosah ti při útoku s ní prodlouží dosah o 5 stop. Platí to i pro určení tvého dosahu pro příležitostné útoky touto zbraní."
+ },
+ {
+  "key": "srd-2024_sage",
+  "name": "Učenec",
+  "text": "**Hodnoty vlastností:** Odolnost, Inteligence, Moudrost\n**Vybavení:** *Zvol A nebo B:* (A) hůl, kaligrafické potřeby, kniha (historie), pergamen (8 listů), roucho, 8 zl; nebo (B) 50 zl\n**Výsada:** Zasvěcenec magie (kouzelník)\n**Zdatnosti v dovednostech:** Arkána a Historie\n**Zdatnost s nástroji:** kaligrafické potřeby"
+ },
+ {
+  "key": "srd-2024_sap-mastery",
+  "name": "Oslabení",
+  "text": "Když touto zbraní zasáhneš tvora, má tento tvor nevýhodu ke svému příštímu hodu na útok před začátkem tvého příštího tahu."
+ },
+ {
+  "key": "srd-2024_savage-attacker",
+  "name": "Divoký útočník",
+  "text": "- Vycvičil ses v obzvlášť ničivých úderech. Jednou za tah, když zasáhneš cíl zbraní, můžeš hodit kostkami zranění zbraně dvakrát a proti cíli použít kterýkoli z obou hodů."
+ },
+ {
+  "key": "srd-2024_skilled",
+  "name": "Zběhlý",
+  "text": "- Získáš zdatnost v libovolné kombinaci tří dovedností nebo nástrojů podle své volby.\n- Tuto výsadu si můžeš vzít víckrát.",
+  "poznamka": "Feat názvy jsou návrh; Skilled = Zběhlý"
+ },
+ {
+  "key": "srd-2024_slow-mastery",
+  "name": "Zpomalení",
+  "text": "Když touto zbraní zasáhneš tvora a způsobíš mu zranění, můžeš mu do začátku svého příštího tahu snížit rychlost o 10 stop. Pokud je tvor zasažen víckrát zbraněmi s touto vlastností, snížení rychlosti nepřesáhne 10 stop."
+ },
+ {
+  "key": "srd-2024_soldier",
+  "name": "Voják",
+  "text": "**Hodnoty vlastností:** Síla, Obratnost, Odolnost\n**Vybavení:** *Zvol A nebo B:* (A) kopí, krátký luk, 20 šípů, herní sada (stejná jako výše), léčitelská brašna, toulec, cestovní oděv, 14 zl; nebo (B) 50 zl\n**Výsada:** Divoký útočník\n**Zdatnosti v dovednostech:** Atletika a Zastrašování\n**Zdatnost s nástroji:** zvol jeden druh herní sady"
+ },
+ {
+  "key": "srd-2024_thrown-wp",
+  "name": "Vrhací",
+  "text": "Pokud má zbraň vlastnost Vrhací, můžeš ji hodit a provést tak útok na dálku a tasení zbraně je součástí útoku. Pokud jde o zbraň na blízko, použij pro hod na útok i na zranění stejný modifikátor vlastnosti, jaký používáš pro útok touto zbraní na blízko."
+ },
+ {
+  "key": "srd-2024_tiefling",
+  "name": "Tiefling"
+ },
+ {
+  "key": "srd-2024_tiefling#Darkvision",
+  "name": "Vidění ve tmě",
+  "text": "Máš vidění ve tmě na vzdálenost 60 stop."
+ },
+ {
+  "key": "srd-2024_tiefling#Fiendish Legacy",
+  "name": "Ďábelský odkaz",
+  "text": "Jsi nositelem odkazu, který ti dává nadpřirozené schopnosti. Zvol odkaz z tabulky Ďábelské odkazy. Získáš výhodu 1. úrovně zvoleného odkazu.\n\nKdyž dosáhneš 3. a 5. úrovně postavy, naučíš se kouzlo vyšší úrovně podle tabulky. Toto kouzlo máš vždy připravené. Jednou ho můžeš seslat bez pozice kouzla a tuto možnost obnovíš, když dokončíš dlouhý odpočinek. Kouzlo můžeš seslat i pomocí kterékoli své pozice kouzla odpovídající úrovně.\n\nInteligence, Moudrost nebo Charisma je tvá sesílací vlastnost pro kouzla, která sesíláš díky tomuto rysu (vlastnost zvol při výběru odkazu).\n\n**Tabulka: Ďábelské odkazy**\n\n|Odkaz|Úroveň 1|Úroveň 3|Úroveň 5|\n|---|---|---|---|\n|Propastný|Máš rezistenci vůči jedovému zranění. Znáš také trik _Jedová sprška_.|_Paprsek nevolnosti_|_Znehybnění osoby_|\n|Chtonický|Máš rezistenci vůči nekrotickému zranění. Znáš také trik _Mrazivý dotek_.|_Falešný život_|_Paprsek oslabení_|\n|Pekelný|Máš rezistenci vůči ohnivému zranění. Znáš také trik _Ohnivá střela_.|_Pekelná odplata_|_Tma_|"
+ },
+ {
+  "key": "srd-2024_tiefling#Otherworldly Presence",
+  "name": "Nadpozemská přítomnost",
+  "text": "Znáš trik *Divotvorba*. Když ho sesíláš díky tomuto rysu, kouzlo používá stejnou sesílací vlastnost, jakou používáš pro svůj rys Ďábelský odkaz."
+ },
+ {
+  "key": "srd-2024_tiefling#Size",
+  "name": "Velikost",
+  "text": "Střední (vysoký asi 4–7 stop) nebo malá (vysoký asi 3–4 stopy), zvolíš při výběru tohoto druhu"
+ },
+ {
+  "key": "srd-2024_tiefling#Speed",
+  "name": "Rychlost",
+  "text": "30 stop"
+ },
+ {
+  "key": "srd-2024_topple-mastery",
+  "name": "Povalení",
+  "text": "Když touto zbraní zasáhneš tvora, můžeš ho přinutit k záchrannému hodu na Odolnost (SO 8 plus modifikátor vlastnosti použitý pro hod na útok a tvůj zdatnostní bonus). Při neúspěchu je tvor ležící."
+ },
+ {
+  "key": "srd-2024_two-handed-wp",
+  "name": "Obouruční",
+  "text": "Když útočíš obouruční zbraní, potřebuješ k tomu obě ruce."
+ },
+ {
+  "key": "srd-2024_two-weapon-fighting",
+  "name": "Boj dvěma zbraněmi",
+  "text": "- Když provádíš útok navíc díky použití zbraně s vlastností Lehká, můžeš k zranění tohoto útoku přičíst svůj modifikátor vlastnosti, pokud ho k zranění už nepřičítáš.",
+  "prerequisite": "Schopnost Bojový styl"
+ },
+ {
+  "key": "srd-2024_versatile-wp",
+  "name": "Univerzální",
+  "text": "Univerzální zbraň lze použít jednou nebo oběma rukama. U vlastnosti je v závorce uvedena hodnota zranění. Tolik zranění zbraň způsobí, když ji při útoku na blízko držíš oběma rukama."
+ },
+ {
+  "key": "srd-2024_vex-mastery",
+  "name": "Rozhození",
+  "text": "Když touto zbraní zasáhneš tvora a způsobíš mu zranění, máš výhodu ke svému příštímu hodu na útok proti tomuto tvorovi před koncem svého příštího tahu."
+ }
+]

@@ -79,6 +79,39 @@ volba sporná.
 | Action / Bonus Action / Reaction | akce / bonusová akce / reakce | |
 | Opportunity Attack | příležitostný útok | |
 
+## Akce
+
+Attack útok, Dash sprint, Disengage odpoutání, Dodge úhyb, Help pomoc, Hide skrytí,
+Influence ovlivnění, Magic magie („akce Magie“), Ready příprava, Search hledání, Study
+zkoumání, Utilize použití. Grapple chvat, Shove strčení.
+
+## Prostředí a smysly
+
+| EN | CS |
+|---|---|
+| Bright Light / Dim Light / Darkness | jasné světlo / šero / tma |
+| Lightly / Heavily Obscured | slabě / silně zastřený |
+| Difficult Terrain | těžký terén |
+| Blindsight | slepecké vnímání |
+| Tremorsense | vnímání otřesů |
+| Truesight | pravé vidění |
+| Emanation | emanace |
+| Cone, Cube, Cylinder, Line, Sphere | kužel, krychle, válec, linie, koule |
+| Bloodied | krvácející (pod polovinou životů) |
+| Attunement | sladění |
+| Challenge Rating (CR) | stupeň nebezpečnosti (SN) |
+| Familiar | přítel (podle kouzla Nalezení přítele) |
+
+Typy tvorů: Aberration zrůda, Beast zvíře, Celestial nebešťan, Construct konstrukt, Dragon
+drak, Elemental elementál, Fey víla, Fiend běs, Giant obr, Humanoid humanoid, Monstrosity
+obluda, Ooze sliz, Plant rostlina, Undead nemrtvý.
+
+Mince: CP md (měďák), SP st (stříbrňák), EP el (elektrum), GP zl (zlaťák), PP pl (platina).
+
+Vlastnosti zbraní: Ammunition střelivo, Finesse finesa, Heavy těžká, Light lehká, Loading
+nabíjení, Range dostřel, Reach dosah, Thrown vrhací, Two-Handed obouruční, Versatile
+univerzální.
+
 ## Kouzla
 
 | EN | CS |

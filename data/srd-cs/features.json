@@ -1,0 +1,677 @@
+[
+ {
+  "key": "srd-2024_barbarian_ability-score-improvement",
+  "name": "Zvýšení vlastnosti",
+  "text": "Získáš výsadu Zvýšení vlastnosti (viz „Výsady“) nebo jinou výsadu podle své volby, jejíž předpoklady splňuješ. Tuto schopnost získáš znovu na 8., 12. a 16. úrovni barbara."
+ },
+ {
+  "key": "srd-2024_barbarian_barbarian-subclass",
+  "name": "Specializace barbara",
+  "text": "Získáš specializaci barbara podle své volby. Specializace Stezka berserkera je popsána za popisem tohoto povolání. Specializace ti na určitých úrovních barbara dává schopnosti. Po zbytek své kariéry získáváš každou schopnost své specializace, jejíž úroveň je rovna tvé úrovni barbara nebo nižší."
+ },
+ {
+  "key": "srd-2024_barbarian_danger-sense",
+  "name": "Vycítění nebezpečí",
+  "text": "Získáš neobvyklý cit pro to, kdy věci nejsou tak, jak mají být, což ti dává náskok, když uhýbáš nebezpečím. Máš výhodu na záchranné hody na Obratnost, pokud nemáš stav neschopný."
+ },
+ {
+  "key": "srd-2024_barbarian_extra-attack",
+  "name": "Útok navíc",
+  "text": "Kdykoli ve svém tahu provedeš akci Útok, můžeš zaútočit dvakrát místo jednou."
+ },
+ {
+  "key": "srd-2024_barbarian_fast-movement",
+  "name": "Rychlý pohyb",
+  "text": "Dokud nenosíš těžkou zbroj, tvá rychlost se zvýší o 10 stop."
+ },
+ {
+  "key": "srd-2024_barbarian_primal-knowledge",
+  "name": "Prvotní znalost",
+  "text": "Získáš zdatnost v další dovednosti podle své volby ze seznamu dovedností, které má barbar k dispozici na 1. úrovni.\n\nNavíc, dokud je tvá Zuřivost aktivní, můžeš při určitých úkolech usměrňovat prvotní sílu; kdykoli provádíš ověření vlastnosti s jednou z následujících dovedností, můžeš ho provést jako ověření Síly, i když obvykle používá jinou vlastnost: Akrobacie, Zastrašování, Vnímání, Nenápadnost nebo Přežití. Když tuto možnost použiješ, tvá Síla představuje prvotní moc, která tebou proudí a zostřuje tvou hbitost, vystupování a smysly."
+ },
+ {
+  "key": "srd-2024_barbarian_rage",
+  "name": "Zuřivost",
+  "text": "Můžeš se naplnit prvotní silou zvanou Zuřivost, která ti dává mimořádnou moc a houževnatost. Pokud nenosíš těžkou zbroj, můžeš do ní vstoupit bonusovou akcí.\n\nDo Zuřivosti můžeš vstoupit tolikrát, kolik pro tvou úroveň barbara ukazuje sloupec Zuřivosti v tabulce Schopnosti barbara. Když dokončíš krátký odpočinek, obnovíš jedno utracené použití, a když dokončíš dlouhý odpočinek, obnovíš všechna.\n\nDokud je tvá Zuřivost aktivní, platí pro ni následující pravidla. *Rezistence vůči zranění.* Máš rezistenci vůči drtivému, bodnému a sečnému zranění.\n\n**Zranění zuřivosti.** Když útočíš pomocí Síly (zbraní nebo útokem beze zbraně) a způsobíš cíli zranění, získáš bonus ke zranění, který roste s tvými úrovněmi barbara, jak ukazuje sloupec Zranění zuřivosti v tabulce Schopnosti barbara.\n\n**Výhoda na Sílu.** Máš výhodu na ověření Síly a záchranné hody na Sílu.\n\n**Bez soustředění a kouzel.** Nemůžeš udržovat soustředění a nemůžeš sesílat kouzla.\n\n**Trvání.** Zuřivost trvá do konce tvého příštího tahu a skončí dřív, pokud si oblékneš těžkou zbroj nebo získáš stav neschopný. Pokud je tvá Zuřivost ve tvém příštím tahu stále aktivní, můžeš ji prodloužit o další kolo jedním z následujících způsobů:\n- Hoď si na útok proti nepříteli.\n- Přinuť nepřítele k záchrannému hodu.\n- Prodluž Zuřivost bonusovou akcí.\n\nPokaždé, když Zuřivost prodloužíš, trvá do konce tvého příštího tahu. Zuřivost můžeš udržet nejvýše 10 minut."
+ },
+ {
+  "key": "srd-2024_barbarian_reckless-attack",
+  "name": "Bezohledný útok",
+  "text": "Můžeš odhodit veškeré ohledy na obranu a útočit s větší divokostí. Když ve svém tahu provádíš první hod na útok, můžeš se rozhodnout útočit bezohledně. Pak máš až do začátku svého příštího tahu výhodu na hody na útok pomocí Síly, ale hody na útok proti tobě mají po tu dobu také výhodu."
+ },
+ {
+  "key": "srd-2024_barbarian_unarmored-defense",
+  "name": "Obrana bez zbroje",
+  "text": "Dokud nenosíš žádnou zbroj, tvá základní třída zbroje se rovná 10 plus tvé modifikátory Obratnosti a Odolnosti. Tento přínos si ponecháš, i když používáš štít."
+ },
+ {
+  "key": "srd-2024_barbarian_weapon-mastery",
+  "name": "Mistrovství zbraní",
+  "text": "Díky výcviku se zbraněmi můžeš používat vlastnosti mistrovství dvou druhů jednoduchých nebo válečných zbraní na blízko podle své volby, například obouručních seker a sekerek. Kdykoli dokončíš dlouhý odpočinek, můžeš si procvičit zbraňové cviky a jednu z těchto voleb zbraní změnit.\n\nNa určitých úrovních barbara získáš možnost používat vlastnosti mistrovství více druhů zbraní, jak ukazuje sloupec Mistrovství zbraní v tabulce Schopnosti barbara."
+ },
+ {
+  "key": "srd-2024_bard_ability-score-improvement",
+  "name": "Zvýšení vlastnosti",
+  "text": "Získáváš výsadu Zvýšení vlastnosti (viz „Výsady“) nebo jinou výsadu podle svého výběru, jejíž předpoklady splňuješ. Tuto schopnost získáš znovu na 8., 12. a 16. úrovni barda."
+ },
+ {
+  "key": "srd-2024_bard_bard-spell-list",
+  "name": "Seznam kouzel barda",
+  "text": "Tato část uvádí seznam kouzel barda. Kouzla jsou seřazena podle úrovně kouzla a pak abecedně a u každého je uvedena jeho škola magie. Ve sloupci Zvláštní znamená *S*, že kouzlo vyžaduje soustředění, *R*, že jde o rituál, a *M*, že vyžaduje konkrétní materiální složku.\n\n**Triky (úroveň 0)**\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Hvězdná jiskra_|Zaklínací|–|\n|_Jistý úder_|Věštecká|–|\n|_Kouzelnické kousky_|Přeměňovací|–|\n|_Malá iluze_|Iluzorní|–|\n|_Mágova ruka_|Vyvolávací|–|\n|_Oprava_|Přeměňovací|–|\n|_Světlo_|Zaklínací|–|\n|_Tančící světla_|Iluzorní|S|\n|_Zlý posměch_|Očarovávací|–|\n|_Zpráva_|Přeměňovací|–|\n\n**Úroveň 1**\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Barevná sprška_|Iluzorní|–|\n|_Disonantní šepot_|Očarovávací|–|\n|_Dlouhý krok_|Přeměňovací|–|\n|_Hrdinství_|Očarovávací|S|\n|_Hromová vlna_|Zaklínací|–|\n|_Identifikace_|Věštecká|R, M|\n|_Iluzorní písmo_|Iluzorní|R, M|\n|_Léčení ran_|Ochranná|–|\n|_Léčivé slovo_|Ochranná|–|\n|_Neviditelný sluha_|Vyvolávací|R|\n|_Odhalení magie_|Věštecká|S, R|\n|_Okouzlení osoby_|Očarovávací|–|\n|_Pád pírka_|Přeměňovací|–|\n|_Porozumění jazykům_|Věštecká|R|\n|_Převlek_|Iluzorní|–|\n|_Rozkaz_|Očarovávací|–|\n|_Řeč se zvířaty_|Věštecká|R|\n|_Spánek_|Očarovávací|S|\n|_Strašlivý smích_|Očarovávací|S|\n|_Tichý přelud_|Iluzorní|S|\n|_Vílí oheň_|Zaklínací|S|\n|_Zhouba_|Očarovávací|S|\n|_Zvířecí přátelství_|Očarovávací|–|\n\n**Úroveň 2**\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Magická ústa_|Iluzorní|R, M|\n|_Menší obnova_|Ochranná|–|\n|_Nalezení předmětu_|Věštecká|S|\n|_Nalezení zvířat či rostlin_|Věštecká|R|\n|_Neviditelnost_|Iluzorní|S|\n|_Odhalení myšlenek_|Věštecká|S|\n|_Otevření_|Přeměňovací|–|\n|_Pomoc_|Ochranná|–|\n|_Posílení vlastnosti_|Přeměňovací|S|\n|_Roztříštění_|Zaklínací|–|\n|_Rozžhavení kovu_|Přeměňovací|S|\n|_Slepota/Hluchota_|Přeměňovací|–|\n|_Sugesce_|Očarovávací|S|\n|_Ticho_|Iluzorní|S, R|\n|_Uchvácení_|Očarovávací|S|\n|_Uklidnění emocí_|Očarovávací|S|\n|_Vidění neviditelného_|Věštecká|–|\n|_Znehybnění osoby_|Očarovávací|S|\n|_Zóna pravdy_|Očarovávací|–|\n|_Zrcadlový obraz_|Iluzorní|–|\n|_Zvětšení/Zmenšení_|Přeměňovací|S|\n|_Zvířecí posel_|Očarovávací|R|\n\n**Úroveň 3**\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Hromadné léčivé slovo_|Ochranná|–|\n|_Hypnotický obrazec_|Iluzorní|S|\n|_Jasnozření_|Věštecká|S, M|\n|_Jazyky_|Věštecká|–|\n|_Malá chýše_|Zaklínací|R|\n|_Neodhalitelnost_|Ochranná|M|\n|_Ochranný glyf_|Ochranná|M|\n|_Páchnoucí mrak_|Vyvolávací|S|\n|_Poselství_|Věštecká|–|\n|_Rozptýlení magie_|Ochranná|–|\n|_Růst rostlin_|Přeměňovací|–|\n|_Řeč s mrtvými_|Nekromantská|–|\n|_Řeč s rostlinami_|Přeměňovací|–|\n|_Strach_|Iluzorní|S|\n|_Uvalení kletby_|Nekromantská|S|\n|_Velký přelud_|Iluzorní|S|\n|_Zpomalení_|Přeměňovací|S|\n\n**Úroveň 4**\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Dimenzní dveře_|Vyvolávací|–|\n|_Donucení_|Očarovávací|S|\n|_Nalezení tvora_|Věštecká|S|\n|_Okouzlení nestvůry_|Očarovávací|–|\n|_Proměna_|Přeměňovací|S|\n|_Přeludný terén_|Iluzorní|–|\n|_Přízračný zabiják_|Iluzorní|S|\n|_Větší neviditelnost_|Iluzorní|S|\n|_Volnost pohybu_|Ochranná|–|\n|_Zmatení_|Očarovávací|S|\n\n**Úroveň 5**\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Hromadné léčení ran_|Ochranná|–|\n|_Oklamání_|Iluzorní|S|\n|_Ovládnutí osoby_|Očarovávací|S|\n|_Oživení předmětů_|Přeměňovací|S|\n|_Probuzení_|Přeměňovací|M|\n|_Přísaha_|Očarovávací|–|\n|_Sen_|Iluzorní|–|\n|_Sférické spoutání_|Ochranná|M|\n|_Telepatické pouto_|Věštecká|R|\n|_Teleportační kruh_|Vyvolávací|M|\n|_Úprava paměti_|Očarovávací|S|\n|_Věštecký zrak_|Věštecká|S, M|\n|_Větší obnova_|Ochranná|M|\n|_Vzkříšení mrtvého_|Nekromantská|M|\n|_Zdání_|Iluzorní|–|\n|_Znalost legend_|Věštecká|M|\n|_Znehybnění nestvůry_|Očarovávací|S|\n\n**Úroveň 6**\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Hostina hrdinů_|Vyvolávací|M|\n|_Hromadná sugesce_|Očarovávací|–|\n|_Nalezení cesty_|Věštecká|S, M|\n|_Naprogramovaná iluze_|Iluzorní|M|\n|_Neodolatelný tanec_|Očarovávací|S|\n|_Pravý zrak_|Věštecká|M|\n|_Stráže a ochrany_|Ochranná|M|\n|_Zlé oko_|Nekromantská|S|\n\n**Úroveň 7**\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Duhová sprška_|Zaklínací|–|\n|_Éterická podoba_|Vyvolávací|–|\n|_Promítnutí obrazu_|Iluzorní|S, M|\n|_Regenerace_|Přeměňovací|–|\n|_Silová klec_|Zaklínací|S, M|\n|_Symbol_|Ochranná|M|\n|_Tajemná fata morgána_|Iluzorní|–|\n|_Tajemný meč_|Zaklínací|S, M|\n|_Teleportace_|Vyvolávací|–|\n|_Velkolepé sídlo_|Vyvolávací|M|\n|_Zmrtvýchvstání_|Nekromantská|M|\n\n**Úroveň 8**\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Odpor/Přitažlivost_|Očarovávací|–|\n|_Ovládnutí nestvůry_|Očarovávací|S|\n|_Pomatení_|Očarovávací|–|\n|_Prázdná mysl_|Ochranná|–|\n|_Slovo moci: omrač_|Očarovávací|–|\n|_Výmluvnost_|Očarovávací|–|\n\n**Úroveň 9**\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Duhová stěna_|Ochranná|–|\n|_Pravá proměna_|Přeměňovací|S|\n|_Předvídavost_|Věštecká|–|\n|_Slovo moci: uzdrav_|Očarovávací|–|\n|_Slovo moci: zabij_|Očarovávací|–|"
+ },
+ {
+  "key": "srd-2024_bard_bard-subclass",
+  "name": "Specializace barda",
+  "text": "Získáváš specializaci barda podle svého výběru. Specializace Kolej vědění je popsána za popisem tohoto povolání. Specializace je zaměření, které ti na určitých úrovních barda dává schopnosti. Po zbytek své kariéry získáváš každou schopnost své specializace, jejíž úroveň je rovna tvé úrovni barda nebo nižší."
+ },
+ {
+  "key": "srd-2024_bard_bardic-inspiration",
+  "name": "Bardská inspirace",
+  "text": "Slovy, hudbou nebo tancem dokážeš nadpřirozeně inspirovat ostatní. Tuto inspiraci představuje tvá kostka bardské inspirace, což je k6.\n\n**Použití bardské inspirace.** Bonusovou akcí můžeš inspirovat jiného tvora do 60 stop od sebe, který tě vidí nebo slyší. Tento tvor získá jednu tvou kostku bardské inspirace. Tvor může mít najednou jen jednu kostku bardské inspirace.\n\nJednou během následující hodiny, když tvor neuspěje v testu k20, může hodit kostkou bardské inspirace a přičíst hozené číslo k hodu k20, čímž možná promění neúspěch v úspěch. Kostka bardské inspirace se hodem spotřebuje.\n\n**Počet použití.** Kostku bardské inspirace můžeš udělit tolikrát, kolik činí tvůj modifikátor Charismatu (minimálně jednou), a všechna utracená použití získáš zpět, když dokončíš dlouhý odpočinek.\n\n**Na vyšších úrovních.** Tvá kostka bardské inspirace se mění, když dosáhneš určitých úrovní barda, jak ukazuje sloupec Bardská kostka v tabulce Schopnosti barda. Na 5. úrovni se z ní stane k8, na 10. úrovni k10 a na 15. úrovni k12."
+ },
+ {
+  "key": "srd-2024_bard_expertise",
+  "name": "Odbornost",
+  "text": "Získáváš odbornost (viz „Glosář pravidel“) ve dvou dovednostech podle svého výběru, ve kterých jsi zdatný. Doporučujeme Vystupování a Přesvědčování, pokud v nich zdatnost máš.\n\nNa 9. úrovni barda získáš odbornost v dalších dvou dovednostech podle svého výběru, ve kterých jsi zdatný."
+ },
+ {
+  "key": "srd-2024_bard_font-of-inspiration",
+  "name": "Zdroj inspirace",
+  "text": "Všechna utracená použití bardské inspirace teď získáváš zpět, když dokončíš krátký nebo dlouhý odpočinek.\n\nNavíc můžeš utratit pozici kouzla (nevyžaduje akci) a získat zpět jedno utracené použití bardské inspirace."
+ },
+ {
+  "key": "srd-2024_bard_jack-of-all-trades",
+  "name": "Všeuměl",
+  "text": "K jakémukoli ověření vlastnosti, které používá dovednost, v níž nejsi zdatný, a které jinak nepoužívá tvůj zdatnostní bonus, můžeš přičíst polovinu svého zdatnostního bonusu (zaokrouhleno dolů).\n\nPokud například provádíš ověření Síly (Atletiky) a nejsi zdatný v Atletice, můžeš k ověření přičíst polovinu svého zdatnostního bonusu."
+ },
+ {
+  "key": "srd-2024_bard_spellcasting",
+  "name": "Sesílání kouzel",
+  "text": "Bardské umění tě naučilo sesílat kouzla. Pravidla sesílání najdeš v části „Kouzla“. Níže je popsáno, jak tato pravidla používáš s kouzly barda, která najdeš v seznamu kouzel barda dále v popisu povolání.\n\n**Triky.** Znáš dva triky podle svého výběru ze seznamu kouzel barda. Doporučujeme _Tančící světla_ a _Zlý posměch_.\n\nKdykoli získáš úroveň barda, můžeš jeden ze svých triků nahradit jiným trikem podle svého výběru ze seznamu kouzel barda.\n\nKdyž dosáhneš 4. a 10. úrovně barda, naučíš se další trik podle svého výběru ze seznamu kouzel barda, jak ukazuje sloupec Triky v tabulce Schopnosti barda.\n\n**Pozice kouzel.** Tabulka Schopnosti barda ukazuje, kolik máš pozic kouzel pro sesílání kouzel úrovně 1+. Všechny utracené pozice získáš zpět, když dokončíš dlouhý odpočinek.\n\n**Připravená kouzla úrovně 1+.** Připravuješ si seznam kouzel úrovně 1+, která můžeš touto schopností sesílat. Na začátek si vyber čtyři kouzla úrovně 1 ze seznamu kouzel barda. Doporučujeme _Okouzlení osoby_, _Barevná sprška_, _Disonantní šepot_ a _Léčivé slovo_.\n\nPočet kouzel na tvém seznamu roste s úrovněmi barda, jak ukazuje sloupec Připravená kouzla v tabulce Schopnosti barda. Kdykoli se toto číslo zvýší, vyber si další kouzla ze seznamu kouzel barda, dokud počet kouzel na seznamu neodpovídá číslu v tabulce. Vybraná kouzla musí být takové úrovně, pro kterou máš pozice kouzel. Jako bard 3. úrovně můžeš mít například na seznamu připravených kouzel šest kouzel úrovní 1 a 2 v libovolné kombinaci.\n\nPokud ti jiná schopnost barda dává kouzla, která máš vždy připravená, nezapočítávají se do počtu kouzel, která si můžeš touto schopností připravit, jinak se ale pro tebe počítají jako kouzla barda.\n\n**Změna připravených kouzel.** Kdykoli získáš úroveň barda, můžeš jedno kouzlo na svém seznamu nahradit jiným kouzlem barda, pro které máš pozice kouzel.\n\n**Sesílací vlastnost.** Tvou sesílací vlastností pro kouzla barda je Charisma.\n\n**Sesílací ohnisko.** Jako sesílací ohnisko pro kouzla barda můžeš používat hudební nástroj."
+ },
+ {
+  "key": "srd-2024_cleric_ability-score-improvement",
+  "name": "Zvýšení vlastnosti",
+  "text": "Získáš výsadu Zvýšení vlastnosti (viz „Výsady“) nebo jinou výsadu podle své volby, jejíž požadavky splňuješ. Tuto schopnost získáš znovu na 8., 12. a 16. úrovni klerika."
+ },
+ {
+  "key": "srd-2024_cleric_channel-divinity",
+  "name": "Usměrnění božské moci",
+  "text": "Dokážeš usměrňovat božskou energii přímo z Vnějších sfér a pohánět jí magické účinky. Začínáš se dvěma takovými účinky: Božská jiskra a Odvrácení nemrtvých, oba jsou popsané níže. Pokaždé, když použiješ Usměrnění božské moci tohoto povolání, zvol, který účinek Usměrnění božské moci tohoto povolání vytvoříš. Na vyšších úrovních klerika získáš další možnosti účinků.\n\nUsměrnění božské moci tohoto povolání můžeš použít dvakrát. Jedno vyčerpané použití obnovíš, když dokončíš krátký odpočinek, a všechna vyčerpaná použití, když dokončíš dlouhý odpočinek. Na určitých úrovních klerika získáš další použití, jak ukazuje sloupec Usměrnění božské moci v tabulce Schopnosti klerika.\n\nPokud účinek Usměrnění božské moci vyžaduje záchranný hod, SO se rovná SO záchrany proti kouzlu ze schopnosti Sesílání kouzel tohoto povolání.\n\n**Božská jiskra.** Akcí Magie namíříš svůj svatý symbol na jiného tvora, kterého vidíš do 30 stop od sebe, a soustředíš na něj božskou energii. Hoď 1k8 a přičti svůj modifikátor Moudrosti. Buď tvorovi obnovíš životy rovné tomuto součtu, nebo ho donutíš hodit si záchranný hod na Odolnost. Při neúspěchu utrpí nekrotické nebo zářivé zranění (podle tvé volby) rovné tomuto součtu. Při úspěchu utrpí poloviční zranění (zaokrouhleno dolů).\n\nDalší k8 házíš, když dosáhneš 7. (2k8), 13. (3k8) a 18. (4k8) úrovně klerika.\n\n**Odvrácení nemrtvých.** Akcí Magie pozvedneš svůj svatý symbol a pokáráš nemrtvé. Každý nemrtvý podle tvé volby do 30 stop od tebe si musí hodit záchranný hod na Moudrost. Pokud tvor neuspěje, má na 1 minutu stavy vystrašený a neschopný. Po tuto dobu se ve svých tazích snaží dostat od tebe co nejdál. Účinek na tvora skončí předčasně, pokud utrpí jakékoli zranění, pokud máš stav neschopný nebo pokud zemřeš.",
+  "poznamka": "Channel Divinity = Usměrnění božské moci, Magic action = akce Magie, Holy Symbol = svatý symbol, Outer Planes = Vnější sféry: mimo slovník."
+ },
+ {
+  "key": "srd-2024_cleric_cleric-spell-list",
+  "name": "Seznam kouzel klerika",
+  "text": "Tato část uvádí seznam kouzel klerika. Kouzla jsou seřazená podle úrovně kouzla a pak abecedně a u každého je uvedena jeho škola magie. Ve sloupci Zvláštní *S* znamená, že kouzlo vyžaduje soustředění, *R* že jde o rituál, a *M* že vyžaduje konkrétní materiální složku.\n\nTabulka: Triky (kouzla klerika 0. úrovně)\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Vedení*|Věštecká|S|\n|*Světlo*|Zaklínací|-|\n|*Oprava*|Přeměňovací|-|\n|*Odolání*|Ochranná|S|\n|*Posvátný plamen*|Zaklínací|-|\n|*Ušetření umírajícího*|Nekromantská|-|\n|*Divotvorba*|Přeměňovací|-|\n\nTabulka: Kouzla klerika 1. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Zhouba*|Očarovávací|S|\n|*Požehnání*|Očarovávací|S, M|\n|*Rozkaz*|Očarovávací|-|\n|*Vytvoření či zničení vody*|Přeměňovací|-|\n|*Léčení ran*|Ochranná|-|\n|*Odhalení zla a dobra*|Věštecká|S|\n|*Odhalení magie*|Věštecká|S, R|\n|*Odhalení jedu a nemoci*|Věštecká|S, R|\n|*Vůdčí střela*|Zaklínací|-|\n|*Léčivé slovo*|Ochranná|-|\n|*Způsobení ran*|Nekromantská|-|\n|*Ochrana před zlem a dobrem*|Ochranná|S, M|\n|*Očištění jídla a pití*|Přeměňovací|R|\n|*Útočiště*|Ochranná|-|\n|*Štít víry*|Ochranná|S|\n\nTabulka: Kouzla klerika 2. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Pomoc*|Ochranná|-|\n|*Věštba*|Věštecká|R, M|\n|*Slepota/Hluchota*|Přeměňovací|-|\n|*Uklidnění emocí*|Očarovávací|S|\n|*Věčný plamen*|Zaklínací|M|\n|*Posílení vlastnosti*|Přeměňovací|S|\n|*Nalezení pastí*|Věštecká|-|\n|*Klidný odpočinek*|Nekromantská|R, M|\n|*Znehybnění osoby*|Očarovávací|S|\n|*Menší obnova*|Ochranná|-|\n|*Nalezení předmětu*|Věštecká|S|\n|*Modlitba za uzdravení*|Ochranná|-|\n|*Ochrana před jedem*|Ochranná|-|\n|*Ticho*|Iluzorní|S, R|\n|*Duchovní zbraň*|Zaklínací|S|\n|*Ochranné pouto*|Ochranná|M|\n|*Zóna pravdy*|Očarovávací|-|\n\nTabulka: Kouzla klerika 3. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Oživení mrtvých*|Nekromantská|-|\n|*Maják naděje*|Ochranná|S|\n|*Uvalení kletby*|Nekromantská|S|\n|*Jasnozření*|Věštecká|S, M|\n|*Vytvoření jídla a vody*|Vyvolávací|-|\n|*Denní světlo*|Zaklínací|-|\n|*Rozptýlení magie*|Ochranná|-|\n|*Ochranný glyf*|Ochranná|M|\n|*Magický kruh*|Ochranná|M|\n|*Hromadné léčivé slovo*|Ochranná|-|\n|*Splynutí s kamenem*|Přeměňovací|R|\n|*Ochrana před energií*|Ochranná|S|\n|*Sejmutí kletby*|Ochranná|-|\n|*Oživení*|Nekromantská|M|\n|*Poselství*|Věštecká|-|\n|*Řeč s mrtvými*|Nekromantská|-|\n|*Duchovní strážci*|Vyvolávací|S|\n|*Jazyky*|Věštecká|-|\n|*Chůze po vodě*|Přeměňovací|R|\n\n#### Kouzla klerika 4. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Aura života*|Ochranná|S|\n|*Vyhnání*|Ochranná|S|\n|*Ovládání vody*|Přeměňovací|S|\n|*Ochrana před smrtí*|Ochranná|-|\n|*Předpověď*|Věštecká|R, M|\n|*Volnost pohybu*|Ochranná|-|\n|*Strážce víry*|Vyvolávací|-|\n|*Nalezení tvora*|Věštecká|S|\n|*Tvarování kamene*|Přeměňovací|-|\n\n#### Kouzla klerika 5. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Rozmluva s božstvem*|Věštecká|R|\n|*Nákaza*|Nekromantská|-|\n|*Rozptýlení zla a dobra*|Ochranná|S|\n|*Plamenný úder*|Zaklínací|-|\n|*Přísaha*|Očarovávací|-|\n|*Větší obnova*|Ochranná|M|\n|*Posvěcení*|Ochranná|M|\n|*Hmyzí mor*|Vyvolávací|S|\n|*Znalost legend*|Věštecká|M|\n|*Hromadné léčení ran*|Ochranná|-|\n|*Sférické spoutání*|Ochranná|M|\n|*Vzkříšení mrtvého*|Nekromantská|M|\n|*Věštecký zrak*|Věštecká|S, M|\n\n#### Kouzla klerika 6. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Bariéra čepelí*|Zaklínací|S|\n|*Vytvoření nemrtvého*|Nekromantská|M|\n|*Nalezení cesty*|Věštecká|S, M|\n|*Zapovězení*|Ochranná|R, M|\n|*Ublížení*|Nekromantská|-|\n|*Uzdravení*|Ochranná|-|\n|*Hostina hrdinů*|Vyvolávací|M|\n|*Spojenec ze sfér*|Vyvolávací|-|\n|*Sluneční paprsek*|Zaklínací|S|\n|*Pravý zrak*|Věštecká|M|\n|*Slovo návratu*|Vyvolávací|-|\n\n#### Kouzla klerika 7. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Vyvolání nebešťana*|Vyvolávací|S|\n|*Božské slovo*|Zaklínací|-|\n|*Éterická podoba*|Vyvolávací|-|\n|*Ohnivá bouře*|Zaklínací|-|\n|*Přesun mezi sférami*|Vyvolávací|M|\n|*Regenerace*|Přeměňovací|-|\n|*Zmrtvýchvstání*|Nekromantská|M|\n|*Symbol*|Ochranná|M|\n\n#### Kouzla klerika 8. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Antimagické pole*|Ochranná|S|\n|*Ovládání počasí*|Přeměňovací|S|\n|*Zemětřesení*|Přeměňovací|S|\n|*Svatá aura*|Ochranná|S, M|\n|*Sluneční výbuch*|Zaklínací|-|\n\n#### Kouzla klerika 9. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Astrální projekce*|Nekromantská|M|\n|*Brána*|Vyvolávací|S, M|\n|*Hromadné uzdravení*|Ochranná|-|\n|*Slovo moci: uzdrav*|Očarovávací|-|\n|*Pravé zmrtvýchvstání*|Nekromantská|M|",
+  "poznamka": "Řádky tabulek jsou v pořadí anglického originálu, české názvy proto nejsou abecedně. Ve sloupci Zvláštní je C (Concentration) převedeno na S (soustředění), prázdné (dlouhá pomlčka) na „-“."
+ },
+ {
+  "key": "srd-2024_cleric_cleric-subclasses",
+  "name": "Specializace klerika",
+  "text": "Získáš specializaci klerika podle své volby. Specializace Doména života je popsaná za popisem tohoto povolání. Specializace je zaměření, které ti na určitých úrovních klerika dává schopnosti. Po zbytek své kariéry získáváš každou schopnost své specializace, jejíž úroveň je stejná jako tvá úroveň klerika nebo nižší."
+ },
+ {
+  "key": "srd-2024_cleric_divine-order",
+  "name": "Božský řád",
+  "text": "Zasvětil ses jedné z následujících posvátných rolí podle své volby.\n\n**Ochránce.** Jsi vycvičený pro boj: získáš zdatnost s válečnými zbraněmi a výcvik v těžké zbroji.\n\n**Divotvůrce.** Znáš jeden trik navíc ze seznamu kouzel klerika. Navíc ti tvé mystické spojení s božstvím dává bonus k ověřením Inteligence (Arkána nebo Náboženství). Bonus se rovná tvému modifikátoru Moudrosti (minimálně +1)."
+ },
+ {
+  "key": "srd-2024_cleric_life-domain_disciple-of-life",
+  "name": "Učedník života",
+  "text": "Když kouzlo, které sešleš pomocí pozice kouzla, obnoví tvorovi životy, tento tvor v tahu, kdy kouzlo sešleš, získá další životy. Další životy se rovnají 2 plus úroveň pozice kouzla."
+ },
+ {
+  "key": "srd-2024_cleric_life-domain_life-domain-spells",
+  "name": "Kouzla domény života",
+  "text": "Tvé spojení s touto božskou doménou zajišťuje, že máš určitá kouzla vždy po ruce. Když dosáhneš úrovně klerika uvedené v tabulce Kouzla domény života, od té doby máš uvedená kouzla vždy připravená.\n\nTabulka: Kouzla domény života\n\n|Úroveň klerika|Připravená kouzla|\n|---|---|\n|3|*Pomoc*, *Požehnání*, *Léčení ran*, *Menší obnova*|\n|5|*Hromadné léčivé slovo*, *Oživení*|\n|7|*Aura života*, *Ochrana před smrtí*|\n|9|*Větší obnova*, *Hromadné léčení ran*|"
+ },
+ {
+  "key": "srd-2024_cleric_life-domain_preserve-life",
+  "name": "Zachování života",
+  "text": "Akcí Magie pozvedneš svůj svatý symbol a utratíš jedno použití Usměrnění božské moci, abys vyvolal léčivou energii, která může obnovit počet životů rovný pětinásobku tvé úrovně klerika. Vyber zkrvavené tvory do 30 stop od sebe (můžeš to být i ty) a rozděl mezi ně tyto životy. Tato schopnost může tvorovi obnovit životy nejvýše na polovinu jeho maxima životů.",
+  "poznamka": "Bloodied = zkrvavený (tvor na polovině maxima životů nebo méně): mimo slovník."
+ },
+ {
+  "key": "srd-2024_cleric_sear-undead",
+  "name": "Spálení nemrtvých",
+  "text": "Kdykoli použiješ Odvrácení nemrtvých, můžeš hodit tolik k8, kolik činí tvůj modifikátor Moudrosti (minimálně 1k8), a hody sečíst. Každý nemrtvý, který neuspěje v záchranném hodu proti tomuto použití Odvrácení nemrtvých, utrpí zářivé zranění rovné součtu hodu. Toto zranění neukončí účinek odvrácení."
+ },
+ {
+  "key": "srd-2024_cleric_spellcasting",
+  "name": "Sesílání kouzel",
+  "text": "Naučil ses sesílat kouzla modlitbou a meditací. Pravidla sesílání kouzel najdeš v části „Kouzla“. Níže je popsáno, jak tato pravidla používáš s kouzly klerika, která najdeš v seznamu kouzel klerika dále v popisu povolání.\n\n**Triky.** Znáš tři triky podle své volby ze seznamu kouzel klerika. Doporučené jsou: *Vedení*, *Posvátný plamen* a *Divotvorba*.\n\nKdykoli získáš úroveň klerika, můžeš jeden ze svých triků nahradit jiným trikem podle své volby ze seznamu kouzel klerika.\n\nNa 4. a 10. úrovni klerika se naučíš další trik podle své volby ze seznamu kouzel klerika, jak ukazuje sloupec Triky v tabulce Schopnosti klerika.\n\n**Pozice kouzel.** Tabulka Schopnosti klerika ukazuje, kolik máš pozic kouzel pro sesílání kouzel 1. a vyšší úrovně. Všechny vyčerpané pozice obnovíš, když dokončíš dlouhý odpočinek.\n\n**Připravená kouzla 1. a vyšší úrovně.** Připravuješ si seznam kouzel 1. a vyšší úrovně, která můžeš touto schopností sesílat. Na začátek si vyber čtyři kouzla 1. úrovně ze seznamu kouzel klerika. Doporučená jsou: *Požehnání*, *Léčení ran*, *Vůdčí střela* a *Štít víry*.\n\nPočet kouzel na tvém seznamu roste s úrovněmi klerika, jak ukazuje sloupec Připravená kouzla v tabulce Schopnosti klerika. Kdykoli se tento počet zvýší, vyber si další kouzla ze seznamu kouzel klerika, dokud počet kouzel na tvém seznamu neodpovídá číslu v tabulce. Vybraná kouzla musí být takové úrovně, pro kterou máš pozice kouzel. Například jako klerik 3. úrovně můžeš mít na seznamu připravených kouzel šest kouzel 1. a 2. úrovně v libovolné kombinaci.\n\nPokud ti jiná schopnost klerika dává kouzla, která máš vždy připravená, tato kouzla se nezapočítávají do počtu kouzel, která si můžeš připravit touto schopností, ale jinak se pro tebe počítají jako kouzla klerika.\n\n**Změna připravených kouzel.** Kdykoli dokončíš dlouhý odpočinek, můžeš změnit svůj seznam připravených kouzel a nahradit kterákoli kouzla na něm jinými kouzly klerika, pro která máš pozice kouzel.\n\n**Sesílací vlastnost.** Tvou sesílací vlastností pro kouzla klerika je Moudrost.\n\n**Sesílací pomůcka.** Jako sesílací pomůcku pro kouzla klerika můžeš používat svatý symbol.",
+  "poznamka": "Spellcasting Focus = sesílací pomůcka: mimo slovník."
+ },
+ {
+  "key": "srd-2024_college-of-lore_bonus-proficiencies",
+  "name": "Zdatnosti navíc",
+  "text": "Získáváš zdatnost ve třech dovednostech podle svého výběru."
+ },
+ {
+  "key": "srd-2024_college-of-lore_cutting-words",
+  "name": "Jízlivá slova",
+  "text": "Učíš se pomocí svého důvtipu nadpřirozeně rozptylovat a mást ostatní a podkopávat jejich sebedůvěru i schopnosti. Když tvor, kterého vidíš do 60 stop od sebe, hází na zranění nebo uspěje v ověření vlastnosti či v hodu na útok, můžeš reakcí utratit jedno použití své bardské inspirace. Hoď kostkou bardské inspirace a hozené číslo odečti od hodu tvora. Tím snížíš zranění nebo možná proměníš úspěch v neúspěch."
+ },
+ {
+  "key": "srd-2024_druid_ability-score-improvement",
+  "name": "Zvýšení vlastnosti",
+  "text": "Získáš výsadu Zvýšení vlastnosti (viz „Výsady“) nebo jinou výsadu podle své volby, jejíž požadavky splňuješ. Tuto schopnost získáš znovu na 8., 12. a 16. úrovni druida."
+ },
+ {
+  "key": "srd-2024_druid_circle-of-the-land_lands-aid",
+  "name": "Pomoc krajiny",
+  "text": "Akcí Magie můžeš utratit jedno použití Divoké podoby a zvolit bod do 60 stop od sebe. Na okamžik se v kouli o poloměru 10 stop se středem v tomto bodě objeví květy dodávající životní sílu a trny vysávající život. Každý tvor podle tvé volby v kouli si musí hodit záchranný hod na Odolnost proti tvému SO záchrany proti kouzlu. Při neúspěchu utrpí 2k6 nekrotického zranění, při úspěchu poloviční zranění. Jeden tvor podle tvé volby v této oblasti získá zpět 2k6 životů.\n\nZranění i léčení se zvýší o 1k6, když dosáhneš 10. (3k6) a 14. (4k6) úrovně druida."
+ },
+ {
+  "key": "srd-2024_druid_circle-of-the-land_spell-list",
+  "name": "Kouzla kruhu krajiny",
+  "text": "Kdykoli dokončíš dlouhý odpočinek, zvol si jeden typ krajiny: suchou, polární, mírnou nebo tropickou. Podívej se do tabulky níže, která odpovídá zvolenému typu; kouzla uvedená pro tvou úroveň druida a nižší máš připravená.\n\nTabulka: Suchá krajina\n\n|Úroveň druida|Kouzla kruhu|\n|---|---|\n|3|*Rozmazání*, *Hořící ruce*, *Ohnivá střela*|\n|5|*Ohnivá koule*|\n|7|*Zmar*|\n|9|*Kamenná stěna*|\n\nTabulka: Polární krajina\n|Úroveň druida|Kouzla kruhu|\n|---|---|\n|3|*Mlžný mrak*, *Znehybnění osoby*, *Mrazivý paprsek*|\n|5|*Plískanice*|\n|7|*Ledová bouře*|\n|9|*Kužel chladu*|\n\nTabulka: Mírná krajina\n|Úroveň druida|Kouzla kruhu|\n|---|---|\n|3|*Mlžný krok*, *Elektrizující sevření*, *Spánek*|\n|5|*Blesk*|\n|7|*Volnost pohybu*|\n|9|*Krok stromem*|\n\nTabulka: Tropická krajina\n|Úroveň druida|Kouzla kruhu|\n|---|---|\n|3|*Kyselinová sprška*, *Paprsek nevolnosti*, *Pavučina*|\n|5|*Páchnoucí mrak*|\n|7|*Proměna*|\n|9|*Hmyzí mor*|",
+  "poznamka": "Circle of the Land = Kruh krajiny (land jako typ krajiny, ne „země“)."
+ },
+ {
+  "key": "srd-2024_druid_druid-spell-list",
+  "name": "Seznam kouzel druida",
+  "text": "Tato část uvádí seznam kouzel druida. Kouzla jsou seřazená podle úrovně kouzla a pak abecedně a u každého je uvedena jeho škola magie. Ve sloupci Zvláštní *S* znamená, že kouzlo vyžaduje soustředění, *R* že jde o rituál, a *M* že vyžaduje konkrétní materiální složku.\n\nTabulka: Triky (kouzla druida 0. úrovně)\n\n|Škola|Zvláštní|\n|---|---|\n|Přeměňovací|-|\n|Přeměňovací|-|\n|Věštecká|S|\n|Přeměňovací|-|\n|Přeměňovací|-|\n|Nekromantská|-|\n|Vyvolávací|-|\n|Ochranná|S|\n|Přeměňovací|-|\n|Nekromantská|-|\n|Zaklínací|-|\n|||\n\nTabulka: Kouzla druida 1. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Zvířecí přátelství*|Očarovávací|-|\n|*Okouzlení osoby*|Očarovávací|-|\n|*Vytvoření či zničení vody*|Přeměňovací|-|\n|*Léčení ran*|Ochranná|-|\n|*Odhalení magie*|Věštecká|S, R|\n|*Odhalení jedu a nemoci*|Věštecká|S, R|\n|*Zapletení*|Vyvolávací|S|\n|*Vílí oheň*|Zaklínací|S|\n|*Mlžný mrak*|Vyvolávací|S|\n|*Dobrobobule*|Vyvolávací|-|\n|*Léčivé slovo*|Ochranná|-|\n|*Ledový nůž*|Vyvolávací|-|\n|*Skok*|Přeměňovací|-|\n|*Dlouhý krok*|Přeměňovací|-|\n|*Ochrana před zlem a dobrem*|Ochranná|S, M|\n|*Očištění jídla a pití*|Přeměňovací|R|\n|*Řeč se zvířaty*|Věštecká|R|\n|*Hromová vlna*|Zaklínací|-|\n\nTabulka: Kouzla druida 2. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Pomoc*|Ochranná|-|\n|*Zvířecí posel*|Očarovávací|R|\n|*Věštba*|Věštecká|R, M|\n|*Kůra místo kůže*|Přeměňovací|-|\n|*Věčný plamen*|Zaklínací|M|\n|*Vidění ve tmě*|Přeměňovací|-|\n|*Posílení vlastnosti*|Přeměňovací|S|\n|*Zvětšení/Zmenšení*|Přeměňovací|S|\n|*Nalezení pastí*|Věštecká|-|\n|*Plamenná čepel*|Zaklínací|S|",
+  "poznamka": "Zdroj je neúplný: tabulka triků nemá sloupec Kouzlo a seznam končí uprostřed kouzel 2. úrovně (Flame Blade). Přeloženo tak, jak je. Řádky triků podle pořadí a škol nejspíš odpovídají: Druidské kousky, Živlová magie, Vedení, Oprava, Zpráva, Jedová sprška, Vytvoření plamene, Odolání, Šilelagh, Ušetření umírajícího, Hvězdná jiskra (doplnit ze zdroje). Řádky tabulek jsou v pořadí anglického originálu, české názvy proto nejsou abecedně. Ve sloupci Zvláštní je C (Concentration) převedeno na S (soustředění), prázdné (dlouhá pomlčka) na „-“."
+ },
+ {
+  "key": "srd-2024_druid_druid-subclass",
+  "name": "Specializace druida",
+  "text": "Získáš specializaci druida podle své volby. Specializace Kruh krajiny je popsaná za popisem tohoto povolání. Specializace je zaměření, které ti na určitých úrovních druida dává schopnosti. Po zbytek své kariéry získáváš každou schopnost své specializace, jejíž úroveň je stejná jako tvá úroveň druida nebo nižší."
+ },
+ {
+  "key": "srd-2024_druid_druidic",
+  "name": "Druidština",
+  "text": "Znáš druidštinu, tajný jazyk druidů. Když ses tento starobylý jazyk učil, odemkl sis také magii dorozumívání se zvířaty; kouzlo *Řeč se zvířaty* máš vždy připravené.\n\nDruidštinou můžeš zanechávat skryté zprávy. Ty a ostatní, kdo druidštinu znají, takovou zprávu automaticky odhalíte. Ostatní si její přítomnosti všimnou úspěšným ověřením Inteligence (Pátrání) se SO 15, ale bez magie ji nedokážou rozluštit."
+ },
+ {
+  "key": "srd-2024_druid_primal-order",
+  "name": "Prvotní řád",
+  "text": "Zasvětil ses jedné z následujících posvátných rolí podle své volby.\n\n**Mág.** Znáš jeden trik navíc ze seznamu kouzel druida. Navíc ti tvé mystické spojení s přírodou dává bonus k ověřením Inteligence (Arkána nebo Příroda). Bonus se rovná tvému modifikátoru Moudrosti (minimální bonus +1).\n\n**Strážce.** Jsi vycvičený pro boj: získáš zdatnost s válečnými zbraněmi a výcvik ve střední zbroji.",
+  "poznamka": "Magician = Mág (Kouzelník je obsazený pro Wizard), Warden = Strážce."
+ },
+ {
+  "key": "srd-2024_druid_spellcasting",
+  "name": "Sesílání kouzel",
+  "text": "Naučil ses sesílat kouzla studiem mystických sil přírody. Pravidla sesílání kouzel najdeš v části „Kouzla“. Níže je popsáno, jak tato pravidla používáš s kouzly druida, která najdeš v seznamu kouzel druida dále v popisu povolání.\n\n**Triky.** Znáš dva triky podle své volby ze seznamu kouzel druida. Doporučené jsou: *Druidské kousky* a *Vytvoření plamene*.\n\nKdykoli získáš úroveň druida, můžeš jeden ze svých triků nahradit jiným trikem podle své volby ze seznamu kouzel druida.\n\nNa 4. a 10. úrovni druida se naučíš další trik podle své volby ze seznamu kouzel druida, jak ukazuje sloupec Triky v tabulce Schopnosti druida.\n\n**Pozice kouzel.** Tabulka Schopnosti druida ukazuje, kolik máš pozic kouzel pro sesílání kouzel 1. a vyšší úrovně. Všechny vyčerpané pozice obnovíš, když dokončíš dlouhý odpočinek.\n\n**Připravená kouzla 1. a vyšší úrovně.** Připravuješ si seznam kouzel 1. a vyšší úrovně, která můžeš touto schopností sesílat. Na začátek si vyber čtyři kouzla 1. úrovně ze seznamu kouzel druida. Doporučená jsou: *Zvířecí přátelství*, *Léčení ran*, *Vílí oheň* a *Hromová vlna*.\n\nPočet kouzel na tvém seznamu roste s úrovněmi druida, jak ukazuje sloupec Připravená kouzla v tabulce Schopnosti druida. Kdykoli se tento počet zvýší, vyber si další kouzla ze seznamu kouzel druida, dokud počet kouzel na tvém seznamu neodpovídá číslu v tabulce. Vybraná kouzla musí být takové úrovně, pro kterou máš pozice kouzel. Například jako druid 3. úrovně můžeš mít na seznamu připravených kouzel šest kouzel 1. a 2. úrovně v libovolné kombinaci.\n\nPokud ti jiná schopnost druida dává kouzla, která máš vždy připravená, tato kouzla se nezapočítávají do počtu kouzel, která si můžeš připravit touto schopností, ale jinak se pro tebe počítají jako kouzla druida.\n\n**Změna připravených kouzel.** Kdykoli dokončíš dlouhý odpočinek, můžeš změnit svůj seznam připravených kouzel a nahradit kterákoli kouzla jinými kouzly druida, pro která máš pozice kouzel.\n\n**Sesílací vlastnost.** Tvou sesílací vlastností pro kouzla druida je Moudrost.\n\n**Sesílací pomůcka.** Jako sesílací pomůcku pro kouzla druida můžeš používat druidskou pomůcku."
+ },
+ {
+  "key": "srd-2024_druid_wild-companion",
+  "name": "Divoký společník",
+  "text": "Můžeš přivolat přírodního ducha, který na sebe vezme zvířecí podobu, aby ti pomáhal. Akcí Magie můžeš utratit pozici kouzla nebo jedno použití Divoké podoby a seslat kouzlo *Nalezení přítele* bez materiálních složek.\n\nKdyž kouzlo sešleš tímto způsobem, přítel je tvor typu víla a zmizí, když dokončíš dlouhý odpočinek.",
+  "poznamka": "Typ tvora Fey = víla, familiar = přítel (podle kouzla Nalezení přítele): typy tvorů nejsou ve slovníku."
+ },
+ {
+  "key": "srd-2024_druid_wild-resurgence",
+  "name": "Divoké obnovení",
+  "text": "Jednou v každém svém tahu, pokud ti nezbývá žádné použití Divoké podoby, si můžeš jedno použití dát tím, že utratíš pozici kouzla (nevyžaduje akci).\n\nNavíc můžeš utratit jedno použití Divoké podoby (nevyžaduje akci) a dát si pozici kouzla 1. úrovně, ale znovu to nemůžeš udělat, dokud nedokončíš dlouhý odpočinek."
+ },
+ {
+  "key": "srd-2024_druid_wild-shape",
+  "name": "Divoká podoba",
+  "text": "Síla přírody ti umožňuje vzít na sebe podobu zvířete. Bonusovou akcí se proměníš v podobu zvířete, kterou ses pro tuto schopnost naučil (viz „Známé podoby“ níže). V této podobě zůstaneš počet hodin rovný polovině tvé úrovně druida, nebo dokud znovu nepoužiješ Divokou podobu, nezískáš stav neschopný nebo nezemřeš. Podobu můžeš také předčasně opustit bonusovou akcí.\n\n**Počet použití.** Divokou podobu můžeš použít dvakrát. Jedno vyčerpané použití obnovíš, když dokončíš krátký odpočinek, a všechna vyčerpaná použití, když dokončíš dlouhý odpočinek.\n\nNa určitých úrovních druida získáš další použití, jak ukazuje sloupec Divoká podoba v tabulce Schopnosti druida.\n\n**Známé podoby.** Pro tuto schopnost znáš čtyři podoby zvířat, vybrané ze statistik zvířat s nejvyšším stupněm nebezpečnosti 1/4, která nemají rychlost letu (možnosti najdeš v části „Zvířata“ v kapitole „Nestvůry“). Doporučené jsou **krysa**, **jezdecký kůň**, **pavouk** a **vlk**. Kdykoli dokončíš dlouhý odpočinek, můžeš jednu ze svých známých podob nahradit jinou vhodnou podobou.\n\nNa určitých úrovních druida se zvýší počet tvých známých podob a nejvyšší stupeň nebezpečnosti těchto podob, jak ukazuje tabulka Zvířecí podoby. Navíc od 8. úrovně můžeš přijmout podobu, která má rychlost letu.\n\nPři výběru známých podob můžeš vhodná zvířata hledat i v jiných zdrojích, pokud ti to Pán jeskyně dovolí.\n\nTabulka: Zvířecí podoby\n\n|Úroveň druida|Známé podoby|Max. SN|Rychlost letu|\n|---|---|---|---|\n|2|4|1/4|Ne|\n|4|6|1/2|Ne|\n|8|8|1|Ano|\n\n**Pravidla během proměny.** V podobě si zachováš svou osobnost, vzpomínky a schopnost mluvit a platí následující pravidla:\n- **Dočasné životy.** Když se proměníš Divokou podobou, získáš dočasné životy v počtu rovném tvé úrovni druida.\n- **Herní statistiky.** Tvé herní statistiky nahradí statistiky zvířete, ale zachováš si svůj typ tvora, životy, kostky životů, hodnoty Inteligence, Moudrosti a Charismatu, schopnosti povolání, jazyky a výsady. Zachováš si také zdatnosti v dovednostech a záchranných hodech a používáš pro ně svůj zdatnostní bonus, a navíc získáš zdatnosti tvora. Pokud je modifikátor dovednosti nebo záchranného hodu ve statistikách zvířete vyšší než tvůj, použij ten ze statistik.\n- **Žádné sesílání kouzel.** Nemůžeš sesílat kouzla, ale proměna nepřeruší tvé soustředění ani jinak neovlivní kouzlo, které už jsi seslal.\n- **Předměty.** Tvou schopnost zacházet s předměty určují končetiny podoby, ne tvoje vlastní. Navíc si zvolíš, zda tvé vybavení spadne na tvé místo, splyne s novou podobou, nebo ho nová podoba bude mít na sobě. Nošené vybavení funguje normálně, ale PJ podle velikosti a tvaru tvora rozhodne, zda je pro novou podobu praktické daný kus vybavení nosit. Tvé vybavení nemění velikost ani tvar podle nové podoby a každé vybavení, které nová podoba nemůže nosit, musí buď spadnout na zem, nebo s podobou splynout. Vybavení, které s podobou splyne, nemá žádný účinek, dokud jsi v této podobě.",
+  "poznamka": "Challenge Rating (CR) = stupeň nebezpečnosti (SN), Beast = zvíře, Fly Speed = rychlost letu, Game Master (GM) = Pán jeskyně (PJ): mimo slovník."
+ },
+ {
+  "key": "srd-2024_druid_wild-shape-uses",
+  "name": "Známé triky",
+  "text": "[Data sloupce]",
+  "poznamka": "Zdroj nesedí: klíč říká wild-shape-uses, název Cantrips Known, text je jen zástupný „[Column data]“. Nejspíš jde o sloupec tabulky, ne o schopnost."
+ },
+ {
+  "key": "srd-2024_fighter_ability-score-improvement",
+  "name": "Zvýšení vlastnosti",
+  "text": "Získáváš výsadu Zvýšení vlastnosti (viz „Výsady“) nebo jinou výsadu podle svého výběru, jejíž předpoklady splňuješ. Tuto schopnost získáš znovu na 6., 8., 12., 14. a 16. úrovni bojovníka."
+ },
+ {
+  "key": "srd-2024_fighter_action-surge",
+  "name": "Příval akce",
+  "text": "Na okamžik dokážeš překonat své běžné meze. Ve svém tahu můžeš provést jednu akci navíc, kromě akce Magie.\n\nJakmile tuto schopnost použiješ, nemůžeš ji použít znovu, dokud nedokončíš krátký nebo dlouhý odpočinek. Od 17. úrovně ji můžeš před odpočinkem použít dvakrát, v jednom tahu ale jen jednou."
+ },
+ {
+  "key": "srd-2024_fighter_champion_improved-critical",
+  "name": "Vylepšený kritický zásah",
+  "text": "Tvé hody na útok zbraněmi a údery beze zbraně způsobí kritický zásah, padne-li na k20 19 nebo 20."
+ },
+ {
+  "key": "srd-2024_fighter_champion_remarkable-athlete",
+  "name": "Pozoruhodný atlet",
+  "text": "Díky své atletičnosti máš výhodu na hody na iniciativu a na ověření Síly (Atletiky)."
+ },
+ {
+  "key": "srd-2024_fighter_extra-attack",
+  "name": "Útok navíc",
+  "text": "Kdykoli ve svém tahu provedeš akci Útok, můžeš zaútočit dvakrát místo jednou."
+ },
+ {
+  "key": "srd-2024_fighter_fighter-subclass",
+  "name": "Specializace bojovníka",
+  "text": "Získáváš specializaci bojovníka podle svého výběru. Specializace Šampion je popsána za popisem tohoto povolání. Specializace je zaměření, které ti na určitých úrovních bojovníka dává schopnosti. Po zbytek své kariéry získáváš každou schopnost své specializace, jejíž úroveň je rovna tvé úrovni bojovníka nebo nižší."
+ },
+ {
+  "key": "srd-2024_fighter_fighting-style",
+  "name": "Bojový styl",
+  "text": "Tvé bojové umění je vybroušené a získáváš výsadu bojového stylu podle svého výběru (viz „Výsady“). Doporučujeme Obranu.\n\nKdykoli získáš úroveň bojovníka, můžeš zvolenou výsadu nahradit jinou výsadou bojového stylu."
+ },
+ {
+  "key": "srd-2024_fighter_second-wind",
+  "name": "Druhý dech",
+  "text": "Máš omezenou zásobu tělesné a duševní výdrže, ze které můžeš čerpat. Bonusovou akcí ji můžeš využít a získat zpět životy ve výši 1k10 plus tvá úroveň bojovníka.\n\nTuto schopnost můžeš použít dvakrát. Jedno utracené použití získáš zpět, když dokončíš krátký odpočinek, a všechna utracená použití, když dokončíš dlouhý odpočinek.\n\nNa určitých úrovních bojovníka získáváš další použití této schopnosti, jak ukazuje sloupec Druhý dech v tabulce Schopnosti bojovníka."
+ },
+ {
+  "key": "srd-2024_fighter_tactical-mind",
+  "name": "Taktická mysl",
+  "text": "Máš smysl pro taktiku na bojišti i mimo ně. Když neuspěješ v ověření vlastnosti, můžeš utratit jedno použití svého Druhého dechu a dotlačit se k úspěchu. Místo získání životů hodíš 1k10 a hozené číslo přičteš k ověření vlastnosti, čímž ho možná proměníš v úspěch. Pokud ověření i tak selže, toto použití Druhého dechu se neutratí."
+ },
+ {
+  "key": "srd-2024_fighter_tactical-shift",
+  "name": "Taktický přesun",
+  "text": "Kdykoli aktivuješ svůj Druhý dech bonusovou akcí, můžeš se pohnout až o polovinu své rychlosti, aniž by to vyvolalo příležitostné útoky."
+ },
+ {
+  "key": "srd-2024_fighter_weapon-mastery",
+  "name": "Mistrovství zbraní",
+  "text": "Díky výcviku se zbraněmi můžeš využívat vlastnosti mistrovství tří druhů jednoduchých nebo válečných zbraní podle svého výběru. Kdykoli dokončíš dlouhý odpočinek, můžeš cvičit se zbraněmi a jednu z vybraných zbraní vyměnit.\n\nNa určitých úrovních bojovníka můžeš využívat vlastnosti mistrovství více druhů zbraní, jak ukazuje sloupec Mistrovství zbraní v tabulce Schopnosti bojovníka."
+ },
+ {
+  "key": "srd-2024_monk_ability-score-improvement",
+  "name": "Zvýšení vlastnosti",
+  "text": "Získáš výsadu Zvýšení vlastnosti (viz „Výsady“) nebo jinou výsadu podle své volby, jejíž předpoklady splňuješ. Tuto schopnost získáš znovu na 8., 12. a 16. úrovni mnicha."
+ },
+ {
+  "key": "srd-2024_monk_deflect-attacks",
+  "name": "Odražení útoků",
+  "text": "Když tě zasáhne hod na útok a jeho zranění zahrnuje drtivé, bodné nebo sečné zranění, můžeš reakcí snížit celkové zranění, které ti útok způsobí. Snížení se rovná 1k10 plus tvůj modifikátor Obratnosti a tvá úroveň mnicha.\n\nPokud zranění snížíš na 0, můžeš utratit 1 bod zaměření a přesměrovat část síly útoku. V takovém případě si vyber tvora, kterého vidíš do 5 stop od sebe, pokud šlo o útok na blízko, nebo tvora, kterého vidíš do 60 stop od sebe a který není za úplným krytem, pokud šlo o útok na dálku. Tento tvor musí uspět v záchranném hodu na Obratnost, jinak utrpí zranění rovné dvěma hodům tvé kostky bojových umění plus tvůj modifikátor Obratnosti. Zranění má stejný typ jako zranění způsobené útokem."
+ },
+ {
+  "key": "srd-2024_monk_extra-attack",
+  "name": "Útok navíc",
+  "text": "Kdykoli ve svém tahu provedeš akci Útok, můžeš zaútočit dvakrát místo jednou."
+ },
+ {
+  "key": "srd-2024_monk_martial-arts",
+  "name": "Bojová umění",
+  "text": "Cvičení bojových umění ti dává mistrovství v bojových stylech, které využívají tvůj útok beze zbraně a mnišské zbraně, což jsou:\n\n- jednoduché zbraně na blízko\n- válečné zbraně na blízko s vlastností lehká\n\nNásledující přínosy máš, dokud jsi beze zbraně nebo třímáš jen mnišské zbraně a zároveň nenosíš zbroj ani netřímáš štít.\n\n**Bonusový útok beze zbraně.** Útok beze zbraně můžeš provést bonusovou akcí.\n\n**Kostka bojových umění.** Místo obvyklého zranění svého útoku beze zbraně nebo mnišské zbraně můžeš hodit 1k6. Tato kostka se mění s úrovněmi mnicha, jak ukazuje sloupec Bojová umění v tabulce Schopnosti mnicha.\n\n**Obratné útoky.** Pro hody na útok a na zranění svých útoků beze zbraně a mnišských zbraní můžeš místo modifikátoru Síly použít modifikátor Obratnosti. Navíc když použiješ možnost Chvat nebo Strčení svého útoku beze zbraně, můžeš pro určení SO záchrany použít modifikátor Obratnosti místo modifikátoru Síly.",
+  "poznamka": "Unarmed Strike = útok beze zbraně, Grapple = Chvat, Shove = Strčení, Martial weapons = válečné zbraně. Nejsou ve slovníku."
+ },
+ {
+  "key": "srd-2024_monk_monk-subclass",
+  "name": "Specializace mnicha",
+  "text": "Získáš specializaci mnicha podle své volby. Specializace Válečník otevřené dlaně je popsána za popisem tohoto povolání. Specializace ti na určitých úrovních mnicha dává schopnosti. Po zbytek své kariéry získáváš každou schopnost své specializace, jejíž úroveň je rovna tvé úrovni mnicha nebo nižší."
+ },
+ {
+  "key": "srd-2024_monk_monks-focus",
+  "name": "Mnišské zaměření",
+  "text": "Tvé zaměření a bojový výcvik ti umožňují čerpat ze zdroje mimořádné energie ve tvém nitru. Tuto energii představují body zaměření. Tvá úroveň mnicha určuje, kolik bodů máš, jak ukazuje sloupec Body zaměření v tabulce Schopnosti mnicha.\n\nTyto body můžeš utrácet na posílení nebo pohánění určitých schopností mnicha. Na začátku znáš tři takové schopnosti: Příval úderů, Trpělivou obranu a Krok větru, každá je popsána níže.\n\nKdyž utratíš bod zaměření, není ti k dispozici, dokud nedokončíš krátký nebo dlouhý odpočinek, na jehož konci obnovíš všechny utracené body.\n\nNěkteré schopnosti využívající body zaměření vyžadují, aby si cíl hodil záchranný hod. SO záchrany se rovná 8 plus tvůj modifikátor Moudrosti a zdatnostní bonus.\n\n**Příval úderů.** Můžeš utratit 1 bod zaměření a bonusovou akcí provést dva útoky beze zbraně.\n\n**Trpělivá obrana.** Bonusovou akcí můžeš provést akci Odpoutání. Případně můžeš utratit 1 bod zaměření a bonusovou akcí provést akce Odpoutání i Úhyb.\n\n**Krok větru.** Bonusovou akcí můžeš provést akci Sprint. Případně můžeš utratit 1 bod zaměření a bonusovou akcí provést akce Odpoutání i Sprint; v tomto tahu se ti navíc zdvojnásobí vzdálenost skoku.",
+  "poznamka": "Focus / Focus Points = zaměření / body zaměření, protože „soustředění“ je ve slovníku vyhrazené pro Concentration. Akce Disengage = Odpoutání, Dodge = Uhýbání, Dash = Sprint."
+ },
+ {
+  "key": "srd-2024_monk_slow-fall",
+  "name": "Zpomalený pád",
+  "text": "Když padáš, můžeš reakcí snížit zranění, které ti pád způsobí, o hodnotu rovnou pětinásobku tvé úrovně mnicha."
+ },
+ {
+  "key": "srd-2024_monk_stunning-strike",
+  "name": "Omračující úder",
+  "text": "Jednou za tah, když zasáhneš tvora mnišskou zbraní nebo útokem beze zbraně, můžeš utratit 1 bod zaměření a pokusit se o omračující úder. Cíl si musí hodit záchranný hod na Odolnost. Při neúspěchu má cíl do začátku tvého příštího tahu stav omráčený. Při úspěchu se cíli do začátku tvého příštího tahu sníží rychlost na polovinu a další hod na útok proti němu do té doby má výhodu."
+ },
+ {
+  "key": "srd-2024_monk_unarmored-defense",
+  "name": "Obrana bez zbroje",
+  "text": "Dokud nenosíš zbroj ani netřímáš štít, tvá základní třída zbroje se rovná 10 plus tvé modifikátory Obratnosti a Moudrosti."
+ },
+ {
+  "key": "srd-2024_monk_unarmored-movement",
+  "name": "Pohyb bez zbroje",
+  "text": "Dokud nenosíš zbroj ani netřímáš štít, tvá rychlost se zvýší o 10 stop. Tento bonus se na určitých úrovních mnicha zvyšuje, jak ukazuje tabulka Schopnosti mnicha."
+ },
+ {
+  "key": "srd-2024_monk_uncanny-metabolism",
+  "name": "Neobvyklý metabolismus",
+  "text": "Když si házíš na iniciativu, můžeš obnovit všechny utracené body zaměření. Když to uděláš, hoď si kostkou bojových umění a obnov si tolik životů, kolik činí tvá úroveň mnicha plus hozené číslo.\n\nJakmile tuto schopnost použiješ, nemůžeš ji použít znovu, dokud nedokončíš dlouhý odpočinek."
+ },
+ {
+  "key": "srd-2024_monk_warrior-of-the-open-hand_open-hand-technique",
+  "name": "Technika otevřené dlaně",
+  "text": "Kdykoli zasáhneš tvora útokem, který ti dává Příval úderů, můžeš na cíl uvalit jeden z následujících účinků.\n\n**Zmatení.** Cíl nemůže do začátku svého příštího tahu provádět příležitostné útoky.\n\n**Odhození.** Cíl musí uspět v záchranném hodu na Sílu, jinak je odhozen až o 15 stop od tebe.\n\n**Povalení.** Cíl musí uspět v záchranném hodu na Obratnost, jinak získá stav ležící."
+ },
+ {
+  "key": "srd-2024_paladin_ability-score-improvement",
+  "name": "Zvýšení vlastnosti",
+  "text": "Získáš výsadu Zvýšení vlastnosti (viz „Výsady“) nebo jinou výsadu podle své volby, jejíž předpoklady splňuješ. Tuto schopnost získáš znovu na 8., 12. a 16. úrovni paladina."
+ },
+ {
+  "key": "srd-2024_paladin_channel-divinity",
+  "name": "Usměrnění božství",
+  "text": "Dokážeš usměrňovat božskou energii přímo z Vnějších sfér a pohánět jí magické účinky. Začínáš s jedním takovým účinkem, Božským smyslem, který je popsán níže. Další schopnosti paladina ti dávají další možnosti účinků Usměrnění božství. Pokaždé, když použiješ Usměrnění božství tohoto povolání, zvolíš, který účinek tohoto povolání vytvoříš.\n\nUsměrnění božství tohoto povolání můžeš použít dvakrát. Když dokončíš krátký odpočinek, obnovíš jedno utracené použití, a když dokončíš dlouhý odpočinek, obnovíš všechna. Na 11. úrovni paladina získáš jedno použití navíc.\n\nPokud účinek Usměrnění božství vyžaduje záchranný hod, SO se rovná SO záchrany proti kouzlu ze schopnosti Sesílání kouzel tohoto povolání.\n\n**Božský smysl.** Bonusovou akcí můžeš otevřít svou mysl a vnímat nebešťany, běsy a nemrtvé. Po dobu příštích 10 minut, nebo dokud nemáš stav neschopný, znáš polohu každého tvora těchto typů do 60 stop od sebe a znáš jeho typ tvora. Ve stejném okruhu také odhalíš přítomnost každého místa či předmětu, který byl posvěcen nebo znesvěcen, jako u kouzla *Posvěcení*.",
+  "poznamka": "Typy tvorů Celestial = nebešťan, Fiend = běs, Undead = nemrtvý; Outer Planes = Vnější sféry. Nejsou ve slovníku."
+ },
+ {
+  "key": "srd-2024_paladin_extra-attack",
+  "name": "Útok navíc",
+  "text": "Kdykoli ve svém tahu provedeš akci Útok, můžeš zaútočit dvakrát místo jednou."
+ },
+ {
+  "key": "srd-2024_paladin_faithful-steed",
+  "name": "Věrný oř",
+  "text": "Můžeš si přivolat pomoc nadpozemského oře. Kouzlo *Nalezení oře* máš vždy připravené.\n\nToto kouzlo také můžeš jednou seslat bez utracení pozice kouzla a tuto možnost obnovíš, když dokončíš dlouhý odpočinek."
+ },
+ {
+  "key": "srd-2024_paladin_fighting-style",
+  "name": "Bojový styl",
+  "text": "Získáš výsadu bojového stylu podle své volby (výsady viz „Výsady“). Místo jedné z těchto výsad si můžeš vybrat možnost níže.\n\n**Požehnaný válečník.** Naučíš se dva triky klerika podle své volby (seznam kouzel klerika najdeš v části o povolání klerik). Doporučené: *Vedení* a *Posvátný plamen*. Zvolené triky se pro tebe počítají jako paladinská kouzla a tvou sesílací vlastností pro ně je Charisma. Kdykoli získáš úroveň paladina, můžeš jeden z těchto triků nahradit jiným trikem klerika."
+ },
+ {
+  "key": "srd-2024_paladin_lay-on-hands",
+  "name": "Vkládání rukou",
+  "text": "Tvůj požehnaný dotek dokáže hojit rány. Máš zásobu léčivé síly, která se obnoví, když dokončíš dlouhý odpočinek. Z této zásoby můžeš obnovit celkem tolik životů, kolik činí pětinásobek tvé úrovně paladina.\n\nBonusovou akcí se můžeš dotknout tvora (můžeš to být i ty sám) a čerpat sílu ze zásoby léčení, čímž mu obnovíš životy, nejvýše tolik, kolik v zásobě zbývá.\n\nMůžeš také utratit 5 životů ze zásoby léčivé síly a odstranit z tvora stav otrávený; tyto body tvorovi zároveň neobnoví životy."
+ },
+ {
+  "key": "srd-2024_paladin_oath-of-devotion_sacred-weapon",
+  "name": "Posvátná zbraň",
+  "text": "Když provedeš akci Útok, můžeš utratit jedno použití svého Usměrnění božství a naplnit jednu zbraň na blízko, kterou držíš, pozitivní energií. Na 10 minut, nebo dokud tuto schopnost nepoužiješ znovu, si k hodům na útok s touto zbraní přičítáš modifikátor Charismatu (bonus nejméně +1) a pokaždé, když s ní zasáhneš, může způsobit buď svůj obvyklý typ zranění, nebo zářivé zranění.\n\nZbraň také vydává jasné světlo v okruhu 20 stop a šero dalších 20 stop za ním.\n\nTento účinek můžeš ukončit dřív (nevyžaduje to akci). Účinek skončí také tehdy, když zbraň nemáš u sebe."
+ },
+ {
+  "key": "srd-2024_paladin_oath-of-devotion_spells",
+  "name": "Kouzla přísahy oddanosti",
+  "text": "Magie tvé přísahy zajišťuje, že máš určitá kouzla vždy po ruce. Když dosáhneš úrovně paladina uvedené v tabulce Kouzla přísahy oddanosti, máš od té chvíle uvedená kouzla vždy připravená.\n\nTabulka: Kouzla přísahy oddanosti\n\n|Úroveň paladina|Kouzla|\n|---|---|\n|3|*Ochrana před zlem a dobrem*, *Štít víry*|\n|5|*Pomoc*, *Zóna pravdy*|\n|9|*Maják naděje*, *Rozptýlení magie*|\n|13|*Volnost pohybu*, *Strážce víry*|\n|17|*Rozmluva s božstvem*, *Plamenný úder*|"
+ },
+ {
+  "key": "srd-2024_paladin_paladin-subclass",
+  "name": "Specializace paladina",
+  "text": "Získáš specializaci paladina podle své volby. Specializace Přísaha oddanosti je popsána za popisem tohoto povolání. Specializace ti na určitých úrovních paladina dává schopnosti. Po zbytek své kariéry získáváš každou schopnost své specializace, jejíž úroveň je rovna tvé úrovni paladina nebo nižší."
+ },
+ {
+  "key": "srd-2024_paladin_paladins-smite",
+  "name": "Paladinův úder",
+  "text": "Kouzlo *Božský úder* máš vždy připravené. Navíc ho můžeš seslat bez utracení pozice kouzla, ale než ho takto budeš moci seslat znovu, musíš dokončit dlouhý odpočinek."
+ },
+ {
+  "key": "srd-2024_paladin_spell-list",
+  "name": "Seznam kouzel paladina",
+  "text": "Tato část obsahuje seznam kouzel paladina. Kouzla jsou seřazena podle úrovně a pak abecedně a u každého je uvedena škola magie. Ve sloupci Zvláštní znamená *S*, že kouzlo vyžaduje soustředění, *R*, že je to rituál, a *M*, že vyžaduje konkrétní materiální složku.\n\nTabulka: Paladinská kouzla 1. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Božská přízeň*|Přeměňovací|–|\n|*Božský úder*|Zaklínací|–|\n|*Hrdinství*|Očarovávací|S|\n|*Léčení ran*|Ochranná|–|\n|*Očištění jídla a pití*|Přeměňovací|R|\n|*Odhalení jedu a nemoci*|Věštecká|S, R|\n|*Odhalení magie*|Věštecká|S, R|\n|*Odhalení zla a dobra*|Věštecká|S|\n|*Ochrana před zlem a dobrem*|Ochranná|S, M|\n|*Požehnání*|Očarovávací|S, M|\n|*Rozkaz*|Očarovávací|–|\n|*Spalující úder*|Zaklínací|–|\n|*Štít víry*|Ochranná|S|\n\nTabulka: Paladinská kouzla 2. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Klidný odpočinek*|Nekromantská|R, M|\n|*Magická zbraň*|Přeměňovací|–|\n|*Menší obnova*|Ochranná|–|\n|*Modlitba za uzdravení*|Ochranná|–|\n|*Nalezení oře*|Vyvolávací|–|\n|*Nalezení předmětu*|Věštecká|S|\n|*Ochrana před jedem*|Ochranná|–|\n|*Ochranné pouto*|Ochranná|M|\n|*Pomoc*|Ochranná|–|\n|*Zářivý úder*|Přeměňovací|S|\n|*Zóna pravdy*|Očarovávací|–|\n\nTabulka: Paladinská kouzla 3. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Denní světlo*|Zaklínací|–|\n|*Magický kruh*|Ochranná|M|\n|*Oživení*|Nekromantská|M|\n|*Rozptýlení magie*|Ochranná|–|\n|*Sejmutí kletby*|Ochranná|–|\n|*Vytvoření jídla a vody*|Vyvolávací|–|\n\nTabulka: Paladinská kouzla 4. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Aura života*|Ochranná|S|\n|*Nalezení tvora*|Věštecká|S|\n|*Ochrana před smrtí*|Ochranná|–|\n|*Vyhnání*|Ochranná|S|\n\nTabulka: Paladinská kouzla 5. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Přísaha*|Očarovávací|–|\n|*Rozptýlení zla a dobra*|Ochranná|S|\n|*Větší obnova*|Ochranná|M|\n|*Vzkříšení mrtvého*|Nekromantská|M|"
+ },
+ {
+  "key": "srd-2024_paladin_spellcasting",
+  "name": "Sesílání kouzel",
+  "text": "Naučil ses sesílat kouzla modlitbou a meditací. Pravidla sesílání najdeš v kapitole „Kouzla“. Níže je popsáno, jak tato pravidla používáš s paladinskými kouzly, která najdeš v seznamu kouzel paladina dále v popisu povolání.\n\n**Pozice kouzel.** Tabulka Schopnosti paladina ukazuje, kolik máš pozic kouzel pro sesílání kouzel 1. a vyšší úrovně. Když dokončíš dlouhý odpočinek, obnovíš všechny utracené pozice.\n\n**Připravená kouzla 1. a vyšší úrovně**. Připravuješ si seznam kouzel 1. a vyšší úrovně, která můžeš touto schopností sesílat. Na začátek si vyber dvě paladinská kouzla 1. úrovně. Doporučené: *Hrdinství* a *Spalující úder*.\n\nPočet kouzel na tvém seznamu roste s úrovněmi paladina, jak ukazuje sloupec Připravená kouzla v tabulce Schopnosti paladina. Kdykoli se toto číslo zvýší, vyber další paladinská kouzla, dokud počet kouzel na seznamu neodpovídá číslu v tabulce Schopnosti paladina. Zvolená kouzla musí mít úroveň, pro kterou máš pozice kouzel. Například jako paladin 5. úrovně můžeš mít na seznamu připravených kouzel šest paladinských kouzel 1. nebo 2. úrovně v libovolné kombinaci.\n\nPokud ti jiná schopnost paladina dává kouzla, která máš vždy připravená, nezapočítávají se do počtu kouzel, která si můžeš připravit touto schopností, ale jinak se pro tebe počítají jako paladinská kouzla.\n\n**Změna připravených kouzel.** Kdykoli dokončíš dlouhý odpočinek, můžeš jedno kouzlo na svém seznamu nahradit jiným paladinským kouzlem, pro které máš pozice kouzel.\n\n**Sesílací vlastnost.** Tvou sesílací vlastností pro paladinská kouzla je Charisma.\n\n**Sesílací ohnisko.** Jako sesílací ohnisko pro paladinská kouzla můžeš používat svatý symbol."
+ },
+ {
+  "key": "srd-2024_paladin_weapon-mastery",
+  "name": "Mistrovství zbraní",
+  "text": "Díky výcviku se zbraněmi můžeš používat vlastnosti mistrovství dvou druhů zbraní podle své volby, ve kterých jsi zdatný, například dlouhých mečů a oštěpů.\n\nKdykoli dokončíš dlouhý odpočinek, můžeš zvolené druhy zbraní změnit. Můžeš například přejít na vlastnosti mistrovství halaparten a cepů."
+ },
+ {
+  "key": "srd-2024_path-of-the-berserker_frenzy",
+  "name": "Běsnění",
+  "text": "Pokud použiješ Bezohledný útok, zatímco je tvá Zuřivost aktivní, způsobíš prvnímu cíli, kterého ve svém tahu zasáhneš útokem založeným na Síle, zranění navíc. Pro určení zranění navíc hoď tolika k6, kolik činí tvůj bonus Zranění zuřivosti, a hodnoty sečti. Zranění má stejný typ jako zbraň nebo útok beze zbraně použitý k útoku."
+ },
+ {
+  "key": "srd-2024_ranger_ability-score-improvement",
+  "name": "Zvýšení vlastnosti",
+  "text": "Získáš výsadu Zvýšení vlastnosti (viz „Výsady“) nebo jinou výsadu podle své volby, jejíž požadavky splňuješ. Tuto schopnost získáš znovu na 8., 12. a 16. úrovni hraničáře."
+ },
+ {
+  "key": "srd-2024_ranger_deft-explorer",
+  "name": "Zručný průzkumník",
+  "text": "Díky svým cestám získáš následující přínosy.\n\n**Odbornost.** Vyber si jednu dovednost, ve které jsi zdatný a nemáš v ní odbornost. V této dovednosti získáš odbornost.\n\n**Jazyky.** Znáš dva jazyky podle své volby z tabulek jazyků v části „Tvorba postavy“."
+ },
+ {
+  "key": "srd-2024_ranger_extra-attack",
+  "name": "Útok navíc",
+  "text": "Kdykoli ve svém tahu provedeš akci Útok, můžeš zaútočit dvakrát místo jednou."
+ },
+ {
+  "key": "srd-2024_ranger_favored-enemy",
+  "name": "Úhlavní nepřítel",
+  "text": "Kouzlo *Lovcovo znamení* máš vždy připravené. Můžeš ho seslat dvakrát, aniž bys utratil pozici kouzla, a všechna vyčerpaná použití této schopnosti obnovíš, když dokončíš dlouhý odpočinek.\n\nPočet seslání tohoto kouzla bez pozice kouzla se na určitých úrovních hraničáře zvyšuje, jak ukazuje sloupec Úhlavní nepřítel v tabulce Schopnosti hraničáře."
+ },
+ {
+  "key": "srd-2024_ranger_fighting-style",
+  "name": "Bojový styl",
+  "text": "Získáš výsadu bojového stylu podle své volby (viz „Výsady“). Místo jedné z těchto výsad si můžeš zvolit možnost níže.\n\n**Druidský válečník.** Naučíš se dva triky druida podle své volby (seznam kouzel druida najdeš v popisu povolání druid). Doporučené jsou: *Vedení* a *Hvězdná jiskra*. Zvolené triky se pro tebe počítají jako kouzla hraničáře a tvou sesílací vlastností pro ně je Moudrost. Kdykoli získáš úroveň hraničáře, můžeš jeden z těchto triků nahradit jiným trikem druida."
+ },
+ {
+  "key": "srd-2024_ranger_hunter_hunters-lore",
+  "name": "Lovcovy znalosti",
+  "text": "Dokážeš povolat síly přírody, aby ti odhalily určité silné a slabé stránky tvé kořisti. Dokud je tvor označený tvým kouzlem *Lovcovo znamení*, víš, zda má nějaké imunity, rezistence nebo zranitelnosti, a pokud nějaké má, víš, jaké to jsou."
+ },
+ {
+  "key": "srd-2024_ranger_hunter_hunters-prey",
+  "name": "Lovcova kořist",
+  "text": "Získáš jednu z následujících možností podle své volby. Kdykoli dokončíš krátký nebo dlouhý odpočinek, můžeš zvolenou možnost vyměnit za tu druhou.\n\n**Přemožitel kolosů.** Tvá houževnatost dokáže zdolat i ty nejodolnější nepřátele. Když zasáhneš tvora zbraní, zbraň cíli způsobí dalších 1k8 zranění, pokud mu chybí jakékoli životy. Toto dodatečné zranění můžeš způsobit jen jednou za tah.\n\n**Ničitel hord.** Jednou v každém svém tahu, když útočíš zbraní, můžeš stejnou zbraní provést další útok proti jinému tvorovi, který je do 5 stop od původního cíle, je v dosahu zbraně a na kterého jsi v tomto tahu ještě neútočil."
+ },
+ {
+  "key": "srd-2024_ranger_ranger-subclass",
+  "name": "Specializace hraničáře",
+  "text": "Získáš specializaci hraničáře podle své volby. Specializace Lovec je popsaná za popisem tohoto povolání. Specializace je zaměření, které ti na určitých úrovních hraničáře dává schopnosti. Po zbytek své kariéry získáváš každou schopnost své specializace, jejíž úroveň je stejná jako tvá úroveň hraničáře nebo nižší."
+ },
+ {
+  "key": "srd-2024_ranger_spell-list",
+  "name": "Seznam kouzel hraničáře",
+  "text": "Tato část uvádí seznam kouzel hraničáře. Kouzla jsou seřazená podle úrovně kouzla a pak abecedně a u každého je uvedena jeho škola magie. Ve sloupci Zvláštní *S* znamená, že kouzlo vyžaduje soustředění, *R* že jde o rituál, a *M* že vyžaduje konkrétní materiální složku.\n\nTabulka: Kouzla hraničáře 1. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Poplach*|Ochranná|R|\n|*Zvířecí přátelství*|Očarovávací|-|\n|*Léčení ran*|Ochranná|-|\n|*Odhalení magie*|Věštecká|S, R|\n|*Odhalení jedu a nemoci*|Věštecká|S, R|\n|*Poutající úder*|Vyvolávací|S|\n|*Zapletení*|Vyvolávací|S|\n|*Mlžný mrak*|Vyvolávací|S|\n|*Dobrobobule*|Vyvolávací|-|\n|*Lovcovo znamení*|Věštecká|S|\n|*Skok*|Přeměňovací|-|\n|*Dlouhý krok*|Přeměňovací|-|\n|*Řeč se zvířaty*|Věštecká|R|\n\nTabulka: Kouzla hraničáře 2. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Pomoc*|Ochranná|-|\n|*Zvířecí posel*|Očarovávací|R|\n|*Kůra místo kůže*|Přeměňovací|-|\n|*Vidění ve tmě*|Přeměňovací|-|\n|*Posílení vlastnosti*|Přeměňovací|S|\n|*Nalezení pastí*|Věštecká|-|\n|*Poryv větru*|Zaklínací|S|\n|*Menší obnova*|Ochranná|-|\n|*Nalezení zvířat či rostlin*|Věštecká|R|\n|*Nalezení předmětu*|Věštecká|S|\n|*Magická zbraň*|Přeměňovací|-|\n|*Průchod beze stopy*|Ochranná|S|\n|*Ochrana před jedem*|Ochranná|-|\n|*Ticho*|Iluzorní|S, R|\n|*Trnitý porost*|Přeměňovací|S|\n\nTabulka: Kouzla hraničáře 3. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Vyvolání zvířat*|Vyvolávací|S|\n|*Denní světlo*|Zaklínací|-|\n|*Rozptýlení magie*|Ochranná|-|\n|*Splynutí s kamenem*|Přeměňovací|R|\n|*Neodhalitelnost*|Ochranná|M|\n|*Růst rostlin*|Přeměňovací|-|\n|*Ochrana před energií*|Ochranná|S|\n|*Oživení*|Nekromantská|M|\n|*Řeč s rostlinami*|Přeměňovací|-|\n|*Dýchání pod vodou*|Přeměňovací|R|\n|*Chůze po vodě*|Přeměňovací|R|\n|*Větrná stěna*|Zaklínací|S|\n\nTabulka: Kouzla hraničáře 4. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Vyvolání lesních bytostí*|Vyvolávací|S|\n|*Ovládnutí zvířete*|Očarovávací|S|\n|*Volnost pohybu*|Ochranná|-|\n|*Nalezení tvora*|Věštecká|S|\n|*Kamenná kůže*|Přeměňovací|S, M|\n\nTabulka: Kouzla hraničáře 5. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Rozmluva s přírodou*|Věštecká|R|\n|*Větší obnova*|Ochranná|M|\n|*Krok stromem*|Vyvolávací|S|",
+  "poznamka": "Řádky tabulek jsou v pořadí anglického originálu, české názvy proto nejsou abecedně. Ve sloupci Zvláštní je C (Concentration) převedeno na S (soustředění), prázdné (dlouhá pomlčka) na „-“."
+ },
+ {
+  "key": "srd-2024_ranger_spellcasting",
+  "name": "Sesílání kouzel",
+  "text": "Naučil ses usměrňovat magickou podstatu přírody a sesílat kouzla. Pravidla sesílání kouzel najdeš v části „Kouzla“. Níže je popsáno, jak tato pravidla používáš s kouzly hraničáře, která najdeš v seznamu kouzel hraničáře dále v popisu povolání.\n\n**Pozice kouzel.** Tabulka Schopnosti hraničáře ukazuje, kolik máš pozic kouzel pro sesílání kouzel 1. a vyšší úrovně. Všechny vyčerpané pozice obnovíš, když dokončíš dlouhý odpočinek.\n\n**Připravená kouzla 1. a vyšší úrovně.** Připravuješ si seznam kouzel 1. a vyšší úrovně, která můžeš touto schopností sesílat. Na začátek si vyber dvě kouzla hraničáře 1. úrovně. Doporučená jsou: *Léčení ran* a *Poutající úder*.\n\nPočet kouzel na tvém seznamu roste s úrovněmi hraničáře, jak ukazuje sloupec Připravená kouzla v tabulce Schopnosti hraničáře. Kdykoli se tento počet zvýší, vyber si další kouzla hraničáře, dokud počet kouzel na tvém seznamu neodpovídá číslu v tabulce Schopnosti hraničáře. Vybraná kouzla musí být takové úrovně, pro kterou máš pozice kouzel. Například jako hraničář 5. úrovně můžeš mít na seznamu připravených kouzel šest kouzel hraničáře 1. nebo 2. úrovně v libovolné kombinaci.\n\nPokud ti jiná schopnost hraničáře dává kouzla, která máš vždy připravená, tato kouzla se nezapočítávají do počtu kouzel, která si můžeš připravit touto schopností, ale jinak se pro tebe počítají jako kouzla hraničáře.\n\n**Změna připravených kouzel.** Kdykoli dokončíš dlouhý odpočinek, můžeš jedno kouzlo na svém seznamu nahradit jiným kouzlem hraničáře, pro které máš pozice kouzel.\n\n**Sesílací vlastnost.** Tvou sesílací vlastností pro kouzla hraničáře je Moudrost.\n\n**Sesílací pomůcka.** Jako sesílací pomůcku pro kouzla hraničáře můžeš používat druidskou pomůcku."
+ },
+ {
+  "key": "srd-2024_ranger_weapon-mastery",
+  "name": "Mistrovství zbraní",
+  "text": "Díky výcviku se zbraněmi můžeš používat vlastnosti mistrovství dvou druhů zbraní podle své volby, se kterými jsi zdatný, například dlouhých luků a krátkých mečů.\n\nKdykoli dokončíš dlouhý odpočinek, můžeš zvolené druhy zbraní změnit. Můžeš třeba přejít na vlastnosti mistrovství šavlí a dlouhých mečů."
+ },
+ {
+  "key": "srd-2024_rogue_ability-score-improvement",
+  "name": "Zvýšení vlastnosti",
+  "text": "Získáš výsadu Zvýšení vlastnosti (viz „Výsady“) nebo jinou výsadu podle své volby, jejíž požadavky splňuješ. Tuto schopnost získáš znovu na 8., 12. a 16. úrovni tuláka."
+ },
+ {
+  "key": "srd-2024_rogue_cunning-action",
+  "name": "Lstivá akce",
+  "text": "Bystrá mysl a hbitost ti umožňují rychle se pohybovat a jednat. Ve svém tahu můžeš bonusovou akcí provést jednu z následujících akcí: Sprint, Odpoutání nebo Skrytí.",
+  "poznamka": "Názvy akcí Dash/Disengage/Hide = Sprint/Odpoutání/Skrytí nejsou ve slovníku."
+ },
+ {
+  "key": "srd-2024_rogue_cunning-strike",
+  "name": "Lstivý úder",
+  "text": "Vyvinul sis lstivé způsoby, jak využít Zákeřný útok. Když způsobíš zranění Zákeřným útokem, můžeš přidat jeden z následujících účinků Lstivého úderu. Každý účinek má cenu v kostkách, tedy počet kostek zranění Zákeřného útoku, kterých se musíš vzdát, abys účinek přidal. Kostku odebereš před hodem a účinek nastane hned poté, co útok způsobí zranění. Například pokud přidáš účinek Jed, odeber před hodem 1k6 ze zranění Zákeřného útoku.\n\nPokud účinek Lstivého úderu vyžaduje záchranný hod, SO se rovná 8 plus tvůj modifikátor Obratnosti a zdatnostní bonus.\n\n**Jed (cena: 1k6).** Přidáš do úderu toxin a cíl si musí hodit záchranný hod na Odolnost. Při neúspěchu má cíl na 1 minutu stav otrávený. Na konci každého svého tahu si otrávený cíl záchranný hod zopakuje a při úspěchu účinek na sobě ukončí.\n\nAbys mohl tento účinek použít, musíš mít u sebe travičskou soupravu.\n\n**Podražení (cena: 1k6).** Pokud je cíl velikosti Velký nebo menší, musí uspět v záchranném hodu na Obratnost, jinak získá stav ležící.\n\n**Ústup (cena: 1k6).** Hned po útoku se přesuneš až o polovinu své rychlosti, aniž bys vyvolal příležitostné útoky.",
+  "poznamka": "Poisoner's Kit = travičská souprava, velikost Large = Velký: mimo slovník."
+ },
+ {
+  "key": "srd-2024_rogue_expertise",
+  "name": "Odbornost",
+  "text": "Získáš odbornost ve dvou dovednostech podle své volby, ve kterých jsi zdatný. Pokud jsi zdatný v Zručnosti a Nenápadnosti, doporučujeme právě je.\n\nNa 6. úrovni tuláka získáš odbornost v dalších dvou dovednostech podle své volby, ve kterých jsi zdatný."
+ },
+ {
+  "key": "srd-2024_rogue_rogue-subclass",
+  "name": "Specializace tuláka",
+  "text": "Získáš specializaci tuláka podle své volby. Specializace Zloděj je popsaná za popisem tohoto povolání. Specializace je zaměření, které ti na určitých úrovních tuláka dává schopnosti. Po zbytek své kariéry získáváš každou schopnost své specializace, jejíž úroveň je stejná jako tvá úroveň tuláka nebo nižší."
+ },
+ {
+  "key": "srd-2024_rogue_sneak-attack",
+  "name": "Zákeřný útok",
+  "text": "Víš, jak udeřit nenápadně a využít nepřítelovy nepozornosti. Jednou za tah můžeš způsobit dalších 1k6 zranění jednomu tvorovi, kterého zasáhneš hodem na útok, pokud máš na tento hod výhodu a útok používá jemnou zbraň nebo zbraň na dálku. Typ dodatečného zranění je stejný jako typ zranění zbraně.\n\nVýhodu na hod na útok nepotřebuješ, pokud je do 5 stop od cíle alespoň jeden tvůj spojenec, tento spojenec nemá stav neschopný a ty nemáš na hod na útok nevýhodu.\n\nDodatečné zranění se zvyšuje s úrovněmi tuláka, jak ukazuje sloupec Zákeřný útok v tabulce Schopnosti tuláka.",
+  "poznamka": "Vlastnost zbraně Finesse = jemná zbraň: mimo slovník."
+ },
+ {
+  "key": "srd-2024_rogue_steady-aim",
+  "name": "Pečlivé míření",
+  "text": "Bonusovou akcí si dáš výhodu na příští hod na útok v tomto tahu. Tuto schopnost můžeš použít, jen pokud ses v tomto tahu nepohnul, a po jejím použití je tvá rychlost až do konce tohoto tahu 0."
+ },
+ {
+  "key": "srd-2024_rogue_thief_fast-hands",
+  "name": "Rychlé ruce",
+  "text": "Bonusovou akcí můžeš udělat jedno z následujícího.\n\n**Zručnost.** Hoď si ověření Obratnosti (Zručnost), abys pomocí zlodějského náčiní otevřel zámek nebo zneškodnil past, nebo abys někoho okradl.\n\n**Použití předmětu.** Proveď akci Použití, nebo akci Magie, abys použil magický předmět, který tuto akci vyžaduje.",
+  "poznamka": "Akce Utilize = Použití, Magic = Magie, Thieves' Tools = zlodějské náčiní: mimo slovník."
+ },
+ {
+  "key": "srd-2024_rogue_thief_second-story-work",
+  "name": "Práce ve výškách",
+  "text": "Vycvičil ses dostávat na obzvlášť těžko přístupná místa, což ti dává tyto přínosy.\n\n**Šplhavec.** Získáš rychlost šplhu rovnou své rychlosti.\n\n**Skokan.** Délku svého skoku můžeš určovat podle Obratnosti místo Síly."
+ },
+ {
+  "key": "srd-2024_rogue_thieves-cant",
+  "name": "Zlodějská hantýrka",
+  "text": "V komunitách, kde jsi uplatňoval své tulácké talenty, ses naučil různé jazyky. Znáš zlodějskou hantýrku a jeden další jazyk podle své volby z tabulek jazyků v části „Tvorba postavy“."
+ },
+ {
+  "key": "srd-2024_rogue_uncanny-dodge",
+  "name": "Neuvěřitelný úhyb",
+  "text": "Když tě útočník, kterého vidíš, zasáhne hodem na útok, můžeš použít reakci a snížit zranění, které ti útok způsobí, na polovinu (zaokrouhleno dolů)."
+ },
+ {
+  "key": "srd-2024_rogue_weapon-mastery",
+  "name": "Mistrovství zbraní",
+  "text": "Díky výcviku se zbraněmi můžeš používat vlastnosti mistrovství dvou druhů zbraní podle své volby, se kterými jsi zdatný, například dýk a krátkých luků.\n\nKdykoli dokončíš dlouhý odpočinek, můžeš zvolené druhy zbraní změnit. Můžeš třeba přejít na vlastnosti mistrovství šavlí a krátkých mečů."
+ },
+ {
+  "key": "srd-2024_sorcerer_ability-score-improvement",
+  "name": "Zvýšení vlastnosti",
+  "text": "Získáváš výsadu Zvýšení vlastnosti (viz „Výsady“) nebo jinou výsadu podle svého výběru, jejíž předpoklady splňuješ. Tuto schopnost získáš znovu na 8., 12. a 16. úrovni čaroděje."
+ },
+ {
+  "key": "srd-2024_sorcerer_draconic-sorcery_draconic-resilience",
+  "name": "Dračí houževnatost",
+  "text": "Magie v tvém těle se projevuje fyzickými rysy tvého dračího daru. Tvé maximum životů se zvýší o 3 a pokaždé, když získáš další úroveň čaroděje, se zvýší o 1.\n\nČásti tvého těla navíc pokrývají dračí šupiny. Když nemáš na sobě zbroj, tvá základní třída zbroje se rovná 10 plus tvé modifikátory Obratnosti a Charismatu."
+ },
+ {
+  "key": "srd-2024_sorcerer_draconic-sorcery_draconic-spells",
+  "name": "Dračí kouzla",
+  "text": "Když dosáhneš úrovně čaroděje uvedené v tabulce Dračí kouzla, máš od té chvíle uvedená kouzla vždy připravená.\n\nTabulka: Dračí kouzla\n\n|Úroveň čaroděje|Kouzla|\n|---|---|\n|3|_Změna podoby_, _Barevná koule_, _Rozkaz_, _Dračí dech_|\n|5|_Strach_, _Let_|\n|7|_Tajemné oko_, _Okouzlení nestvůry_|\n|9|_Znalost legend_, _Přivolání draka_|"
+ },
+ {
+  "key": "srd-2024_sorcerer_font-of-magic",
+  "name": "Zdroj magie",
+  "text": "Dokážeš čerpat z pramene magie ve svém nitru. Tento pramen představují body čarodějnictví, s jejichž pomocí vytváříš nejrůznější magické efekty.\n\nMáš 2 body čarodějnictví a s vyššími úrovněmi získáváš další, jak ukazuje sloupec Body čarodějnictví v tabulce Schopnosti čaroděje. Nemůžeš mít víc bodů čarodějnictví, než kolik tabulka uvádí pro tvou úroveň. Všechny utracené body čarodějnictví získáš zpět, když dokončíš dlouhý odpočinek.\n\nBody čarodějnictví můžeš používat k pohánění níže uvedených možností i dalších schopností, které tyto body využívají, například Metamagie.\n\n**Přeměna pozic kouzel na body čarodějnictví.** Můžeš utratit pozici kouzla a získat počet bodů čarodějnictví rovný úrovni této pozice (nevyžaduje akci).\n\n**Vytváření pozic kouzel.** Bonusovou akcí můžeš přeměnit neutracené body čarodějnictví na jednu pozici kouzla. Tabulka Vytváření pozic kouzel ukazuje, kolik stojí vytvoření pozice kouzla dané úrovně, a uvádí minimální úroveň čaroděje, kterou k tomu potřebuješ. Můžeš vytvořit pozici kouzla nejvýše úrovně 5.\n\nKaždá pozice kouzla, kterou touto schopností vytvoříš, zmizí, když dokončíš dlouhý odpočinek.\n\nTabulka: Vytváření pozic kouzel\n\n|Úroveň pozice kouzla|Cena v bodech čarodějnictví|Min. úroveň čaroděje|\n|---|---|---|\n|1|2|2|\n|2|3|3|\n|3|5|5|\n|4|6|7|\n|5|7|9|",
+  "poznamka": "Sorcery Points = body čarodějnictví."
+ },
+ {
+  "key": "srd-2024_sorcerer_innate-sorcery",
+  "name": "Vrozené čarodějnictví",
+  "text": "Událost z tvé minulosti v tobě zanechala nesmazatelnou stopu a naplnila tě doutnající magií. Bonusovou akcí můžeš tuto magii na 1 minutu uvolnit. Po tu dobu pro tebe platí:\n\n- SO záchrany proti tvým kouzlům čaroděje se zvýší o 1.\n- Na hody na útok kouzly čaroděje, která sešleš, máš výhodu.\n\nTuto schopnost můžeš použít dvakrát a všechna utracená použití získáš zpět, když dokončíš dlouhý odpočinek."
+ },
+ {
+  "key": "srd-2024_sorcerer_metamagic",
+  "name": "Metamagie",
+  "text": "Tvá magie vyvěrá z tvého nitra, a proto můžeš svá kouzla upravovat podle svých potřeb. Získáváš dvě možnosti metamagie podle svého výběru z části „Možnosti metamagie“ dále v popisu tohoto povolání. Zvolenými možnostmi dočasně upravuješ kouzla, která sesíláš. Chceš-li možnost použít, musíš utratit tolik bodů čarodějnictví, kolik stojí.\n\nNa kouzlo můžeš při jeho seslání použít jen jednu možnost metamagie, pokud některá z těchto možností neuvádí jinak.\n\nKdykoli získáš úroveň čaroděje, můžeš jednu ze svých možností metamagie nahradit jinou, kterou neznáš. Na 10. úrovni čaroděje získáš další dvě možnosti a na 17. úrovni čaroděje další dvě."
+ },
+ {
+  "key": "srd-2024_sorcerer_sorcerer-spell-list",
+  "name": "Seznam kouzel čaroděje",
+  "text": "Tato část uvádí seznam kouzel čaroděje. Kouzla jsou seřazena podle úrovně kouzla a pak abecedně a u každého je uvedena jeho škola magie. Ve sloupci Zvláštní znamená *S*, že kouzlo vyžaduje soustředění, *R*, že jde o rituál, a *M*, že vyžaduje konkrétní materiální složku.\n\nTabulka: Triky (kouzla čaroděje úrovně 0)\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Čarodějný výbuch_|Zaklínací|–|\n|_Elektrizující sevření_|Zaklínací|–|\n|_Jedová sprška_|Nekromantská|–|\n|_Jistý úder_|Věštecká|–|\n|_Kouzelnické kousky_|Přeměňovací|–|\n|_Kyselinová sprška_|Zaklínací|–|\n|_Malá iluze_|Iluzorní|–|\n|_Mágova ruka_|Vyvolávací|–|\n|_Mrazivý dotek_|Nekromantská|–|\n|_Mrazivý paprsek_|Zaklínací|–|\n|_Ohnivá střela_|Zaklínací|–|\n|_Oprava_|Přeměňovací|–|\n|_Světlo_|Zaklínací|–|\n|_Tančící světla_|Iluzorní|S|\n|_Zpráva_|Přeměňovací|–|\n|_Živlová magie_|Přeměňovací|–|\n\nTabulka: Kouzla čaroděje úrovně 1\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Barevná koule_|Zaklínací|M|\n|_Barevná sprška_|Iluzorní|–|\n|_Falešný život_|Nekromantská|–|\n|_Hořící ruce_|Zaklínací|–|\n|_Hromová vlna_|Zaklínací|–|\n|_Ledový nůž_|Vyvolávací|–|\n|_Magická střela_|Zaklínací|–|\n|_Mazlavost_|Vyvolávací|–|\n|_Mágova zbroj_|Ochranná|–|\n|_Mlžný mrak_|Vyvolávací|S|\n|_Odhalení magie_|Věštecká|S, R|\n|_Okouzlení osoby_|Očarovávací|–|\n|_Paprsek nevolnosti_|Nekromantská|–|\n|_Pád pírka_|Přeměňovací|–|\n|_Porozumění jazykům_|Věštecká|R|\n|_Převlek_|Iluzorní|–|\n|_Rychlý ústup_|Přeměňovací|S|\n|_Skok_|Přeměňovací|–|\n|_Spánek_|Očarovávací|S|\n|_Štít_|Ochranná|–|\n|_Tichý přelud_|Iluzorní|S|\n\nTabulka: Kouzla čaroděje úrovně 2\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Dračí dech_|Přeměňovací|S|\n|_Levitace_|Přeměňovací|S|\n|_Magická zbraň_|Přeměňovací|–|\n|_Mlžný krok_|Vyvolávací|–|\n|_Neviditelnost_|Iluzorní|S|\n|_Odhalení myšlenek_|Věštecká|S|\n|_Otevření_|Přeměňovací|–|\n|_Pavoučí šplh_|Přeměňovací|S|\n|_Pavučina_|Vyvolávací|S|\n|_Plamenná čepel_|Zaklínací|S|\n|_Plamenná koule_|Zaklínací|S|\n|_Poryv větru_|Zaklínací|S|\n|_Posílení vlastnosti_|Přeměňovací|S|\n|_Rozmazání_|Iluzorní|S|\n|_Roztříštění_|Zaklínací|–|\n|_Slepota/Hluchota_|Přeměňovací|–|\n|_Spalující paprsek_|Zaklínací|–|\n|_Sugesce_|Očarovávací|S|\n|_Tma_|Zaklínací|S|\n|_Vidění neviditelného_|Věštecká|–|\n|_Vidění ve tmě_|Přeměňovací|–|\n|_Změna podoby_|Přeměňovací|S|\n|_Znehybnění osoby_|Očarovávací|S|\n|_Zrcadlový obraz_|Iluzorní|–|\n|_Zvětšení/Zmenšení_|Přeměňovací|S|\n\nTabulka: Kouzla čaroděje úrovně 3\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Blesk_|Zaklínací|–|\n|_Denní světlo_|Zaklínací|–|\n|_Dýchání pod vodou_|Přeměňovací|R|\n|_Hypnotický obrazec_|Iluzorní|S|\n|_Chůze po vodě_|Přeměňovací|R|\n|_Jasnozření_|Věštecká|S, M|\n|_Jazyky_|Věštecká|–|\n|_Let_|Přeměňovací|S|\n|_Mihnutí_|Přeměňovací|–|\n|_Ohnivá koule_|Zaklínací|–|\n|_Ochrana před energií_|Ochranná|S|\n|_Páchnoucí mrak_|Vyvolávací|S|\n|_Plískanice_|Vyvolávací|S|\n|_Plynná podoba_|Přeměňovací|S|\n|_Protikouzlo_|Ochranná|–|\n|_Rozptýlení magie_|Ochranná|–|\n|_Strach_|Iluzorní|S|\n|_Upíří dotek_|Nekromantská|S|\n|_Velký přelud_|Iluzorní|S|\n|_Zpomalení_|Přeměňovací|S|\n|_Zrychlení_|Přeměňovací|S|\n\nTabulka: Kouzla čaroděje úrovně 4\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Dimenzní dveře_|Vyvolávací|–|\n|_Kamenná kůže_|Přeměňovací|S, M|\n|_Ledová bouře_|Zaklínací|–|\n|_Ohnivá stěna_|Zaklínací|S|\n|_Ohnivý štít_|Zaklínací|–|\n|_Okouzlení nestvůry_|Očarovávací|–|\n|_Ovládnutí zvířete_|Očarovávací|S|\n|_Proměna_|Přeměňovací|S|\n|_Větší neviditelnost_|Iluzorní|S|\n|_Vyhnání_|Ochranná|S|\n|_Zmar_|Nekromantská|–|\n|_Zmatení_|Očarovávací|S|\n|_Žíravá koule_|Zaklínací|–|\n\nTabulka: Kouzla čaroděje úrovně 5\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Hmyzí mor_|Vyvolávací|S|\n|_Kamenná stěna_|Zaklínací|S|\n|_Kužel chladu_|Zaklínací|–|\n|_Ovládnutí osoby_|Očarovávací|S|\n|_Oživení předmětů_|Přeměňovací|S|\n|_Smrtící mrak_|Vyvolávací|S|\n|_Stvoření_|Iluzorní|–|\n|_Tajemná ruka_|Zaklínací|S|\n|_Telekineze_|Přeměňovací|S|\n|_Teleportační kruh_|Vyvolávací|M|\n|_Zdání_|Iluzorní|–|\n|_Znehybnění nestvůry_|Očarovávací|S|\n\nTabulka: Kouzla čaroděje úrovně 6\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Hromadná sugesce_|Očarovávací|–|\n|_Koule nezranitelnosti_|Ochranná|S|\n|_Kruh smrti_|Nekromantská|M|\n|_Mrazivá koule_|Zaklínací|–|\n|_Pohyb země_|Přeměňovací|S|\n|_Pravý zrak_|Věštecká|M|\n|_Rozklad_|Přeměňovací|–|\n|_Řetězový blesk_|Zaklínací|–|\n|_Sluneční paprsek_|Zaklínací|S|\n|_Zkamenění_|Přeměňovací|S|\n|_Zlé oko_|Nekromantská|S|\n|||\n\nTabulka: Kouzla čaroděje úrovně 7\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Duhová sprška_|Zaklínací|–|\n|_Éterická podoba_|Vyvolávací|–|\n|_Obrácená gravitace_|Přeměňovací|S|\n|_Ohnivá bouře_|Zaklínací|–|\n|_Opožděná ohnivá koule_|Zaklínací|S|\n|_Prst smrti_|Nekromantská|–|\n|_Přesun mezi sférami_|Vyvolávací|M|\n|_Teleportace_|Vyvolávací|–|\n\nTabulka: Kouzla čaroděje úrovně 8\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Ovládnutí nestvůry_|Očarovávací|S|\n|_Polosféra_|Vyvolávací|–|\n|_Slovo moci: omrač_|Očarovávací|–|\n|_Sluneční výbuch_|Zaklínací|–|\n|_Zápalný mrak_|Vyvolávací|S|\n|_Zemětřesení_|Přeměňovací|S|\n\nTabulka: Kouzla čaroděje úrovně 9\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Brána_|Vyvolávací|S, M|\n|_Meteorický roj_|Zaklínací|–|\n|_Přání_|Vyvolávací|–|\n|_Slovo moci: zabij_|Očarovávací|–|\n|_Zastavení času_|Přeměňovací|–|"
+ },
+ {
+  "key": "srd-2024_sorcerer_sorcerer-subclass",
+  "name": "Specializace čaroděje",
+  "text": "Získáváš specializaci čaroděje podle svého výběru. Specializace Dračí čarodějnictví je popsána za popisem tohoto povolání. Specializace je zaměření, které ti na určitých úrovních čaroděje dává schopnosti. Po zbytek své kariéry získáváš každou schopnost své specializace, jejíž úroveň je rovna tvé úrovni čaroděje nebo nižší."
+ },
+ {
+  "key": "srd-2024_sorcerer_sorcerous-restoration",
+  "name": "Čarodějná obnova",
+  "text": "Když dokončíš krátký odpočinek, můžeš získat zpět utracené body čarodějnictví, nejvýše však tolik, kolik činí polovina tvé úrovně čaroděje (zaokrouhleno dolů). Jakmile tuto schopnost použiješ, nemůžeš ji použít znovu, dokud nedokončíš dlouhý odpočinek."
+ },
+ {
+  "key": "srd-2024_sorcerer_spellcasting",
+  "name": "Sesílání kouzel",
+  "text": "Díky své vrozené magii dokážeš sesílat kouzla. Pravidla sesílání najdeš v části „Kouzla“. Níže je popsáno, jak tato pravidla používáš s kouzly čaroděje, která najdeš v seznamu kouzel čaroděje dále v popisu povolání.\n\n**Triky.** Znáš čtyři triky čaroděje podle svého výběru. Doporučujeme _Světlo_, _Kouzelnické kousky_, _Elektrizující sevření_ a _Čarodějný výbuch_. Kdykoli získáš úroveň čaroděje, můžeš jeden ze svých triků z této schopnosti nahradit jiným trikem čaroděje podle svého výběru.\n\nKdyž dosáhneš 4. a 10. úrovně čaroděje, naučíš se další trik čaroděje podle svého výběru, jak ukazuje sloupec Triky v tabulce Schopnosti čaroděje.\n\n**Pozice kouzel.** Tabulka Schopnosti čaroděje ukazuje, kolik máš pozic kouzel pro sesílání kouzel úrovně 1+. Všechny utracené pozice získáš zpět, když dokončíš dlouhý odpočinek.\n\n**Připravená kouzla úrovně 1+.** Připravuješ si seznam kouzel úrovně 1+, která můžeš touto schopností sesílat. Na začátek si vyber dvě kouzla čaroděje úrovně 1. Doporučujeme _Hořící ruce_ a _Odhalení magie_.\n\nPočet kouzel na tvém seznamu roste s úrovněmi čaroděje, jak ukazuje sloupec Připravená kouzla v tabulce Schopnosti čaroděje. Kdykoli se toto číslo zvýší, vyber si další kouzla čaroděje, dokud počet kouzel na seznamu neodpovídá číslu v tabulce Schopnosti čaroděje. Vybraná kouzla musí být takové úrovně, pro kterou máš pozice kouzel. Jako čaroděj 3. úrovně můžeš mít například na seznamu připravených kouzel šest kouzel čaroděje úrovně 1 nebo 2 v libovolné kombinaci.\n\nPokud ti jiná schopnost čaroděje dává kouzla, která máš vždy připravená, nezapočítávají se do počtu kouzel, která si můžeš touto schopností připravit, jinak se ale pro tebe počítají jako kouzla čaroděje.\n\n**Změna připravených kouzel.** Kdykoli získáš úroveň čaroděje, můžeš jedno kouzlo na svém seznamu nahradit jiným kouzlem čaroděje, pro které máš pozice kouzel.\n\n**Sesílací vlastnost.** Tvou sesílací vlastností pro kouzla čaroděje je Charisma.\n\n**Sesílací ohnisko.** Jako sesílací ohnisko pro kouzla čaroděje můžeš používat tajemné ohnisko.",
+  "poznamka": "Arcane Focus = tajemné ohnisko, Spellcasting Focus = sesílací ohnisko (podle Arcane Eye = Tajemné oko)."
+ },
+ {
+  "key": "srd-2024_warlock_ability-score-improvement",
+  "name": "Zvýšení vlastnosti",
+  "text": "Získáváš výsadu Zvýšení vlastnosti (viz „Výsady“) nebo jinou výsadu podle svého výběru, jejíž předpoklady splňuješ. Tuto schopnost získáš znovu na 8., 12. a 16. úrovni černokněžníka."
+ },
+ {
+  "key": "srd-2024_warlock_eldritch-invocations",
+  "name": "Nadpřirozená vzývání",
+  "text": "Objevuješ nadpřirozená vzývání, útržky zakázaného vědění, které ti propůjčují trvalou magickou schopnost nebo jiné poznatky. Získáváš jedno vzývání podle svého výběru, například Pakt knihy. Vzývání jsou popsána v části „Možnosti nadpřirozených vzývání“ dále v popisu tohoto povolání.\n\n**Předpoklady.** Má-li vzývání předpoklad, můžeš se ho naučit, jen když tento předpoklad splňuješ. Pokud například vzývání vyžaduje černokněžníka úrovně 5+, můžeš si ho vybrat, jakmile dosáhneš 5. úrovně černokněžníka.\n\n**Nahrazování a získávání vzývání.** Kdykoli získáš úroveň černokněžníka, můžeš jedno ze svých vzývání nahradit jiným, jehož předpoklady splňuješ. Vzývání nemůžeš nahradit, pokud je předpokladem jiného vzývání, které máš.\n\nNa určitých úrovních černokněžníka získáváš další vzývání podle svého výběru, jak ukazuje sloupec Vzývání v tabulce Schopnosti černokněžníka.\n\nTotéž vzývání si nemůžeš vybrat víckrát, pokud jeho popis neuvádí jinak.",
+  "poznamka": "Eldritch Invocation = nadpřirozené vzývání (podle Eldritch Blast = Nadpřirozený výboj); Pact of the Tome = Pakt knihy."
+ },
+ {
+  "key": "srd-2024_warlock_fiend-patron_dark-ones-blessing",
+  "name": "Požehnání Temného",
+  "text": "Když snížíš životy nepřítele na 0, získáš dočasné životy ve výši svého modifikátoru Charismatu plus své úrovně černokněžníka (minimálně 1 dočasný život). Tento přínos získáš také tehdy, když životy nepřítele do 10 stop od tebe sníží na 0 někdo jiný."
+ },
+ {
+  "key": "srd-2024_warlock_fiend-patron_fiend-spells",
+  "name": "Ďábelská kouzla",
+  "text": "Magie tvého patrona zajišťuje, že máš určitá kouzla vždy po ruce. Když dosáhneš úrovně černokněžníka uvedené v tabulce Ďábelská kouzla, máš od té chvíle uvedená kouzla vždy připravená.\n\nTabulka: Ďábelská kouzla\n\n|Úroveň černokněžníka|Kouzla|\n|---|---|\n|3|_Hořící ruce_, _Rozkaz_, _Spalující paprsek_, _Sugesce_|\n|5|_Ohnivá koule_, _Páchnoucí mrak_|\n|7|_Ohnivý štít_, _Ohnivá stěna_|\n|9|_Přísaha_, _Hmyzí mor_|",
+  "poznamka": "Fiend = ďábel/ďábelský (Fiend Patron = Ďábelský patron); zvážit „běs“."
+ },
+ {
+  "key": "srd-2024_warlock_magical-cunning",
+  "name": "Magická vynalézavost",
+  "text": "Můžeš 1 minutu vykonávat esoterický obřad. Na jeho konci získáš zpět utracené pozice kouzel magie paktu, nejvýše však tolik, kolik činí polovina jejich maxima (zaokrouhleno nahoru). Jakmile tuto schopnost použiješ, nemůžeš ji použít znovu, dokud nedokončíš dlouhý odpočinek."
+ },
+ {
+  "key": "srd-2024_warlock_pact-magic",
+  "name": "Magie paktu",
+  "text": "Okultní obřad tě spojil paktem s tajemnou bytostí, od níž získáváš magickou moc. Ta bytost je hlasem ve stínech a její totožnost zůstává nejasná, její dar je ale zcela hmatatelný: schopnost sesílat kouzla. Pravidla sesílání najdeš v části „Kouzla“. Níže je popsáno, jak tato pravidla používáš s kouzly černokněžníka, která najdeš v seznamu kouzel černokněžníka dále v popisu povolání.\n\n**Triky.** Znáš dva triky černokněžníka podle svého výběru. Doporučujeme _Nadpřirozený výboj_ a _Kouzelnické kousky_. Kdykoli získáš úroveň černokněžníka, můžeš jeden ze svých triků z této schopnosti nahradit jiným trikem černokněžníka podle svého výběru.\n\nKdyž dosáhneš 4. a 10. úrovně černokněžníka, naučíš se další trik černokněžníka podle svého výběru, jak ukazuje sloupec Triky v tabulce Schopnosti černokněžníka.\n\n**Pozice kouzel.** Tabulka Schopnosti černokněžníka ukazuje, kolik máš pozic kouzel pro sesílání kouzel černokněžníka úrovní 1–5. Tabulka také ukazuje úroveň těchto pozic, všechny mají stejnou úroveň. Všechny utracené pozice kouzel magie paktu získáš zpět, když dokončíš krátký nebo dlouhý odpočinek.\n\nJako černokněžník 5. úrovně máš například dvě pozice kouzel úrovně 3. Chceš-li seslat kouzlo úrovně 1 _Okouzlení osoby_, musíš utratit jednu z těchto pozic a sešleš ho jako kouzlo úrovně 3.\n\n**Připravená kouzla úrovně 1+.** Připravuješ si seznam kouzel úrovně 1+, která můžeš touto schopností sesílat. Na začátek si vyber dvě kouzla černokněžníka úrovně 1. Doporučujeme _Okouzlení osoby_ a _Zaklení_.\n\nPočet kouzel na tvém seznamu roste s úrovněmi černokněžníka, jak ukazuje sloupec Připravená kouzla v tabulce Schopnosti černokněžníka. Kdykoli se toto číslo zvýší, vyber si další kouzla černokněžníka, dokud počet kouzel na seznamu neodpovídá číslu v tabulce. Vybraná kouzla nesmí mít vyšší úroveň, než jakou pro tvou úroveň uvádí sloupec Úroveň pozic v tabulce. Když například dosáhneš 6. úrovně, naučíš se nové kouzlo černokněžníka, které může být úrovně 1–3.\n\nPokud ti jiná schopnost černokněžníka dává kouzla, která máš vždy připravená, nezapočítávají se do počtu kouzel, která si můžeš touto schopností připravit, jinak se ale pro tebe počítají jako kouzla černokněžníka.\n\n**Změna připravených kouzel.** Kdykoli získáš úroveň černokněžníka, můžeš jedno kouzlo na svém seznamu nahradit jiným kouzlem černokněžníka přípustné úrovně.\n\n**Sesílací vlastnost.** Sesílací vlastností pro tvá kouzla černokněžníka je Charisma.\n\n**Sesílací ohnisko.** Jako sesílací ohnisko pro kouzla černokněžníka můžeš používat tajemné ohnisko."
+ },
+ {
+  "key": "srd-2024_warlock_warlock-spell-list",
+  "name": "Seznam kouzel černokněžníka",
+  "text": "Tato část uvádí seznam kouzel černokněžníka. Kouzla jsou seřazena podle úrovně kouzla a pak abecedně a u každého je uvedena jeho škola magie. Ve sloupci Zvláštní znamená *S*, že kouzlo vyžaduje soustředění, *R*, že jde o rituál, a *M*, že vyžaduje konkrétní materiální složku.\n\nTabulka: Triky (kouzla černokněžníka úrovně 0)\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Jedová sprška_|Nekromantská|–|\n|_Jistý úder_|Věštecká|–|\n|_Kouzelnické kousky_|Přeměňovací|–|\n|_Malá iluze_|Iluzorní|–|\n|_Mágova ruka_|Vyvolávací|–|\n|_Mrazivý dotek_|Nekromantská|–|\n|_Nadpřirozený výboj_|Zaklínací|–|\n\nTabulka: Kouzla černokněžníka úrovně 1\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Iluzorní písmo_|Iluzorní|R, M|\n|_Neviditelný sluha_|Vyvolávací|R|\n|_Odhalení magie_|Věštecká|S, R|\n|_Ochrana před zlem a dobrem_|Ochranná|S, M|\n|_Okouzlení osoby_|Očarovávací|–|\n|_Pekelná odplata_|Zaklínací|–|\n|_Porozumění jazykům_|Věštecká|R|\n|_Rychlý ústup_|Přeměňovací|S|\n|_Řeč se zvířaty_|Věštecká|R|\n|_Strašlivý smích_|Očarovávací|S|\n|_Zaklení_|Očarovávací|S|\n|_Zhouba_|Očarovávací|S|\n\nTabulka: Kouzla černokněžníka úrovně 2\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Mentální bodnutí_|Věštecká|S|\n|_Mlžný krok_|Vyvolávací|–|\n|_Neviditelnost_|Iluzorní|S|\n|_Paprsek oslabení_|Nekromantská|S|\n|_Pavoučí šplh_|Přeměňovací|S|\n|_Sugesce_|Očarovávací|S|\n|_Tma_|Zaklínací|S|\n|_Uchvácení_|Očarovávací|S|\n|_Znehybnění osoby_|Očarovávací|S|\n|_Zrcadlový obraz_|Iluzorní|–|\n\nTabulka: Kouzla černokněžníka úrovně 3\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Hypnotický obrazec_|Iluzorní|S|\n|_Jazyky_|Věštecká|–|\n|_Let_|Přeměňovací|S|\n|_Magický kruh_|Ochranná|M|\n|_Plynná podoba_|Přeměňovací|S|\n|_Protikouzlo_|Ochranná|–|\n|_Rozptýlení magie_|Ochranná|–|\n|_Sejmutí kletby_|Ochranná|–|\n|_Strach_|Iluzorní|S|\n|_Upíří dotek_|Nekromantská|S|\n|_Velký přelud_|Iluzorní|S|\n\nTabulka: Kouzla černokněžníka úrovně 4\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Dimenzní dveře_|Vyvolávací|–|\n|_Okouzlení nestvůry_|Očarovávací|–|\n|_Přeludný terén_|Iluzorní|–|\n|_Vyhnání_|Ochranná|S|\n|_Zmar_|Nekromantská|–|\n\nTabulka: Kouzla černokněžníka úrovně 5\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Kontakt s jinou sférou_|Věštecká|R|\n|_Oklamání_|Iluzorní|S|\n|_Sen_|Iluzorní|–|\n|_Sférické spoutání_|Ochranná|M|\n|_Teleportační kruh_|Vyvolávací|M|\n|_Věštecký zrak_|Věštecká|S, M|\n|_Znehybnění nestvůry_|Očarovávací|S|\n\nTabulka: Kouzla černokněžníka úrovně 6\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Kruh smrti_|Nekromantská|M|\n|_Pravý zrak_|Věštecká|M|\n|_Vytvoření nemrtvého_|Nekromantská|M|\n|_Zlé oko_|Nekromantská|S|\n\nTabulka: Kouzla černokněžníka úrovně 7\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Éterická podoba_|Vyvolávací|–|\n|_Prst smrti_|Nekromantská|–|\n|_Přesun mezi sférami_|Vyvolávací|M|\n|_Silová klec_|Zaklínací|S, M|\n\nTabulka: Kouzla černokněžníka úrovně 8\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Ovládnutí nestvůry_|Očarovávací|S|\n|_Polosféra_|Vyvolávací|–|\n|_Pomatení_|Očarovávací|–|\n|_Slovo moci: omrač_|Očarovávací|–|\n|_Výmluvnost_|Očarovávací|–|\n\nTabulka: Kouzla černokněžníka úrovně 9\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|_Astrální projekce_|Nekromantská|M|\n|_Brána_|Vyvolávací|S, M|\n|_Hrůzný přízrak_|Iluzorní|S|\n|_Pravá proměna_|Přeměňovací|S|\n|_Předvídavost_|Věštecká|–|\n|_Slovo moci: zabij_|Očarovávací|–|\n|_Uvěznění_|Ochranná|M|"
+ },
+ {
+  "key": "srd-2024_warlock_warlock-subclass",
+  "name": "Specializace černokněžníka",
+  "text": "Získáváš specializaci černokněžníka podle svého výběru. Specializace Ďábelský patron je popsána za popisem tohoto povolání. Specializace je zaměření, které ti na určitých úrovních černokněžníka dává schopnosti. Po zbytek své kariéry získáváš každou schopnost své specializace, jejíž úroveň je rovna tvé úrovni černokněžníka nebo nižší."
+ },
+ {
+  "key": "srd-2024_wizard_ability-score-improvement",
+  "name": "Zvýšení vlastnosti",
+  "text": "Získáš výsadu Zvýšení vlastnosti (viz „Výsady“) nebo jinou výsadu podle své volby, jejíž předpoklady splňuješ. Tuto schopnost získáš znovu na 8., 12. a 16. úrovni kouzelníka."
+ },
+ {
+  "key": "srd-2024_wizard_arcane-recovery",
+  "name": "Tajemná obnova",
+  "text": "Studiem své knihy kouzel můžeš obnovit část své magické energie. Když dokončíš krátký odpočinek, můžeš si vybrat utracené pozice kouzel, které obnovíš. Součet úrovní těchto pozic nesmí přesáhnout polovinu tvé úrovně kouzelníka (zaokrouhleno nahoru) a žádná z nich nesmí být 6. nebo vyšší úrovně. Například jako kouzelník 4. úrovně můžeš obnovit pozice kouzel v hodnotě až dvou úrovní: buď jednu pozici kouzla 2. úrovně, nebo dvě pozice kouzel 1. úrovně.\n\nJakmile tuto schopnost použiješ, nemůžeš ji použít znovu, dokud nedokončíš dlouhý odpočinek."
+ },
+ {
+  "key": "srd-2024_wizard_evoker_evocation-savant",
+  "name": "Znalec zaklínání",
+  "text": "Vyber si dvě kouzelnická kouzla zaklínací školy, každé nejvýše 2. úrovně, a zdarma si je zapiš do své knihy kouzel.\n\nNavíc kdykoli v tomto povolání získáš přístup k nové úrovni pozic kouzel, můžeš si do knihy kouzel zdarma zapsat jedno kouzelnické kouzlo zaklínací školy. Zvolené kouzlo musí mít úroveň, pro kterou máš pozice kouzel."
+ },
+ {
+  "key": "srd-2024_wizard_evoker_potent-cantrip",
+  "name": "Mocný trik",
+  "text": "Tvé zraňující triky zasáhnou i tvory, kteří se vyhnou hlavní síle účinku. Když sešleš trik na tvora a mineš hodem na útok nebo cíl uspěje v záchranném hodu proti triku, utrpí cíl polovinu zranění triku (pokud nějaké způsobuje), ale žádný další účinek triku na něj nepůsobí."
+ },
+ {
+  "key": "srd-2024_wizard_memorize-spell",
+  "name": "Zapamatování kouzla",
+  "text": "Kdykoli dokončíš krátký odpočinek, můžeš studovat svou knihu kouzel a jedno z kouzelnických kouzel 1. a vyšší úrovně, která máš připravená pro schopnost Sesílání kouzel, nahradit jiným kouzlem 1. a vyšší úrovně z knihy."
+ },
+ {
+  "key": "srd-2024_wizard_ritual-adept",
+  "name": "Adept rituálů",
+  "text": "Jakékoli kouzlo můžeš seslat jako rituál, pokud má značku Rituál a máš ho ve své knize kouzel. Kouzlo nemusíš mít připravené, ale abys ho takto seslal, musíš z knihy číst."
+ },
+ {
+  "key": "srd-2024_wizard_scholar",
+  "name": "Učenec",
+  "text": "Při studiu magie ses specializoval i na další obor. Vyber si jednu z následujících dovedností, ve které jsi zdatný: Arkána, Historie, Pátrání, Lékařství, Příroda nebo Náboženství. Ve zvolené dovednosti máš odbornost."
+ },
+ {
+  "key": "srd-2024_wizard_spellcasting",
+  "name": "Sesílání kouzel",
+  "text": "Jako student tajemné magie ses naučil sesílat kouzla. Pravidla sesílání najdeš v kapitole „Kouzla“. Níže je popsáno, jak tato pravidla používáš s kouzelnickými kouzly, která najdeš v seznamu kouzel kouzelníka dále v popisu povolání.\n\n**Triky.** Znáš tři kouzelnické triky podle své volby. Doporučené: *Světlo*, *Mágova ruka* a *Mrazivý paprsek*. Kdykoli dokončíš dlouhý odpočinek, můžeš jeden ze svých triků z této schopnosti nahradit jiným kouzelnickým trikem podle své volby.\n\nKdyž dosáhneš 4. a 10. úrovně kouzelníka, naučíš se další kouzelnický trik podle své volby, jak ukazuje sloupec Triky v tabulce Schopnosti kouzelníka.\n\n**Kniha kouzel.** Tvé kouzelnické učednictví vyvrcholilo vytvořením jedinečné knihy: tvé knihy kouzel. Je to drobný předmět o váze 3 libry, má 100 stran a číst ji můžeš jen ty nebo někdo, kdo sesílá kouzlo *Identifikace*. Vzhled a materiály knihy určíš sám, může to být třeba foliant se zlacenou ořízkou nebo svazek pergamenů převázaný provázkem.\n\nKniha obsahuje kouzla 1. a vyšší úrovně, která znáš. Na začátku v ní je šest kouzelnických kouzel 1. úrovně podle tvé volby. Doporučené: *Odhalení magie*, *Pád pírka*, *Mágova zbroj*, *Magická střela*, *Spánek* a *Hromová vlna*.\n\nKdykoli získáš další úroveň kouzelníka po 1. úrovni, zapiš si do knihy kouzel dvě kouzelnická kouzla podle své volby. Každé z nich musí mít úroveň, pro kterou máš pozice kouzel, jak ukazuje tabulka Schopnosti kouzelníka. Tato kouzla jsou výsledkem tajemného bádání, kterému se pravidelně věnuješ.\n\n**Pozice kouzel.** Tabulka Schopnosti kouzelníka ukazuje, kolik máš pozic kouzel pro sesílání kouzel 1. a vyšší úrovně. Když dokončíš dlouhý odpočinek, obnovíš všechny utracené pozice.\n\n**Připravená kouzla 1. a vyšší úrovně.** Připravuješ si seznam kouzel 1. a vyšší úrovně, která můžeš touto schopností sesílat. Vyber k tomu čtyři kouzla ze své knihy kouzel. Zvolená kouzla musí mít úroveň, pro kterou máš pozice kouzel.\n\nPočet kouzel na tvém seznamu roste s úrovněmi kouzelníka, jak ukazuje sloupec Připravená kouzla v tabulce Schopnosti kouzelníka. Kdykoli se toto číslo zvýší, vyber další kouzelnická kouzla, dokud počet kouzel na seznamu neodpovídá číslu v tabulce. Zvolená kouzla musí mít úroveň, pro kterou máš pozice kouzel. Například jako kouzelník 3. úrovně můžeš mít na seznamu připravených kouzel šest kouzel 1. a 2. úrovně v libovolné kombinaci, vybraných z knihy kouzel.\n\nPokud ti jiná schopnost kouzelníka dává kouzla, která máš vždy připravená, nezapočítávají se do počtu kouzel, která si můžeš připravit touto schopností, ale jinak se pro tebe počítají jako kouzelnická kouzla.\n\n**Změna připravených kouzel.** Kdykoli dokončíš dlouhý odpočinek, můžeš změnit seznam připravených kouzel a nahradit kterékoli z nich kouzly ze své knihy kouzel.\n\n**Sesílací vlastnost.** Tvou sesílací vlastností pro kouzelnická kouzla je Inteligence.\n\n**Sesílací ohnisko.** Jako sesílací ohnisko pro kouzelnická kouzla můžeš používat tajemné ohnisko nebo svou knihu kouzel.\n\n> ### Rozšíření a náhrada knihy kouzel\n\n> Kouzla, která si s novými úrovněmi zapisuješ do knihy, odrážejí tvé průběžné magické bádání, ale během dobrodružství můžeš najít i další kouzla, která si do knihy můžeš přidat. Kouzelnické kouzlo můžeš objevit třeba na *svitku kouzla* (Spell Scroll) a pak si ho opsat do knihy kouzel.\n\n>**Opsání kouzla do knihy.** Když najdeš kouzelnické kouzlo 1. a vyšší úrovně, můžeš si ho opsat do knihy kouzel, pokud má úroveň, kterou si dokážeš připravit, a máš na opsání čas. Za každou úroveň kouzla trvá přepis 2 hodiny a stojí 50 zl. Poté si kouzlo můžeš připravit stejně jako ostatní kouzla ve své knize.\n\n> **Opsání knihy.** Kouzlo ze své knihy kouzel můžeš opsat do jiné knihy. Je to jako opsání nového kouzla do knihy, jen rychlejší, protože kouzlo už umíš seslat. Za každou úroveň opisovaného kouzla ti stačí 1 hodina a 10 zl.\n\n> Pokud knihu kouzel ztratíš, můžeš stejným postupem přepsat kouzelnická kouzla, která máš připravená, do nové knihy kouzel. Zbytek nové knihy zaplníš jen tak, že najdeš nová kouzla. Proto má mnoho kouzelníků záložní knihu kouzel.",
+  "poznamka": "GP = zl (zlaťáky); Arcane Focus = tajemné ohnisko, Spellcasting Focus = sesílací ohnisko; Spell Scroll = svitek kouzla. Termíny nejsou ve slovníku."
+ },
+ {
+  "key": "srd-2024_wizard_wizard-spell-list",
+  "name": "Seznam kouzel kouzelníka",
+  "text": "Tato část obsahuje seznam kouzel kouzelníka. Kouzla jsou seřazena podle úrovně a pak abecedně a u každého je uvedena škola magie. Ve sloupci Zvláštní znamená *S*, že kouzlo vyžaduje soustředění, *R*, že je to rituál, a *M*, že vyžaduje konkrétní materiální složku.\n\nTabulka: Triky (kouzelnická kouzla 0. úrovně)\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Elektrizující sevření*|Zaklínací|–|\n|*Jedová sprška*|Nekromantská|–|\n|*Jistý úder*|Věštecká|–|\n|*Kouzelnické kousky*|Přeměňovací|–|\n|*Kyselinová sprška*|Zaklínací|–|\n|*Mágova ruka*|Vyvolávací|–|\n|*Malá iluze*|Iluzorní|–|\n|*Mrazivý dotek*|Nekromantská|–|\n|*Mrazivý paprsek*|Zaklínací|–|\n|*Ohnivá střela*|Zaklínací|–|\n|*Oprava*|Přeměňovací|–|\n|*Světlo*|Zaklínací|–|\n|*Tančící světla*|Iluzorní|S|\n|*Zpráva*|Přeměňovací|–|\n|*Živlová magie*|Přeměňovací|–|\n\nTabulka: Kouzelnická kouzla 1. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Barevná koule*|Zaklínací|M|\n|*Barevná sprška*|Iluzorní|–|\n|*Dlouhý krok*|Přeměňovací|–|\n|*Falešný život*|Nekromantská|–|\n|*Hořící ruce*|Zaklínací|–|\n|*Hromová vlna*|Zaklínací|–|\n|*Identifikace*|Věštecká|R, M|\n|*Iluzorní písmo*|Iluzorní|R, M|\n|*Ledový nůž*|Vyvolávací|–|\n|*Magická střela*|Zaklínací|–|\n|*Mágova zbroj*|Ochranná|–|\n|*Mazlavost*|Vyvolávací|–|\n|*Mlžný mrak*|Vyvolávací|S|\n|*Nalezení přítele*|Vyvolávací|R, M|\n|*Neviditelný sluha*|Vyvolávací|R|\n|*Odhalení magie*|Věštecká|S, R|\n|*Ochrana před zlem a dobrem*|Ochranná|S, M|\n|*Okouzlení osoby*|Očarovávací|–|\n|*Pád pírka*|Přeměňovací|–|\n|*Paprsek nevolnosti*|Nekromantská|–|\n|*Poplach*|Ochranná|R|\n|*Porozumění jazykům*|Věštecká|R|\n|*Převlek*|Iluzorní|–|\n|*Rychlý ústup*|Přeměňovací|S|\n|*Skok*|Přeměňovací|–|\n|*Spánek*|Očarovávací|S|\n|*Strašlivý smích*|Očarovávací|S|\n|*Štít*|Ochranná|–|\n|*Tichý přelud*|Iluzorní|S|\n|*Vznášející se disk*|Vyvolávací|R|\n\nTabulka: Kouzelnická kouzla 2. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Dračí dech*|Přeměňovací|S|\n|*Klidný odpočinek*|Nekromantská|R, M|\n|*Kyselinový šíp*|Zaklínací|–|\n|*Levitace*|Přeměňovací|S|\n|*Magická ústa*|Iluzorní|R, M|\n|*Magická zbraň*|Přeměňovací|–|\n|*Mágova magická aura*|Iluzorní|–|\n|*Mentální bodnutí*|Věštecká|S|\n|*Mlžný krok*|Vyvolávací|–|\n|*Nalezení předmětu*|Věštecká|S|\n|*Neviditelnost*|Iluzorní|S|\n|*Odhalení myšlenek*|Věštecká|S|\n|*Otevření*|Přeměňovací|–|\n|*Paprsek oslabení*|Nekromantská|S|\n|*Pavoučí šplh*|Přeměňovací|S|\n|*Pavučina*|Vyvolávací|S|\n|*Plamenná koule*|Zaklínací|S|\n|*Poryv větru*|Zaklínací|S|\n|*Posílení vlastnosti*|Přeměňovací|S|\n|*Provazový trik*|Přeměňovací|–|\n|*Rozmazání*|Iluzorní|S|\n|*Roztříštění*|Zaklínací|–|\n|*Slepota/Hluchota*|Přeměňovací|–|\n|*Spalující paprsek*|Zaklínací|–|\n|*Sugesce*|Očarovávací|S|\n|*Tajemný zámek*|Ochranná|M|\n|*Tma*|Zaklínací|S|\n|*Věčný plamen*|Zaklínací|M|\n|*Věštba*|Věštecká|R, M|\n|*Vidění neviditelného*|Věštecká|–|\n|*Vidění ve tmě*|Přeměňovací|–|\n|*Změna podoby*|Přeměňovací|S|\n|*Znehybnění osoby*|Očarovávací|S|\n|*Zrcadlový obraz*|Iluzorní|–|\n|*Zvětšení/Zmenšení*|Přeměňovací|S|\n\nTabulka: Kouzelnická kouzla 3. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Blesk*|Zaklínací|–|\n|*Dýchání pod vodou*|Přeměňovací|R|\n|*Hypnotický obrazec*|Iluzorní|S|\n|*Jasnozření*|Věštecká|S, M|\n|*Jazyky*|Věštecká|–|\n|*Let*|Přeměňovací|S|\n|*Magický kruh*|Ochranná|M|\n|*Malá chýše*|Zaklínací|R|\n|*Mihnutí*|Přeměňovací|–|\n|*Neodhalitelnost*|Ochranná|M|\n|*Ohnivá koule*|Zaklínací|–|\n|*Ochrana před energií*|Ochranná|S|\n|*Ochranný glyf*|Ochranná|M|\n|*Oživení mrtvých*|Nekromantská|–|\n|*Páchnoucí mrak*|Vyvolávací|S|\n|*Plískanice*|Vyvolávací|S|\n|*Plynná podoba*|Přeměňovací|S|\n|*Poselství*|Věštecká|–|\n|*Protikouzlo*|Ochranná|–|\n|*Přízračný oř*|Iluzorní|R|\n|*Rozptýlení magie*|Ochranná|–|\n|*Řeč s mrtvými*|Nekromantská|–|\n|*Sejmutí kletby*|Ochranná|–|\n|*Strach*|Iluzorní|S|\n|*Upíří dotek*|Nekromantská|S|\n|*Uvalení kletby*|Nekromantská|S|\n|*Velký přelud*|Iluzorní|S|\n|*Zpomalení*|Přeměňovací|S|\n|*Zrychlení*|Přeměňovací|S|\n\nTabulka: Kouzelnická kouzla 4. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Černá chapadla*|Vyvolávací|S|\n|*Dimenzní dveře*|Vyvolávací|–|\n|*Kamenná kůže*|Přeměňovací|S, M|\n|*Ledová bouře*|Zaklínací|–|\n|*Nalezení tvora*|Věštecká|S|\n|*Odolná koule*|Ochranná|S|\n|*Ohnivá stěna*|Zaklínací|S|\n|*Ohnivý štít*|Zaklínací|–|\n|*Okouzlení nestvůry*|Očarovávací|–|\n|*Ovládání vody*|Přeměňovací|S|\n|*Proměna*|Přeměňovací|S|\n|*Předpověď*|Věštecká|R, M|\n|*Přeludný terén*|Iluzorní|–|\n|*Přízračný zabiják*|Iluzorní|S|\n|*Soukromá svatyně*|Ochranná|–|\n|*Tajemné oko*|Věštecká|S|\n|*Tajná truhla*|Vyvolávací|M|\n|*Tvarování kamene*|Přeměňovací|–|\n|*Věrný pes*|Vyvolávací|–|\n|*Větší neviditelnost*|Iluzorní|S|\n|*Vyhnání*|Ochranná|S|\n|*Výroba*|Přeměňovací|–|\n|*Vyvolání menších elementálů*|Vyvolávací|S|\n|*Zmar*|Nekromantská|–|\n|*Zmatení*|Očarovávací|S|\n|*Žíravá koule*|Zaklínací|–|\n\nTabulka: Kouzelnická kouzla 5. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Kamenná stěna*|Zaklínací|S|\n|*Kontakt s jinou sférou*|Věštecká|R|\n|*Kužel chladu*|Zaklínací|–|\n|*Oklamání*|Iluzorní|S|\n|*Ovládnutí osoby*|Očarovávací|S|\n|*Oživení předmětů*|Přeměňovací|S|\n|*Průchod zdí*|Přeměňovací|–|\n|*Přísaha*|Očarovávací|–|\n|*Přivolání draka*|Vyvolávací|S, M|\n|*Sen*|Iluzorní|–|\n|*Sférické spoutání*|Ochranná|M|\n|*Silová stěna*|Zaklínací|S|\n|*Smrtící mrak*|Vyvolávací|S|\n|*Stvoření*|Iluzorní|–|\n|*Tajemná ruka*|Zaklínací|S|\n|*Telekineze*|Přeměňovací|S|\n|*Telepatické pouto*|Věštecká|R|\n|*Teleportační kruh*|Vyvolávací|M|\n|*Úprava paměti*|Očarovávací|S|\n|*Věštecký zrak*|Věštecká|S, M|\n|*Vyvolání elementála*|Vyvolávací|S|\n|*Zdání*|Iluzorní|–|\n|*Znalost legend*|Věštecká|M|\n|*Znehybnění nestvůry*|Očarovávací|S|\n\nTabulka: Kouzelnická kouzla 6. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Hromadná sugesce*|Očarovávací|–|\n|*Koule nezranitelnosti*|Ochranná|S|\n|*Kruh smrti*|Nekromantská|M|\n|*Ledová stěna*|Zaklínací|S|\n|*Magická nádoba*|Nekromantská|M|\n|*Mrazivá koule*|Zaklínací|–|\n|*Naprogramovaná iluze*|Iluzorní|M|\n|*Neodolatelný tanec*|Očarovávací|S|\n|*Okamžité přivolání*|Vyvolávací|R, M|\n|*Pohotovost*|Ochranná|M|\n|*Pohyb země*|Přeměňovací|S|\n|*Pravý zrak*|Věštecká|M|\n|*Rozklad*|Přeměňovací|–|\n|*Řetězový blesk*|Zaklínací|–|\n|*Sluneční paprsek*|Zaklínací|S|\n|*Stráže a ochrany*|Ochranná|M|\n|*Vytvoření nemrtvého*|Nekromantská|M|\n|*Zkamenění*|Přeměňovací|S|\n|*Zlé oko*|Nekromantská|S|\n\nTabulka: Kouzelnická kouzla 7. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Duhová sprška*|Zaklínací|–|\n|*Éterická podoba*|Vyvolávací|–|\n|*Obrácená gravitace*|Přeměňovací|S|\n|*Opožděná ohnivá koule*|Zaklínací|S|\n|*Promítnutí obrazu*|Iluzorní|S, M|\n|*Prst smrti*|Nekromantská|–|\n|*Přesun mezi sférami*|Vyvolávací|M|\n|*Silová klec*|Zaklínací|S, M|\n|*Simulakrum*|Iluzorní|M|\n|*Symbol*|Ochranná|M|\n|*Tajemná fata morgána*|Iluzorní|–|\n|*Tajemný meč*|Zaklínací|S, M|\n|*Teleportace*|Vyvolávací|–|\n|*Ukrytí*|Přeměňovací|M|\n|*Velkolepé sídlo*|Vyvolávací|M|\n\nTabulka: Kouzelnická kouzla 8. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Antimagické pole*|Ochranná|S|\n|*Bludiště*|Vyvolávací|S|\n|*Klon*|Nekromantská|M|\n|*Odpor/Přitažlivost*|Očarovávací|–|\n|*Ovládání počasí*|Přeměňovací|S|\n|*Ovládnutí nestvůry*|Očarovávací|S|\n|*Polosféra*|Vyvolávací|–|\n|*Pomatení*|Očarovávací|–|\n|*Prázdná mysl*|Ochranná|–|\n|*Slovo moci: omrač*|Očarovávací|–|\n|*Sluneční výbuch*|Zaklínací|–|\n|*Zápalný mrak*|Vyvolávací|S|\n\nTabulka: Kouzelnická kouzla 9. úrovně\n\n|Kouzlo|Škola|Zvláštní|\n|---|---|---|\n|*Astrální projekce*|Nekromantská|M|\n|*Brána*|Vyvolávací|S, M|\n|*Duhová stěna*|Ochranná|–|\n|*Hrůzný přízrak*|Iluzorní|S|\n|*Meteorický roj*|Zaklínací|–|\n|*Pravá proměna*|Přeměňovací|S|\n|*Přání*|Vyvolávací|–|\n|*Předvídavost*|Věštecká|–|\n|*Slovo moci: zabij*|Očarovávací|–|\n|*Uvěznění*|Ochranná|M|\n|*Zastavení času*|Přeměňovací|–|\n|*Změna tvaru*|Přeměňovací|S, M|",
+  "poznamka": "Special C (Concentration) = S (soustředění). Tabulky seřazeny abecedně podle českých jmen."
+ },
+ {
+  "key": "srd-2024_wizard_wizard-subclass",
+  "name": "Specializace kouzelníka",
+  "text": "Získáš specializaci kouzelníka podle své volby. Specializace Zaklínač je popsána za popisem tohoto povolání. Specializace ti na určitých úrovních kouzelníka dává schopnosti. Po zbytek své kariéry získáváš každou schopnost své specializace, jejíž úroveň je rovna tvé úrovni kouzelníka nebo nižší.",
+  "poznamka": "Evoker = Zaklínač (podle školy Evocation = zaklínací)."
+ }
+]

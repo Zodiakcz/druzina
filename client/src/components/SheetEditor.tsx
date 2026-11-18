@@ -5,7 +5,7 @@ import type { Ability, Sheet, Skill, SkillLevel } from '@/lib/types'
 import { ABILITIES, SKILLS } from '@/lib/types'
 import { ABILITY, SKILL, T } from '@/lib/cs'
 import { mod } from '@/lib/rules'
-import { useSpells } from '@/lib/srd'
+import { useFeatures, useSpells } from '@/lib/srd'
 import { Button, Section } from './ui'
 import { signed } from '@/lib/cs'
 
@@ -286,7 +286,7 @@ export function SheetEditor({ initial, onSave, onCancel, onDelete }: {
           items={s.resources}
           onChange={(resources) => set({ resources })}
           blank={() => ({ id: uid(), name: '', max: 1, reset: 'long' as const })}
-          addLabel="zdroj (zuřivost, kanalizace božství…)"
+          addLabel="zdroj (zuřivost, usměrnění božské moci…)"
           render={(r, setR) => (
             <div className="grid grid-cols-[1fr_4rem_7rem] gap-2">
               <input className={input} placeholder="Název" value={r.name} onChange={(e) => setR({ name: e.target.value })} />
@@ -301,6 +301,7 @@ export function SheetEditor({ initial, onSave, onCancel, onDelete }: {
       </Section>
 
       <Section title={T.features}>
+        <FeaturePicker onPick={(f) => set({ features: [...s.features, f] })} />
         <Rows
           items={s.features}
           onChange={(features) => set({ features })}
@@ -435,6 +436,71 @@ function SpellcastingFields({ sc, onChange, spellSearch, setSpellSearch, spellIn
           </div>
         )}
       />
+    </div>
+  )
+}
+
+/** Adds an SRD feature (class, species, feat, background, weapon mastery) with its Czech text. */
+function FeaturePicker({ onPick }: { onPick: (f: Sheet['features'][number]) => void }) {
+  const [open, setOpen] = useState(false)
+  const [q, setQ] = useState('')
+  const list = useFeatures(open)
+  const hits = useMemo(() => {
+    const needle = q.trim().toLowerCase()
+    if (!list || needle.length < 2) return []
+    return list
+      .filter((f) => `${f.nameCs ?? ''} ${f.name} ${f.group} ${f.groupEn ?? ''}`.toLowerCase().includes(needle))
+      .slice(0, 30)
+  }, [list, q])
+  if (!open) {
+    return (
+      <div className="mb-3">
+        <Button onClick={() => setOpen(true)}>Přidat schopnost ze SRD…</Button>
+      </div>
+    )
+  }
+  return (
+    <div className="mb-3 rounded-lg border border-amber-800/50 p-2">
+      <input
+        autoFocus
+        className={input}
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
+        placeholder="Hledej: zuřivost, Rage, barbar, trpaslík…"
+      />
+      {!list && <p className="mt-2 text-xs text-zinc-500">Načítám…</p>}
+      <ul className="mt-2 max-h-72 divide-y divide-zinc-800 overflow-y-auto">
+        {hits.map((f) => (
+          <li key={f.key}>
+            <button
+              className="w-full py-1.5 text-left"
+              onClick={() => {
+                onPick({
+                  id: uid(),
+                  name: f.nameCs ?? f.name,
+                  source: f.level ? `${f.group} ${f.level}` : f.group,
+                  text: f.textCs ?? f.text,
+                })
+                setQ('')
+              }}
+            >
+              <span className="block text-sm text-zinc-100">
+                {f.nameCs ?? f.name} {!f.textCs && <span className="text-xs text-amber-500">(zatím anglicky)</span>}
+              </span>
+              <span className="block text-xs text-zinc-500">
+                {f.group}
+                {f.level ? `, úroveň ${f.level}` : ''}
+                {f.nameCs ? ` · ${f.name}` : ''}
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-1 flex justify-end">
+        <Button kind="ghost" onClick={() => setOpen(false)}>
+          Hotovo
+        </Button>
+      </div>
     </div>
   )
 }

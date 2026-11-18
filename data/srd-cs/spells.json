@@ -1,0 +1,1132 @@
+[
+ {
+  "key": "srd-2024_acid-arrow",
+  "name": "Kyselinový šíp",
+  "text": "Třpytivý zelený šíp vyletí k cíli v dosahu a rozprskne se ve spršce kyseliny. Proveď proti cíli útok kouzlem na dálku. Při zásahu cíl utrpí 4k4 kyselinového zranění a na konci svého příštího tahu dalších 2k4 kyselinového zranění. Při minutí šíp cíl potřísní kyselinou a způsobí mu jen polovinu počátečního zranění.",
+  "higher": "Zranění (počáteční i pozdější) se zvýší o 1k4 za každou úroveň pozice kouzla nad 2.",
+  "material": "prášek z listu reveně"
+ },
+ {
+  "key": "srd-2024_acid-splash",
+  "name": "Kyselinová sprška",
+  "text": "Vytvoříš kyselinovou bublinu v bodě v dosahu, kde exploduje v kouli o poloměru 5 stop. Každý tvor v té kouli musí uspět v záchranném hodu na Obratnost, jinak utrpí 1k6 kyselinového zranění.",
+  "higher": "Zranění se zvýší o 1k6, když dosáhneš 5. úrovně (2k6), 11. úrovně (3k6) a 17. úrovně (4k6)."
+ },
+ {
+  "key": "srd-2024_aid",
+  "name": "Pomoc",
+  "text": "Zvol až tři tvory v dosahu. Každému cíli se po dobu trvání zvýší maximum životů i současné životy o 5.",
+  "higher": "Životy každého cíle se zvýší o dalších 5 za každou úroveň pozice kouzla nad 2.",
+  "material": "proužek bílé látky"
+ },
+ {
+  "key": "srd-2024_alarm",
+  "name": "Poplach",
+  "text": "Nastražíš poplach proti vetřelcům. Zvol dveře, okno nebo oblast v dosahu, která není větší než 20stopá krychle. Dokud kouzlo neskončí, poplach tě upozorní, kdykoli se tvor hlídané oblasti dotkne nebo do ní vstoupí. Při seslání kouzla můžeš určit tvory, kteří poplach nespustí. Také zvolíš, zda je poplach slyšitelný, nebo mentální:\n\n**Slyšitelný poplach.** Poplach vydává po dobu 10 sekund zvuk ručního zvonku, který je slyšet do 60 stop od hlídané oblasti.\n\n**Mentální poplach.** Upozorní tě mentální signál, pokud jsi do 1 míle od hlídané oblasti. Pokud spíš, tento signál tě probudí.",
+  "material": "zvonek a stříbrný drát"
+ },
+ {
+  "key": "srd-2024_alter-self",
+  "name": "Změna podoby",
+  "text": "Změníš svou tělesnou podobu. Zvol jednu z následujících možností. Její účinky trvají po dobu trvání kouzla a během ní můžeš akcí Magie zvolenou možnost vyměnit za jinou. _Vodní adaptace._ Vyraší ti žábry a mezi prsty ti narostou blány. Můžeš dýchat pod vodou a získáš rychlost plavání rovnou své rychlosti. _Změna vzhledu._ Změníš svůj vzhled. Rozhodneš, jak vypadáš, včetně výšky, váhy, rysů obličeje, zvuku hlasu, délky vlasů, zbarvení a dalších rozlišovacích znaků. Můžeš vypadat jako příslušník jiného druhu, ale žádné tvé statistiky se nezmění. Nemůžeš vypadat jako tvor jiné velikosti a tvůj základní tvar zůstane stejný; pokud jsi například dvounohý, nemůžeš se tímto kouzlem stát čtyřnohým. Po dobu trvání můžeš akcí Magie svůj vzhled tímto způsobem znovu změnit. _Přirozené zbraně._ Narostou ti drápy (sečné), tesáky (bodné), rohy (bodné) nebo kopyta (drtivé). Když svým úderem beze zbraně způsobíš zranění tímto novým výrůstkem, způsobí 1k6 zranění typu uvedeného v závorce místo běžného zranění tvého úderu beze zbraně a pro hody na útok a na zranění použiješ modifikátor své sesílací vlastnosti místo Síly.",
+  "poznamka": "Magic action = akce Magie; Unarmed Strike = úder beze zbraně (obojí není ve slovníku)"
+ },
+ {
+  "key": "srd-2024_animal-friendship",
+  "name": "Zvířecí přátelství",
+  "text": "Zaměř zvíře, které vidíš v dosahu. Cíl musí uspět v záchranném hodu na Moudrost, jinak po dobu trvání získá stav okouzlený. Pokud ty nebo některý z tvých spojenců cíli způsobíte zranění, kouzlo skončí.",
+  "higher": "Za každou úroveň pozice kouzla nad 1 můžeš zaměřit jedno další zvíře.",
+  "material": "sousto jídla"
+ },
+ {
+  "key": "srd-2024_animal-messenger",
+  "name": "Zvířecí posel",
+  "text": "Drobné zvíře podle tvé volby, které vidíš v dosahu, musí uspět v záchranném hodu na Charisma, jinak se pokusí doručit za tebe zprávu (pokud stupeň nebezpečnosti cíle není 0, automaticky uspěje). Určíš místo, které jsi navštívil, a příjemce odpovídajícího obecnému popisu, například „osoba v uniformě městské stráže“ nebo „zrzavý trpaslík ve špičatém klobouku“. Také sdělíš zprávu o nejvýše dvaceti pěti slovech. Zvíře po dobu trvání putuje k určenému místu a urazí asi 25 mil za 24 hodin, nebo 50 mil, pokud umí létat. Když zvíře dorazí, doručí tvou zprávu tvorovi, kterého jsi popsal, a napodobí přitom tvůj projev. Pokud zvíře nedorazí do cíle dřív, než kouzlo skončí, zpráva se ztratí a zvíře se vrátí tam, kde jsi kouzlo seslal.",
+  "higher": "Doba trvání kouzla se zvýší o 48 hodin za každou úroveň pozice kouzla nad 2.",
+  "material": "sousto jídla",
+  "poznamka": "Challenge Rating = stupeň nebezpečnosti; Beast = zvíře; Tiny = drobný (velikosti a typy tvorů nejsou ve slovníku)"
+ },
+ {
+  "key": "srd-2024_animate-dead",
+  "name": "Oživení mrtvých",
+  "text": "Zvol hromadu kostí nebo mrtvolu středního nebo malého humanoida v dosahu. Cíl se stane nemrtvým tvorem: kostlivcem, pokud jsi zvolil kosti, nebo zombií, pokud jsi zvolil mrtvolu (statistiky viz „Nestvůry“). V každém svém tahu můžeš bonusovou akcí mentálně velet kterémukoli tvorovi, kterého jsi vytvořil tímto kouzlem, pokud je do 60 stop od tebe (ovládáš-li více tvorů, můžeš velet kterémukoli z nich současně a vydat každému stejný rozkaz). Rozhodneš, jakou akci tvor provede a kam se v příštím tahu přesune, nebo můžeš vydat obecný rozkaz, například hlídat komnatu či chodbu. Pokud nevydáš žádný rozkaz, tvor provede akci Úhyb a pohybuje se jen tak, aby se vyhnul nebezpečí. Jakmile tvor dostane rozkaz, plní ho, dokud úkol nedokončí. Tvor je pod tvou kontrolou 24 hodin, poté přestane poslouchat jakýkoli rozkaz, který jsi mu dal. Chceš-li si kontrolu nad tvorem udržet dalších 24 hodin, musíš na něj toto kouzlo seslat znovu, než současné 24hodinové období skončí. Takové použití kouzla obnoví tvou kontrolu nad nejvýše čtyřmi tvory, které jsi tímto kouzlem oživil, místo aby oživilo nového tvora.",
+  "higher": "Za každou úroveň pozice kouzla nad 3 oživíš dva další nemrtvé tvory nebo nad nimi obnovíš kontrolu. Každý z nich musí pocházet z jiné mrtvoly nebo hromady kostí.",
+  "material": "kapka krve, kousek masa a špetka kostního prachu",
+  "poznamka": "Dodge = akce Uhýbání (názvy akcí nejsou ve slovníku)"
+ },
+ {
+  "key": "srd-2024_arcane-lock",
+  "name": "Tajemný zámek",
+  "text": "Dotkneš se zavřených dveří, okna, brány, schránky nebo poklopu a po dobu trvání je magicky zamkneš. Tento zámek nelze odemknout žádným nemagickým způsobem. Ty a tvorové, které při seslání kouzla určíš, můžete předmět navzdory zámku otevírat a zavírat. Můžeš také nastavit heslo, které předmět na 1 minutu odemkne, když ho někdo vysloví do 5 stop od něj.",
+  "material": "zlatý prach v hodnotě 25+ zl, který kouzlo spotřebuje",
+  "poznamka": "GP = zl (zlaťáky); měna není ve slovníku"
+ },
+ {
+  "key": "srd-2024_arcanists-magic-aura",
+  "name": "Mágova magická aura",
+  "text": "Dotykem umístíš iluzi na ochotného tvora nebo na předmět, který nikdo nenosí ani nedrží. Tvor získá níže popsaný účinek Maska, předmět účinek Falešná aura. Účinek trvá po dobu trvání kouzla. Pokud kouzlo sešleš na stejný cíl každý den po 30 dní, iluze trvá, dokud není rozptýlena.\n\n**Maska (tvor).** Zvol jiný typ tvora, než jaký cíl skutečně je. Kouzla a jiné magické účinky zacházejí s cílem, jako by byl tvorem zvoleného typu.\n\n**Falešná aura (předmět).** Změníš, jak se cíl jeví kouzlům a magickým účinkům, které odhalují magické aury, například _Odhalení magie_. Můžeš nemagický předmět ukázat jako magický, magický předmět jako nemagický, nebo změnit auru předmětu tak, aby se zdálo, že patří ke škole magie podle tvé volby.",
+  "material": "malý čtverec hedvábí"
+ },
+ {
+  "key": "srd-2024_augury",
+  "name": "Věštba",
+  "text": "Od nadpozemské bytosti dostaneš znamení ohledně výsledků činu, který plánuješ provést v příštích 30 minutách. PJ vybere znamení z tabulky Znamení. Tabulka: Znamení | Znamení | Pro výsledky, které budou… | |--------------|----------------------------| | Zdar | Dobré | | Nezdar | Špatné | | Zdar i nezdar | Dobré i špatné | | Lhostejnost | Ani dobré, ani špatné | Kouzlo nepočítá s okolnostmi, například s jinými kouzly, které by mohly výsledky změnit. Pokud kouzlo sešleš víckrát, než dokončíš dlouhý odpočinek, je u každého seslání po prvním kumulativní 25procentní šance, že nedostaneš žádnou odpověď.",
+  "material": "zvlášť označené tyčinky, kosti, karty nebo jiné věštecké předměty v hodnotě 25+ zl",
+  "poznamka": "GM → PJ (Pán jeskyně), GP → zl (zlaťáky); obojí chybí ve slovníku"
+ },
+ {
+  "key": "srd-2024_bane",
+  "name": "Zhouba",
+  "text": "Až tři tvorové podle tvé volby, které vidíš v dosahu, si musí každý hodit záchranný hod na Charisma. Kdykoli cíl, který v tomto záchranném hodu neuspěl, provede hod na útok nebo záchranný hod předtím, než kouzlo skončí, musí od hodu odečíst 1k4.",
+  "higher": "Za každou úroveň pozice kouzla nad 1 můžeš zaměřit jednoho dalšího tvora.",
+  "material": "kapka krve"
+ },
+ {
+  "key": "srd-2024_barkskin",
+  "name": "Kůra místo kůže",
+  "text": "Dotkneš se ochotného tvora. Dokud kouzlo neskončí, kůže cíle vypadá jako kůra a cíl má třídu zbroje 17, pokud je jeho TZ nižší.",
+  "material": "hrst kůry"
+ },
+ {
+  "key": "srd-2024_beacon-of-hope",
+  "name": "Maják naděje",
+  "text": "Zvol libovolný počet tvorů v dosahu. Po dobu trvání má každý cíl výhodu k záchranným hodům na Moudrost a k hodům proti smrti a z každého léčení získá zpět nejvyšší možný počet životů."
+ },
+ {
+  "key": "srd-2024_bestow-curse",
+  "name": "Uvalení kletby",
+  "text": "Dotkneš se tvora, který musí uspět v záchranném hodu na Moudrost, jinak je po dobu trvání prokletý. Dokud kletba neskončí, trpí cíl jedním z následujících efektů podle tvé volby: - Zvol jednu vlastnost. Cíl má nevýhodu u ověření vlastnosti a záchranných hodů s touto vlastností. - Cíl má nevýhodu u hodů na útok proti tobě. - V boji musí cíl na začátku každého svého tahu uspět v záchranném hodu na Moudrost, jinak je nucen v tomto tahu provést akci Úhyb. - Když cíli způsobíš zranění hodem na útok nebo kouzlem, utrpí cíl navíc 1k8 nekrotického zranění.",
+  "higher": "Pokud toto kouzlo sešleš s použitím pozice kouzla 4. úrovně, můžeš na něm udržovat soustředění až 10 minut. Pokud použiješ pozici kouzla 5. nebo vyšší úrovně, kouzlo nevyžaduje soustředění a doba trvání se změní na 8 hodin (pozice 5.–6. úrovně) nebo 24 hodin (pozice 7.–8. úrovně). Pokud použiješ pozici kouzla 9. úrovně, kouzlo trvá, dokud není rozptýleno.",
+  "poznamka": "Dodge action → akce Úhyb (názvy akcí 2024 nejsou ve slovníku)"
+ },
+ {
+  "key": "srd-2024_bless",
+  "name": "Požehnání",
+  "text": "Požehnáš až třem tvorům v dosahu. Kdykoli cíl hází na útok nebo záchranný hod, než kouzlo skončí, přičte k hodu na útok nebo záchrannému hodu 1k4.",
+  "higher": "Můžeš zacílit na jednoho dalšího tvora za každou úroveň pozice kouzla nad 1.",
+  "material": "svatý symbol v hodnotě 5+ zl"
+ },
+ {
+  "key": "srd-2024_blindnessdeafness",
+  "name": "Slepota/Hluchota",
+  "text": "Jeden tvor, kterého vidíš v dosahu, musí uspět v záchranném hodu na Odolnost, jinak má po dobu trvání stav oslepený nebo ohlušený (podle tvé volby). Na konci každého svého tahu cíl záchranný hod opakuje a při úspěchu kouzlo na sobě ukončí.",
+  "higher": "Za každou úroveň pozice kouzla nad 2 můžeš zacílit jednoho dalšího tvora."
+ },
+ {
+  "key": "srd-2024_blink",
+  "name": "Mihnutí",
+  "text": "Po dobu trvání si na konci každého svého tahu hoď 1k6. Při výsledku 4–6 zmizíš ze své současné sféry bytí a objevíš se v Éterické sféře (pokud už v ní jsi, kouzlo okamžitě skončí). Dokud jsi v Éterické sféře, vnímáš sféru, kterou jsi opustil, v odstínech šedi, ale nevidíš v ní nic, co je dál než 60 stop. Můžeš ovlivňovat jen jiné tvory v Éterické sféře a ovlivňovat tě mohou jen oni. Tvorové v druhé sféře tě nevnímají, pokud nemají zvláštní schopnost, která jim umožňuje vnímat věci v Éterické sféře. Do druhé sféry se vrátíš na začátku svého příštího tahu a také při skončení kouzla, pokud jsi v Éterické sféře. Vrátíš se na neobsazené místo podle své volby, které vidíš do 10 stop od místa, které jsi opustil. Pokud v tomto dosahu žádné neobsazené místo není, objevíš se na nejbližším neobsazeném místě.",
+  "poznamka": "Ethereal Plane → Éterická sféra (plane = sféra podle jmen kouzel)"
+ },
+ {
+  "key": "srd-2024_blur",
+  "name": "Rozmazání",
+  "text": "Tvé tělo se rozmaže. Po dobu trvání má každý tvor nevýhodu u hodů na útok proti tobě. Útočník je vůči tomuto efektu imunní, pokud tě vnímá slepeckým vnímáním nebo pravým viděním.",
+  "poznamka": "Blindsight → slepozrak, Truesight → pravé vidění (ne „pravý zrak“, to je jméno kouzla True Seeing)"
+ },
+ {
+  "key": "srd-2024_burning-hands",
+  "name": "Hořící ruce",
+  "text": "Z tebe vyšlehne tenká clona plamenů. Každý tvor v 15stopém kuželu hází záchranný hod na Obratnost. Při neúspěchu utrpí 3k6 ohnivého zranění, při úspěchu poloviční. Hořlavé předměty v kuželu, které nikdo nemá na sobě ani je nenese, začnou hořet.",
+  "higher": "Zranění se zvýší o 1k6 za každou úroveň pozice kouzla nad 1."
+ },
+ {
+  "key": "srd-2024_call-lightning",
+  "name": "Přivolání blesku",
+  "text": "V bodě v dosahu, který vidíš nad sebou, se objeví bouřkový mrak. Má tvar válce vysokého 10 stop s poloměrem 60 stop. Když kouzlo sešleš, zvol bod pod mrakem, který vidíš. Z mraku do toho bodu udeří blesk. Každý tvor do 5 stop od toho bodu hází záchranný hod na Obratnost. Při neúspěchu utrpí 3k10 bleskového zranění, při úspěchu poloviční. Dokud kouzlo neskončí, můžeš akcí Magie stejným způsobem znovu přivolat blesk, na stejný bod nebo jiný. Pokud jsi při seslání kouzla venku v bouři, kouzlo ti místo vytvoření nové bouře dá vládu nad touto bouří. Za takových podmínek se zranění kouzla zvýší o 1k10.",
+  "higher": "Zranění se zvýší o 1k10 za každou úroveň pozice kouzla nad 3.",
+  "poznamka": "Magic action = akce Magie"
+ },
+ {
+  "key": "srd-2024_calm-emotions",
+  "name": "Uklidnění emocí",
+  "text": "Každý humanoid v kouli o poloměru 20 stop se středem v bodě v dosahu, který zvolíš, musí uspět v záchranném hodu na Charismu, jinak na něj zapůsobí jeden z následujících účinků (zvol pro každého tvora): - Tvor má imunitu vůči stavům okouzlený a vystrašený, dokud kouzlo neskončí. Pokud už tvor okouzlený nebo vystrašený byl, tyto stavy jsou po dobu trvání potlačené. - Tvor se stane lhostejným vůči tvorům podle tvé volby, vůči kterým je nepřátelský. Tato lhostejnost skončí, pokud cíl utrpí zranění nebo uvidí, že zranění utrpí jeho spojenci. Když kouzlo skončí, postoj tvora se vrátí do normálu.",
+  "poznamka": "Indifferent / Hostile (postoje) = lhostejný / nepřátelský"
+ },
+ {
+  "key": "srd-2024_charm-person",
+  "name": "Okouzlení osoby",
+  "text": "Jeden humanoid, kterého vidíš v dosahu, si hází záchranný hod na Moudrost. Pokud s ním ty nebo tví spojenci bojujete, hází s výhodou. Při neúspěchu má cíl stav okouzlený, dokud kouzlo neskončí nebo dokud mu ty či tví spojenci nezpůsobíte zranění. Okouzlený tvor je k tobě přátelský. Když kouzlo skončí, cíl ví, že jsi ho okouzlil.",
+  "higher": "Za každou úroveň pozice kouzla nad 1 můžeš zacílit jednoho dalšího tvora."
+ },
+ {
+  "key": "srd-2024_chill-touch",
+  "name": "Mrazivý dotek",
+  "text": "Usměrníš chlad hrobu a provedeš útok kouzlem na blízko proti cíli na dosah. Při zásahu cíl utrpí 1k10 nekrotického zranění a do konce tvého příštího tahu si nemůže obnovit životy.",
+  "higher": "Zranění se zvýší o 1k10, když dosáhneš 5. úrovně (2k10), 11. úrovně (3k10) a 17. úrovně (4k10)."
+ },
+ {
+  "key": "srd-2024_chromatic-orb",
+  "name": "Barevná koule",
+  "text": "Vrhneš na cíl v dosahu kouli energie. Zvol pro kouli typ kyselinový, chladný, ohnivý, bleskový, jedový nebo hromový a pak proveď proti cíli útok kouzlem na dálku. Při zásahu cíl utrpí 3k8 zranění zvoleného typu. Pokud na dvou či více k8 padne stejné číslo, koule přeskočí na jiný cíl podle tvé volby do 30 stop od cíle. Proveď proti novému cíli hod na útok a hoď znovu na zranění. Koule nemůže přeskočit znovu, pokud kouzlo nesešleš pozicí kouzla 2. či vyšší úrovně.",
+  "higher": "Zranění se zvýší o 1k8 za každou úroveň pozice kouzla nad 1. Koule může přeskočit nejvýše tolikrát, kolik činí úroveň použité pozice, a každý tvor může být jedním sesláním tohoto kouzla zaměřen jen jednou.",
+  "material": "diamant v hodnotě 50+ zl"
+ },
+ {
+  "key": "srd-2024_clairvoyance",
+  "name": "Jasnozření",
+  "text": "Vytvoříš v dosahu neviditelný senzor, a to na místě, které znáš (kde jsi už byl nebo které jsi viděl), nebo na zřejmém místě, které neznáš (například za dveřmi, za rohem nebo v hájku). Nehmotný, nezranitelný senzor zůstane po dobu trvání na místě. Při seslání kouzla zvol zrak, nebo sluch. Zvolený smysl můžeš přes senzor používat, jako bys byl v jeho prostoru. Bonusovou akcí můžeš přepínat mezi zrakem a sluchem. Tvor, který senzor vidí (například tvor pod vlivem _Vidění neviditelného_ nebo s pravým viděním), vidí zářící kouli asi velikosti tvé pěsti.",
+  "material": "ohnisko v hodnotě 100+ zl, buď roh zdobený drahokamy pro sluch, nebo skleněné oko pro zrak",
+  "poznamka": "Truesight = pravé vidění (není ve slovníku; kouzlo True Seeing je Pravý zrak)"
+ },
+ {
+  "key": "srd-2024_color-spray",
+  "name": "Barevná sprška",
+  "text": "Vyšleš oslnivou záplavu blikajícího barevného světla. Každý tvor v 15stopém kuželu vycházejícím z tebe musí uspět v záchranném hodu na Odolnost, jinak má do konce tvého příštího tahu stav oslepený.",
+  "material": "špetka barevného písku",
+  "poznamka": "Cone/Cube/Sphere/Line/Cylinder/Emanation → kužel/krychle/koule/linie/válec/emanace, malým písmenem"
+ },
+ {
+  "key": "srd-2024_command",
+  "name": "Rozkaz",
+  "text": "Vyslovíš jednoslovný rozkaz tvorovi v dosahu, kterého vidíš. Cíl musí uspět v záchranném hodu na Moudrost, jinak ve svém příštím tahu rozkaz splní. Rozkaz zvol z těchto možností:\n\n- **Pusť.** Cíl upustí vše, co drží, a pak ukončí svůj tah.\n- **Uteč.** Cíl stráví svůj tah tím, že se od tebe vzdaluje nejrychlejším dostupným způsobem.\n- **Plaz se.** Cíl je ležící a pak ukončí svůj tah.\n- **Stůj.** Cíl se ve svém tahu nepohne a nepoužije žádnou akci ani bonusovou akci.",
+  "higher": "Můžeš ovlivnit jednoho dalšího tvora za každou úroveň pozice kouzla nad 1."
+ },
+ {
+  "key": "srd-2024_comprehend-languages",
+  "name": "Porozumění jazykům",
+  "text": "Po dobu trvání rozumíš doslovnému významu každého jazyka, který slyšíš nebo vidíš znakovat. Rozumíš také každému psanému jazyku, který vidíš, ale musíš se dotýkat povrchu, na kterém jsou slova napsaná. Přečíst jednu stránku textu trvá asi 1 minutu. Toto kouzlo nerozluští symboly ani tajné zprávy.",
+  "material": "špetka sazí a soli"
+ },
+ {
+  "key": "srd-2024_conjure-animals",
+  "name": "Vyvolání zvířat",
+  "text": "Vyvoláš přírodní duchy, kteří se objeví jako velká smečka přízračných, nehmotných zvířat na neobsazeném místě, které vidíš v dosahu. Smečka vydrží po dobu trvání a podobu zvířat volíš ty, například vlky, hady nebo ptáky. Dokud jsi do 5 stop od smečky, máš výhodu u záchranných hodů na Sílu, a když se ve svém tahu pohneš, můžeš také přesunout smečku až o 30 stop na neobsazené místo, které vidíš. Kdykoli se smečka přiblíží do 10 stop k tvorovi, kterého vidíš, a kdykoli tvor, kterého vidíš, vstoupí na místo do 10 stop od smečky nebo tam ukončí svůj tah, můžeš tohoto tvora donutit k záchrannému hodu na Obratnost. Při neúspěchu utrpí 3k10 sečného zranění. Tvor si tento záchranný hod hází jen jednou za tah.",
+  "higher": "Za každou úroveň pozice kouzla nad 3 se zranění zvýší o 1k10."
+ },
+ {
+  "key": "srd-2024_continual-flame",
+  "name": "Věčný plamen",
+  "text": "Z předmětu, kterého se dotkneš, vyšlehne plamen. Vrhá jasné světlo v okruhu 20 stop a šero dalších 20 stop. Vypadá jako obyčejný plamen, ale nehřeje a nespotřebovává palivo. Plamen lze zakrýt nebo schovat, ale ne udusit ani uhasit.",
+  "material": "rubínový prach v hodnotě 50+ zl, který kouzlo spotřebuje",
+  "poznamka": "Bright Light / Dim Light = jasné světlo / šero (není ve slovníku)"
+ },
+ {
+  "key": "srd-2024_counterspell",
+  "name": "Protikouzlo",
+  "text": "Pokusíš se přerušit tvora, který právě sesílá kouzlo. Tvor hází záchranný hod na Odolnost. Při neúspěchu se kouzlo rozplyne bez účinku a akce, bonusová akce nebo reakce použitá k jeho seslání je promarněná. Pokud bylo kouzlo sesláno z pozice kouzla, pozice se nespotřebuje."
+ },
+ {
+  "key": "srd-2024_create-food-and-water",
+  "name": "Vytvoření jídla a vody",
+  "text": "Vytvoříš 45 liber jídla a 30 galonů pitné vody na zemi nebo v nádobách v dosahu. Obojí pomáhá odvrátit nebezpečí podvýživy a dehydratace. Jídlo je mdlé, ale výživné a vypadá jako jídlo podle tvé volby, voda je čistá. Nesnědené jídlo se po 24 hodinách zkazí."
+ },
+ {
+  "key": "srd-2024_create-or-destroy-water",
+  "name": "Vytvoření či zničení vody",
+  "text": "Provedeš jedno z následujícího:\n\n**Vytvoření vody.** Vytvoříš až 10 galonů čisté vody v otevřené nádobě v dosahu. Případně voda spadne jako déšť v 30stopé krychli v dosahu a uhasí tam nechráněné plameny.\n\n**Zničení vody.** Zničíš až 10 galonů vody v otevřené nádobě v dosahu. Případně zničíš mlhu v 30stopé krychli v dosahu.",
+  "higher": "Za každou úroveň pozice kouzla nad 1 vytvoříš nebo zničíš o 10 galonů vody víc, nebo se velikost krychle zvětší o 5 stop.",
+  "material": "směs vody a písku"
+ },
+ {
+  "key": "srd-2024_cure-wounds",
+  "name": "Léčení ran",
+  "text": "Tvor, jehož se dotkneš, získá zpět počet životů rovný 2k8 plus tvůj modifikátor sesílací vlastnosti.",
+  "higher": "Za každou úroveň pozice kouzla nad 1 se léčení zvýší o 2k8."
+ },
+ {
+  "key": "srd-2024_dancing-lights",
+  "name": "Tančící světla",
+  "text": "Vytvoříš v dosahu až čtyři světla velikosti pochodně, která vypadají jako pochodně, lucerny nebo zářící koule a po dobu trvání se vznášejí. Případně spojíš čtyři světla do jedné zářící postavy střední velikosti, která vzdáleně připomíná člověka. Ať zvolíš kteroukoli podobu, každé světlo vydává šero v okruhu 10 stop. Bonusovou akcí můžeš světla přesunout až o 60 stop na místo v dosahu. Každé světlo musí být do 20 stop od jiného světla vytvořeného tímto kouzlem a světlo zmizí, pokud se dostane mimo dosah kouzla.",
+  "material": "kousek fosforu",
+  "poznamka": "Bright Light → jasné světlo, Dim Light → šero"
+ },
+ {
+  "key": "srd-2024_darkness",
+  "name": "Tma",
+  "text": "Po dobu trvání se z bodu v dosahu šíří magická tma a vyplní kouli o poloměru 15 stop. Vidění ve tmě jí neprohlédne a nemagické světlo ji neozáří. Případně můžeš kouzlo seslat na předmět, který nikdo nenosí ani nedrží; tma pak vyplní 15stopá emanace vycházející z tohoto předmětu. Zakrytí předmětu něčím neprůhledným, například miskou nebo přilbou, tmu zablokuje. Pokud se jakákoli část oblasti tohoto kouzla překrývá s oblastí jasného světla nebo šera vytvořenou kouzlem 2. či nižší úrovně, toto jiné kouzlo je rozptýleno.",
+  "material": "netopýří srst a kousek uhlí",
+  "poznamka": "Emanation = vyzařování (tvar oblasti, není ve slovníku)"
+ },
+ {
+  "key": "srd-2024_darkvision",
+  "name": "Vidění ve tmě",
+  "text": "Po dobu trvání má ochotný tvor, kterého se dotkneš, vidění ve tmě na vzdálenost 150 stop.",
+  "material": "sušená mrkev"
+ },
+ {
+  "key": "srd-2024_daylight",
+  "name": "Denní světlo",
+  "text": "Po dobu trvání se z bodu v dosahu šíří sluneční světlo a vyplní kouli o poloměru 60 stop. Oblast slunečního světla je jasné světlo a dalších 60 stop za ní vrhá šero. Kouzlo můžeš místo toho seslat na předmět, který nikdo nemá na sobě ani ho nenese; sluneční světlo pak vyplní 60stopou emanaci vycházející z toho předmětu. Když předmět zakryješ něčím neprůhledným, třeba miskou nebo přilbou, sluneční světlo zablokuješ. Pokud se kterákoli část oblasti tohoto kouzla překrývá s oblastí tmy vytvořenou kouzlem 3. úrovně nebo nižší, to druhé kouzlo se rozptýlí.",
+  "poznamka": "Emanation = emanace; Bright Light / Dim Light = jasné / slabé světlo"
+ },
+ {
+  "key": "srd-2024_detect-evil-and-good",
+  "name": "Odhalení zla a dobra",
+  "text": "Po dobu trvání cítíš polohu každé zrůdy, nebešťana, elementála, víly, běsa nebo nemrtvého do 30 stop od sebe. Také cítíš, zda je tam aktivní kouzlo _Posvěcení_, a pokud ano, kde. Kouzlo zablokuje 1 stopa kamene, hlíny nebo dřeva, 1 palec kovu nebo tenký plát olova.",
+  "poznamka": "typy tvorů: Aberration → zrůda, Celestial → nebešťan, Fey → víla, Fiend → běs (ve slovníku chybí)"
+ },
+ {
+  "key": "srd-2024_detect-magic",
+  "name": "Odhalení magie",
+  "text": "Po dobu trvání cítíš přítomnost magických efektů do 30 stop od sebe. Pokud takové efekty ucítíš, můžeš provést akci Magie a uvidět slabou auru kolem každého viditelného tvora nebo předmětu v oblasti, který magii nese, a pokud efekt vytvořilo kouzlo, zjistíš, do které školy magie kouzlo patří. Kouzlo zablokuje 1 stopa kamene, hlíny nebo dřeva, 1 palec kovu nebo tenký plát olova.",
+  "poznamka": "Magic action → akce Magie"
+ },
+ {
+  "key": "srd-2024_detect-poison-and-disease",
+  "name": "Odhalení jedu a nemoci",
+  "text": "Po dobu trvání cítíš polohu jedů, jedovatých tvorů a magických nákaz do 30 stop od sebe. V každém případě poznáš druh jedu, tvora nebo nákazy. Kouzlo zablokuje 1 stopa kamene, hlíny nebo dřeva, 1 palec kovu nebo tenký plát olova.",
+  "material": "tisový list"
+ },
+ {
+  "key": "srd-2024_detect-thoughts",
+  "name": "Odhalení myšlenek",
+  "text": "Aktivuješ jeden z níže uvedených účinků. Dokud kouzlo neskončí, můžeš v dalších tazích akcí Magie aktivovat kterýkoli z nich.\n\n***Vnímání myšlenek.*** Vycítíš přítomnost myšlenek do 30 stop od sebe, které patří tvorům znalým nějakého jazyka nebo telepatickým. Myšlenky nečteš, ale víš, že je přítomen myslící tvor. Kouzlo zablokuje 1 stopa kamene, hlíny nebo dřeva, 1 palec kovu nebo tenký plát olova.\n\n**Čtení myšlenek.** Zaměř jednoho tvora, kterého vidíš do 30 stop od sebe, nebo jednoho tvora do 30 stop od sebe, kterého jsi odhalil možností Vnímání myšlenek. Zjistíš, co cíl právě nejvíc zaměstnává. Pokud cíl neumí žádný jazyk a není telepatický, nezjistíš nic.\n\nV příštím tahu se můžeš akcí Magie pokusit proniknout hlouběji do mysli cíle. Pokud pronikáš hlouběji, cíl si hodí záchranný hod na Moudrost. Při neúspěchu poznáš jeho uvažování, emoce a něco, co v jeho mysli hraje velkou roli (například starost, lásku nebo nenávist). Při úspěchu kouzlo skončí. Tak či onak cíl ví, že pronikáš do jeho mysli, a dokud svou pozornost od jeho mysli neodvrátíš, může cíl ve svém tahu akcí provést ověření Inteligence (Arkána) proti tvému SO záchrany proti kouzlu; při úspěchu kouzlo skončí.",
+  "material": "1 měďák"
+ },
+ {
+  "key": "srd-2024_disguise-self",
+  "name": "Převlek",
+  "text": "Změníš vzhled sebe sama, včetně oblečení, zbroje, zbraní a dalších věcí, které máš u sebe, dokud kouzlo neskončí. Můžeš vypadat o 1 stopu menší nebo větší a můžeš se zdát těžší nebo lehčí. Musíš přijmout podobu se stejným základním uspořádáním končetin, jaké máš ty. Jinak je rozsah iluze na tobě. Změny vyvolané tímto kouzlem neobstojí při fyzickém zkoumání. Pokud například tímto kouzlem přidáš ke svému oblečení klobouk, předměty jím projdou a kdo se ho dotkne, nic neucítí. Aby tvor odhalil, že jsi převlečený, musí použít akci Zkoumání k prohlédnutí tvého vzhledu a uspět v ověření Inteligence (Pátrání) proti tvému SO záchrany proti kouzlu.",
+  "poznamka": "Study action = akce Zkoumání"
+ },
+ {
+  "key": "srd-2024_dispel-magic",
+  "name": "Rozptýlení magie",
+  "text": "Zvol jednoho tvora, předmět nebo magický účinek v dosahu. Každé probíhající kouzlo 3. či nižší úrovně na cíli skončí. Za každé probíhající kouzlo 4. či vyšší úrovně na cíli proveď ověření vlastnosti se svou sesílací vlastností (SO 10 plus úroveň toho kouzla). Při úspěšném ověření kouzlo skončí.",
+  "higher": "Kouzlo na cíli automaticky ukončíš, pokud je jeho úroveň rovna úrovni použité pozice kouzla nebo nižší."
+ },
+ {
+  "key": "srd-2024_dissonant-whispers",
+  "name": "Disonantní šepot",
+  "text": "Jeden tvor podle tvé volby, kterého vidíš v dosahu, uslyší ve své mysli nesouzvučnou melodii. Cíl si hází záchranný hod na Moudrost. Při neúspěchu utrpí 3k6 psychického zranění a musí okamžitě použít svou reakci, pokud ji má k dispozici, a po nejbezpečnější cestě se od tebe vzdálit, co nejdál může. Při úspěchu cíl utrpí jen poloviční zranění."
+ },
+ {
+  "key": "srd-2024_divine-favor",
+  "name": "Božská přízeň",
+  "text": "Dokud kouzlo neskončí, tvé útoky zbraněmi při zásahu způsobí navíc 1k4 zářivého zranění."
+ },
+ {
+  "key": "srd-2024_divine-smite",
+  "name": "Božský úder",
+  "text": "Cíl utrpí z útoku navíc 2k8 zářivého zranění. Pokud je cíl běs nebo nemrtvý, zranění se zvýší o 1k8.",
+  "higher": "Za každou úroveň pozice kouzla nad 1 se zranění zvýší o 1k8."
+ },
+ {
+  "key": "srd-2024_dragons-breath",
+  "name": "Dračí dech",
+  "text": "Dotkneš se jednoho ochotného tvora a zvolíš kyselinu, chlad, oheň, blesk nebo jed. Dokud kouzlo neskončí, může cíl provést akci Magie a vydechnout 15stopý kužel. Každý tvor v této oblasti si hází záchranný hod na Obratnost; při neúspěchu utrpí 3k6 zranění zvoleného typu, při úspěchu poloviční zranění.",
+  "higher": "Za každou úroveň pozice kouzla nad 2 se zranění zvýší o 1k6.",
+  "material": "pálivá paprička"
+ },
+ {
+  "key": "srd-2024_druidcraft",
+  "name": "Druidské kousky",
+  "text": "Šeptem k duchům přírody vytvoříš v dosahu jeden z následujících účinků.\n\n- ***Předpověď počasí.*** Vytvoříš drobný, neškodný smyslový účinek, který předpoví, jaké bude na tvém místě počasí v příštích 24 hodinách. Účinek se může projevit jako zlatá koule pro jasnou oblohu, mrak pro déšť, padající vločky pro sníh a podobně. Tento účinek přetrvá 1 kolo.\n- ***Rozkvět.*** Okamžitě necháš rozkvést květ, otevřít semeník nebo rozvinout listový pupen.\n- ***Smyslový účinek.*** Vytvoříš neškodný smyslový účinek, například padající listí, přízračné tančící víly, jemný vánek, zvuk zvířete nebo slabý pach skunka. Účinek se musí vejít do 5stopé krychle.\n- ***Hra s ohněm.*** Zapálíš nebo uhasíš svíčku, pochodeň nebo táborák."
+ },
+ {
+  "key": "srd-2024_eldritch-blast",
+  "name": "Nadpřirozený výboj",
+  "text": "Vrhneš paprsek praskající energie. Proveď útok kouzlem na dálku proti jednomu tvorovi nebo předmětu v dosahu. Při zásahu cíl utrpí 1k10 silového zranění.",
+  "higher": "Na 5. úrovni kouzlo vytvoří dva paprsky, na 11. úrovni tři a na 17. úrovni čtyři. Paprsky můžeš namířit na stejný cíl nebo na různé. Pro každý paprsek hoď na útok zvlášť."
+ },
+ {
+  "key": "srd-2024_elementalism",
+  "name": "Živlová magie",
+  "text": "Ovládneš živly a vytvoříš v dosahu jeden z následujících efektů.\n\n***Přivolání vzduchu.*** Vytvoříš vánek dost silný na to, aby zvlnil látku, zvířil prach, rozšustil listí a zavřel otevřené dveře a okenice, to vše v 5stopé krychli. Dveře a okenice, které někdo nebo něco drží otevřené, ovlivněny nejsou.\n\n***Přivolání země.*** Vytvoříš tenký povlak prachu nebo písku, který pokryje povrchy na čtvercové ploše o straně 5 stop, nebo necháš na kousku hlíny či písku objevit jediné slovo psané tvým rukopisem.\n\n***Přivolání ohně.*** Vytvoříš v 5stopé krychli řídký oblak neškodných jisker a barevného, vonného kouře. Barvu a vůni zvolíš ty a jiskry mohou v této oblasti zapálit svíčky, pochodně nebo lampy. Vůně kouře přetrvá 1 minutu.\n\n***Přivolání vody.*** Vytvoříš v 5stopé krychli spršku chladné mlhy, která lehce navlhčí tvory a předměty. Případně vytvoříš 1 hrnek čisté vody buď v otevřené nádobě, nebo na povrchu; voda se za 1 minutu odpaří.\n\n***Tvarování živlu.*** Způsobíš, že hlína, písek, oheň, kouř, mlha nebo voda, která se vejde do 1stopé krychle, na 1 hodinu zaujme hrubý tvar (například tvar tvora)."
+ },
+ {
+  "key": "srd-2024_enhance-ability",
+  "name": "Posílení vlastnosti",
+  "text": "Dotkneš se tvora a zvolíš Sílu, Obratnost, Inteligenci, Moudrost nebo Charisma. Po dobu trvání má cíl výhodu při ověřeních zvolené vlastnosti.",
+  "higher": "Za každou úroveň pozice kouzla nad 2 můžeš zaměřit jednoho dalšího tvora. Pro každý cíl můžeš zvolit jinou vlastnost.",
+  "material": "srst nebo pírko"
+ },
+ {
+  "key": "srd-2024_enlargereduce",
+  "name": "Zvětšení/Zmenšení",
+  "text": "Po dobu trvání kouzlo zvětší nebo zmenší tvora nebo předmět, který vidíš v dosahu (viz zvolený účinek níže). Zaměřený předmět nesmí nikdo nosit ani nést. Je-li cílem neochotný tvor, může si hodit záchranný hod na Odolnost. Při úspěchu kouzlo nemá žádný účinek. Vše, co zaměřený tvor nosí a nese, změní velikost spolu s ním. Každý předmět, který upustí, se okamžitě vrátí do normální velikosti. Vržená zbraň nebo kus střeliva se vrátí do normální velikosti hned poté, co cíl zasáhne nebo mine.\n\n**_Zvětšení._** Velikost cíle se zvýší o jednu kategorii, například ze střední na velkou. Cíl má také výhodu při ověřeních Síly a záchranných hodech na Sílu. Útoky cíle zvětšenými zbraněmi nebo údery beze zbraně způsobí při zásahu dalších 1k4 zranění.\n\n**_Zmenšení._** Velikost cíle se sníží o jednu kategorii, například ze střední na malou. Cíl má také nevýhodu při ověřeních Síly a záchranných hodech na Sílu. Útoky cíle zmenšenými zbraněmi nebo údery beze zbraně způsobí při zásahu o 1k4 zranění méně (zranění tím nemůže klesnout pod 1).",
+  "material": "špetka železného prášku"
+ },
+ {
+  "key": "srd-2024_ensnaring-strike",
+  "name": "Poutající úder",
+  "text": "Když zasáhneš cíl, objeví se na něm chapavé úponky a cíl si hází záchranný hod na Sílu. Velký nebo větší tvor má u tohoto záchranného hodu výhodu. Při neúspěchu má cíl stav spoutaný, dokud kouzlo neskončí. Při úspěchu úponky uschnou a kouzlo skončí. Dokud je cíl spoutaný, utrpí na začátku každého svého tahu 1k6 bodného zranění. Cíl nebo tvor, který na cíl dosáhne, může akcí provést ověření Síly (Atletiky) proti tvému SO záchrany proti kouzlu. Při úspěchu kouzlo skončí.",
+  "higher": "Za každou úroveň pozice kouzla nad 1 se zranění zvýší o 1k6."
+ },
+ {
+  "key": "srd-2024_entangle",
+  "name": "Zapletení",
+  "text": "Ve 20stopém čtverci v dosahu vyraší ze země chápavé rostliny. Po dobu trvání mění zemi v oblasti v těžký terén. Když kouzlo skončí, zmizí. Každý tvor (kromě tebe), který je v oblasti při seslání kouzla, musí uspět v záchranném hodu na Sílu, jinak až do konce kouzla získá stav spoutaný. Spoutaný tvor může akcí provést ověření Síly (Atletika) proti tvému SO záchrany proti kouzlu. Při úspěchu se z chápavých rostlin vyprostí a už jimi není spoutaný.",
+  "poznamka": "Difficult Terrain = těžký terén (není ve slovníku)"
+ },
+ {
+  "key": "srd-2024_enthrall",
+  "name": "Uchvácení",
+  "text": "Spleteš rozptylující proud slov a tvorové podle tvé volby, které vidíš v dosahu, si musí hodit záchranný hod na Moudrost. Každý tvor, se kterým ty nebo tví společníci bojujete, v tomto záchranném hodu automaticky uspěje. Při neúspěchu má cíl až do konce kouzla postih −10 k ověřením Moudrosti (Vnímání) a k pasivnímu vnímání."
+ },
+ {
+  "key": "srd-2024_expeditious-retreat",
+  "name": "Rychlý ústup",
+  "text": "Použiješ akci Sprint a dokud kouzlo neskončí, můžeš tuto akci znovu použít jako bonusovou akci.",
+  "poznamka": "Dash action = akce Sprint"
+ },
+ {
+  "key": "srd-2024_faerie-fire",
+  "name": "Vílí oheň",
+  "text": "Předměty ve 20stopé krychli v dosahu obklopí modrá, zelená nebo fialová záře (podle tvé volby). Každého tvora v krychli záře obklopí také, pokud neuspěje v záchranném hodu na Obratnost. Po dobu trvání vrhají předměty a zasažení tvorové šero v poloměru 10 stop a nemohou těžit ze stavu neviditelný. Hody na útok proti zasaženému tvorovi nebo předmětu mají výhodu, pokud ho útočník vidí."
+ },
+ {
+  "key": "srd-2024_false-life",
+  "name": "Falešný život",
+  "text": "Získáš 2k4 + 4 dočasných životů.",
+  "higher": "Za každou úroveň pozice kouzla nad 1 získáš 5 dalších dočasných životů.",
+  "material": "kapka alkoholu"
+ },
+ {
+  "key": "srd-2024_fear",
+  "name": "Strach",
+  "text": "Každý tvor ve 30stopém kuželu musí uspět v záchranném hodu na Moudrost, jinak upustí vše, co drží, a po dobu trvání je vystrašený. Vystrašený tvor v každém svém tahu použije akci Sprint a vzdaluje se od tebe nejbezpečnější cestou, ledaže nemá kam. Pokud tvor ukončí svůj tah na místě, odkud na tebe nevidí, hází záchranný hod na Moudrost. Při úspěchu kouzlo pro tohoto tvora skončí.",
+  "material": "bílé pírko"
+ },
+ {
+  "key": "srd-2024_feather-fall",
+  "name": "Pád pírka",
+  "text": "Zvol až pět padajících tvorů v dosahu. Rychlost pádu padajícího tvora se až do konce kouzla zpomalí na 60 stop za kolo. Pokud tvor přistane dřív, než kouzlo skončí, neutrpí pádem žádné zranění a kouzlo pro něj skončí.",
+  "material": "malé pírko nebo kousek prachového peří"
+ },
+ {
+  "key": "srd-2024_find-familiar",
+  "name": "Nalezení přítele",
+  "text": "Získáš služby přítele (familiára), ducha, který přijme zvířecí podobu podle tvé volby: netopýr, kočka, žába, jestřáb, ještěrka, chobotnice, sova, krysa, havran, pavouk, lasička nebo jiné zvíře se stupněm nebezpečnosti 0. Přítel se objeví na volném místě v dosahu a má statistiky zvolené podoby (viz „Nestvůry“), je to však nebešťan, víla nebo běs (podle tvé volby), ne zvíře. Tvůj přítel jedná nezávisle na tobě, ale poslouchá tvé rozkazy.\n\n**_Telepatické spojení._** Když je tvůj přítel do 100 stop od tebe, můžeš s ním komunikovat telepaticky. Navíc můžeš bonusovou akcí vidět očima přítele a slyšet, co slyší on, až do začátku svého příštího tahu, a těžit přitom ze všech zvláštních smyslů, které má.\n\nA konečně, když sešleš kouzlo s dosahem dotyk, může dotyk zprostředkovat tvůj přítel. Musí být do 100 stop od tebe a při seslání kouzla musí k zprostředkování dotyku použít reakci.\n\n**_Boj._** Přítel je spojencem tvým i tvých spojenců. Hází si vlastní iniciativu a jedná ve vlastním tahu. Přítel nemůže útočit, ale jiné akce může používat normálně.\n\n**_Zmizení přítele._** Když přítel klesne na 0 životů, zmizí. Znovu se objeví, až toto kouzlo sešleš znovu. Akcí Magie můžeš přítele dočasně odeslat do kapsové dimenze. Případně ho můžeš propustit navždy. Když je dočasně odeslaný, můžeš ho akcí Magie nechat znovu objevit na volném místě do 30 stop od sebe. Kdykoli přítel klesne na 0 životů nebo zmizí do kapsové dimenze, zanechá na svém místě vše, co měl na sobě nebo nesl.\n\n**_Jen jeden přítel._** Nemůžeš mít víc než jednoho přítele najednou. Pokud toto kouzlo sešleš, když už přítele máš, místo toho ho přiměješ přijmout novou přípustnou podobu.",
+  "material": "hořící kadidlo v hodnotě 10+ zl, které kouzlo spotřebuje",
+  "poznamka": "familiar = přítel (dle jména kouzla); Challenge Rating = nebezpečnost; Celestial / Fey / Fiend = nebešťan / víla / běs"
+ },
+ {
+  "key": "srd-2024_find-steed",
+  "name": "Nalezení oře",
+  "text": "Přivoláš nadpozemskou bytost, která se objeví jako věrný oř na volném místě podle tvé volby v dosahu. Tento tvor používá statistiky Nadpozemského oře. Pokud už oře z tohoto kouzla máš, nahradí ho nový.\n\nOř připomíná velké jezdecké zvíře podle tvé volby, třeba koně, velblouda, zlovlka nebo losa. Kdykoli kouzlo sešleš, zvol typ tvora oře: nebešťan, víla nebo běs. Ten určuje některé vlastnosti ve statistikách.\n\n**_Boj._** Oř je spojencem tvým i tvých spojenců. V boji sdílí tvou iniciativu a když na něm jedeš, funguje jako ovládané jezdecké zvíře (podle pravidel pro boj v sedle). Pokud jsi neschopný, oř hraje svůj tah hned po tobě a jedná nezávisle, přičemž se soustředí na tvou ochranu.\n\n**_Zmizení oře._** Oř zmizí, pokud klesne na 0 životů nebo pokud zemřeš. Když zmizí, zanechá po sobě vše, co měl na sobě nebo nesl. Pokud toto kouzlo sešleš znovu, rozhodneš, zda přivoláš oře, který zmizel, nebo jiného.",
+  "higher": "Jako úroveň kouzla ve statistikách použij úroveň pozice kouzla.",
+  "poznamka": "Otherworldly Steed (blok statistik) = Nadpozemský oř; Large = velký (velikost); dire wolf = zlovlk"
+ },
+ {
+  "key": "srd-2024_find-traps",
+  "name": "Nalezení pastí",
+  "text": "Vycítíš každou past v dosahu, která je v přímé viditelnosti. Pro účely tohoto kouzla je pastí jakýkoli předmět nebo mechanismus vytvořený, aby způsobil zranění nebo jiné nebezpečí. Kouzlo tedy vycítí kouzlo _Poplach_ nebo _Ochranný glyf_ či mechanickou propadlou jámu, ale neodhalí přirozenou slabinu v podlaze, nestabilní strop ani skrytý závrt. Kouzlo prozradí, že past existuje, ale ne kde je. Dozvíš se však obecnou povahu nebezpečí, které vycítěná past představuje."
+ },
+ {
+  "key": "srd-2024_fire-bolt",
+  "name": "Ohnivá střela",
+  "text": "Mrštíš ohnivou jiskru na tvora nebo předmět v dosahu. Proveď proti cíli útok kouzlem na dálku. Při zásahu cíl utrpí 1k10 ohnivého zranění. Hořlavý předmět zasažený tímto kouzlem začne hořet, pokud ho nikdo nemá na sobě ani ho nenese.",
+  "higher": "Zranění se zvýší o 1k10, když dosáhneš úrovně 5 (2k10), 11 (3k10) a 17 (4k10)."
+ },
+ {
+  "key": "srd-2024_fireball",
+  "name": "Ohnivá koule",
+  "text": "Z tebe vyšlehne jasný pruh k bodu v dosahu podle tvé volby a s tlumeným burácením tam vykvete v ohnivý výbuch. Každý tvor v kouli o poloměru 20 stop se středem v tomto bodě si hodí záchranný hod na Obratnost. Při neúspěchu utrpí 8k6 ohnivého zranění, při úspěchu polovinu. Hořlavé předměty v oblasti, které nikdo nenosí ani nedrží, začnou hořet.",
+  "higher": "Zranění se zvýší o 1k6 za každou úroveň pozice kouzla nad 3.",
+  "material": "kulička netopýřího trusu a síry"
+ },
+ {
+  "key": "srd-2024_flame-blade",
+  "name": "Plamenná čepel",
+  "text": "Ve volné ruce vyvoláš ohnivou čepel. Čepel má podobnou velikost a tvar jako šavle a vydrží po dobu trvání. Pokud čepel pustíš, zmizí, ale bonusovou akcí ji můžeš vyvolat znovu. Akcí Magie můžeš ohnivou čepelí provést útok kouzlem na blízko. Při zásahu cíl utrpí ohnivé zranění rovné 3k6 plus tvůj modifikátor sesílací vlastnosti. Plamenná čepel vydává jasné světlo v okruhu 10 stop a šero v dalších 10 stopách.",
+  "higher": "Za každou úroveň pozice kouzla nad 2 se zranění zvýší o 1k6.",
+  "material": "list škumpy"
+ },
+ {
+  "key": "srd-2024_flaming-sphere",
+  "name": "Plamenná koule",
+  "text": "Vytvoříš ohnivou kouli o průměru 5 stop na volném místě na zemi v dosahu. Vydrží po dobu trvání. Každý tvor, který ukončí svůj tah do 5 stop od koule, hází záchranný hod na Obratnost. Při neúspěchu utrpí 2k6 ohnivého zranění, při úspěchu poloviční. Bonusovou akcí můžeš kouli posunout až o 30 stop tak, že ji kutálíš po zemi. Pokud kouli posuneš na místo tvora, hází tento tvor záchranný hod proti kouli a koule se pro tento tah zastaví. Když kouli posouváš, můžeš ji převést přes překážky vysoké až 5 stop a přeskočit s ní jámy široké až 10 stop. Hořlavé předměty, které nikdo nemá na sobě ani je nenese, začnou hořet, když se jich koule dotkne. Koule vrhá jasné světlo v poloměru 20 stop a šero dalších 20 stop.",
+  "higher": "Zranění se zvýší o 1k6 za každou úroveň pozice kouzla nad 2.",
+  "material": "kulička vosku"
+ },
+ {
+  "key": "srd-2024_floating-disk",
+  "name": "Vznášející se disk",
+  "text": "Toto kouzlo vytvoří kruhovou vodorovnou plochu ze síly o průměru 3 stopy a tloušťce 1 palec, která se vznáší 3 stopy nad zemí na volném místě podle tvé volby, které vidíš v dosahu. Disk vydrží po dobu trvání a unese až 500 liber. Pokud se na něj položí větší váha, kouzlo skončí a vše na disku spadne na zem. Disk se nehýbe, dokud jsi od něj do 20 stop. Pokud se od něj vzdálíš víc než na 20 stop, disk tě následuje tak, aby zůstal do 20 stop od tebe. Dokáže se pohybovat po nerovném terénu, nahoru i dolů po schodech, svazích a podobně, ale nepřekoná výškový rozdíl 10 stop a víc. Disk například nepřejede 10 stop hlubokou jámu, ani by z takové jámy nevyjel, kdyby byl vytvořen na jejím dně. Pokud se od disku vzdálíš víc než na 100 stop (obvykle proto, že nemůže obejít překážku a následovat tě), kouzlo skončí.",
+  "material": "kapka rtuti"
+ },
+ {
+  "key": "srd-2024_fly",
+  "name": "Let",
+  "text": "Dotkneš se ochotného tvora. Po dobu trvání získá cíl rychlost létání 60 stop a může se vznášet. Když kouzlo skončí a cíl je stále ve vzduchu, spadne, pokud pád nedokáže zastavit.",
+  "higher": "Za každou úroveň pozice kouzla nad 3 můžeš zaměřit jednoho dalšího tvora.",
+  "material": "pírko"
+ },
+ {
+  "key": "srd-2024_fog-cloud",
+  "name": "Mlžný mrak",
+  "text": "Vytvoříš kouli mlhy o poloměru 20 stop se středem v bodě v dosahu. Koule je silně zastřená. Vydrží po dobu trvání kouzla, nebo dokud ji nerozežene silný vítr (například vytvořený kouzlem _Poryv větru_).",
+  "higher": "Poloměr mlhy se zvýší o 20 stop za každou úroveň pozice kouzla nad 1.",
+  "poznamka": "Heavily Obscured = silně zastřený (není ve slovníku)"
+ },
+ {
+  "key": "srd-2024_gaseous-form",
+  "name": "Plynná podoba",
+  "text": "Ochotný tvor, kterého se dotkneš, se po dobu trvání i se vším, co nosí a nese, promění v mlžný oblak. Kouzlo na cíli skončí, pokud klesne na 0 životů, nebo pokud akcí Magie kouzlo na sobě ukončí. V této podobě se cíl může pohybovat jedině rychlostí létání 10 stop a může se vznášet. Cíl může vstoupit do prostoru jiného tvora a zůstat v něm. Cíl má rezistenci vůči drtivému, bodnému a sečnému zranění, imunitu vůči stavu ležící a výhodu při záchranných hodech na Sílu, Obratnost a Odolnost. Cíl může procházet úzkými otvory, ale s kapalinami zachází, jako by to byly pevné povrchy. Cíl nemůže mluvit ani manipulovat s předměty a předměty, které nesl nebo držel, nemůže upustit, použít ani s nimi jinak zacházet. A konečně cíl nemůže útočit ani sesílat kouzla.",
+  "higher": "Za každou úroveň pozice kouzla nad 3 můžeš zaměřit jednoho dalšího tvora.",
+  "material": "kousek gázy"
+ },
+ {
+  "key": "srd-2024_gentle-repose",
+  "name": "Klidný odpočinek",
+  "text": "Dotkneš se mrtvoly nebo jiných ostatků. Po dobu trvání je cíl chráněn před rozkladem a nemůže se stát nemrtvým. Kouzlo také fakticky prodlužuje časový limit pro přivedení cíle zpět k životu, protože dny strávené pod vlivem tohoto kouzla se nezapočítávají do časového limitu kouzel, jako je _Vzkříšení mrtvého_.",
+  "material": "2 měďáky, které kouzlo spotřebuje",
+  "poznamka": "Copper Pieces → měďáky (měna ve slovníku chybí)"
+ },
+ {
+  "key": "srd-2024_glyph-of-warding",
+  "name": "Ochranný glyf",
+  "text": "Vepíšeš glyf, který později uvolní magický efekt. Vepíšeš ho buď na povrch (například stůl nebo část podlahy), nebo dovnitř předmětu, který lze zavřít (například knihy nebo truhly), aby byl glyf skrytý. Glyf může pokrývat oblast o průměru nejvýš 10 stop. Pokud se povrch nebo předmět přesune víc než 10 stop od místa, kde jsi kouzlo seslal, glyf se poruší a kouzlo skončí, aniž by se spustilo.\n\nGlyf je téměř nepostřehnutelný; kdo ho chce zpozorovat, musí uspět v ověření Moudrosti (Vnímání) proti tvému SO záchrany proti kouzlu.\n\nKdyž glyf vpisuješ, nastavíš jeho spouštěč a zvolíš, zda jde o výbušnou runu, nebo o kouzelný glyf, jak je vysvětleno níže.\n\n**_Nastavení spouštěče._** Při sesílání kouzla rozhodneš, co glyf spustí. U glyfů vepsaných na povrch jsou běžnými spouštěči dotyk glyfu nebo šlápnutí na něj, odstranění jiného předmětu, který ho zakrývá, nebo přiblížení se k němu na určitou vzdálenost. U glyfů vepsaných dovnitř předmětu jsou běžnými spouštěči otevření předmětu nebo pohled na glyf. Jakmile se glyf spustí, kouzlo skončí.\n\nSpouštěč můžeš upřesnit tak, aby ho aktivovali jen tvorové určitých typů (glyf lze například nastavit tak, aby působil na zrůdy). Můžeš také stanovit podmínky pro tvory, kteří glyf nespustí, například pro ty, kteří vysloví určité heslo.\n\n**_Výbušná runa._** Po spuštění glyf vybuchne magickou energií v kouli o poloměru 20 stop se středem v glyfu. Každý tvor v oblasti si hází záchranný hod na Obratnost. Při neúspěchu utrpí 5k8 kyselinového, chladného, ohnivého, bleskového nebo hromového zranění (zvolíš při vytváření glyfu), při úspěchu poloviční zranění.\n\n**_Kouzelný glyf._** Do glyfu můžeš uložit připravené kouzlo 3. nebo nižší úrovně tím, že ho sešleš jako součást vytváření glyfu. Kouzlo musí cílit na jediného tvora nebo na oblast. Kouzlo, které takto ukládáš, nemá při seslání žádný okamžitý účinek.\n\nKdyž se glyf spustí, uložené kouzlo začne působit. Pokud má kouzlo cíl, zacílí na tvora, který glyf spustil. Pokud kouzlo působí na oblast, má oblast střed v tomto tvorovi. Pokud kouzlo přivolá nepřátelské tvory nebo vytvoří škodlivé předměty či pasti, objeví se co nejblíž k vetřelci a zaútočí na něj. Pokud kouzlo vyžaduje soustředění, trvá až do konce své plné doby trvání.",
+  "higher": "Za každou úroveň pozice kouzla nad 3 se zranění výbušné runy zvýší o 1k8. Pokud vytváříš kouzelný glyf, můžeš uložit jakékoli kouzlo až do úrovně pozice kouzla, kterou na _Ochranný glyf_ použiješ.",
+  "material": "diamantový prach v hodnotě 200+ zl, který kouzlo spotřebuje"
+ },
+ {
+  "key": "srd-2024_goodberry",
+  "name": "Dobrobobule",
+  "text": "V tvé ruce se objeví deset bobulí, které jsou po dobu trvání naplněné magií. Tvor může bonusovou akcí sníst jednu bobuli. Snědení bobule obnoví 1 život a bobule poskytne dost výživy, aby tvora nasytila na jeden den. Nesnědené bobule zmizí, když kouzlo skončí.",
+  "material": "snítka jmelí"
+ },
+ {
+  "key": "srd-2024_grease",
+  "name": "Mazlavost",
+  "text": "Nehořlavý tuk pokryje zem ve 10stopém čtverci se středem v bodě v dosahu a po dobu trvání ji promění v těžký terén. Když se tuk objeví, každý tvor stojící v jeho oblasti musí uspět v záchranném hodu na Obratnost, jinak získá stav ležící. Tvor, který do oblasti vstoupí nebo v ní ukončí tah, musí také v tomto záchranném hodu uspět, jinak upadne a bude ležet.",
+  "material": "kousek vepřové kůže nebo másla"
+ },
+ {
+  "key": "srd-2024_guidance",
+  "name": "Vedení",
+  "text": "Dotkneš se ochotného tvora a zvolíš dovednost. Dokud kouzlo neskončí, přičte si tvor 1k4 ke každému ověření vlastnosti, při kterém používá zvolenou dovednost."
+ },
+ {
+  "key": "srd-2024_guiding-bolt",
+  "name": "Vůdčí střela",
+  "text": "Vrhneš světelnou střelu na tvora v dosahu. Proveď útok kouzlem na dálku proti cíli. Při zásahu cíl utrpí 4k6 zářivého zranění a další hod na útok proti němu před koncem tvého příštího tahu má výhodu.",
+  "higher": "Zranění se zvýší o 1k6 za každou úroveň pozice kouzla nad 1."
+ },
+ {
+  "key": "srd-2024_gust-of-wind",
+  "name": "Poryv větru",
+  "text": "Po dobu trvání z tebe ve zvoleném směru vane linie silného větru dlouhá 60 stop a široká 10 stop. Každý tvor v linii musí uspět v záchranném hodu na Sílu, jinak je odsunut o 15 stop od tebe ve směru linie. Tvor, který ukončí svůj tah v linii, si musí hodit stejný záchranný hod. Každý tvor v linii musí při pohybu směrem k tobě utratit 2 stopy pohybu za každou 1 stopu, o kterou se posune. Poryv rozptýlí plyn nebo páru a uhasí svíčky a podobné nechráněné plameny v oblasti. Chráněné plameny, například v lucernách, divoce rozkmitá a s 50procentní šancí je uhasí. Bonusovou akcí ve svých dalších tazích můžeš změnit směr, kterým linie z tebe vane.",
+  "material": "semeno luštěniny"
+ },
+ {
+  "key": "srd-2024_haste",
+  "name": "Zrychlení",
+  "text": "Zvol ochotného tvora, kterého vidíš v dosahu. Dokud kouzlo neskončí, rychlost cíle se zdvojnásobí, získá bonus +2 k třídě zbroje, má výhodu při záchranných hodech na Obratnost a v každém svém tahu získá jednu akci navíc. Tuto akci může použít jen na akci Útok (pouze jeden útok), Sprint, Odpoutání, Skrytí nebo Použití. Když kouzlo skončí, cíl je až do konce svého příštího tahu neschopný a má rychlost 0, protože ho zaplaví vlna malátnosti.",
+  "material": "odštěpek lékořicového kořene",
+  "poznamka": "Názvy akcí Attack/Dash/Disengage/Hide/Utilize = Útok/Sprint/Odpoutání/Skrytí/Použití (nejsou ve slovníku)"
+ },
+ {
+  "key": "srd-2024_healing-word",
+  "name": "Léčivé slovo",
+  "text": "Tvor podle tvé volby, kterého vidíš v dosahu, si obnoví životy v hodnotě 2k4 plus modifikátor tvé sesílací vlastnosti.",
+  "higher": "Léčení se zvýší o 2k4 za každou úroveň pozice kouzla nad 1."
+ },
+ {
+  "key": "srd-2024_heat-metal",
+  "name": "Rozžhavení kovu",
+  "text": "Zvol vyrobený kovový předmět, například kovovou zbraň nebo těžkou či střední kovovou zbroj, který vidíš v dosahu. Rozžhavíš předmět do ruda. Každý tvor ve fyzickém kontaktu s předmětem utrpí při seslání kouzla 2k8 ohnivého zranění. Dokud kouzlo neskončí, můžeš v každém svém dalším tahu bonusovou akcí způsobit toto zranění znovu, pokud je předmět v dosahu. Pokud tvor předmět drží nebo ho má na sobě a utrpí od něj zranění, musí uspět v záchranném hodu na Odolnost, jinak předmět upustí, pokud může. Pokud předmět neupustí, má do začátku tvého příštího tahu nevýhodu u hodů na útok a ověření vlastnosti.",
+  "higher": "Za každou úroveň pozice kouzla nad 2 se zranění zvýší o 1k8.",
+  "material": "kousek železa a plamen"
+ },
+ {
+  "key": "srd-2024_hellish-rebuke",
+  "name": "Pekelná odplata",
+  "text": "Tvora, který ti způsobil zranění, na okamžik obklopí zelené plameny. Hodí si záchranný hod na Obratnost; při neúspěchu utrpí 2k10 ohnivého zranění, při úspěchu polovinu.",
+  "higher": "Zranění se zvýší o 1k10 za každou úroveň pozice kouzla nad 1."
+ },
+ {
+  "key": "srd-2024_heroism",
+  "name": "Hrdinství",
+  "text": "Ochotný tvor, jehož se dotkneš, je naplněn statečností. Dokud kouzlo neskončí, je tvor imunní vůči stavu vystrašený a na začátku každého svého tahu získá dočasné životy rovné tvému modifikátoru sesílací vlastnosti.",
+  "higher": "Za každou úroveň pozice kouzla nad 1 můžeš zacílit jednoho dalšího tvora."
+ },
+ {
+  "key": "srd-2024_hex",
+  "name": "Zaklení",
+  "text": "Uvalíš kletbu na tvora v dosahu, kterého vidíš. Dokud kouzlo neskončí, způsobíš cíli navíc 1k6 nekrotického zranění pokaždé, když ho zasáhneš hodem na útok. Při seslání kouzla také zvol jednu vlastnost. Cíl má nevýhodu k ověřením zvolené vlastnosti. Pokud cíl klesne na 0 životů, než kouzlo skončí, můžeš v pozdějším tahu bonusovou akcí proklít nového tvora.",
+  "higher": "Tvé soustředění může trvat déle s pozicí kouzla 2. úrovně (až 4 hodiny), 3.–4. úrovně (až 8 hodin) nebo 5.+ úrovně (24 hodin).",
+  "material": "zkamenělé oko čolka"
+ },
+ {
+  "key": "srd-2024_hideous-laughter",
+  "name": "Strašlivý smích",
+  "text": "Jeden tvor podle tvé volby, kterého vidíš v dosahu, si hází záchranný hod na Moudrost. Při neúspěchu má po dobu trvání stavy ležící a neschopný. Po tu dobu se nezadržitelně směje, pokud je smíchu schopen, a nemůže na sobě ukončit stav ležící. Na konci každého svého tahu a pokaždé, když utrpí zranění, si hází další záchranný hod na Moudrost. Pokud záchranný hod vyvolalo zranění, má cíl u něj výhodu. Při úspěchu kouzlo skončí.",
+  "higher": "Za každou úroveň pozice kouzla nad 1 můžeš zacílit jednoho dalšího tvora.",
+  "material": "koláček a pírko"
+ },
+ {
+  "key": "srd-2024_hold-person",
+  "name": "Znehybnění osoby",
+  "text": "Zvol humanoida v dosahu, kterého vidíš. Cíl musí uspět v záchranném hodu na Moudrost, jinak je po dobu trvání ochromený. Na konci každého svého tahu cíl záchranný hod opakuje a při úspěchu kouzlo na sobě ukončí.",
+  "higher": "Můžeš zacílit na jednoho dalšího humanoida za každou úroveň pozice kouzla nad 2.",
+  "material": "rovný kousek železa"
+ },
+ {
+  "key": "srd-2024_hunters-mark",
+  "name": "Lovcovo znamení",
+  "text": "Magicky označíš jednoho tvora, kterého vidíš v dosahu, jako svou kořist. Dokud kouzlo neskončí, způsobíš cíli 1k6 silového zranění navíc pokaždé, když ho zasáhneš hodem na útok. Máš také výhodu při každém ověření Moudrosti (Vnímání nebo Přežití), které provádíš, abys ho našel. Pokud cíl klesne na 0 životů dřív, než kouzlo skončí, můžeš bonusovou akcí přenést znamení na nového tvora, kterého vidíš v dosahu.",
+  "higher": "Tvé soustředění může trvat déle s pozicí kouzla 3.–4. úrovně (až 8 hodin) nebo 5. či vyšší úrovně (až 24 hodin)."
+ },
+ {
+  "key": "srd-2024_hypnotic-pattern",
+  "name": "Hypnotický obrazec",
+  "text": "Vytvoříš ve 30stopé krychli v dosahu kroutící se barevný obrazec. Obrazec se na okamžik objeví a zmizí. Každý tvor v oblasti, který obrazec vidí, musí uspět v záchranném hodu na Moudrost, jinak po dobu trvání získá stav okouzlený. Dokud je tvor takto okouzlený, má stav neschopný a rychlost 0. Kouzlo pro zasaženého tvora skončí, pokud utrpí jakékoli zranění, nebo pokud ho někdo jiný akcí vytrhne z omámení.",
+  "material": "špetka konfet"
+ },
+ {
+  "key": "srd-2024_ice-knife",
+  "name": "Ledový nůž",
+  "text": "Vytvoříš ledový střep a vrhneš ho na jednoho tvora v dosahu. Proveď útok kouzlem na dálku proti cíli. Při zásahu cíl utrpí 1k10 bodného zranění. Ať zasáhneš, nebo ne, střep pak exploduje. Cíl a každý tvor do 5 stop od něj musí uspět v záchranném hodu na Obratnost, jinak utrpí 2k6 chladného zranění.",
+  "higher": "Chladné zranění se zvýší o 1k6 za každou úroveň pozice kouzla nad 1.",
+  "material": "kapka vody nebo kousek ledu"
+ },
+ {
+  "key": "srd-2024_identify",
+  "name": "Identifikace",
+  "text": "Po celou dobu sesílání kouzla se dotýkáš předmětu. Pokud je předmět kouzelný nebo jinak magický, zjistíš jeho vlastnosti a jak je používat, zda vyžaduje sladění a kolik má případně nábojů. Zjistíš, zda na předmět působí nějaká probíhající kouzla, a jaká. Pokud předmět vytvořilo kouzlo, zjistíš jméno tohoto kouzla. Pokud se místo toho po celou dobu sesílání dotýkáš tvora, zjistíš, jaká probíhající kouzla na něj případně právě působí.",
+  "material": "perla v hodnotě 100+ zl",
+  "poznamka": "Attunement → sladění; magic item → kouzelný předmět"
+ },
+ {
+  "key": "srd-2024_illusory-script",
+  "name": "Iluzorní písmo",
+  "text": "Píšeš na pergamen, papír nebo jiný vhodný materiál a vložíš do něj iluzi, která vydrží po dobu trvání. Tobě a všem tvorům, které při seslání kouzla určíš, se písmo jeví normálně, zdá se psané tvou rukou a sděluje přesně to, co jsi textem zamýšlel. Pro všechny ostatní vypadá písmo, jako by bylo psané neznámým nebo magickým písmem, kterému nelze porozumět. Iluze může místo toho změnit význam, rukopis a jazyk textu, jazyk však musí být takový, který znáš. Pokud je kouzlo rozptýleno, zmizí původní písmo i iluze. Tvor s pravým viděním dokáže skrytou zprávu přečíst.",
+  "material": "inkoust v hodnotě 10+ zl, který kouzlo spotřebuje",
+  "poznamka": "Truesight = pravé vidění"
+ },
+ {
+  "key": "srd-2024_inflict-wounds",
+  "name": "Způsobení ran",
+  "text": "Tvor, jehož se dotkneš, si hází záchranný hod na Odolnost; při neúspěchu utrpí 2k10 nekrotického zranění, při úspěchu poloviční zranění.",
+  "higher": "Za každou úroveň pozice kouzla nad 1 se zranění zvýší o 1k10."
+ },
+ {
+  "key": "srd-2024_invisibility",
+  "name": "Neviditelnost",
+  "text": "Tvor, jehož se dotkneš, má stav neviditelný, dokud kouzlo neskončí. Kouzlo skončí předčasně ihned poté, co cíl provede hod na útok, způsobí zranění nebo sešle kouzlo.",
+  "higher": "Za každou úroveň pozice kouzla nad 2 můžeš zacílit jednoho dalšího tvora.",
+  "material": "řasa zalitá v arabské gumě"
+ },
+ {
+  "key": "srd-2024_jump",
+  "name": "Skok",
+  "text": "Dotkneš se ochotného tvora. Jednou v každém svém tahu, dokud kouzlo neskončí, může tento tvor skočit až 30 stop za cenu 10 stop pohybu.",
+  "higher": "Za každou úroveň pozice kouzla nad 1 můžeš zaměřit jednoho dalšího tvora."
+ },
+ {
+  "key": "srd-2024_knock",
+  "name": "Otevření",
+  "text": "Cíl, který drží zavřený obyčejný zámek nebo který je zaseknutý či zajištěný závorou, se odemkne, uvolní nebo se závora odsune. Pokud má předmět víc zámků, odemkne se jen jeden z nich. Pokud cíl drží zavřený kouzlo _Tajemný zámek_, je toto kouzlo na 10 minut potlačeno a cíl lze po tu dobu otevírat a zavírat. Když kouzlo sešleš, ozve se z cíle hlasité zaklepání, slyšitelné až na 300 stop."
+ },
+ {
+  "key": "srd-2024_lesser-restoration",
+  "name": "Menší obnova",
+  "text": "Dotkneš se tvora a ukončíš na něm jeden stav: oslepený, ohlušený, ochromený nebo otrávený."
+ },
+ {
+  "key": "srd-2024_levitate",
+  "name": "Levitace",
+  "text": "Jeden tvor nebo volný předmět podle tvé volby, který vidíš v dosahu, se svisle zvedne až o 20 stop a po dobu trvání tam zůstane viset. Kouzlo dokáže zvednout předmět vážící až 500 liber. Neochotný tvor, který uspěje v záchranném hodu na Odolnost, není ovlivněn. Cíl se může pohybovat jen odstrkováním nebo přitahováním o pevný předmět či povrch na dosah (například stěnu nebo strop), což mu umožní pohybovat se jako při šplhání. Ve svém tahu můžeš výšku cíle změnit až o 20 stop nahoru či dolů. Pokud jsi cílem ty, můžeš se v rámci svého pohybu posunout nahoru nebo dolů. Jinak můžeš cílem pohnout akcí Magie; cíl přitom musí zůstat v dosahu kouzla. Když kouzlo skončí a cíl je stále ve vzduchu, pomalu se snese k zemi.",
+  "material": "kovová pružina"
+ },
+ {
+  "key": "srd-2024_light",
+  "name": "Světlo",
+  "text": "Dotkneš se jednoho velkého nebo menšího předmětu, který nikdo jiný nemá na sobě ani nenese. Dokud kouzlo neskončí, vydává předmět jasné světlo v okruhu 20 stop a šero v dalších 20 stopách. Světlo může mít libovolnou barvu. Zakrytí předmětu něčím neprůhledným světlo zablokuje. Kouzlo skončí, pokud ho sešleš znovu.",
+  "material": "světluška nebo světélkující mech"
+ },
+ {
+  "key": "srd-2024_lightning-bolt",
+  "name": "Blesk",
+  "text": "Z tebe vyšlehne ve zvoleném směru blesk ve tvaru linie dlouhé 100 stop a široké 5 stop. Každý tvor v linii si hází záchranný hod na Obratnost; při neúspěchu utrpí 8k6 bleskového zranění, při úspěchu poloviční zranění.",
+  "higher": "Za každou úroveň pozice kouzla nad 3 se zranění zvýší o 1k6.",
+  "material": "kousek kožešiny a křišťálová tyčinka"
+ },
+ {
+  "key": "srd-2024_locate-animals-or-plants",
+  "name": "Nalezení zvířat či rostlin",
+  "text": "Popiš nebo pojmenuj konkrétní druh zvířete, rostlinného tvora nebo nemagické rostliny. Zjistíš směr a vzdálenost k nejbližšímu tvoru nebo rostlině toho druhu do 5 mil, pokud nějaký poblíž je.",
+  "material": "srst svatohubertského psa"
+ },
+ {
+  "key": "srd-2024_locate-object",
+  "name": "Nalezení předmětu",
+  "text": "Popiš nebo pojmenuj předmět, který znáš. Vycítíš směr k místu, kde předmět je, pokud je do 1 000 stop od tebe. Pokud je předmět v pohybu, znáš směr jeho pohybu. Kouzlo dokáže najít konkrétní předmět, který znáš, pokud jsi ho aspoň jednou viděl zblízka (do 30 stop). Případně dokáže najít nejbližší předmět určitého druhu, třeba určitý druh oblečení, šperku, nábytku, nástroje nebo zbraně. Kouzlo předmět nenajde, pokud přímou cestu mezi tebou a předmětem blokuje olovo jakékoli tloušťky.",
+  "material": "rozvětvená větvička"
+ },
+ {
+  "key": "srd-2024_longstrider",
+  "name": "Dlouhý krok",
+  "text": "Dotkneš se tvora. Rychlost cíle se zvýší o 10 stop, dokud kouzlo neskončí.",
+  "higher": "Za každou úroveň pozice kouzla nad 1 můžeš zacílit jednoho dalšího tvora.",
+  "material": "špetka hlíny"
+ },
+ {
+  "key": "srd-2024_mage-armor",
+  "name": "Mágova zbroj",
+  "text": "Dotkneš se ochotného tvora, který nemá na sobě zbroj. Dokud kouzlo neskončí, je základní TZ cíle 13 plus jeho modifikátor Obratnosti. Kouzlo skončí předčasně, pokud si cíl oblékne zbroj.",
+  "material": "kousek vydělané kůže"
+ },
+ {
+  "key": "srd-2024_mage-hand",
+  "name": "Mágova ruka",
+  "text": "V bodě, který zvolíš v dosahu, se objeví přízračná vznášející se ruka. Ruka vydrží po dobu trvání. Ruka zmizí, pokud se kdykoli ocitne víc než 30 stop od tebe nebo pokud kouzlo sešleš znovu. Když kouzlo sešleš, můžeš rukou manipulovat s předmětem, otevřít nezamčené dveře nebo nádobu, uložit předmět do otevřené nádoby nebo ho z ní vyndat, nebo vylít obsah lahvičky. Akcí Magie ve svých dalších tazích můžeš ruku takto ovládat znovu. V rámci této akce můžeš ruku přesunout až o 30 stop. Ruka nemůže útočit, aktivovat kouzelné předměty ani nést víc než 10 liber."
+ },
+ {
+  "key": "srd-2024_magic-circle",
+  "name": "Magický kruh",
+  "text": "Vytvoříš válec magické energie o poloměru 10 stop a výšce 20 stop se středem v bodě na zemi, který vidíš v dosahu. Všude, kde válec protíná podlahu nebo jiný povrch, se objeví zářící runy. Zvol jeden nebo více z těchto typů tvorů: nebešťané, elementálové, víly, běsi nebo nemrtví. Kruh působí na tvora zvoleného typu takto:\n\n- Tvor nemůže dobrovolně vstoupit do válce nemagickými prostředky. Pokud se o to pokusí teleportací nebo mezisférickým cestováním, musí nejdřív uspět v záchranném hodu na Charismu.\n- Tvor má nevýhodu k hodům na útok proti cílům uvnitř válce.\n- Cíle uvnitř válce nemůže tvor posednout ani je učinit okouzlenými nebo vystrašenými. Pokaždé, když toto kouzlo sešleš, můžeš jeho magii obrátit: zabrání pak tvorovi zvoleného typu válec opustit a chrání cíle mimo něj.",
+  "higher": "Doba trvání se zvýší o 1 hodinu za každou úroveň pozice kouzla nad 3.",
+  "material": "sůl a stříbrný prach v hodnotě 100+ zl, které kouzlo spotřebuje",
+  "poznamka": "Celestials / Elementals / Fey / Fiends / Undead = nebešťané / elementálové / víly / běsi / nemrtví"
+ },
+ {
+  "key": "srd-2024_magic-missile",
+  "name": "Magická střela",
+  "text": "Vytvoříš tři zářící šipky magické síly. Každá šipka zasáhne tvora podle tvé volby, kterého vidíš v dosahu. Šipka způsobí svému cíli 1k4 + 1 silového zranění. Všechny šipky zasáhnou současně a můžeš je namířit na jednoho tvora nebo na několik.",
+  "higher": "Kouzlo vytvoří o jednu šipku víc za každou úroveň pozice kouzla nad 1."
+ },
+ {
+  "key": "srd-2024_magic-mouth",
+  "name": "Magická ústa",
+  "text": "Vložíš do předmětu v dosahu zprávu, která zazní, když se splní spouštěcí podmínka. Zvol předmět, který vidíš a který nemá na sobě ani nenese jiný tvor. Pak vyslov zprávu, která smí mít nejvýš 25 slov, ale její přednes může trvat až 10 minut. Nakonec urči okolnost, která kouzlo spustí, aby zprávu předalo. Když spouštěč nastane, objeví se na předmětu magická ústa a odříkají zprávu tvým hlasem a stejně hlasitě, jako jsi mluvil ty. Pokud má zvolený předmět ústa nebo něco, co ústa připomíná (třeba ústa sochy), objeví se magická ústa tam, takže slova zdánlivě vycházejí z úst předmětu. Při seslání kouzla můžeš určit, že kouzlo po předání zprávy skončí, nebo že zůstane a zopakuje zprávu pokaždé, když spouštěč nastane. Spouštěč může být tak obecný nebo podrobný, jak chceš, musí však vycházet z viditelných nebo slyšitelných podmínek, které nastanou do 30 stop od předmětu. Můžeš například ústům nařídit, aby promluvila, když se kterýkoli tvor přiblíží do 30 stop od předmětu, nebo když do 30 stop od něj zazvoní stříbrný zvonek.",
+  "material": "jadeitový prach v hodnotě 10+ zl, který kouzlo spotřebuje"
+ },
+ {
+  "key": "srd-2024_magic-weapon",
+  "name": "Magická zbraň",
+  "text": "Dotkneš se nemagické zbraně. Dokud kouzlo neskončí, stane se ta zbraň magickou zbraní s bonusem +1 k hodům na útok a na zranění. Kouzlo skončí předčasně, pokud ho sešleš znovu.",
+  "higher": "S pozicí kouzla 3.–5. úrovně se bonus zvýší na +2. S pozicí kouzla 6.+ úrovně se bonus zvýší na +3."
+ },
+ {
+  "key": "srd-2024_major-image",
+  "name": "Velký přelud",
+  "text": "Vytvoříš obraz předmětu, tvora nebo jiného viditelného jevu, který není větší než 20stopá krychle. Obraz se objeví na místě, které vidíš v dosahu, a vydrží po dobu trvání. Působí skutečně, včetně zvuků, pachů a teploty odpovídajících zobrazené věci, ale nemůže způsobit zranění ani stavy. Pokud jsi v dosahu iluze, můžeš akcí Magie přesunout obraz na jakékoli jiné místo v dosahu. Když obraz mění polohu, můžeš měnit jeho vzhled tak, aby jeho pohyby vypadaly přirozeně. Pokud například vytvoříš obraz tvora a pohneš s ním, můžeš obraz upravit tak, aby to vypadalo, že kráčí. Podobně můžeš iluzi nechat v různých chvílích vydávat různé zvuky, a dokonce ji nechat vést rozhovor. Fyzický kontakt s obrazem prozradí, že jde o iluzi, protože věci jím procházejí. Tvor, který použije akci Zkoumání k prohlédnutí obrazu, může úspěšným ověřením Inteligence (Pátrání) proti tvému SO záchrany proti kouzlu zjistit, že jde o iluzi. Pokud tvor iluzi prohlédne, vidí skrz obraz a jeho ostatní smyslové vlastnosti pro něj zeslábnou.",
+  "higher": "Pokud kouzlo sešleš z pozice kouzla 4.+ úrovně, trvá, dokud není rozptýleno, a nevyžaduje soustředění.",
+  "material": "kousek rouna"
+ },
+ {
+  "key": "srd-2024_mass-healing-word",
+  "name": "Hromadné léčivé slovo",
+  "text": "Až šest tvorů podle tvé volby, které vidíš v dosahu, si obnoví životy v hodnotě 2k4 plus modifikátor tvé sesílací vlastnosti.",
+  "higher": "Léčení se zvýší o 1k4 za každou úroveň pozice kouzla nad 3."
+ },
+ {
+  "key": "srd-2024_meld-into-stone",
+  "name": "Splynutí s kamenem",
+  "text": "Vstoupíš do kamenného předmětu nebo povrchu dost velkého, aby pojal celé tvé tělo, a po dobu trvání s kamenem splyneš i se svou výbavou. Musíš se přitom kamene dotýkat. Nic z tvé přítomnosti nezůstane viditelné ani jinak odhalitelné nemagickými smysly. Dokud jsi s kamenem splynutý, nevidíš, co se děje venku, a ověření Moudrosti (Vnímání), kterými se snažíš slyšet zvuky zvenčí, házíš s nevýhodou. Stále vnímáš plynutí času a můžeš na sebe sesílat kouzla. Za 5 stop pohybu můžeš kámen opustit tam, kudy jsi vstoupil, čímž kouzlo skončí. Jinak se pohybovat nemůžeš. Drobné fyzické poškození kamene ti neublíží, ale jeho částečné zničení nebo změna tvaru (tak, že se do něj už nevejdeš) tě vypudí ven a způsobí ti 6k6 silového zranění. Úplné zničení kamene (nebo jeho přeměna v jinou látku) tě vypudí ven a způsobí ti 50 silového zranění. Když jsi vypuzen, přesuneš se na neobsazené místo nejblíže tomu, kudy jsi původně vstoupil, a získáš stav ležící."
+ },
+ {
+  "key": "srd-2024_mending",
+  "name": "Oprava",
+  "text": "Toto kouzlo opraví jediný lom nebo trhlinu předmětu, jehož se dotkneš, například prasklý článek řetězu, dvě poloviny zlomeného klíče, roztržený plášť nebo děravý měch na víno. Pokud lom nebo trhlina není v žádném rozměru větší než 1 stopa, opravíš ji tak, že po původním poškození nezůstane ani památka. Toto kouzlo dokáže fyzicky opravit kouzelný předmět, ale nedokáže takovému předmětu vrátit magii.",
+  "material": "dva magnetovce"
+ },
+ {
+  "key": "srd-2024_message",
+  "name": "Zpráva",
+  "text": "Ukážeš na tvora v dosahu a zašeptáš zprávu. Cíl (a jen cíl) zprávu slyší a může odpovědět šepotem, který slyšíš jen ty. Toto kouzlo můžeš seslat i skrz pevné předměty, pokud cíl znáš a víš, že je za překážkou. Kouzlo blokuje magické ticho, 1 stopa kamene, kovu nebo dřeva nebo tenký plát olova.",
+  "material": "měděný drátek"
+ },
+ {
+  "key": "srd-2024_mind-spike",
+  "name": "Mentální bodnutí",
+  "text": "Vrazíš hrot psionické energie do mysli jednoho tvora v dosahu, kterého vidíš. Cíl hází záchranný hod na Moudrost. Při neúspěchu utrpí 3k8 psychického zranění, při úspěchu poloviční. Při neúspěchu navíc až do konce kouzla vždy znáš polohu cíle, ale jen dokud jste oba na stejné sféře bytí. Dokud tuto znalost máš, cíl se před tebou nemůže skrýt, a pokud je neviditelný, nemá z tohoto stavu proti tobě žádný užitek.",
+  "higher": "Zranění se zvýší o 1k8 za každou úroveň pozice kouzla nad 2."
+ },
+ {
+  "key": "srd-2024_minor-illusion",
+  "name": "Malá iluze",
+  "text": "Vytvoříš v dosahu zvuk nebo obraz předmětu, který vydrží po dobu trvání. Účinky obou najdeš v popisech níže. Iluze skončí, pokud kouzlo sešleš znovu. Pokud tvor provede akci Zkoumání, aby zvuk nebo obraz prozkoumal, může úspěšným ověřením Inteligence (Pátrání) proti tvému SO záchrany proti kouzlu zjistit, že jde o iluzi. Pokud tvor iluzi prohlédne, stane se pro něj iluze nezřetelnou.\n\n**_Zvuk._** Pokud vytvoříš zvuk, jeho hlasitost může sahat od šepotu po křik. Může to být tvůj hlas, hlas někoho jiného, lví řev, bubnování nebo jakýkoli jiný zvuk, který zvolíš. Zvuk může znít nepřetržitě po celou dobu trvání, nebo můžeš vydávat jednotlivé zvuky v různých chvílích, než kouzlo skončí.\n\n**_Obraz._** Pokud vytvoříš obraz předmětu (například židle, zablácených stop nebo malé truhly), nesmí být větší než 5stopá krychle. Obraz nemůže vytvářet zvuk, světlo, pach ani žádný jiný smyslový vjem. Fyzický kontakt s obrazem odhalí, že jde o iluzi, protože věci jím procházejí.",
+  "material": "kousek ovčí vlny",
+  "poznamka": "Study action → akce Zkoumání"
+ },
+ {
+  "key": "srd-2024_mirror-image",
+  "name": "Zrcadlový obraz",
+  "text": "Ve tvém prostoru se objeví tři iluzorní dvojníci. Dokud kouzlo neskončí, dvojníci se pohybují s tebou, napodobují tvé činy a střídají pozice, takže nelze sledovat, který obraz je skutečný. Pokaždé, když tě během trvání kouzla nějaký tvor zasáhne hodem na útok, hoď k6 za každého zbývajícího dvojníka. Pokud na kterékoli k6 padne 3 nebo víc, je místo tebe zasažen jeden z dvojníků a ten je zničen. Jiné zranění a účinky dvojníci jinak ignorují. Kouzlo skončí, když jsou zničeni všichni tři dvojníci. Na tvora nemá kouzlo vliv, pokud je oslepený nebo má slepecké vnímání či pravé vidění.",
+  "poznamka": "Blindsight = slepecké vnímání; Truesight = pravé vidění"
+ },
+ {
+  "key": "srd-2024_misty-step",
+  "name": "Mlžný krok",
+  "text": "Nakrátko tě obklopí stříbřitá mlha a teleportuješ se až o 30 stop na neobsazené místo, které vidíš."
+ },
+ {
+  "key": "srd-2024_moonbeam",
+  "name": "Měsíční paprsek",
+  "text": "Když se válec objeví, každý tvor v něm si hází záchranný hod na Odolnost. Při neúspěchu tvor utrpí 2k10 zářivého zranění, a pokud má změněnou podobu (například v důsledku kouzla _Proměna_), vrátí se do své pravé podoby a nemůže měnit podobu, dokud válec neopustí. Při úspěchu tvor utrpí jen poloviční zranění. Tvor si tento záchranný hod hází také tehdy, když se oblast kouzla přesune na jeho místo, a když do oblasti kouzla vstoupí nebo v ní ukončí svůj tah. Tvor si tento záchranný hod hází jen jednou za tah.",
+  "higher": "Za každou úroveň pozice kouzla nad 2 se zranění zvýší o 1k10.",
+  "material": "list lunoplodu"
+ },
+ {
+  "key": "srd-2024_nondetection",
+  "name": "Neodhalitelnost",
+  "text": "Po dobu trvání skryješ cíl, kterého se dotkneš, před věšteckými kouzly. Cílem může být ochotný tvor, nebo místo či předmět, jehož žádný rozměr nepřesahuje 10 stop. Cíl nemůže být zaměřen žádným věšteckým kouzlem ani vnímán prostřednictvím magických věšteckých senzorů.",
+  "material": "špetka diamantového prachu v hodnotě 25+ zl, kterou kouzlo spotřebuje"
+ },
+ {
+  "key": "srd-2024_pass-without-trace",
+  "name": "Průchod beze stopy",
+  "text": "Po dobu trvání z tebe vyzařuje zastírací aura ve 30stopé emanaci. Dokud jste v auře, ty i každý tvor, kterého zvolíš, máte bonus +10 k ověřením Obratnosti (Nenápadnost) a nezanecháváte stopy.",
+  "material": "popel ze spáleného jmelí",
+  "poznamka": "Emanation = emanace"
+ },
+ {
+  "key": "srd-2024_phantasmal-force",
+  "name": "Přízračná síla",
+  "text": "Pokusíš se vytvořit iluzi v mysli tvora, kterého vidíš v dosahu. Cíl si hází záchranný hod na Inteligenci. Při neúspěchu vytvoříš přízračný předmět, tvora nebo jiný jev, který není větší než 10stopá krychle a který po dobu trvání vnímá jen cíl. Přelud zahrnuje zvuk, teplotu a další podněty. Cíl může provést akci Zkoumání a prozkoumat přelud ověřením Inteligence (Pátrání) proti tvému SO záchrany proti kouzlu. Pokud ověření uspěje, cíl si uvědomí, že přelud je iluze, a kouzlo skončí. Dokud je cíl pod vlivem kouzla, považuje přelud za skutečný a jakékoli nelogické výsledky interakce s ním si rozumově vysvětlí. Pokud například cíl šlápne na přízračný most, propadne jím a pád přežije, věří, že most existuje a pád způsobilo něco jiného. Ovlivněný cíl může od iluze dokonce utrpět zranění, pokud přelud představuje nebezpečného tvora nebo nástrahu. V každém tvém tahu může takový přelud cíli způsobit 2k8 psychického zranění, pokud je cíl v oblasti přeludu nebo do 5 stop od něj. Cíl vnímá zranění jako typ odpovídající iluzi.",
+  "material": "kousek ovčí vlny"
+ },
+ {
+  "key": "srd-2024_phantom-steed",
+  "name": "Přízračný oř",
+  "text": "Na zemi na neobsazeném místě podle tvé volby v dosahu se objeví velký, polohmotný tvor podobný koni. Vzhled tvora určíš ty a je vybaven sedlem, udidlem a uzdou. Jakékoli vybavení vytvořené kouzlem zmizí v obláčku dýmu, pokud je odneseno dál než 10 stop od oře. Po dobu trvání můžeš na oři jezdit ty nebo tvor, kterého zvolíš. Oř používá statistiky jezdeckého koně (viz „Nestvůry“), jen má rychlost 100 stop a za hodinu urazí 13 mil. Když kouzlo skončí, oř postupně vybledne a jezdci dá 1 minutu na to, aby sesedl. Kouzlo skončí předčasně, pokud oř utrpí jakékoli zranění."
+ },
+ {
+  "key": "srd-2024_plant-growth",
+  "name": "Růst rostlin",
+  "text": "Toto kouzlo vlévá do rostlin životní sílu. Doba sesílání, kterou použiješ, určí, zda má kouzlo níže popsaný efekt Bujení, nebo Obohacení.\n\n**_Bujení._** Zvol bod v dosahu. Všechny běžné rostliny v kouli o poloměru 100 stop se středem v tomto bodě zhoustnou a zarostou. Tvor, který se pohybuje touto oblastí, musí utratit 4 stopy pohybu za každou 1 stopu, o kterou se posune. Z působení kouzla můžeš vyjmout jednu nebo více oblastí libovolné velikosti uvnitř oblasti kouzla.\n\n**_Obohacení._** Všechny rostliny v okruhu půl míle se středem v bodě v dosahu jsou na 365 dní obohaceny. Při sklizni dají dvojnásobné množství potravy. Mohou mít užitek jen z jednoho kouzla _Růst rostlin_ za rok."
+ },
+ {
+  "key": "srd-2024_poison-spray",
+  "name": "Jedová sprška",
+  "text": "Vystříkneš na tvora v dosahu jedovatou mlhu. Proveď proti cíli útok kouzlem na dálku. Při zásahu cíl utrpí 1k12 jedového zranění.",
+  "higher": "Zranění se zvýší o 1k12, když dosáhneš 5. úrovně (2k12), 11. úrovně (3k12) a 17. úrovně (4k12)."
+ },
+ {
+  "key": "srd-2024_prayer-of-healing",
+  "name": "Modlitba za uzdravení",
+  "text": "Až pět tvorů podle tvé volby, kteří zůstanou v dosahu po celou dobu sesílání kouzla, získá výhody krátkého odpočinku a navíc si obnoví 2k8 životů. Tvor nemůže být tímto kouzlem znovu ovlivněn, dokud nedokončí dlouhý odpočinek.",
+  "higher": "Léčení se zvýší o 1k8 za každou úroveň pozice kouzla nad 2."
+ },
+ {
+  "key": "srd-2024_prestidigitation",
+  "name": "Kouzelnické kousky",
+  "text": "Vytvoříš v dosahu magický účinek. Zvol účinek z níže uvedených možností. Sešleš-li toto kouzlo vícekrát, můžeš mít současně aktivní až tři jeho neokamžité účinky.\n\n**_Smyslový účinek._** Vytvoříš okamžitý, neškodný smyslový účinek, například spršku jisker, závan větru, tiché hudební tóny nebo zvláštní pach.\n\n**_Hra s ohněm._** Okamžitě zapálíš nebo uhasíš svíčku, pochodeň nebo malý táborák.\n\n**_Čištění či špinění._** Okamžitě vyčistíš nebo ušpiníš předmět ne větší než 1 krychlová stopa.\n\n**_Drobný vjem._** Na 1 hodinu ochladíš, zahřeješ nebo ochutíš až 1 krychlovou stopu neživého materiálu.\n\n**_Magická značka._** Na 1 hodinu necháš na předmětu nebo povrchu objevit barvu, malou značku nebo symbol.\n\n**_Drobný výtvor._** Vytvoříš nemagickou cetku nebo iluzorní obraz, který se vejde do tvé dlaně. Vydrží do konce tvého příštího tahu. Cetka nemůže způsobit žádné zranění a nemá žádnou peněžní hodnotu."
+ },
+ {
+  "key": "srd-2024_produce-flame",
+  "name": "Vytvoření plamene",
+  "text": "V tvé ruce se objeví mihotavý plamen a zůstane tam po dobu trvání. Dokud tam je, plamen nevydává žádné teplo a nic nezapálí; vydává jasné světlo v okruhu 20 stop a šero v dalších 20 stopách. Kouzlo skončí, pokud ho sešleš znovu. Dokud kouzlo neskončí, můžeš provést akci Magie a mrštit oheň na tvora nebo předmět do 60 stop od sebe. Proveď útok kouzlem na dálku. Při zásahu cíl utrpí 1k8 ohnivého zranění.",
+  "higher": "Zranění se zvýší o 1k8, když dosáhneš úrovně 5 (2k8), 11 (3k8) a 17 (4k8)."
+ },
+ {
+  "key": "srd-2024_protection-from-energy",
+  "name": "Ochrana před energií",
+  "text": "Po dobu trvání má ochotný tvor, kterého se dotkneš, rezistenci vůči jednomu typu zranění podle tvé volby: kyselinovému, chladnému, ohnivému, bleskovému nebo hromovému."
+ },
+ {
+  "key": "srd-2024_protection-from-evil-and-good",
+  "name": "Ochrana před zlem a dobrem",
+  "text": "Dokud kouzlo neskončí, je jeden ochotný tvor, kterého se dotkneš, chráněn před tvory, kteří jsou zrůdy, nebešťané, elementálové, víly, běsové nebo nemrtví. Ochrana přináší několik přínosů. Tvorové těchto typů mají při hodech na útok proti cíli nevýhodu. Cíl také nemůže být jimi posednut ani od nich získat stav okouzlený či vystrašený. Pokud je cíl již takovým tvorem posednut, okouzlen nebo vystrašen, má výhodu při každém novém záchranném hodu proti příslušnému účinku.",
+  "material": "lahvička svěcené vody v hodnotě 25+ zl, kterou kouzlo spotřebuje",
+  "poznamka": "Typy tvorů: Aberration = zrůda, Celestial = nebešťan, Elemental = elementál, Fey = víla, Fiend = běs (nejsou ve slovníku)"
+ },
+ {
+  "key": "srd-2024_protection-from-poison",
+  "name": "Ochrana před jedem",
+  "text": "Dotkneš se tvora a ukončíš na něm stav otrávený. Po dobu trvání má cíl výhodu k záchranným hodům, jimiž se vyhýbá stavu otrávený nebo ho ukončuje, a má rezistenci vůči jedovému zranění."
+ },
+ {
+  "key": "srd-2024_purify-food-and-drink",
+  "name": "Očištění jídla a pití",
+  "text": "Odstraníš jed a hnilobu z nemagického jídla a pití v kouli o poloměru 5 stop se středem v bodě v dosahu."
+ },
+ {
+  "key": "srd-2024_ray-of-enfeeblement",
+  "name": "Paprsek oslabení",
+  "text": "Z tebe vyšlehne paprsek vysilující energie k tvorovi v dosahu. Cíl si musí hodit záchranný hod na Odolnost. Při úspěchu má nevýhodu k příštímu hodu na útok, který provede do začátku tvého příštího tahu. Při neúspěchu má po dobu trvání nevýhodu k testům k20 založeným na Síle. Po tuto dobu si také od všech svých hodů na zranění odečítá 1k8. Cíl záchranný hod opakuje na konci každého svého tahu a při úspěchu kouzlo skončí."
+ },
+ {
+  "key": "srd-2024_ray-of-frost",
+  "name": "Mrazivý paprsek",
+  "text": "K tvorovi v dosahu vyrazí ledový paprsek modrobílého světla. Proveď proti cíli útok kouzlem na dálku. Při zásahu cíl utrpí 1k8 chladného zranění a jeho rychlost se do začátku tvého příštího tahu sníží o 10 stop.",
+  "higher": "Zranění se zvýší o 1k8, když dosáhneš úrovně 5 (2k8), 11 (3k8) a 17 (4k8)."
+ },
+ {
+  "key": "srd-2024_ray-of-sickness",
+  "name": "Paprsek nevolnosti",
+  "text": "Vystřelíš na tvora v dosahu nazelenalý paprsek. Proveď proti cíli útok kouzlem na dálku. Při zásahu cíl utrpí 2k8 jedového zranění a má do konce tvého příštího tahu stav otrávený.",
+  "higher": "Za každou úroveň pozice kouzla nad 1 se zranění zvýší o 1k8."
+ },
+ {
+  "key": "srd-2024_remove-curse",
+  "name": "Sejmutí kletby",
+  "text": "Tvým dotykem skončí všechny kletby, které působí na jednoho tvora nebo předmět. Pokud je předmětem prokletý magický předmět, jeho kletba zůstane, ale kouzlo zruší sladění jeho majitele s předmětem, takže ho lze sundat nebo odhodit.",
+  "poznamka": "Attunement = sladění"
+ },
+ {
+  "key": "srd-2024_resistance",
+  "name": "Odolání",
+  "text": "Dotkneš se ochotného tvora a zvolíš typ zranění: kyselinové, drtivé, chladné, ohnivé, bleskové, nekrotické, bodné, jedové, zářivé, sečné nebo hromové. Když tvor utrpí zranění zvoleného typu, než kouzlo skončí, sníží celkové utrpěné zranění o 1k4. Tvor může z tohoto kouzla těžit jen jednou za tah."
+ },
+ {
+  "key": "srd-2024_revivify",
+  "name": "Oživení",
+  "text": "Dotkneš se tvora, který zemřel během poslední minuty. Tento tvor ožije s 1 životem. Toto kouzlo nedokáže oživit tvora, který zemřel stářím, ani neobnoví chybějící části těla.",
+  "material": "diamant v hodnotě 300+ zl, který kouzlo spotřebuje"
+ },
+ {
+  "key": "srd-2024_rope-trick",
+  "name": "Provazový trik",
+  "text": "Dotkneš se lana. Jeden jeho konec se vznese vzhůru, až lano visí kolmo k zemi nebo dosáhne stropu. Na horním konci lana se otevře neviditelný portál o rozměrech 3 × 5 stop do mimodimenzionálního prostoru, který trvá, dokud kouzlo neskončí. Do prostoru se lze dostat vyšplháním po laně, které lze do prostoru vtáhnout nebo z něj spustit. Prostor pojme až osm středních nebo menších tvorů. Útoky, kouzla a jiné účinky nemohou do prostoru proniknout ani z něj ven, ale tvorové uvnitř vidí skrz portál ven. Cokoli je uvnitř, když kouzlo skončí, z prostoru vypadne.",
+  "material": "kus lana"
+ },
+ {
+  "key": "srd-2024_sacred-flame",
+  "name": "Posvátný plamen",
+  "text": "Na tvora, kterého vidíš v dosahu, se snese záře podobná plameni. Cíl musí uspět v záchranném hodu na Obratnost, jinak utrpí 1k8 zářivého zranění. Při tomto záchranném hodu cíl nezíská žádný užitek z polovičního ani tříčtvrtinového krytu.",
+  "higher": "Zranění se zvýší o 1k8, když dosáhneš 5. úrovně (2k8), 11. úrovně (3k8) a 17. úrovně (4k8)."
+ },
+ {
+  "key": "srd-2024_sanctuary",
+  "name": "Útočiště",
+  "text": "Ochráníš tvora v dosahu. Dokud kouzlo neskončí, každý tvor, který chráněného tvora zaměří hodem na útok nebo zraňujícím kouzlem, musí uspět v záchranném hodu na Moudrost, jinak musí buď zvolit nový cíl, nebo o útok či kouzlo přijde. Toto kouzlo nechrání chráněného tvora před plošnými účinky. Kouzlo skončí, pokud chráněný tvor provede hod na útok, sešle kouzlo nebo způsobí zranění.",
+  "material": "střep zrcadla"
+ },
+ {
+  "key": "srd-2024_scorching-ray",
+  "name": "Spalující paprsek",
+  "text": "Vrhneš tři ohnivé paprsky. Můžeš je vrhnout na jeden cíl v dosahu, nebo na několik. Za každý paprsek proveď útok kouzlem na dálku. Při zásahu cíl utrpí 2k6 ohnivého zranění.",
+  "higher": "Za každou úroveň pozice kouzla nad 2 vytvoříš jeden paprsek navíc."
+ },
+ {
+  "key": "srd-2024_searing-smite",
+  "name": "Spalující úder",
+  "text": "Když cíl zasáhneš, utrpí z útoku navíc 1k6 ohnivého zranění. Na začátku každého svého tahu, dokud kouzlo neskončí, cíl utrpí 1k6 ohnivého zranění a pak hází záchranný hod na Odolnost. Při neúspěchu kouzlo pokračuje. Při úspěchu kouzlo skončí.",
+  "higher": "Veškeré zranění se zvýší o 1k6 za každou úroveň pozice kouzla nad 1."
+ },
+ {
+  "key": "srd-2024_see-invisibility",
+  "name": "Vidění neviditelného",
+  "text": "Po dobu trvání vidíš tvory a předměty se stavem neviditelný, jako by byly viditelné, a vidíš do Éterické sféry. Tvorové a předměty v ní vypadají jako přízraky.",
+  "material": "špetka mastku"
+ },
+ {
+  "key": "srd-2024_sending",
+  "name": "Poselství",
+  "text": "Pošleš krátkou zprávu o nejvýš 25 slovech tvorovi, se kterým ses setkal, nebo tvorovi, kterého ti popsal někdo, kdo se s ním setkal. Cíl zprávu uslyší ve své mysli, pozná tě jako odesílatele, pokud tě zná, a může stejným způsobem okamžitě odpovědět. Kouzlo umožní cílům porozumět významu tvé zprávy. Zprávu můžeš poslat na jakoukoli vzdálenost, dokonce i na jiné sféry bytí, ale pokud je cíl na jiné sféře než ty, je šance 5 %, že zpráva nedorazí. Pokud doručení selže, víš o tom. Po přijetí tvé zprávy může tvor na 8 hodin zablokovat tvou možnost ho tímto kouzlem znovu zastihnout. Pokud se během té doby pokusíš poslat další zprávu, zjistíš, že jsi zablokovaný, a kouzlo selže.",
+  "material": "měděný drátek"
+ },
+ {
+  "key": "srd-2024_shatter",
+  "name": "Roztříštění",
+  "text": "Z bodu v dosahu podle tvé volby vybuchne hlasitý rámus. Každý tvor v kouli o poloměru 10 stop se středem v tom bodě hází záchranný hod na Odolnost. Při neúspěchu utrpí 3k8 hromového zranění, při úspěchu poloviční. Konstrukt má k tomuto záchrannému hodu nevýhodu. Nemagický předmět, který nikdo nemá na sobě ani ho nenese, utrpí zranění také, pokud je v oblasti kouzla.",
+  "higher": "Zranění se zvýší o 1k8 za každou úroveň pozice kouzla nad 2.",
+  "material": "úlomek slídy"
+ },
+ {
+  "key": "srd-2024_shield",
+  "name": "Štít",
+  "text": "Chrání tě neviditelná bariéra magické síly. Do začátku svého příštího tahu máš bonus +5 k TZ, i proti útoku, který kouzlo spustil, a neutrpíš žádné zranění od kouzla _Magická střela_."
+ },
+ {
+  "key": "srd-2024_shield-of-faith",
+  "name": "Štít víry",
+  "text": "Tvora podle tvé volby v dosahu obklopí třpytivé pole, které mu po dobu trvání dává bonus +2 k TZ.",
+  "material": "svitek s modlitbou"
+ },
+ {
+  "key": "srd-2024_shillelagh",
+  "name": "Šilelagh",
+  "text": "Kyj nebo hůl ve tvé ruce se naplní silou přírody. Po dobu trvání můžeš u hodů na útok a na zranění při útocích na blízko touto zbraní používat místo Síly svou sesílací vlastnost a kostka zranění zbraně se změní na k8. Pokud útok způsobí zranění, může jít o silové zranění nebo o běžný typ zranění zbraně (podle tvé volby). Kouzlo skončí předčasně, pokud ho sešleš znovu nebo pokud zbraň pustíš.",
+  "higher": "Kostka zranění se změní, když dosáhneš úrovně 5 (k10), 11 (k12) a 17 (2k6).",
+  "material": "jmelí"
+ },
+ {
+  "key": "srd-2024_shining-smite",
+  "name": "Zářivý úder",
+  "text": "Cíl zasažený úderem utrpí z útoku navíc 2k6 zářivého zranění. Dokud kouzlo neskončí, cíl vrhá jasné světlo v poloměru 5 stop, hody na útok proti němu mají výhodu a nemůže těžit ze stavu neviditelný.",
+  "higher": "Zranění se zvýší o 1k6 za každou úroveň pozice kouzla nad 2."
+ },
+ {
+  "key": "srd-2024_shocking-grasp",
+  "name": "Elektrizující sevření",
+  "text": "Z tebe vyšlehne blesk k tvorovi, kterého se snažíš dotknout. Proveď proti cíli útok kouzlem na blízko. Při zásahu cíl utrpí 1k8 bleskového zranění a až do začátku svého příštího tahu nemůže provádět příležitostné útoky.",
+  "higher": "Zranění se zvýší o 1k8, když dosáhneš 5. úrovně (2k8), 11. úrovně (3k8) a 17. úrovně (4k8)."
+ },
+ {
+  "key": "srd-2024_silence",
+  "name": "Ticho",
+  "text": "Po dobu trvání nemůže v kouli o poloměru 20 stop se středem v bodě v dosahu, který zvolíš, vzniknout žádný zvuk ani jí žádný zvuk projít. Každý tvor nebo předmět celý uvnitř koule má imunitu vůči hromovému zranění a tvorové celí uvnitř ní jsou ohlušení. Sesílat tam kouzla s verbální složkou je nemožné."
+ },
+ {
+  "key": "srd-2024_silent-image",
+  "name": "Tichý přelud",
+  "text": "Vytvoříš obraz předmětu, tvora nebo jiného viditelného jevu, který není větší než 15stopá krychle. Obraz se objeví na místě v dosahu a vydrží po dobu trvání. Obraz je čistě vizuální; nedoprovází ho zvuk, pach ani jiné smyslové účinky. Akcí Magie můžeš přesunout obraz na jakékoli místo v dosahu. Když obraz mění polohu, můžeš měnit jeho vzhled tak, aby jeho pohyby vypadaly přirozeně. Pokud například vytvoříš obraz tvora a pohneš s ním, můžeš obraz upravit tak, aby to vypadalo, že kráčí. Fyzický kontakt s obrazem prozradí, že jde o iluzi, protože věci jím procházejí. Tvor, který použije akci Zkoumání k prohlédnutí obrazu, může úspěšným ověřením Inteligence (Pátrání) proti tvému SO záchrany proti kouzlu zjistit, že jde o iluzi. Pokud tvor iluzi prohlédne, vidí skrz obraz.",
+  "material": "kousek rouna"
+ },
+ {
+  "key": "srd-2024_sleep",
+  "name": "Spánek",
+  "text": "Každý tvor podle tvé volby v kouli o poloměru 5 stop se středem v bodě v dosahu musí uspět v záchranném hodu na Moudrost, jinak je až do konce svého příštího tahu neschopný a pak musí záchranný hod zopakovat. Pokud cíl neuspěje ani podruhé, je po dobu trvání v bezvědomí. Kouzlo na cíli skončí, pokud utrpí zranění nebo pokud ho někdo do 5 stop od něj akcí probudí z účinku kouzla. Tvorové, kteří nespí, například elfové, nebo kteří mají imunitu vůči stavu vyčerpání, v záchranných hodech proti tomuto kouzlu automaticky uspějí.",
+  "material": "špetka písku nebo okvětních lístků růže"
+ },
+ {
+  "key": "srd-2024_sleet-storm",
+  "name": "Plískanice",
+  "text": "Dokud kouzlo neskončí, padá plískanice ve válci vysokém 40 stop o poloměru 20 stop se středem v bodě v dosahu podle tvé volby. Oblast je silně zastřená a nekryté plameny v ní zhasnou. Země ve válci je těžký terén. Když tvor poprvé za tah vstoupí do válce nebo v něm začne svůj tah, musí uspět v záchranném hodu na Obratnost, jinak získá stav ležící a ztratí soustředění.",
+  "material": "miniaturní deštník"
+ },
+ {
+  "key": "srd-2024_slow",
+  "name": "Zpomalení",
+  "text": "Změníš čas kolem až šesti tvorů podle tvé volby ve 40stopé krychli v dosahu. Každý cíl musí uspět v záchranném hodu na Moudrost, jinak je po dobu trvání ovlivněn tímto kouzlem. Ovlivněnému cíli se rychlost sníží na polovinu, má postih −2 k TZ a záchranným hodům na Obratnost a nemůže používat reakce. Ve svých tazích může použít buď akci, nebo bonusovou akci, ne obojí, a pokud použije akci Útok, může provést jen jeden útok. Pokud sesílá kouzlo s pohybovou složkou, je 25procentní šance, že kouzlo selže, protože cíl provádí gesta kouzla příliš pomalu. Ovlivněný cíl opakuje záchranný hod na konci každého svého tahu; při úspěchu kouzlo na sobě ukončí.",
+  "material": "kapka melasy"
+ },
+ {
+  "key": "srd-2024_sorcerous-burst",
+  "name": "Čarodějný výbuch",
+  "text": "Vrhneš čarodějnou energii na jednoho tvora nebo předmět v dosahu. Proveď útok kouzlem na dálku proti cíli. Při zásahu cíl utrpí 1k8 zranění typu podle tvé volby: kyselinové, chladné, ohnivé, bleskové, jedové, psychické nebo hromové. Pokud ti u tohoto kouzla padne 8 na k8, můžeš hodit další k8 a přičíst ji ke zranění. Při seslání kouzla se nejvyšší počet takových k8, které můžeš přičíst ke zranění kouzla, rovná modifikátoru tvé sesílací vlastnosti.",
+  "higher": "Zranění se zvýší o 1k8, když dosáhneš 5. úrovně (2k8), 11. úrovně (3k8) a 17. úrovně (4k8)."
+ },
+ {
+  "key": "srd-2024_spare-the-dying",
+  "name": "Ušetření umírajícího",
+  "text": "Zvol tvora v dosahu, který má 0 životů a není mrtvý. Tvor se stabilizuje.",
+  "higher": "Dosah se zdvojnásobí, když dosáhneš 5. úrovně (30 stop), 11. úrovně (60 stop) a 17. úrovně (120 stop)."
+ },
+ {
+  "key": "srd-2024_speak-with-animals",
+  "name": "Řeč se zvířaty",
+  "text": "Po dobu trvání rozumíš zvířatům a můžeš s nimi mluvit a můžeš na ně použít kteroukoli z dovednostních možností akce Ovlivnění. Většina zvířat nemá moc co říct k tématům, která se netýkají přežití nebo společnosti, ale přinejmenším ti zvíře může poskytnout informace o okolních místech a nestvůrách, včetně všeho, co vnímalo za poslední den.",
+  "poznamka": "Influence action = akce Ovlivnění; Beast = zvíře"
+ },
+ {
+  "key": "srd-2024_speak-with-dead",
+  "name": "Řeč s mrtvými",
+  "text": "Propůjčíš zdání života mrtvole podle své volby v dosahu, takže může odpovídat na otázky, které jí položíš. Mrtvola musí mít ústa a kouzlo selže, pokud byl zesnulý tvor v okamžiku smrti nemrtvý. Kouzlo selže také tehdy, pokud byla mrtvola cílem tohoto kouzla během posledních 10 dní. Dokud kouzlo neskončí, můžeš mrtvole položit až pět otázek. Mrtvola ví jen to, co věděla za života, včetně jazyků, které znala. Odpovědi bývají stručné, záhadné nebo se opakují a mrtvola není nijak nucena odpovídat pravdivě, pokud se k ní chováš nepřátelsky nebo tě poznává jako nepřítele. Toto kouzlo nevrací do těla duši tvora, jen jeho oživujícího ducha. Mrtvola se tedy nemůže dozvědět nové informace, nechápe nic z toho, co se stalo od její smrti, a nemůže spekulovat o budoucích událostech.",
+  "material": "hořící kadidlo"
+ },
+ {
+  "key": "srd-2024_speak-with-plants",
+  "name": "Řeč s rostlinami",
+  "text": "Rostlinám v nepohyblivé 30stopé emanaci propůjčíš omezené vědomí a oživení, takže s tebou mohou komunikovat a plnit tvé jednoduché příkazy. Můžeš se rostlin vyptávat na události v oblasti kouzla za poslední den a získat informace o tvorech, kteří tudy prošli, o počasí a dalších okolnostech. Můžeš také těžký terén způsobený růstem rostlin (například houštinami a podrostem) proměnit na běžný terén, který vydrží po dobu trvání. Nebo můžeš běžný terén, kde rostou rostliny, proměnit na těžký terén, který vydrží po dobu trvání. Kouzlo rostlinám neumožní vytrhnout se z půdy a pohybovat se, ale mohou kvůli tobě hýbat větvemi, úponky a stonky. Pokud je v oblasti tvor typu rostlina, můžeš s ním komunikovat, jako byste měli společný jazyk.",
+  "poznamka": "Difficult Terrain → obtížný terén"
+ },
+ {
+  "key": "srd-2024_spider-climb",
+  "name": "Pavoučí šplh",
+  "text": "Dokud kouzlo neskončí, získá jeden ochotný tvor, kterého se dotkneš, schopnost pohybovat se nahoru, dolů a napříč po svislých plochách i po stropech a ruce má přitom volné. Cíl také získá rychlost šplhání rovnou své rychlosti.",
+  "higher": "Můžeš zacílit na jednoho dalšího tvora za každou úroveň pozice kouzla nad 2.",
+  "material": "kapka asfaltu a pavouk"
+ },
+ {
+  "key": "srd-2024_spike-growth",
+  "name": "Trnitý porost",
+  "text": "Ze země v kouli o poloměru 20 stop se středem v bodě v dosahu vyraší tvrdé hroty a trny. Oblast se po dobu trvání stane těžkým terénem. Když tvor vstoupí do oblasti nebo se v ní pohybuje, utrpí 2k4 bodného zranění za každých 5 stop, které urazí. Proměna země je zamaskovaná, aby vypadala přirozeně. Každý tvor, který oblast při seslání kouzla nevidí, musí použít akci Hledání a uspět v ověření Moudrosti (Vnímání nebo Přežití) proti tvému SO záchrany proti kouzlu, aby terén před vstupem rozpoznal jako nebezpečný.",
+  "material": "sedm trnů",
+  "poznamka": "Difficult Terrain = těžký terén; Search action = akce Hledání"
+ },
+ {
+  "key": "srd-2024_spirit-guardians",
+  "name": "Duchovní strážci",
+  "text": "Po dobu trvání kolem tebe v 15stopé emanaci poletují ochranní duchové. Jsi-li dobrý nebo neutrální, jejich přízračná podoba vypadá jako andělé, nebo jako víly (podle tvé volby). Jsi-li zlý, vypadají ďábelsky. Při seslání kouzla můžeš určit tvory, na které nebude působit. Každému jinému tvoru se v emanaci sníží rychlost na polovinu, a kdykoli emanace vstoupí do prostoru tvora a kdykoli tvor vstoupí do emanace nebo v něm ukončí tah, musí si tento tvor hodit záchranný hod na Moudrost. Při neúspěchu utrpí 3k8 zářivého zranění (jsi-li dobrý nebo neutrální), nebo 3k8 nekrotického zranění (jsi-li zlý). Při úspěchu utrpí polovinu zranění. Tvor si tento záchranný hod hází jen jednou za tah.",
+  "higher": "Zranění se zvýší o 1k8 za každou úroveň pozice kouzla nad 3.",
+  "material": "svitek s modlitbou"
+ },
+ {
+  "key": "srd-2024_spiritual-weapon",
+  "name": "Duchovní zbraň",
+  "text": "Vytvoříš vznášející se přízračnou sílu, která připomíná zbraň podle tvé volby a vydrží po dobu trvání. Síla se objeví v dosahu na místě podle tvé volby a ty můžeš okamžitě provést jeden útok kouzlem na blízko proti jednomu tvorovi do 5 stop od síly. Při zásahu cíl utrpí silové zranění rovné 1k8 plus modifikátor tvé sesílací vlastnosti. Bonusovou akcí ve svých dalších tazích můžeš sílu posunout až o 20 stop a útok zopakovat proti tvorovi do 5 stop od ní.",
+  "higher": "Zranění se zvýší o 1k8 za každou úroveň pozice kouzla nad 2."
+ },
+ {
+  "key": "srd-2024_starry-wisp",
+  "name": "Hvězdná jiskra",
+  "text": "Vyšleš jiskru světla na jednoho tvora nebo předmět v dosahu. Proveď proti cíli útok kouzlem na dálku. Při zásahu cíl utrpí 1k8 zářivého zranění a do konce tvého příštího tahu vydává šero v okruhu 10 stop a nemůže mít užitek ze stavu neviditelný.",
+  "higher": "Zranění se zvýší o 1k8, když dosáhneš úrovně 5 (2k8), 11 (3k8) a 17 (4k8)."
+ },
+ {
+  "key": "srd-2024_stinking-cloud",
+  "name": "Páchnoucí mrak",
+  "text": "Vytvoříš kouli žlutého, nevolnost vyvolávajícího plynu o poloměru 20 stop se středem v bodě v dosahu. Oblak je silně zastřený. Zůstane viset ve vzduchu po dobu trvání, nebo dokud ho nerozežene silný vítr (například ten vytvořený kouzlem _Poryv větru_). Každý tvor, který začne tah v kouli, musí uspět v záchranném hodu na Odolnost, jinak až do konce aktuálního tahu získá stav otrávený. Dokud je tvor takto otrávený, nemůže provést akci ani bonusovou akci.",
+  "material": "zkažené vejce"
+ },
+ {
+  "key": "srd-2024_suggestion",
+  "name": "Sugesce",
+  "text": "Navrhneš činnost (popsanou nejvýš 25 slovy) jednomu tvorovi v dosahu, kterého vidíš a který tě slyší a rozumí ti. Návrh musí znít proveditelně a nesmí zahrnovat nic, co by cíli nebo jeho spojencům zjevně způsobilo zranění. Můžeš například říct: „Přines klíč od pokladnice kultu a dej mi ho.“ Nebo můžeš říct: „Přestaň bojovat, v klidu opusť tuto knihovnu a už se nevracej.“ Cíl musí uspět v záchranném hodu na Moudrost, jinak má stav okouzlený po dobu trvání, nebo dokud mu ty či tví spojenci nezpůsobíte zranění. Okouzlený cíl se návrhem řídí, jak nejlépe dokáže. Navržená činnost může pokračovat po celou dobu trvání, ale pokud ji lze dokončit za kratší dobu, kouzlo pro cíl skončí, jakmile ji dokončí.",
+  "material": "kapka medu"
+ },
+ {
+  "key": "srd-2024_thaumaturgy",
+  "name": "Divotvorba",
+  "text": "Projevíš drobný zázrak v dosahu. Vytvoříš v dosahu jeden z níže uvedených účinků. Pokud toto kouzlo sešleš vícekrát, můžeš mít současně aktivní až tři jeho účinky trvající 1 minutu.\n\n**_Změněné oči._** Na 1 minutu změníš vzhled svých očí.\n\n**_Hromový hlas._** Tvůj hlas na 1 minutu zesílí až na trojnásobek běžné hlasitosti. Po tuto dobu máš výhodu k ověřením Charismy (Zastrašování).\n\n**_Hra s ohněm._** Na 1 minutu přiměješ plameny mihotat se, zjasnit, ztlumit nebo změnit barvu.\n\n**_Neviditelná ruka._** Okamžitě přiměješ nezamčené dveře nebo okno, aby se prudce otevřely nebo zabouchly.\n\n**_Přízračný zvuk._** Vytvoříš okamžitý zvuk, který vychází z bodu v dosahu podle tvé volby, třeba zahřmění, krákání havrana nebo zlověstný šepot.\n\n**_Otřesy._** Na 1 minutu vyvoláš neškodné otřesy země."
+ },
+ {
+  "key": "srd-2024_thunderwave",
+  "name": "Hromová vlna",
+  "text": "Vypustíš vlnu hromové energie. Každý tvor v 15stopé krychli vycházející z tebe si hodí záchranný hod na Odolnost. Při neúspěchu utrpí 2k8 hromového zranění a je odhozen o 10 stop od tebe. Při úspěchu utrpí jen polovinu zranění.\n\nNavíc nepřipevněné předměty, které jsou celé uvnitř krychle, jsou odhozeny o 10 stop od tebe a hromový třesk je slyšet do 300 stop.",
+  "higher": "Zranění se zvýší o 1k8 za každou úroveň pozice kouzla nad 1."
+ },
+ {
+  "key": "srd-2024_tiny-hut",
+  "name": "Malá chýše",
+  "text": "Kolem tebe vznikne 10stopá emanace, která po dobu trvání zůstane na místě. Kouzlo při seslání selže, pokud emanace není dost velká, aby úplně obklopila všechny tvory ve své oblasti. Tvorové a předměty, které jsou při seslání kouzla uvnitř emanace, jí mohou volně procházet. Všem ostatním tvorům a předmětům je průchod znemožněn. Kouzla 3. úrovně nebo nižší skrz ni nelze seslat a jejich účinky do ní nemohou zasahovat. Uvnitř emanace je příjemně a sucho bez ohledu na počasí venku. Dokud kouzlo neskončí, můžeš určit, zda je uvnitř šero, nebo tma (nevyžaduje akci). Emanace je zvenku neprůhledná a má jakoukoli barvu, kterou zvolíš, ale zevnitř je průhledná. Kouzlo skončí předčasně, pokud emanaci opustíš nebo pokud ho sešleš znovu.",
+  "material": "křišťálový korálek",
+  "poznamka": "Emanation = emanace"
+ },
+ {
+  "key": "srd-2024_tongues",
+  "name": "Jazyky",
+  "text": "Toto kouzlo dá tvorovi, kterého se dotkneš, schopnost rozumět každému mluvenému nebo znakovanému jazyku, který slyší nebo vidí. Navíc když cíl komunikuje řečí nebo znaky, rozumí mu každý tvor, který zná aspoň jeden jazyk, pokud řeč slyší nebo znaky vidí.",
+  "material": "zmenšený zikkurat"
+ },
+ {
+  "key": "srd-2024_true-strike",
+  "name": "Jistý úder",
+  "text": "Vedený zábleskem magického vhledu provedeš jeden útok zbraní použitou při seslání kouzla. Pro hody na útok a na zranění použiješ svou sesílací vlastnost místo Síly nebo Obratnosti. Pokud útok způsobí zranění, může být zářivé, nebo běžného typu zranění zbraně (podle tvé volby).",
+  "higher": "Ať způsobíš zářivé zranění, nebo běžný typ zranění zbraně, útok způsobí dodatečné zářivé zranění, když dosáhneš 5. úrovně (1k6), 11. úrovně (2k6) a 17. úrovně (3k6).",
+  "material": "zbraň, se kterou jsi zdatný a která má hodnotu 1+ md",
+  "poznamka": "CP = md (měďáky); měna není ve slovníku"
+ },
+ {
+  "key": "srd-2024_unseen-servant",
+  "name": "Neviditelný sluha",
+  "text": "Toto kouzlo vytvoří neviditelnou, bezduchou, beztvarou sílu střední velikosti, která na tvůj příkaz plní jednoduché úkoly, dokud kouzlo neskončí. Sluha se objeví na neobsazeném místě na zemi v dosahu. Má TZ 10, 1 život a Sílu 2 a nemůže útočit. Pokud klesne na 0 životů, kouzlo skončí. Jednou v každém svém tahu můžeš bonusovou akcí sluhovi v duchu přikázat, aby se pohnul až o 15 stop a manipuloval s předmětem. Sluha zvládne jednoduché úkoly, které by zvládl člověk, například přinášet věci, uklízet, spravovat, skládat oblečení, rozdělávat oheň, servírovat jídlo a nalévat pití. Jakmile mu dáš příkaz, sluha úkol plní, jak nejlépe dokáže, dokud ho nedokončí, a pak čeká na tvůj další příkaz. Pokud sluhovi přikážeš úkol, při kterém by se dostal víc než 60 stop od tebe, kouzlo skončí.",
+  "material": "kousek provázku a dřeva"
+ },
+ {
+  "key": "srd-2024_vampiric-touch",
+  "name": "Upíří dotek",
+  "text": "Dotyk tvé stínem ovinuté ruky dokáže vysát z jiných životní sílu a vyléčit tvá zranění. Proveď útok kouzlem na blízko proti jednomu tvorovi na dosah. Při zásahu cíl utrpí 3k6 nekrotického zranění a ty získáš zpět životy rovné polovině způsobeného nekrotického zranění. Dokud kouzlo neskončí, můžeš útok v každém svém tahu zopakovat akcí Magie, na stejného tvora nebo jiného.",
+  "higher": "Zranění se zvýší o 1k6 za každou úroveň pozice kouzla nad 3."
+ },
+ {
+  "key": "srd-2024_vicious-mockery",
+  "name": "Zlý posměch",
+  "text": "Vychrlíš na jednoho tvora, kterého vidíš nebo slyšíš v dosahu, sérii urážek protkaných jemným očarováním. Cíl musí uspět v záchranném hodu na Moudrost, jinak utrpí 1k6 psychického zranění a má nevýhodu u příštího hodu na útok, který provede před koncem svého příštího tahu.",
+  "higher": "Zranění se zvýší o 1k6, když dosáhneš úrovně 5 (2k6), 11 (3k6) a 17 (4k6)."
+ },
+ {
+  "key": "srd-2024_warding-bond",
+  "name": "Ochranné pouto",
+  "text": "Dotkneš se jiného, ochotného tvora a vytvoříš mezi sebou a cílem mystické pouto, které trvá, dokud kouzlo neskončí. Dokud je cíl do 60 stop od tebe, získá bonus +1 k TZ a záchranným hodům a má rezistenci vůči všemu zranění. Navíc pokaždé, když utrpí zranění, utrpíš ty stejné množství zranění. Kouzlo skončí, pokud klesneš na 0 životů, nebo pokud vás s cílem od sebe dělí více než 60 stop. Skončí také, pokud je kouzlo znovu sesláno na kteréhokoli z propojených tvorů.",
+  "material": "pár platinových prstenů v hodnotě 50+ zl každý, které ty i cíl musíte po dobu trvání nosit"
+ },
+ {
+  "key": "srd-2024_water-breathing",
+  "name": "Dýchání pod vodou",
+  "text": "Toto kouzlo udělí až deseti ochotným tvorům podle tvé volby v dosahu schopnost dýchat pod vodou, dokud kouzlo neskončí. Ovlivnění tvorové si zároveň zachovají svůj běžný způsob dýchání.",
+  "material": "krátké stéblo rákosu"
+ },
+ {
+  "key": "srd-2024_water-walk",
+  "name": "Chůze po vodě",
+  "text": "Toto kouzlo udělí schopnost pohybovat se po jakémkoli tekutém povrchu (například po vodě, kyselině, bahně, sněhu, tekutém písku nebo lávě), jako by to byla neškodná pevná zem (tvorové přecházející roztavenou lávu mohou přesto utrpět zranění žárem). Tuto schopnost získá po dobu trvání až deset ochotných tvorů podle tvé volby v dosahu. Ovlivněný cíl musí provést bonusovou akci, aby přešel z povrchu tekutiny do tekutiny samotné a naopak, ale pokud do tekutiny spadne, propadne povrchem do tekutiny pod ním.",
+  "material": "kousek korku"
+ },
+ {
+  "key": "srd-2024_web",
+  "name": "Pavučina",
+  "text": "Vyvoláš v bodě v dosahu masu lepkavých pavučin. Pavučiny tam po dobu trvání vyplní 20stopou krychli. Pavučiny jsou těžký terén a prostor v nich je slabě zastřený. Pokud pavučiny nejsou ukotvené mezi dvěma pevnými hmotami (například zdmi nebo stromy) nebo rozprostřené přes podlahu, zeď či strop, pavučina se zhroutí sama do sebe a kouzlo skončí na začátku tvého příštího tahu. Pavučiny rozprostřené přes rovný povrch mají hloubku 5 stop. Když tvor poprvé v tahu vstoupí do pavučin nebo v nich začne svůj tah, musí uspět v záchranném hodu na Obratnost, jinak má stav spoutaný, dokud je v pavučinách nebo dokud se nevyprostí. Tvor spoutaný pavučinami může akcí provést ověření Síly (Atletiky) proti tvému SO záchrany proti kouzlu. Pokud uspěje, už není spoutaný. Pavučiny jsou hořlavé. Každá 5stopá krychle pavučin vystavená ohni shoří za 1 kolo a způsobí 2k4 ohnivého zranění každému tvorovi, který začne svůj tah v ohni.",
+  "material": "kousek pavučiny",
+  "poznamka": "Lightly Obscured → slabě zahalený"
+ },
+ {
+  "key": "srd-2024_wind-wall",
+  "name": "Větrná stěna",
+  "text": "Z bodu v dosahu podle tvé volby se ze země zvedne stěna silného větru. Stěna může být až 50 stop dlouhá, 15 stop vysoká a 1 stopu silná. Stěnu můžeš tvarovat libovolně, pokud tvoří jednu souvislou dráhu po zemi. Stěna vydrží po dobu trvání. Když se stěna objeví, každý tvor v její oblasti si hodí záchranný hod na Sílu. Při neúspěchu utrpí 4k8 drtivého zranění, při úspěchu polovinu. Silný vítr drží mlhu, kouř a jiné plyny v odstupu. Malí nebo menší létající tvorové či předměty nemohou stěnou projít. Volné, lehké materiály vnesené do stěny vyletí vzhůru. Šípy, šipky a jiné obyčejné střely vystřelené na cíle za stěnou jsou odkloněny vzhůru a automaticky minou. Balvany vržené obry nebo obléhacími stroji a podobné střely nejsou ovlivněny. Tvorové v plynné podobě jí projít nemohou.",
+  "material": "vějíř a pírko"
+ },
+ {
+  "key": "srd-2024_zone-of-truth",
+  "name": "Zóna pravdy",
+  "text": "Vytvoříš magickou zónu, která chrání před klamem, v kouli o poloměru 15 stop se středem v bodě v dosahu. Dokud kouzlo neskončí, tvor, který poprvé v tahu vstoupí do oblasti kouzla nebo v ní začne svůj tah, si hází záchranný hod na Charisma. Při neúspěchu nemůže tvor, dokud je v tomto okruhu, úmyslně lhát. Víš, zda tvor v záchranném hodu uspěl, nebo neuspěl. Ovlivněný tvor si je kouzla vědom a může se vyhnout odpovědím na otázky, na které by normálně odpověděl lží. Takový tvor může být vyhýbavý, ale musí mluvit pravdu."
+ }
+]
