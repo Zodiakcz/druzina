@@ -35,7 +35,7 @@ export function useRoller() {
 
 export function RollerProvider({ children, onRoll }: {
   children: ReactNode
-  onRoll: (r: { label: string; formula: string; total: number; detail: RollDetail; hidden: boolean }) => void
+  onRoll: (r: { kind: 'roll'; label: string; formula: string; total: number; detail: RollDetail; hidden: boolean }) => void
 }) {
   const [mode, setMode] = useState<Mode>('normal')
   const [result, setResult] = useState<Result | null>(null)
@@ -50,7 +50,7 @@ export function RollerProvider({ children, onRoll }: {
       const res = { id: ++seq.current, label, formula, ...r }
       setResult(res)
       if (navigator.vibrate) navigator.vibrate(30)
-      onRoll({ label, formula, total: r.total, detail: r.detail, hidden: !!opts.hidden })
+      onRoll({ kind: 'roll', label, formula, total: r.total, detail: r.detail, hidden: !!opts.hidden })
       return res
     },
     [mode, onRoll]

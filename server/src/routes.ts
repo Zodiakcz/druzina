@@ -47,7 +47,10 @@ r.post('/campaigns', async (req, res) => {
   res.status(201).json({ id: c.id, name: c.name, gmKey: c.gmKey, partyKey: c.partyKey })
 })
 
-// Everything a screen needs in one call: who am I, the party, the last 100 rolls.
+/** Log page size. The session carries the first page; older pages come from GET /rolls. */
+const LOG_PAGE = 30
+
+// Everything a screen needs in one call: who am I, the party, the first page of the log.
 r.get('/session', async (req, res) => {
   const a = await access(req)
   const gm = a.role === 'gm'
@@ -55,8 +58,8 @@ r.get('/session', async (req, res) => {
     prisma.character.findMany({ where: { campaignId: a.campaign.id }, orderBy: [{ sort: 'asc' }, { createdAt: 'asc' }] }),
     prisma.roll.findMany({
       where: { campaignId: a.campaign.id, ...(gm ? {} : { hidden: false }) },
-      orderBy: { createdAt: 'desc' },
-      take: 100,
+      orderBy: [{ createdAt: 'desc' }, { id: 'desc' }],
+      take: LOG_PAGE,
     }),
   ])
   res.json({
@@ -65,7 +68,28 @@ r.get('/session', async (req, res) => {
     meId: a.character?.id ?? null,
     characters: characters.map((c) => publicCharacter(c, gm)),
     rolls: rolls.map(publicRoll),
+    hasMoreRolls: rolls.length === LOG_PAGE,
   })
+})
+
+// Older log entries: everything strictly before the given entry, newest first.
+r.get('/rolls', async (req, res) => {
+  const a = await access(req)
+  const before = typeof req.query.before === 'string' ? req.query.before : ''
+  const anchor = before ? await prisma.roll.findFirst({ where: { id: before, campaignId: a.campaign.id } }) : null
+  if (before && !anchor) throw new HttpError(404, 'Záznam nenalezen')
+  const rolls = await prisma.roll.findMany({
+    where: {
+      campaignId: a.campaign.id,
+      ...(a.role === 'gm' ? {} : { hidden: false }),
+      ...(anchor
+        ? { OR: [{ createdAt: { lt: anchor.createdAt } }, { createdAt: anchor.createdAt, id: { lt: anchor.id } }] }
+        : {}),
+    },
+    orderBy: [{ createdAt: 'desc' }, { id: 'desc' }],
+    take: LOG_PAGE,
+  })
+  res.json({ rolls: rolls.map(publicRoll), hasMore: rolls.length === LOG_PAGE })
 })
 
 // Import preview from D&D Beyond. Nothing is saved: the GM checks the result in the editor first.
@@ -173,11 +197,22 @@ r.post('/rolls', async (req, res) => {
     characterId = c.id
     who = sheetSchema.parse(JSON.parse(c.sheet)).name
   }
-  const hidden = a.role === 'gm' && body.hidden
+  // Only the GM's dice can be hidden; HP changes and rests are always public.
+  const hidden = a.role === 'gm' && body.kind === 'roll' && body.hidden
   const detail = JSON.stringify(body.detail ?? null)
   if (detail.length > 4000) throw new HttpError(400, 'Příliš mnoho kostek')
   const roll = await prisma.roll.create({
-    data: { campaignId: a.campaign.id, characterId, who, label: body.label, formula: body.formula, total: body.total, detail, hidden },
+    data: {
+      campaignId: a.campaign.id,
+      characterId,
+      who,
+      kind: body.kind,
+      label: body.label,
+      formula: body.formula,
+      total: body.total,
+      detail,
+      hidden,
+    },
   })
   publish(a.campaign.id, 'roll', publicRoll(roll), hidden)
   res.status(201).json(publicRoll(roll))

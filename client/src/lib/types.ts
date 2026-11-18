@@ -121,14 +121,24 @@ export interface RollDetail {
   nat?: 20 | 1
 }
 
+/** HP before and after, for damage, heal, temp and rest entries. */
+export interface HpDetail {
+  from: number
+  to: number
+}
+
+export type LogKind = 'roll' | 'damage' | 'heal' | 'temp' | 'rest'
+
+/** One log entry: a dice roll, or an HP change / rest (amount in `total`). */
 export interface Roll {
   id: string
   characterId: string | null
   who: string
+  kind: LogKind
   label: string
   formula: string
   total: number
-  detail: RollDetail | null
+  detail: RollDetail | HpDetail | null
   hidden: boolean
   createdAt: string
 }
@@ -141,6 +151,7 @@ export interface Session {
   meId: string | null
   characters: Character[]
   rolls: Roll[]
+  hasMoreRolls: boolean
 }
 
 export function emptySheet(): Sheet {

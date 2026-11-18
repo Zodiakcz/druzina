@@ -102,10 +102,13 @@ export function initialState(sheet: Sheet): State {
   return stateSchema.parse({ hp: sheet.hpMax })
 }
 
+export const LOG_KINDS = ['roll', 'damage', 'heal', 'temp', 'rest'] as const
+
 export const rollSchema = z.object({
   characterId: z.string().max(40).nullable().default(null),
+  kind: z.enum(LOG_KINDS).default('roll'),
   label: z.string().max(80),
-  formula: z.string().max(60),
+  formula: z.string().max(60).default(''),
   total: int(-999, 9999),
   detail: z.unknown(),
   hidden: z.boolean().default(false),

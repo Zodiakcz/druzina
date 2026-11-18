@@ -8,7 +8,7 @@ import { emptySheet, type Character, type RollDetail, type Session, type Sheet }
 import { RollerProvider, DiceBar } from '@/components/Roller'
 import { RollLog } from '@/components/RollLog'
 import { PartyCard } from '@/components/PartyCard'
-import { CharacterSheet } from '@/components/CharacterSheet'
+import { CharacterSheet, type LogEvent } from '@/components/CharacterSheet'
 import { SheetEditor } from '@/components/SheetEditor'
 import { Button, Section } from '@/components/ui'
 
@@ -95,9 +95,14 @@ export function Shell({ title, status, statusText, children }: { title?: ReactNo
 function useLogRoll(characterId: string | null) {
   const { logRoll } = useCampaign()
   return useCallback(
-    (r: { label: string; formula: string; total: number; detail: RollDetail; hidden: boolean }) => logRoll({ ...r, characterId }),
+    (r: { kind: 'roll'; label: string; formula: string; total: number; detail: RollDetail; hidden: boolean }) => logRoll({ ...r, characterId }),
     [logRoll, characterId]
   )
+}
+
+function useLogEvent(characterId: string | undefined): LogEvent {
+  const { logRoll } = useCampaign()
+  return useCallback((e) => logRoll({ ...e, characterId: characterId ?? null }), [logRoll, characterId])
 }
 
 async function shareLink(path: string, title: string) {
@@ -117,9 +122,10 @@ async function shareLink(path: string, title: string) {
 // ---------------------------------------------------------------- GM
 
 export function GmHome() {
-  const { session, base } = useCampaign()
+  const { session, base, loadOlderRolls } = useCampaign()
   const navigate = useNavigate()
-  const [hidden, setHidden] = useState(false)
+  // The GM's own dice are hidden unless they choose to show them.
+  const [hidden, setHidden] = useState(true)
   const onRoll = useLogRoll(null)
   return (
     <RollerProvider onRoll={onRoll}>
@@ -158,8 +164,10 @@ export function GmHome() {
           <Section title="Kostky PJ">
             <DiceBar hidden={hidden} onHiddenChange={setHidden} />
           </Section>
-          <Section title="Log hodů">
-            <RollLog rolls={session.rolls} />
+          <Section title="Log">
+            <div className="max-h-[70vh] overflow-y-auto pr-1">
+              <RollLog rolls={session.rolls} hasMore={session.hasMoreRolls} onLoadMore={loadOlderRolls} />
+            </div>
           </Section>
         </aside>
       </div>
@@ -175,16 +183,25 @@ function useCharacter(): Character | undefined {
 
 export function GmCharacter() {
   const c = useCharacter()
-  const { session, patchState, base } = useCampaign()
+  const { session, patchState, base, loadOlderRolls } = useCampaign()
   const navigate = useNavigate()
   const onRoll = useLogRoll(c?.id ?? null)
+  const log = useLogEvent(c?.id)
   if (!c) return <p className="py-10 text-center text-zinc-500">Postava nenalezena.</p>
   return (
     <RollerProvider onRoll={onRoll}>
       <Link to={base} className="mb-2 inline-block text-sm text-zinc-400">
         ← Družina
       </Link>
-      <CharacterSheet c={c} rolls={session.rolls} patch={(p) => patchState(c.id, p)} onEdit={() => navigate(`${base}/postava/${c.id}/upravit`)} />
+      <CharacterSheet
+        c={c}
+        rolls={session.rolls}
+        hasMoreRolls={session.hasMoreRolls}
+        onLoadMore={loadOlderRolls}
+        patch={(p) => patchState(c.id, p)}
+        log={log}
+        onEdit={() => navigate(`${base}/postava/${c.id}/upravit`)}
+      />
     </RollerProvider>
   )
 }
@@ -359,7 +376,7 @@ export function GmImport() {
 // ---------------------------------------------------------------- Party (read-only)
 
 export function PartyHome() {
-  const { session } = useCampaign()
+  const { session, loadOlderRolls } = useCampaign()
   return (
     <div className="grid gap-4 pb-10 lg:grid-cols-[1fr_22rem]">
       <div className="grid content-start gap-3 sm:grid-cols-2">
@@ -367,8 +384,10 @@ export function PartyHome() {
           <PartyCard key={c.id} c={c} />
         ))}
       </div>
-      <Section title="Log hodů">
-        <RollLog rolls={session.rolls} />
+      <Section title="Log">
+        <div className="max-h-[70vh] overflow-y-auto pr-1">
+          <RollLog rolls={session.rolls} hasMore={session.hasMoreRolls} onLoadMore={loadOlderRolls} />
+        </div>
       </Section>
     </div>
   )
@@ -377,14 +396,23 @@ export function PartyHome() {
 // ---------------------------------------------------------------- Player
 
 export function PlayerHome() {
-  const { session, patchState, base } = useCampaign()
+  const { session, patchState, base, loadOlderRolls } = useCampaign()
   const navigate = useNavigate()
   const me = session.characters.find((c) => c.id === session.meId)
   const onRoll = useLogRoll(me?.id ?? null)
+  const log = useLogEvent(me?.id)
   if (!me) return <p className="py-10 text-center text-zinc-500">Postava nenalezena.</p>
   return (
     <RollerProvider onRoll={onRoll}>
-      <CharacterSheet c={me} rolls={session.rolls} patch={(p) => patchState(me.id, p)} onEdit={() => navigate(`${base}/upravit`)} />
+      <CharacterSheet
+        c={me}
+        rolls={session.rolls}
+        hasMoreRolls={session.hasMoreRolls}
+        onLoadMore={loadOlderRolls}
+        patch={(p) => patchState(me.id, p)}
+        log={log}
+        onEdit={() => navigate(`${base}/upravit`)}
+      />
     </RollerProvider>
   )
 }

@@ -14,14 +14,20 @@ import type { Roll } from '@/lib/types'
 
 type Tab = 'boj' | 'vlastnosti' | 'kouzla' | 'schopnosti' | 'log'
 
+/** Writes a non-dice entry (damage, heal, temp HP, rest) to the shared log. */
+export type LogEvent = (e: { kind: 'damage' | 'heal' | 'temp' | 'rest'; label: string; total: number; detail: { from: number; to: number } | null }) => void
+
 interface Props {
   c: Character
   rolls: Roll[]
   patch: (p: Partial<State>) => void
+  log: LogEvent
   onEdit?: () => void
+  hasMoreRolls?: boolean
+  onLoadMore?: () => Promise<void>
 }
 
-export function CharacterSheet({ c, rolls, patch, onEdit }: Props) {
+export function CharacterSheet({ c, rolls, patch, log, onEdit, hasMoreRolls, onLoadMore }: Props) {
   const [tab, setTab] = useState<Tab>('boj')
   const [reading, setReading] = useState<{ title: ReactNode; body: ReactNode } | null>(null)
   const s = c.sheet
@@ -39,7 +45,7 @@ export function CharacterSheet({ c, rolls, patch, onEdit }: Props) {
     <div className="pb-24">
       <Header c={c} patch={patch} onEdit={onEdit} />
       <div className="mt-3 space-y-3">
-        {tab === 'boj' && <CombatTab c={c} patch={patch} read={read} />}
+        {tab === 'boj' && <CombatTab c={c} patch={patch} log={log} read={read} />}
         {tab === 'vlastnosti' && <AbilitiesTab s={s} st={st} />}
         {tab === 'kouzla' && s.spellcasting && <SpellsTab c={c} patch={patch} read={read} />}
         {tab === 'schopnosti' && <FeaturesTab s={s} read={read} />}
@@ -49,7 +55,7 @@ export function CharacterSheet({ c, rolls, patch, onEdit }: Props) {
               <DiceBar />
             </Section>
             <Section title="Log hodů">
-              <RollLog rolls={rolls} meId={c.id} />
+              <RollLog rolls={rolls} meId={c.id} hasMore={hasMoreRolls} onLoadMore={onLoadMore} />
             </Section>
           </>
         )}
@@ -107,7 +113,7 @@ function Header({ c, patch, onEdit }: { c: Character; patch: Props['patch']; onE
 
 // ---------------------------------------------------------------- Boj
 
-function CombatTab({ c, patch, read }: { c: Character; patch: Props['patch']; read: (t: ReactNode, b: ReactNode) => void }) {
+function CombatTab({ c, patch, log, read }: { c: Character; patch: Props['patch']; log: LogEvent; read: (t: ReactNode, b: ReactNode) => void }) {
   const s = c.sheet
   const st = c.state
   const { rollAndLog } = useRoller()
@@ -115,7 +121,7 @@ function CombatTab({ c, patch, read }: { c: Character; patch: Props['patch']; re
   const init = R.initiative(s) + pen
   return (
     <>
-      <HpPanel c={c} patch={patch} />
+      <HpPanel c={c} patch={patch} log={log} />
       <div className="grid grid-cols-4 gap-2">
         <Stat label={T.acShort} value={s.ac} />
         <Stat label={T.initiative} value={signed(init)} onClick={() => rollAndLog(T.initiative, d20(init))} />
@@ -189,12 +195,12 @@ function CombatTab({ c, patch, read }: { c: Character; patch: Props['patch']; re
       )}
 
       <Conditions c={c} patch={patch} read={read} />
-      <Rests c={c} patch={patch} />
+      <Rests c={c} patch={patch} log={log} />
     </>
   )
 }
 
-function HpPanel({ c, patch }: { c: Character; patch: Props['patch'] }) {
+function HpPanel({ c, patch, log }: { c: Character; patch: Props['patch']; log: LogEvent }) {
   const s = c.sheet
   const st = c.state
   const [mode, setMode] = useState<'damage' | 'heal' | 'temp' | null>(null)
@@ -204,10 +210,22 @@ function HpPanel({ c, patch }: { c: Character; patch: Props['patch'] }) {
     if (!Number.isFinite(n) || n <= 0) return
     if (mode === 'damage') {
       const next = R.applyDamage(st, n)
-      // Damage while concentrating: remind of the save (DC 10 or half the damage, max 30).
       patch(next)
-    } else if (mode === 'heal') patch(R.applyHealing(s, st, n))
-    else if (mode === 'temp') patch({ temp: Math.max(st.temp, n) })
+      const absorbed = st.temp - next.temp
+      log({
+        kind: 'damage',
+        label: absorbed > 0 ? `zranění (${absorbed} z dočasných)` : 'zranění',
+        total: n,
+        detail: { from: st.hp, to: next.hp },
+      })
+    } else if (mode === 'heal') {
+      const next = R.applyHealing(s, st, n)
+      patch(next)
+      log({ kind: 'heal', label: 'léčení', total: n, detail: { from: st.hp, to: next.hp ?? st.hp } })
+    } else if (mode === 'temp') {
+      patch({ temp: Math.max(st.temp, n) })
+      log({ kind: 'temp', label: 'dočasné životy', total: n, detail: null })
+    }
     setValue('')
     setMode(null)
   }
@@ -359,7 +377,7 @@ function Conditions({ c, patch, read }: { c: Character; patch: Props['patch']; r
   )
 }
 
-function Rests({ c, patch }: { c: Character; patch: Props['patch'] }) {
+function Rests({ c, patch, log }: { c: Character; patch: Props['patch']; log: LogEvent }) {
   const s = c.sheet
   const st = c.state
   const { rollAndLog } = useRoller()
@@ -405,7 +423,14 @@ function Rests({ c, patch }: { c: Character; patch: Props['patch'] }) {
               kind="primary"
               className="w-full py-3"
               onClick={() => {
-                patch(confirm === 'short' ? R.shortRest(s, st) : R.longRest(s, st))
+                const next = confirm === 'short' ? R.shortRest(s, st) : R.longRest(s, st)
+                patch(next)
+                log({
+                  kind: 'rest',
+                  label: confirm === 'short' ? 'krátký odpočinek' : 'dlouhý odpočinek',
+                  total: 0,
+                  detail: { from: st.hp, to: next.hp ?? st.hp },
+                })
                 setConfirm(null)
               }}
             >

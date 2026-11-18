@@ -3,7 +3,10 @@
 // comes back, so a dropped Wi-Fi at the table loses nothing.
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { api, ApiError } from './api'
-import type { Character, Roll, RollDetail, Session, Sheet, State } from './types'
+import type { Character, HpDetail, LogKind, Roll, RollDetail, Session, Sheet, State } from './types'
+
+/** Entries kept in memory; older ones come back through "Starší záznamy". */
+const LOG_CAP = 300
 
 export interface DdbImport {
   sheet: Sheet
@@ -44,6 +47,9 @@ export function useSession(key: string) {
   })
   const [error, setError] = useState<string | null>(null)
   const [online, setOnline] = useState(true)
+  // loadOlderRolls needs the current oldest entry without re-creating itself on every change.
+  const sessionRef = useRef(session)
+  sessionRef.current = session
   const queue = useRef<Pending[]>(loadQueue(key))
 
   const upsert = useCallback((c: Character) => {
@@ -108,7 +114,7 @@ export function useSession(key: string) {
     })
     es.addEventListener('roll', (ev) => {
       const roll: Roll = JSON.parse((ev as MessageEvent).data)
-      setSession((s) => (s && !s.rolls.some((r) => r.id === roll.id) ? { ...s, rolls: [roll, ...s.rolls].slice(0, 100) } : s))
+      setSession((s) => (s && !s.rolls.some((r) => r.id === roll.id) ? capLog(s, [roll, ...s.rolls]) : s))
     })
     let wasDown = false
     es.onerror = () => {
@@ -170,10 +176,18 @@ export function useSession(key: string) {
   )
 
   const logRoll = useCallback(
-    async (r: { characterId: string | null; label: string; formula: string; total: number; detail: RollDetail; hidden?: boolean }) => {
+    async (r: {
+      characterId: string | null
+      kind?: LogKind
+      label: string
+      formula?: string
+      total: number
+      detail: RollDetail | HpDetail | null
+      hidden?: boolean
+    }) => {
       try {
         const saved = await api<Roll>(key, 'POST', '/rolls', r)
-        setSession((s) => (s && !s.rolls.some((x) => x.id === saved.id) ? { ...s, rolls: [saved, ...s.rolls].slice(0, 100) } : s))
+        setSession((s) => (s && !s.rolls.some((x) => x.id === saved.id) ? capLog(s, [saved, ...s.rolls]) : s))
       } catch {
         // The roll still shows on this phone; only the shared log misses it.
         setOnline(false)
@@ -182,12 +196,27 @@ export function useSession(key: string) {
     [key]
   )
 
+  const loadOlderRolls = useCallback(async () => {
+    const last = sessionRef.current?.rolls.at(-1)
+    const page = await api<{ rolls: Roll[]; hasMore: boolean }>(key, 'GET', `/rolls${last ? `?before=${encodeURIComponent(last.id)}` : ''}`)
+    setSession((s) => {
+      if (!s) return s
+      const known = new Set(s.rolls.map((r) => r.id))
+      return { ...s, rolls: [...s.rolls, ...page.rolls.filter((r) => !known.has(r.id))], hasMoreRolls: page.hasMore }
+    })
+  }, [key])
+
   const importDdb = useCallback(
     (url: string, characterId?: string) => api<DdbImport>(key, 'POST', '/import/ddb', { url, characterId }),
     [key]
   )
 
-  return { session, error, online, patchState, saveSheet, createCharacter, deleteCharacter, logRoll, importDdb, reload: load }
+  return { session, error, online, patchState, saveSheet, createCharacter, deleteCharacter, logRoll, loadOlderRolls, importDdb, reload: load }
 }
 
 export type SessionApi = ReturnType<typeof useSession>
+
+/** Newest entries first; past the cap the oldest drop out and can be loaded again. */
+function capLog(s: Session, rolls: Roll[]): Session {
+  return rolls.length > LOG_CAP ? { ...s, rolls: rolls.slice(0, LOG_CAP), hasMoreRolls: true } : { ...s, rolls }
+}

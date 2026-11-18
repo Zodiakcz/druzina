@@ -50,6 +50,6 @@ export function publicCharacter(c: Character, withKey = false) {
   }
 }
 
-export function publicRoll(r: { id: string; characterId: string | null; who: string; label: string; formula: string; total: number; detail: string; hidden: boolean; createdAt: Date }) {
+export function publicRoll(r: { id: string; characterId: string | null; who: string; kind: string; label: string; formula: string; total: number; detail: string; hidden: boolean; createdAt: Date }) {
   return { ...r, detail: JSON.parse(r.detail) }
 }
