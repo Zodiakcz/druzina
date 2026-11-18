@@ -26,3 +26,27 @@ button {
     opacity: 1;
   }
 }
+
+/* Dice tumbling before the reveal, then the number popping in. */
+@keyframes tumble {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.86);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes reveal {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}

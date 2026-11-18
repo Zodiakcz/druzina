@@ -44,8 +44,8 @@ model Roll {
   character   Character? @relation(fields: [characterId], references: [id], onDelete: SetNull)
   /// Who rolled, as shown in the log (character name or "PJ"). Kept even if the character is deleted.
   who         String
-  /// roll (dice), damage, heal, temp (temporary HP), rest. Non-roll entries keep the amount in
-  /// `total` and { from, to } HP in `detail`.
+  /// roll (dice), damage, heal, temp (temporary HP), rest, item, gold. Non-roll entries keep the
+  /// amount in `total` and { from, to } (HP, item count or gold) in `detail`.
   kind        String     @default("roll")
   label       String
   formula     String

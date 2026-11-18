@@ -4,11 +4,8 @@ import { sheetSchema, stateSchema } from './schema'
 
 export const prisma = new PrismaClient()
 
-export class HttpError extends Error {
-  constructor(public status: number, message: string, public code?: string) {
-    super(message)
-  }
-}
+import { HttpError } from './errors'
+export { HttpError }
 
 /** 128-bit random, URL-safe. The key is the only credential, so it must be unguessable. */
 export function newKey(): string {

@@ -91,6 +91,14 @@ export interface State {
   heroic: boolean
   death: { ok: number; fail: number }
   concentration: string
+  items: InventoryItem[]
+  gold: number
+}
+
+export interface InventoryItem {
+  id: string
+  name: string
+  qty: number
 }
 
 export interface Character {
@@ -121,13 +129,13 @@ export interface RollDetail {
   nat?: 20 | 1
 }
 
-/** HP before and after, for damage, heal, temp and rest entries. */
+/** Before and after (HP, item count or gold) for non-dice log entries. */
 export interface HpDetail {
   from: number
   to: number
 }
 
-export type LogKind = 'roll' | 'damage' | 'heal' | 'temp' | 'rest'
+export type LogKind = 'roll' | 'damage' | 'heal' | 'temp' | 'rest' | 'item' | 'gold'
 
 /** One log entry: a dice roll, or an HP change / rest (amount in `total`). */
 export interface Roll {

@@ -13,6 +13,11 @@ const EVENT_STYLE: Record<string, { sign: string; color: string }> = {
 
 function Total({ r }: { r: Roll }) {
   if (r.kind === 'rest') return <span className="text-xl text-zinc-400">☾</span>
+  if (r.kind === 'item' || r.kind === 'gold') {
+    const d = r.detail as HpDetail | null
+    const up = !d || d.to >= d.from
+    return <span className={`text-xl ${r.kind === 'gold' ? 'text-yellow-400' : 'text-amber-200'}`}>{`${up ? '+' : '−'}${r.total}`}</span>
+  }
   const ev = EVENT_STYLE[r.kind]
   if (ev) return <span className={ev.color}>{`${ev.sign}${r.total}`}</span>
   const nat = (r.detail as RollDetail | null)?.nat
@@ -22,7 +27,10 @@ function Total({ r }: { r: Roll }) {
 function Sub({ r }: { r: Roll }) {
   if (!r.kind || r.kind === 'roll') return <DetailText detail={r.detail as RollDetail | null} formula={r.formula} />
   const hp = r.detail as HpDetail | null
-  return hp && typeof hp.from === 'number' && hp.from !== hp.to ? <>{`životy ${hp.from} → ${hp.to}`}</> : null
+  if (!hp || typeof hp.from !== 'number' || hp.from === hp.to) return null
+  if (r.kind === 'gold') return <>{`zlato ${hp.from} → ${hp.to} zl`}</>
+  if (r.kind === 'item') return hp.from === 0 ? <>nový předmět</> : hp.to === 0 ? <>odebráno</> : <>{`kusů ${hp.from} → ${hp.to}`}</>
+  return <>{`životy ${hp.from} → ${hp.to}`}</>
 }
 
 export function RollLog({ rolls, meId, hasMore, onLoadMore }: {

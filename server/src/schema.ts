@@ -1,6 +1,7 @@
 // Character JSON shapes. Mirror of client/src/lib/types.ts: change both together.
 // Every field has a default so older rows still parse after a field is added.
 import { z } from 'zod'
+import { HttpError } from './errors'
 
 export const ABILITIES = ['str', 'dex', 'con', 'int', 'wis', 'cha'] as const
 export const SKILLS = [
@@ -91,9 +92,28 @@ export const stateSchema = z.object({
   heroic: z.boolean().default(false),
   death: z.object({ ok: int(0, 3), fail: int(0, 3) }).default({ ok: 0, fail: 0 }),
   concentration: text(80),
+  /** Inventory: free-text items with a count. Changes go to the public log. */
+  items: z.array(z.object({ id, name: z.string().trim().min(1).max(80), qty: int(1, 9999) })).max(300).default([]),
+  /** Gold pieces (zl). Other coins, if any, are items ("Stříbrňáky"). */
+  gold: int(0, 10_000_000).default(0),
 })
 
 export const statePatchSchema = stateSchema.partial()
+
+/**
+ * A state patch with only the keys the client sent. zod 4 applies defaults even inside
+ * .partial(), so parsing {gold: 25} alone would also "patch" items, conditions, resources...
+ * back to their empty defaults and wipe them.
+ */
+export function parseStatePatch(body: unknown): Partial<State> {
+  const res = statePatchSchema.safeParse(body)
+  if (!res.success) {
+    const issue = res.error.issues[0]
+    throw new HttpError(400, `Neplatná data: ${issue.path.join('.')} ${issue.message}`)
+  }
+  const sent = body && typeof body === 'object' ? Object.keys(body) : []
+  return Object.fromEntries(Object.entries(res.data).filter(([k]) => sent.includes(k))) as Partial<State>
+}
 
 export type Sheet = z.infer<typeof sheetSchema>
 export type State = z.infer<typeof stateSchema>
@@ -102,14 +122,14 @@ export function initialState(sheet: Sheet): State {
   return stateSchema.parse({ hp: sheet.hpMax })
 }
 
-export const LOG_KINDS = ['roll', 'damage', 'heal', 'temp', 'rest'] as const
+export const LOG_KINDS = ['roll', 'damage', 'heal', 'temp', 'rest', 'item', 'gold'] as const
 
 export const rollSchema = z.object({
   characterId: z.string().max(40).nullable().default(null),
   kind: z.enum(LOG_KINDS).default('roll'),
   label: z.string().max(80),
   formula: z.string().max(60).default(''),
-  total: int(-999, 9999),
+  total: int(-10_000_000, 10_000_000),
   detail: z.unknown(),
   hidden: z.boolean().default(false),
 })

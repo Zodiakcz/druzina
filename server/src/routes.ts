@@ -2,7 +2,7 @@ import { Router, type Request } from 'express'
 import { timingSafeEqual } from 'crypto'
 import { z } from 'zod'
 import { prisma, HttpError, newKey, resolveKey, publicCharacter, publicRoll, type Access } from './lib'
-import { sheetSchema, stateSchema, statePatchSchema, initialState, rollSchema } from './schema'
+import { sheetSchema, stateSchema, parseStatePatch, initialState, rollSchema } from './schema'
 import { subscribe, publish } from './events'
 import { fetchDdb, mapCharacter, parseDdbId } from './ddb'
 import type { Sheet } from './schema'
@@ -167,7 +167,7 @@ r.put('/characters/:id/sheet', async (req, res) => {
 r.patch('/characters/:id/state', async (req, res) => {
   const a = await access(req)
   const c = await editable(a, req.params.id)
-  const patch = parse(statePatchSchema, req.body.patch)
+  const patch = parseStatePatch(req.body.patch)
   const state = stateSchema.parse({ ...JSON.parse(c.state), ...patch })
   const updated = await prisma.character.update({ where: { id: c.id }, data: { state: JSON.stringify(state) } })
   publish(a.campaign.id, 'character', publicCharacter(updated))

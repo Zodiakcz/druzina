@@ -12,10 +12,15 @@ import { HpBar, Portrait } from './PartyCard'
 import { Button, Modal, Pips, Prose, Section, Stat } from './ui'
 import type { Roll } from '@/lib/types'
 
-type Tab = 'boj' | 'vlastnosti' | 'kouzla' | 'schopnosti' | 'log'
+type Tab = 'boj' | 'vlastnosti' | 'kouzla' | 'schopnosti' | 'vybava' | 'log'
 
 /** Writes a non-dice entry (damage, heal, temp HP, rest) to the shared log. */
-export type LogEvent = (e: { kind: 'damage' | 'heal' | 'temp' | 'rest'; label: string; total: number; detail: { from: number; to: number } | null }) => void
+export type LogEvent = (e: {
+  kind: 'damage' | 'heal' | 'temp' | 'rest' | 'item' | 'gold'
+  label: string
+  total: number
+  detail: { from: number; to: number } | null
+}) => void
 
 interface Props {
   c: Character
@@ -37,6 +42,7 @@ export function CharacterSheet({ c, rolls, patch, log, onEdit, hasMoreRolls, onL
     ['vlastnosti', 'Vlastnosti'],
     ...(s.spellcasting ? ([['kouzla', T.spells]] as [Tab, string][]) : []),
     ['schopnosti', T.features],
+    ['vybava', 'Výbava'],
     ['log', 'Kostky'],
   ]
   const read = (title: ReactNode, body: ReactNode) => setReading({ title, body })
@@ -49,6 +55,7 @@ export function CharacterSheet({ c, rolls, patch, log, onEdit, hasMoreRolls, onL
         {tab === 'vlastnosti' && <AbilitiesTab s={s} st={st} />}
         {tab === 'kouzla' && s.spellcasting && <SpellsTab c={c} patch={patch} read={read} />}
         {tab === 'schopnosti' && <FeaturesTab s={s} read={read} />}
+        {tab === 'vybava' && <InventoryTab c={c} patch={patch} log={log} />}
         {tab === 'log' && (
           <>
             <Section title="Hod kostkou">
@@ -66,7 +73,7 @@ export function CharacterSheet({ c, rolls, patch, log, onEdit, hasMoreRolls, onL
             <button
               key={id}
               onClick={() => setTab(id)}
-              className={`flex-1 py-3 text-xs font-semibold uppercase tracking-wide ${tab === id ? 'text-amber-300' : 'text-zinc-500'}`}
+              className={`min-w-0 flex-1 truncate px-0.5 py-3 text-[11px] font-semibold ${tab === id ? 'text-amber-300' : 'text-zinc-500'}`}
             >
               {label}
             </button>
@@ -296,14 +303,16 @@ function DeathSaves({ c, patch }: { c: Character; patch: Props['patch'] }) {
   const { death } = c.state
   const { rollAndLog } = useRoller()
   const rollSave = () => {
-    const r = rollAndLog(T.death, d20(R.d20Penalty(c.state)))
-    if (!r) return
-    const nat = r.detail.nat
-    // Nat 20: back with 1 HP. Nat 1: two failures. 10+ success.
-    if (nat === 20) patch({ hp: 1, death: { ok: 0, fail: 0 } })
-    else if (nat === 1) patch({ death: { ...death, fail: Math.min(3, death.fail + 2) } })
-    else if (r.total >= 10) patch({ death: { ...death, ok: Math.min(3, death.ok + 1) } })
-    else patch({ death: { ...death, fail: Math.min(3, death.fail + 1) } })
+    // The outcome lands when the die stops: nat 20 back with 1 HP, nat 1 two failures, 10+ success.
+    rollAndLog(T.death, d20(R.d20Penalty(c.state)), {
+      onReveal: (r) => {
+        const nat = r.detail.nat
+        if (nat === 20) patch({ hp: 1, death: { ok: 0, fail: 0 } })
+        else if (nat === 1) patch({ death: { ...death, fail: Math.min(3, death.fail + 2) } })
+        else if (r.total >= 10) patch({ death: { ...death, ok: Math.min(3, death.ok + 1) } })
+        else patch({ death: { ...death, fail: Math.min(3, death.fail + 1) } })
+      },
+    })
   }
   return (
     <Section title={T.death} right={<Button onClick={rollSave}>Hodit</Button>}>
@@ -384,11 +393,13 @@ function Rests({ c, patch, log }: { c: Character; patch: Props['patch']; log: Lo
   const [confirm, setConfirm] = useState<'short' | 'long' | null>(null)
   const conMod = R.abilityMod(s, 'con')
   const spendHitDie = (die: number) => {
-    const r = rollAndLog(`${T.hitDice}: k${die}`, `1d${die}${conMod ? (conMod > 0 ? '+' : '-') + Math.abs(conMod) : ''}`, { d20: false })
-    if (!r) return
-    patch({
-      ...R.applyHealing(s, st, Math.max(0, r.total)),
-      hitDiceUsed: { ...st.hitDiceUsed, [die]: (st.hitDiceUsed[die] ?? 0) + 1 },
+    rollAndLog(`${T.hitDice}: k${die}`, `1d${die}${conMod ? (conMod > 0 ? '+' : '-') + Math.abs(conMod) : ''}`, {
+      d20: false,
+      onReveal: (r) =>
+        patch({
+          ...R.applyHealing(s, st, Math.max(0, r.total)),
+          hitDiceUsed: { ...st.hitDiceUsed, [die]: (st.hitDiceUsed[die] ?? 0) + 1 },
+        }),
     })
   }
   return (
@@ -672,6 +683,183 @@ function FeaturesTab({ s, read }: { s: Sheet; read: (t: ReactNode, b: ReactNode)
         <Section title={T.notes}>
           <Prose text={s.notes} />
         </Section>
+      )}
+    </>
+  )
+}
+
+// ---------------------------------------------------------------- Výbava
+
+function NumberModal({ title, onClose, onConfirm, hint }: { title: string; onClose: () => void; onConfirm: (n: number) => void; hint?: ReactNode }) {
+  const [value, setValue] = useState('')
+  const confirm = () => {
+    const n = parseInt(value, 10)
+    if (Number.isFinite(n) && n > 0) onConfirm(n)
+  }
+  return (
+    <Modal
+      title={title}
+      onClose={onClose}
+      footer={
+        <Button kind="primary" className="w-full py-3" onClick={confirm}>
+          Potvrdit
+        </Button>
+      }
+    >
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          confirm()
+        }}
+      >
+        <input
+          autoFocus
+          inputMode="numeric"
+          pattern="[0-9]*"
+          value={value}
+          onChange={(e) => setValue(e.target.value.replace(/\D/g, ''))}
+          className="w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-3 text-center text-3xl font-bold tabular-nums text-zinc-50"
+        />
+      </form>
+      {hint && <p className="mt-2 text-xs text-zinc-500">{hint}</p>}
+    </Modal>
+  )
+}
+
+function InventoryTab({ c, patch, log }: { c: Character; patch: Props['patch']; log: LogEvent }) {
+  const st = c.state
+  const [goldMode, setGoldMode] = useState<'add' | 'spend' | null>(null)
+  const [name, setName] = useState('')
+  const [qty, setQty] = useState('1')
+  const [removing, setRemoving] = useState<string | null>(null)
+
+  const changeGold = (n: number) => {
+    const to = goldMode === 'add' ? st.gold + n : Math.max(0, st.gold - n)
+    patch({ gold: to })
+    log({ kind: 'gold', label: goldMode === 'add' ? 'zlato přidáno' : 'zlato utraceno', total: Math.abs(to - st.gold), detail: { from: st.gold, to } })
+    setGoldMode(null)
+  }
+
+  const setItemQty = (id: string, to: number) => {
+    const item = st.items.find((i) => i.id === id)
+    if (!item) return
+    const items = to <= 0 ? st.items.filter((i) => i.id !== id) : st.items.map((i) => (i.id === id ? { ...i, qty: Math.min(9999, to) } : i))
+    patch({ items })
+    log({
+      kind: 'item',
+      label: to <= 0 ? `odebral(a): ${item.name}` : to > item.qty ? `přidal(a): ${item.name}` : `ubral(a): ${item.name}`,
+      total: Math.abs(Math.max(0, to) - item.qty),
+      detail: { from: item.qty, to: Math.max(0, to) },
+    })
+  }
+
+  const addItem = () => {
+    const n = Math.max(1, Math.min(9999, parseInt(qty, 10) || 1))
+    const clean = name.trim().slice(0, 80)
+    if (!clean) return
+    // Same name: raise the count instead of a second row.
+    const same = st.items.find((i) => i.name.toLowerCase() === clean.toLowerCase())
+    if (same) setItemQty(same.id, same.qty + n)
+    else {
+      patch({ items: [...st.items, { id: Math.random().toString(36).slice(2, 10), name: clean, qty: n }] })
+      log({ kind: 'item', label: `získal(a): ${clean}`, total: n, detail: { from: 0, to: n } })
+    }
+    setName('')
+    setQty('1')
+  }
+
+  const removingItem = st.items.find((i) => i.id === removing)
+
+  return (
+    <>
+      <Section title="Zlato">
+        <div className="flex items-center gap-3">
+          <div className="flex-1 text-4xl font-bold tabular-nums text-yellow-300">
+            {st.gold.toLocaleString('cs-CZ')} <span className="text-xl text-yellow-600">zl</span>
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <Button onClick={() => setGoldMode('add')} className="!border-yellow-800 !bg-yellow-950 !text-yellow-200">
+              + Přidat
+            </Button>
+            <Button onClick={() => setGoldMode('spend')}>− Utratit</Button>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="Předměty">
+        <form
+          className="mb-3 flex gap-2"
+          onSubmit={(e) => {
+            e.preventDefault()
+            addItem()
+          }}
+        >
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Nový předmět, např. Lano (15 m)"
+            maxLength={80}
+            className="min-w-0 flex-1 rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm text-zinc-100 placeholder:text-zinc-600"
+          />
+          <input
+            value={qty}
+            onChange={(e) => setQty(e.target.value.replace(/\D/g, ''))}
+            inputMode="numeric"
+            aria-label="Počet"
+            className="w-14 rounded-lg border border-zinc-700 bg-zinc-950 px-2 py-2 text-center text-sm text-zinc-100"
+          />
+          <Button kind="primary" type="submit" disabled={!name.trim()}>
+            Přidat
+          </Button>
+        </form>
+        {st.items.length === 0 && <p className="text-sm text-zinc-500">Zatím nic.</p>}
+        <ul className="divide-y divide-zinc-800">
+          {st.items.map((i) => (
+            <li key={i.id} className="flex items-center gap-2 py-1.5">
+              <span className="min-w-0 flex-1 truncate text-sm text-zinc-100">{i.name}</span>
+              <button aria-label={`Ubrat ${i.name}`} onClick={() => (i.qty > 1 ? setItemQty(i.id, i.qty - 1) : setRemoving(i.id))} className="h-8 w-8 rounded-lg border border-zinc-700 text-zinc-300">
+                −
+              </button>
+              <span className="w-8 text-center text-sm font-bold tabular-nums text-zinc-100">{i.qty}</span>
+              <button aria-label={`Přidat ${i.name}`} onClick={() => setItemQty(i.id, i.qty + 1)} className="h-8 w-8 rounded-lg border border-zinc-700 text-zinc-300">
+                +
+              </button>
+              <button aria-label={`Odebrat ${i.name}`} onClick={() => setRemoving(i.id)} className="h-8 w-6 text-zinc-600 hover:text-red-400">
+                ×
+              </button>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-2 text-xs text-zinc-500">Každá změna se zapíše do logu, který vidí celá družina.</p>
+      </Section>
+
+      {goldMode && (
+        <NumberModal
+          title={goldMode === 'add' ? 'Kolik zlata přidat?' : 'Kolik zlata utratit?'}
+          onClose={() => setGoldMode(null)}
+          onConfirm={changeGold}
+          hint={goldMode === 'spend' ? `Máš ${st.gold} zl. Víc než to se neutratí.` : undefined}
+        />
+      )}
+      {removingItem && (
+        <Modal
+          title={`Odebrat: ${removingItem.name}?`}
+          onClose={() => setRemoving(null)}
+          footer={
+            <Button
+              kind="danger"
+              className="w-full py-3"
+              onClick={() => {
+                setItemQty(removingItem.id, 0)
+                setRemoving(null)
+              }}
+            >
+              Odebrat {removingItem.qty > 1 ? `všech ${removingItem.qty} ks` : ''}
+            </Button>
+          }
+        >
+          <p>Předmět zmizí z výbavy a do logu se zapíše, že byl odebrán.</p>
+        </Modal>
       )}
     </>
   )

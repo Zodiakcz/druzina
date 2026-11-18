@@ -72,6 +72,24 @@ const CS: Record<string, string> = {
   Net: 'Síť', Pike: 'Píka', Pistol: 'Pistole', Quarterstaff: 'Hůl', Rapier: 'Rapír', Scimitar: 'Šavle', Shortbow: 'Krátký luk',
   Shortsword: 'Krátký meč', Sickle: 'Srp', Sling: 'Prak', Spear: 'Kopí', Trident: 'Trojzubec', 'War Pick': 'Válečný krumpáč',
   Warhammer: 'Válečné kladivo', Whip: 'Bič',
+  // adventuring gear and armor (common items; anything else keeps its D&D Beyond name)
+  Backpack: 'Batoh', Bedroll: 'Spací rohož', Chest: 'Truhla', 'Clothes, Common': 'Obyčejné oblečení',
+  "Clothes, Traveler's": 'Cestovní oblečení', 'Clothes, Fine': 'Zdobné oblečení', 'Mess Kit': 'Jídelní souprava',
+  'Rations (1 day)': 'Příděl jídla (1 den)', Rations: 'Příděl jídla', 'Rope, Hempen (50 feet)': 'Konopné lano (50 stop)',
+  'Rope, Silk (50 feet)': 'Hedvábné lano (50 stop)', Rope: 'Lano', Tinderbox: 'Křesadlo', Torch: 'Pochodeň', Waterskin: 'Měch na vodu',
+  Crowbar: 'Páčidlo', Hammer: 'Kladivo', 'Holy Water (flask)': 'Svěcená voda (lahvička)', Manacles: 'Pouta',
+  'Mirror, Steel': 'Ocelové zrcátko', 'Oil (flask)': 'Olej (lahvička)', 'Stake (Wooden)': 'Dřevěný kolík', Piton: 'Skoba',
+  'Holy Symbol': 'Svatý symbol', 'Alchemical Supplies': 'Alchymistické potřeby', Candle: 'Svíčka', Chalk: 'Křída', Bell: 'Zvonek',
+  'Lantern, Hooded': 'Lucerna s clonou', 'Lantern, Bullseye': 'Směrová lucerna', Lamp: 'Lampa', Pouch: 'Váček', Sack: 'Pytel',
+  Quiver: 'Toulec', 'Component Pouch': 'Váček na složky', Spellbook: 'Kniha kouzel', Book: 'Kniha', Parchment: 'Pergamen',
+  'Ink (1-ounce bottle)': 'Inkoust (lahvička)', 'Ink Pen': 'Pero', 'Potion of Healing': 'Lektvar léčení', Arrows: 'Šípy',
+  'Crossbow Bolts': 'Šipky do kuše', 'Sling Bullets': 'Kuličky do praku', Blanket: 'Přikrývka', 'Signal Whistle': 'Píšťalka',
+  "Explorer's Pack": 'Výbava průzkumníka', "Dungeoneer's Pack": 'Výbava jeskyňáře', "Priest's Pack": 'Výbava kněze',
+  "Scholar's Pack": 'Výbava učence', "Burglar's Pack": 'Výbava lupiče', "Diplomat's Pack": 'Výbava diplomata',
+  "Entertainer's Pack": 'Výbava baviče', Shield: 'Štít', 'Leather Armor': 'Kožená zbroj', 'Padded Armor': 'Prošívaná zbroj',
+  'Studded Leather Armor': 'Pobíjená kožená zbroj', 'Hide Armor': 'Kožešinová zbroj', 'Chain Shirt': 'Kroužková košile',
+  'Scale Mail': 'Šupinová zbroj', Breastplate: 'Kyrys', 'Half Plate Armor': 'Polovičná plátová zbroj', 'Ring Mail': 'Kroužkovaná zbroj',
+  'Chain Mail': 'Kroužková zbroj', 'Splint Armor': 'Pásová zbroj', 'Plate Armor': 'Plátová zbroj',
   // limited-use resources
   Rage: 'Zuřivost', 'Relentless Endurance': 'Neúprosná výdrž', 'Bardic Inspiration': 'Bardská inspirace',
   'Channel Divinity': 'Usměrnění božské moci', 'Second Wind': 'Druhý dech', 'Action Surge': 'Příval akce', 'Ki Points': 'Body ki',
@@ -447,6 +465,24 @@ export function mapCharacter(c: Any): ImportResult {
     features: features.slice(0, 120),
   })
 
+  // Inventory: every item with its quantity, same names merged. Gold (and platinum as 10 gold)
+  // becomes the gold counter; silver, copper and electrum stay countable as items.
+  const items: { id: string; name: string; qty: number }[] = []
+  for (const i of [...(c.inventory ?? []), ...(c.customItems ?? [])]) {
+    const name = clampText(cs(i.definition?.name ?? i.name ?? ''), 80).trim()
+    if (!name) continue
+    const qty = Math.max(1, Math.min(9999, i.quantity ?? 1))
+    const same = items.find((x) => x.name === name)
+    if (same) same.qty = Math.min(9999, same.qty + qty)
+    else items.push({ id: nextId('i'), name, qty })
+  }
+  const cur = c.currencies ?? {}
+  for (const [n, label] of [['ep', 'Elektrum (el)'], ['sp', 'Stříbrňáky (st)'], ['cp', 'Měďáky (md)']] as const) {
+    if (cur[n] > 0) items.push({ id: nextId('i'), name: label, qty: Math.min(9999, cur[n]) })
+  }
+  const gold = Math.max(0, (cur.gp ?? 0) + 10 * (cur.pp ?? 0))
+  if (cur.pp > 0) warnings.push(`Platina převedena na zlato: ${cur.pp} pl = ${cur.pp * 10} zl.`)
+
   // State as it is in D&D Beyond right now, so the first session starts where they left off.
   const exhaustion = (c.conditions ?? []).find((x: Any) => x.id === 4)?.level ?? 0
   const state = stateSchema.parse({
@@ -459,6 +495,8 @@ export function mapCharacter(c: Any): ImportResult {
     exhaustion: Math.min(6, exhaustion),
     heroic: !!c.inspiration,
     death: { ok: c.deathSaves?.successCount ?? 0, fail: c.deathSaves?.failCount ?? 0 },
+    items: items.slice(0, 300),
+    gold: Math.min(10_000_000, gold),
   })
 
   const untranslated = features.length + (spellcasting?.spells.filter((s) => !s.srd).length ?? 0)
