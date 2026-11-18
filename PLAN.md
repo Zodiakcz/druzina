@@ -83,7 +83,7 @@ a loga D&D. Texty mimo SRD jen v databázi kampaně pro soukromou potřebu party
 
 ## Otevřené otázky
 
-- Které podtřídy jsou u Arése, Kakoňfonixe a Orena (screenshot je uřízl)?
+- Které podtřídy jsou u Arése a Kakoňfonixe (screenshot je uřízl)? Ukáže import.
 - Jsou postavy v D&D Beyond veřejné? Import potřebuje sdílení „Public“.
 - Hrajete podle pravidel 2024 i s postavami z 2014 (D&D Beyond to tak umí), nebo míchaně?
 - Třída zbroje (TZ) nebo obranné číslo (OČ) z Dračího doupěte? Viz slovník.
