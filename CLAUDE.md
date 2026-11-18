@@ -40,6 +40,24 @@ dashes, no English dice or feet, nothing suspiciously short) and folds it into t
 (English with Czech fields merged in; the UI prefers Czech and labels what is still English). Text from outside the SRD (Rune Knight, Light Domain, ...) is
 never committed: it lives only in the campaign database.
 
+## D&D Beyond import
+
+`server/src/ddb.ts`. The server fetches `character-service.dndbeyond.com/character/v5/character/<id>`
+(public characters only; the browser cannot, CORS) and maps it in `mapCharacter`. Nothing is saved
+by `POST /api/import/ddb`: the GM reviews the result in the editor and saves.
+
+- D&D Beyond computes most numbers client-side, so we recompute: abilities from base + bonus +
+  modifiers (`choose-an-ability-score` is ignored: it is the leftover of an option not taken),
+  AC from equipped armor or `set unarmored-armor-class` (+ the stat in `statId`), HP from base +
+  Con × level, attacks from equipped weapons, resources from `actions.*.limitedUse`.
+  Verified on Oren (160170320) against D&D Beyond: HP 64, AC 15, passives 13/9/10, speed 40.
+- The group's characters are mixed: 2014 class features, 2024 weapons with mastery. So feature
+  and spell texts are D&D Beyond's own, kept in `nameEn`/`textEn`; `text === textEn` means not yet
+  translated (the sheet says "zatím anglicky"). SRD spells get our key and Czech text instead.
+- Re-import (`characterId` given) keeps the Czech name/text of every feature or spell whose
+  English original is unchanged, keeps notes and portrait, and never touches `state`.
+- Never commit a D&D Beyond JSON: it carries non-SRD book text.
+
 ## Stack and layout
 
 React 19 + Vite + Tailwind 3 (`client/`), Express 5 + Prisma + SQLite (`server/`). One image:

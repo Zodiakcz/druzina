@@ -23,6 +23,8 @@ app.use(
 )
 app.use('/api', rateLimit({ windowMs: 60 * 1000, max: 600, standardHeaders: true, legacyHeaders: false }))
 app.use(express.json({ limit: '300kb' }))
+// Each import is a request to D&D Beyond; keep that polite.
+app.use('/api/import', rateLimit({ windowMs: 60 * 1000, max: 20, standardHeaders: true, legacyHeaders: false }))
 
 app.get('/api/health', (_req, res) => res.json({ status: 'ok', version: process.env.APP_VERSION || 'dev' }))
 app.use('/api', routes)

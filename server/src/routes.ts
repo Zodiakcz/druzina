@@ -4,6 +4,8 @@ import { z } from 'zod'
 import { prisma, HttpError, newKey, resolveKey, publicCharacter, publicRoll, type Access } from './lib'
 import { sheetSchema, stateSchema, statePatchSchema, initialState, rollSchema } from './schema'
 import { subscribe, publish } from './events'
+import { fetchDdb, mapCharacter, parseDdbId } from './ddb'
+import type { Sheet } from './schema'
 
 const r = Router()
 
@@ -66,11 +68,44 @@ r.get('/session', async (req, res) => {
   })
 })
 
+// Import preview from D&D Beyond. Nothing is saved: the GM checks the result in the editor first.
+// With characterId (re-import), Czech texts whose English original did not change are kept.
+r.post('/import/ddb', async (req, res) => {
+  const a = await access(req)
+  if (a.role !== 'gm') throw new HttpError(403, 'Importovat může jen PJ')
+  const { url, characterId } = parse(z.object({ url: z.string().max(300), characterId: z.string().max(40).optional() }), req.body)
+  const result = mapCharacter(await fetchDdb(parseDdbId(url)))
+  if (characterId) {
+    const existing = await editable(a, characterId)
+    result.sheet = keepTranslations(result.sheet, sheetSchema.parse(JSON.parse(existing.sheet)))
+  }
+  res.json(result)
+})
+
+function keepTranslations(next: Sheet, prev: Sheet): Sheet {
+  const sameEn = (x: { nameEn?: string; textEn?: string }, y: { nameEn?: string; textEn?: string }) =>
+    !!x.nameEn && x.nameEn === y.nameEn && x.textEn === y.textEn
+  const features = next.features.map((f) => {
+    const old = prev.features.find((o) => sameEn(o, f))
+    return old ? { ...f, name: old.name, text: old.text } : f
+  })
+  const spellcasting = next.spellcasting && {
+    ...next.spellcasting,
+    spells: next.spellcasting.spells.map((sp) => {
+      const old = prev.spellcasting?.spells.find((o) => sameEn(o, sp))
+      return old ? { ...sp, name: old.name, text: old.text, prepared: sp.prepared } : sp
+    }),
+  }
+  // Hand edits outside the import (notes, portrait) survive too.
+  return { ...next, features, spellcasting, notes: prev.notes || next.notes, portrait: prev.portrait || next.portrait }
+}
+
 r.post('/characters', async (req, res) => {
   const a = await access(req)
   if (a.role !== 'gm') throw new HttpError(403, 'Postavy zakládá PJ')
   const sheet = parse(sheetSchema, req.body.sheet)
   const ddbId = req.body.ddbId == null ? null : parse(z.number().int().positive(), req.body.ddbId)
+  const startState = req.body.state == null ? null : parse(stateSchema, req.body.state)
   const count = await prisma.character.count({ where: { campaignId: a.campaign.id } })
   if (count >= 20) throw new HttpError(400, 'Kampaň už má 20 postav')
   const c = await prisma.character.create({
@@ -78,7 +113,7 @@ r.post('/characters', async (req, res) => {
       campaignId: a.campaign.id,
       key: newKey(),
       sheet: JSON.stringify(sheet),
-      state: JSON.stringify(initialState(sheet)),
+      state: JSON.stringify(startState ? { ...startState, hp: Math.min(startState.hp, sheet.hpMax) } : initialState(sheet)),
       ddbId,
       sort: count,
     },
@@ -94,9 +129,10 @@ r.put('/characters/:id/sheet', async (req, res) => {
   // Lowering max HP must not leave current HP above it.
   const state = stateSchema.parse(JSON.parse(c.state))
   if (state.hp > sheet.hpMax) state.hp = sheet.hpMax
+  const ddbId = req.body.ddbId == null ? undefined : parse(z.number().int().positive(), req.body.ddbId)
   const updated = await prisma.character.update({
     where: { id: c.id },
-    data: { sheet: JSON.stringify(sheet), state: JSON.stringify(state) },
+    data: { sheet: JSON.stringify(sheet), state: JSON.stringify(state), ...(ddbId ? { ddbId } : {}) },
   })
   publish(a.campaign.id, 'character', publicCharacter(updated))
   res.json(publicCharacter(updated, a.role === 'gm'))

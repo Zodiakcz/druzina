@@ -5,6 +5,13 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { api, ApiError } from './api'
 import type { Character, Roll, RollDetail, Session, Sheet, State } from './types'
 
+export interface DdbImport {
+  sheet: Sheet
+  state: State
+  ddbId: number
+  warnings: string[]
+}
+
 type Pending = { id: string; patch: Partial<State> }
 
 const queueKey = (key: string) => `druzina.pending.${key.slice(0, 8)}`
@@ -137,8 +144,8 @@ export function useSession(key: string) {
   )
 
   const saveSheet = useCallback(
-    async (id: string, sheet: Sheet) => {
-      const c = await api<Character>(key, 'PUT', `/characters/${id}/sheet`, { sheet })
+    async (id: string, sheet: Sheet, ddbId?: number) => {
+      const c = await api<Character>(key, 'PUT', `/characters/${id}/sheet`, { sheet, ...(ddbId ? { ddbId } : {}) })
       upsert(c)
       return c
     },
@@ -146,8 +153,8 @@ export function useSession(key: string) {
   )
 
   const createCharacter = useCallback(
-    async (sheet: Sheet) => {
-      const c = await api<Character>(key, 'POST', '/characters', { sheet })
+    async (sheet: Sheet, extra: { state?: State; ddbId?: number } = {}) => {
+      const c = await api<Character>(key, 'POST', '/characters', { sheet, ...extra })
       upsert(c)
       return c
     },
@@ -175,7 +182,12 @@ export function useSession(key: string) {
     [key]
   )
 
-  return { session, error, online, patchState, saveSheet, createCharacter, deleteCharacter, logRoll, reload: load }
+  const importDdb = useCallback(
+    (url: string, characterId?: string) => api<DdbImport>(key, 'POST', '/import/ddb', { url, characterId }),
+    [key]
+  )
+
+  return { session, error, online, patchState, saveSheet, createCharacter, deleteCharacter, logRoll, importDdb, reload: load }
 }
 
 export type SessionApi = ReturnType<typeof useSession>

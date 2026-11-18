@@ -18,7 +18,7 @@ Postavu jednou založí PJ (import z D&D Beyond nebo ruční formulář), pak se
 | Arés | robvsb | Hill Dwarf | Wizard 5, School of … | druh jen v SRD 5.1; škola neověřená |
 | Dorrali | klecpetra | High Elf | Fighter 5, Rune Knight | druh jen v SRD 5.1; **Rune Knight není v SRD** |
 | Kakoňfonix | jirkastajger | High Elf | Bard 5, College of … | druh jen v SRD 5.1; kolej neověřená |
-| Oren (Zodi) | dpollec | Half-Orc | Barbarian 5, Path of the … | druh jen v SRD 5.1; stezka neověřená |
+| Oren (Zodi) | dpollec | Half-Orc | Barbarian 5, Path of the Zealot | druh jen v SRD 5.1; **Zealot není v SRD**; výsady Great Weapon Master, Hero's Journey Boon, Dark Bargain |
 | Rakkar | dobiasma | Half-Elf | Cleric 5, Light Domain | druh jen v SRD 5.1; **Light Domain není v SRD** |
 | Smerf | Hergersen | Gnome | úroveň 0, rozpracovaná | |
 
@@ -41,6 +41,10 @@ až 3 (183), schopnosti všech povolání a SRD specializací do 5. úrovně (13
 ras z 2014, výsady, původy a vlastnosti zbraní. Čeká na revizi rodilým hráčem. Zbývá: kouzla 4. až
 9. úrovně, schopnosti od 6. úrovně. Známé díry ve zdroji (Open5e): seznam druidských kouzel je
 useknutý, tabulka počtu divokých podob chybí.
+
+**Fáze 3, 18. 11.:** import z D&D Beyond funguje (náhled k revizi, uložení, opakované načtení,
+které drží české překlady). Ověřeno na Orenovi. Čeká: odkazy ostatních pěti postav a překlad
+textů mimo SRD pro každou postavu (dělá se až v nasazené databázi, do repozitáře nepatří).
 
 Kontrolní bod po fázi 4: jedno sezení s oběma appkami vedle sebe, teprve pak D&D Beyond pustit.
 

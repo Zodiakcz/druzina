@@ -29,6 +29,8 @@ export interface Spell {
   prepared: boolean
   srd: string
   text: string
+  nameEn?: string
+  textEn?: string
 }
 
 export interface Resource {
@@ -43,6 +45,9 @@ export interface Feature {
   name: string
   source: string
   text: string
+  /** English original from an import; text === textEn means it still needs translating. */
+  nameEn?: string
+  textEn?: string
 }
 
 export interface Sheet {

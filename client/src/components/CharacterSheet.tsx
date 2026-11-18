@@ -152,7 +152,7 @@ function CombatTab({ c, patch, read }: { c: Character; patch: Props['patch']; re
                       {a.damage.replace(/d/g, 'k')}
                     </button>
                   )}
-                  {a.damage && (
+                  {/d/i.test(a.damage) && (
                     <button
                       onClick={() => rollAndLog(`${a.name}: kritický zásah`, critFormula(a.damage), { d20: false })}
                       className="rounded-lg border border-amber-800 px-2 py-2 text-xs text-amber-300"
@@ -627,7 +627,9 @@ function FeaturesTab({ s, read }: { s: Sheet; read: (t: ReactNode, b: ReactNode)
             {list.map((f) => (
               <li key={f.id}>
                 <button className="w-full py-2 text-left" onClick={() => read(f.name, f.text ? <Prose text={f.text} /> : <p className="text-zinc-500">Bez popisu.</p>)}>
-                  <span className="block text-sm font-semibold text-zinc-100">{f.name}</span>
+                  <span className="block text-sm font-semibold text-zinc-100">
+                    {f.name} {f.textEn && f.text === f.textEn && <span className="text-xs font-normal text-amber-500">zatím anglicky</span>}
+                  </span>
                   {f.text && <span className="line-clamp-2 block text-xs text-zinc-400">{f.text}</span>}
                 </button>
               </li>

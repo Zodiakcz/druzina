@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { Home } from './pages/Home'
-import { CampaignLayout, GmCharacter, GmEdit, GmHome, GmNew, PartyHome, PlayerEdit, PlayerHome } from './pages/Campaign'
+import { CampaignLayout, GmCharacter, GmEdit, GmHome, GmImport, GmNew, PartyHome, PlayerEdit, PlayerHome } from './pages/Campaign'
 
 export default function App() {
   return (
@@ -9,6 +9,7 @@ export default function App() {
       <Route path="/pj/:key" element={<CampaignLayout prefix="pj" />}>
         <Route index element={<GmHome />} />
         <Route path="nova" element={<GmNew />} />
+        <Route path="import" element={<GmImport />} />
         <Route path="postava/:id" element={<GmCharacter />} />
         <Route path="postava/:id/upravit" element={<GmEdit />} />
       </Route>

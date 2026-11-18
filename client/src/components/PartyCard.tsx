@@ -11,7 +11,7 @@ export function Portrait({ c, size = 56 }: { c: Character; size?: number }) {
     .join('')
     .slice(0, 2)
   return c.sheet.portrait ? (
-    <img src={c.sheet.portrait} alt="" width={size} height={size} className="shrink-0 rounded-lg border border-zinc-700 object-cover" style={{ width: size, height: size }} />
+    <img src={c.sheet.portrait} alt="" referrerPolicy="no-referrer" width={size} height={size} className="shrink-0 rounded-lg border border-zinc-700 object-cover" style={{ width: size, height: size }} />
   ) : (
     <div className="flex shrink-0 items-center justify-center rounded-lg border border-zinc-700 bg-zinc-800 font-display text-xl text-amber-200" style={{ width: size, height: size }}>
       {initials}

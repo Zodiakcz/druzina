@@ -54,7 +54,10 @@ export const sheetSchema = z.object({
       prepared: z.boolean().default(true),
       /** Open5e key when the spell is in the SRD, for the Czech/English text lookup. */
       srd: text(80),
-      text: text(5000),
+      text: text(8000),
+      /** English original from an import, so a re-import can tell whether the text changed. */
+      nameEn: text(80),
+      textEn: text(8000),
     })).max(150).default([]),
   }).nullable().default(null),
   resources: z.array(z.object({
@@ -67,7 +70,10 @@ export const sheetSchema = z.object({
     id,
     name: z.string().max(120),
     source: text(80),
-    text: text(8000),
+    text: text(12000),
+    /** English original from an import; text === textEn means it still needs translating. */
+    nameEn: text(120),
+    textEn: text(12000),
   })).max(120).default([]),
 })
 
