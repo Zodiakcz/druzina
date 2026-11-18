@@ -1,0 +1,440 @@
+// The form behind "Upravit kartu" and "Nová postava". Plain fields, no rules engine: whoever
+// fills it in copies numbers from D&D Beyond or the paper sheet.
+import { useMemo, useState, type ReactNode } from 'react'
+import type { Ability, Sheet, Skill, SkillLevel } from '@/lib/types'
+import { ABILITIES, SKILLS } from '@/lib/types'
+import { ABILITY, SKILL, T } from '@/lib/cs'
+import { mod } from '@/lib/rules'
+import { useSpells } from '@/lib/srd'
+import { Button, Section } from './ui'
+import { signed } from '@/lib/cs'
+
+const uid = () => Math.random().toString(36).slice(2, 10)
+
+const input = 'w-full rounded-lg border border-zinc-700 bg-zinc-950 px-2.5 py-2 text-sm text-zinc-100 placeholder:text-zinc-600'
+
+function Field({ label, children, className = '' }: { label: string; children: ReactNode; className?: string }) {
+  return (
+    <label className={`block ${className}`}>
+      <span className="mb-1 block text-xs text-zinc-400">{label}</span>
+      {children}
+    </label>
+  )
+}
+
+function Num({ value, onChange, min, max }: { value: number; onChange: (n: number) => void; min?: number; max?: number }) {
+  return (
+    <input
+      className={input}
+      inputMode="numeric"
+      value={Number.isFinite(value) ? String(value) : ''}
+      onChange={(e) => {
+        const n = parseInt(e.target.value.replace(/[^\d-]/g, ''), 10)
+        onChange(Number.isFinite(n) ? Math.min(max ?? 999, Math.max(min ?? -99, n)) : 0)
+      }}
+    />
+  )
+}
+
+function Rows<T extends object>({ items, onChange, render, blank, addLabel }: {
+  items: T[]
+  onChange: (items: T[]) => void
+  render: (item: T, set: (patch: Partial<T>) => void) => ReactNode
+  blank: () => T
+  addLabel: string
+}) {
+  return (
+    <div className="space-y-2">
+      {items.map((item, i) => (
+        <div key={(item as { id?: string }).id ?? i} className="rounded-lg border border-zinc-800 bg-zinc-950/50 p-2">
+          {render(item, (patch) => onChange(items.map((x, j) => (j === i ? { ...x, ...patch } : x))))}
+          <div className="mt-1 flex justify-end gap-1">
+            {i > 0 && (
+              <button className="px-2 text-xs text-zinc-500" onClick={() => onChange(items.map((x, j) => (j === i - 1 ? items[i] : j === i ? items[i - 1] : x)))}>
+                ↑ výš
+              </button>
+            )}
+            <button className="px-2 text-xs text-red-400" onClick={() => onChange(items.filter((_, j) => j !== i))}>
+              Odebrat
+            </button>
+          </div>
+        </div>
+      ))}
+      <Button onClick={() => onChange([...items, blank()])}>+ {addLabel}</Button>
+    </div>
+  )
+}
+
+const SKILL_LEVELS: [SkillLevel, string][] = [
+  [0, '–'],
+  [0.5, '½'],
+  [1, 'zdatnost'],
+  [2, 'odbornost'],
+]
+
+export function SheetEditor({ initial, onSave, onCancel, onDelete }: {
+  initial: Sheet
+  onSave: (s: Sheet) => Promise<void>
+  onCancel: () => void
+  onDelete?: () => void
+}) {
+  const [s, setS] = useState<Sheet>(() => structuredClone(initial))
+  const [saving, setSaving] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const set = (patch: Partial<Sheet>) => setS((x) => ({ ...x, ...patch }))
+  const srd = useSpells(!!s.spellcasting)
+  const spellIndex = useMemo(() => {
+    const m = new Map<string, { key: string; name: string; level: number }>()
+    for (const e of srd?.values() ?? []) {
+      m.set(e.name.toLowerCase(), { key: e.key, name: e.nameCs ?? e.name, level: e.level })
+      if (e.nameCs) m.set(e.nameCs.toLowerCase(), { key: e.key, name: e.nameCs, level: e.level })
+    }
+    return m
+  }, [srd])
+  const [spellSearch, setSpellSearch] = useState('')
+
+  const save = async () => {
+    if (!s.name.trim()) return setError('Postava potřebuje jméno.')
+    setSaving(true)
+    setError(null)
+    try {
+      await onSave({ ...s, name: s.name.trim() })
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Uložení selhalo')
+      setSaving(false)
+    }
+  }
+
+  return (
+    <div className="space-y-3 pb-28">
+      <Section title="Základ">
+        <div className="grid grid-cols-2 gap-2">
+          <Field label="Jméno postavy" className="col-span-2">
+            <input className={input} value={s.name} onChange={(e) => set({ name: e.target.value })} />
+          </Field>
+          <Field label="Hráč">
+            <input className={input} value={s.player} onChange={(e) => set({ player: e.target.value })} />
+          </Field>
+          <Field label="Druh">
+            <input className={input} value={s.species} onChange={(e) => set({ species: e.target.value })} placeholder="např. Půlork" />
+          </Field>
+          <Field label="Původ">
+            <input className={input} value={s.background} onChange={(e) => set({ background: e.target.value })} />
+          </Field>
+          <Field label="Obrázek (URL)">
+            <input className={input} value={s.portrait} onChange={(e) => set({ portrait: e.target.value })} placeholder="https://…" />
+          </Field>
+        </div>
+      </Section>
+
+      <Section title="Povolání">
+        <Rows
+          items={s.classes}
+          onChange={(classes) => set({ classes })}
+          blank={() => ({ name: '', subclass: '', level: 1 })}
+          addLabel="povolání"
+          render={(c, setC) => (
+            <div className="grid grid-cols-[1fr_1fr_4rem] gap-2">
+              <input className={input} placeholder="Povolání" value={c.name} onChange={(e) => setC({ name: e.target.value })} />
+              <input className={input} placeholder="Specializace" value={c.subclass} onChange={(e) => setC({ subclass: e.target.value })} />
+              <Num value={c.level} min={0} max={20} onChange={(level) => setC({ level })} />
+            </div>
+          )}
+        />
+      </Section>
+
+      <Section title="Vlastnosti a záchranné hody">
+        <div className="grid grid-cols-3 gap-2">
+          {ABILITIES.map((a: Ability) => (
+            <div key={a} className="rounded-lg border border-zinc-800 p-2">
+              <Field label={`${ABILITY[a].name} (${signed(mod(s.abilities[a]))})`}>
+                <Num value={s.abilities[a]} min={1} max={30} onChange={(v) => set({ abilities: { ...s.abilities, [a]: v } })} />
+              </Field>
+              <label className="mt-1 flex items-center gap-1.5 text-xs text-zinc-400">
+                <input
+                  type="checkbox"
+                  checked={s.saves.includes(a)}
+                  onChange={(e) => set({ saves: e.target.checked ? [...s.saves, a] : s.saves.filter((x) => x !== a) })}
+                />
+                zdatný ZH
+              </label>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section title={T.skills}>
+        <div className="grid grid-cols-1 gap-1 sm:grid-cols-2">
+          {SKILLS.map((k: Skill) => (
+            <label key={k} className="flex items-center justify-between gap-2 text-sm text-zinc-300">
+              {SKILL[k]}
+              <select
+                className="rounded border border-zinc-700 bg-zinc-950 px-1.5 py-1 text-sm"
+                value={s.skills[k] ?? 0}
+                onChange={(e) => {
+                  const v = Number(e.target.value) as SkillLevel
+                  const skills = { ...s.skills }
+                  if (v) skills[k] = v
+                  else delete skills[k]
+                  set({ skills })
+                }}
+              >
+                {SKILL_LEVELS.map(([v, l]) => (
+                  <option key={v} value={v}>
+                    {l}
+                  </option>
+                ))}
+              </select>
+            </label>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Boj">
+        <div className="grid grid-cols-4 gap-2">
+          <Field label={T.acShort}>
+            <Num value={s.ac} min={0} max={40} onChange={(ac) => set({ ac })} />
+          </Field>
+          <Field label="Max ŽV">
+            <Num value={s.hpMax} min={0} max={999} onChange={(hpMax) => set({ hpMax })} />
+          </Field>
+          <Field label="Rychlost">
+            <Num value={s.speed} min={0} max={200} onChange={(speed) => set({ speed })} />
+          </Field>
+          <Field label="Inic. navíc">
+            <Num value={s.initiativeBonus} min={-10} max={20} onChange={(initiativeBonus) => set({ initiativeBonus })} />
+          </Field>
+        </div>
+        <p className="mb-1 mt-3 text-xs text-zinc-400">{T.hitDice}</p>
+        <Rows
+          items={s.hitDice}
+          onChange={(hitDice) => set({ hitDice })}
+          blank={() => ({ die: 8 as const, count: 1 })}
+          addLabel="kostky životů"
+          render={(h, setH) => (
+            <div className="grid grid-cols-2 gap-2">
+              <select className={input} value={h.die} onChange={(e) => setH({ die: Number(e.target.value) as 6 | 8 | 10 | 12 })}>
+                {[6, 8, 10, 12].map((d) => (
+                  <option key={d} value={d}>
+                    k{d}
+                  </option>
+                ))}
+              </select>
+              <Num value={h.count} min={0} max={20} onChange={(count) => setH({ count })} />
+            </div>
+          )}
+        />
+        <Field label={T.senses} className="mt-3">
+          <input className={input} value={s.senses} onChange={(e) => set({ senses: e.target.value })} placeholder="Vidění ve tmě 60 stop" />
+        </Field>
+      </Section>
+
+      <Section title={T.attacks}>
+        <Rows
+          items={s.attacks}
+          onChange={(attacks) => set({ attacks })}
+          blank={() => ({ id: uid(), name: '', toHit: 0, damage: '', damageType: '', notes: '' })}
+          addLabel="útok"
+          render={(a, setA) => (
+            <div className="grid grid-cols-[1fr_4.5rem] gap-2">
+              <input className={input} placeholder="Název" value={a.name} onChange={(e) => setA({ name: e.target.value })} />
+              <input
+                className={input}
+                placeholder="útok"
+                inputMode="numeric"
+                value={a.toHit === null ? '' : String(a.toHit)}
+                onChange={(e) => {
+                  const n = parseInt(e.target.value, 10)
+                  setA({ toHit: Number.isFinite(n) ? n : null })
+                }}
+              />
+              <input className={input} placeholder="Zranění, např. 1d12+3" value={a.damage} onChange={(e) => setA({ damage: e.target.value })} />
+              <input className={input} placeholder="typ" value={a.damageType} onChange={(e) => setA({ damageType: e.target.value })} />
+              <input className={`${input} col-span-2`} placeholder="Poznámka (vlastnosti, mistrovství)" value={a.notes} onChange={(e) => setA({ notes: e.target.value })} />
+            </div>
+          )}
+        />
+        <p className="mt-2 text-xs text-zinc-500">Prázdný bonus k útoku = bez hodu na útok (kouzlo se záchranným hodem).</p>
+      </Section>
+
+      <Section
+        title={T.spells}
+        right={
+          <label className="flex items-center gap-1.5 text-xs text-zinc-400">
+            <input
+              type="checkbox"
+              checked={!!s.spellcasting}
+              onChange={(e) => set({ spellcasting: e.target.checked ? { ability: 'int', slots: [0, 0, 0, 0, 0, 0, 0, 0, 0], pact: null, spells: [] } : null })}
+            />
+            sesílá kouzla
+          </label>
+        }
+      >
+        {s.spellcasting && (
+          <SpellcastingFields
+            sc={s.spellcasting}
+            onChange={(spellcasting) => set({ spellcasting })}
+            spellSearch={spellSearch}
+            setSpellSearch={setSpellSearch}
+            spellIndex={spellIndex}
+          />
+        )}
+      </Section>
+
+      <Section title={T.resources}>
+        <Rows
+          items={s.resources}
+          onChange={(resources) => set({ resources })}
+          blank={() => ({ id: uid(), name: '', max: 1, reset: 'long' as const })}
+          addLabel="zdroj (zuřivost, kanalizace božství…)"
+          render={(r, setR) => (
+            <div className="grid grid-cols-[1fr_4rem_7rem] gap-2">
+              <input className={input} placeholder="Název" value={r.name} onChange={(e) => setR({ name: e.target.value })} />
+              <Num value={r.max} min={0} max={99} onChange={(max) => setR({ max })} />
+              <select className={input} value={r.reset} onChange={(e) => setR({ reset: e.target.value as 'short' | 'long' })}>
+                <option value="short">krátký odp.</option>
+                <option value="long">dlouhý odp.</option>
+              </select>
+            </div>
+          )}
+        />
+      </Section>
+
+      <Section title={T.features}>
+        <Rows
+          items={s.features}
+          onChange={(features) => set({ features })}
+          blank={() => ({ id: uid(), name: '', source: '', text: '' })}
+          addLabel="schopnost"
+          render={(f, setF) => (
+            <div className="grid grid-cols-2 gap-2">
+              <input className={input} placeholder="Název" value={f.name} onChange={(e) => setF({ name: e.target.value })} />
+              <input className={input} placeholder="Zdroj, např. Barbar 3" value={f.source} onChange={(e) => setF({ source: e.target.value })} />
+              <textarea className={`${input} col-span-2`} rows={3} placeholder="Co to dělá" value={f.text} onChange={(e) => setF({ text: e.target.value })} />
+            </div>
+          )}
+        />
+      </Section>
+
+      <Section title="Texty">
+        <Field label={T.proficiencies}>
+          <textarea className={input} rows={3} value={s.proficiencies} onChange={(e) => set({ proficiencies: e.target.value })} />
+        </Field>
+        <Field label={T.notes} className="mt-2">
+          <textarea className={input} rows={4} value={s.notes} onChange={(e) => set({ notes: e.target.value })} />
+        </Field>
+      </Section>
+
+      {onDelete && (
+        <div className="pt-2">
+          <Button kind="danger" onClick={onDelete}>
+            Smazat postavu
+          </Button>
+        </div>
+      )}
+
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-zinc-800 bg-zinc-950/95 px-3 py-3 pb-[max(.75rem,env(safe-area-inset-bottom))] backdrop-blur">
+        <div className="mx-auto flex max-w-2xl items-center gap-2">
+          {error && <span className="min-w-0 flex-1 truncate text-sm text-red-400">{error}</span>}
+          <span className="flex-1" />
+          <Button kind="ghost" onClick={onCancel}>
+            Zrušit
+          </Button>
+          <Button kind="primary" onClick={save} disabled={saving}>
+            {saving ? 'Ukládám…' : 'Uložit'}
+          </Button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function SpellcastingFields({ sc, onChange, spellSearch, setSpellSearch, spellIndex }: {
+  sc: NonNullable<Sheet['spellcasting']>
+  onChange: (sc: NonNullable<Sheet['spellcasting']>) => void
+  spellSearch: string
+  setSpellSearch: (v: string) => void
+  spellIndex: Map<string, { key: string; name: string; level: number }>
+}) {
+  const addFromSrd = (value: string) => {
+    const hit = spellIndex.get(value.trim().toLowerCase())
+    if (!hit) return false
+    if (!sc.spells.some((x) => x.srd === hit.key)) {
+      onChange({ ...sc, spells: [...sc.spells, { id: uid(), name: hit.name, level: hit.level, prepared: true, srd: hit.key, text: '' }] })
+    }
+    setSpellSearch('')
+    return true
+  }
+  return (
+    <div className="space-y-3">
+      <Field label="Sesílací vlastnost">
+        <select className={input} value={sc.ability} onChange={(e) => onChange({ ...sc, ability: e.target.value as Ability })}>
+          {ABILITIES.map((a) => (
+            <option key={a} value={a}>
+              {ABILITY[a].name}
+            </option>
+          ))}
+        </select>
+      </Field>
+      <div>
+        <p className="mb-1 text-xs text-zinc-400">Pozice kouzel podle úrovně (1 až 9)</p>
+        <div className="grid grid-cols-9 gap-1">
+          {sc.slots.map((n, i) => (
+            <Num key={i} value={n} min={0} max={9} onChange={(v) => onChange({ ...sc, slots: sc.slots.map((x, j) => (j === i ? v : x)) })} />
+          ))}
+        </div>
+      </div>
+      <label className="flex items-center gap-2 text-xs text-zinc-400">
+        <input type="checkbox" checked={!!sc.pact} onChange={(e) => onChange({ ...sc, pact: e.target.checked ? { level: 1, count: 1 } : null })} />
+        {T.pact} (černokněžník)
+      </label>
+      {sc.pact && (
+        <div className="grid grid-cols-2 gap-2">
+          <Field label="Úroveň pozic paktu">
+            <Num value={sc.pact.level} min={1} max={5} onChange={(level) => onChange({ ...sc, pact: { ...sc.pact!, level } })} />
+          </Field>
+          <Field label="Počet">
+            <Num value={sc.pact.count} min={0} max={4} onChange={(count) => onChange({ ...sc, pact: { ...sc.pact!, count } })} />
+          </Field>
+        </div>
+      )}
+      <Field label="Přidat kouzlo ze SRD (začni psát anglický nebo český název)">
+        <input
+          className={input}
+          list="srd-spells"
+          value={spellSearch}
+          onChange={(e) => {
+            if (!addFromSrd(e.target.value)) setSpellSearch(e.target.value)
+          }}
+          placeholder="Fireball…"
+        />
+        <datalist id="srd-spells">
+          {[...spellIndex.values()]
+            .filter((v, i, arr) => arr.findIndex((x) => x.key === v.key) === i)
+            .map((v) => (
+              <option key={v.key} value={v.name} />
+            ))}
+        </datalist>
+      </Field>
+      <Rows
+        items={sc.spells}
+        onChange={(spells) => onChange({ ...sc, spells })}
+        blank={() => ({ id: uid(), name: '', level: 1, prepared: true, srd: '', text: '' })}
+        addLabel="vlastní kouzlo (mimo SRD)"
+        render={(sp, setSp) => (
+          <div className="grid grid-cols-[1fr_3.5rem] gap-2">
+            <input className={input} placeholder="Název" value={sp.name} onChange={(e) => setSp({ name: e.target.value })} />
+            <Num value={sp.level} min={0} max={9} onChange={(level) => setSp({ level })} />
+            <label className="col-span-2 flex items-center gap-2 text-xs text-zinc-400">
+              <input type="checkbox" checked={sp.prepared} onChange={(e) => setSp({ prepared: e.target.checked })} /> připravené
+              {sp.srd && <span className="text-zinc-600">· text ze SRD</span>}
+            </label>
+            {!sp.srd && (
+              <textarea className={`${input} col-span-2`} rows={2} placeholder="Text kouzla" value={sp.text} onChange={(e) => setSp({ text: e.target.value })} />
+            )}
+          </div>
+        )}
+      />
+    </div>
+  )
+}

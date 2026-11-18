@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Campaign {
+  id         String      @id @default(cuid())
+  name       String
+  gmKey      String      @unique
+  partyKey   String      @unique
+  createdAt  DateTime    @default(now())
+  characters Character[]
+  rolls      Roll[]
+}
+
+model Character {
+  id         String   @id @default(cuid())
+  campaignId String
+  campaign   Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  key        String   @unique
+  /// Static description (abilities, proficiencies, attacks, spells, features). JSON, see server/src/schema.ts.
+  sheet      String
+  /// Play state (HP, slots, resources, conditions). JSON, see server/src/schema.ts.
+  state      String
+  /// D&D Beyond character id when imported, for re-import.
+  ddbId      Int?
+  sort       Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  rolls      Roll[]
+
+  @@index([campaignId])
+}
+
+model Roll {
+  id          String     @id @default(cuid())
+  campaignId  String
+  campaign    Campaign   @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  characterId String?
+  character   Character? @relation(fields: [characterId], references: [id], onDelete: SetNull)
+  /// Who rolled, as shown in the log (character name or "PJ"). Kept even if the character is deleted.
+  who         String
+  label       String
+  formula     String
+  total       Int
+  /// JSON: the individual dice and modifiers, see RollDetail in client/src/lib/types.ts.
+  detail      String
+  /// Visible only to the GM.
+  hidden      Boolean    @default(false)
+  createdAt   DateTime   @default(now())
+
+  @@index([campaignId, createdAt])
+}

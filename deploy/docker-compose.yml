@@ -1,0 +1,15 @@
+# On the Docker VM (192.168.88.206), e.g. in ~/druzina. Settings in .env next to this file:
+#   CREATE_KEY=...   needed to found a new campaign from the home page; pick a long random string
+services:
+  app:
+    image: ghcr.io/zodiakcz/druzina:latest
+    env_file: .env
+    ports:
+      # 8095 is lukovany-denik; check `docker ps` before relying on 8096 being free.
+      - "172.17.0.1:8096:3000"
+    volumes:
+      - druzina-data:/data
+    restart: unless-stopped
+
+volumes:
+  druzina-data:

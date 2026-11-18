@@ -1,0 +1,5 @@
+# Append to /opt/lankaparty/Caddyfile (lankapartycz repo), then:
+#   docker exec lankaparty-caddy-1 caddy reload --config /etc/caddy/Caddyfile
+druzina.lankapp.cloud {
+    reverse_proxy 172.17.0.1:8096
+}

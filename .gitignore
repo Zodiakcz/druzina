@@ -1,0 +1,9 @@
+node_modules/
+dist/
+server/public/
+server/.env
+*.db
+*.db-journal
+*.log
+deploy/.env
+*.tsbuildinfo
