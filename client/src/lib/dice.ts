@@ -80,6 +80,21 @@ export function roll(formula: string, mode: Mode = 'normal', rand?: (n: number) 
 /** "1d20+5" for a d20 test with the given bonus. */
 export const d20 = (bonus: number) => (bonus === 0 ? '1d20' : `1d20${bonus > 0 ? '+' : '-'}${Math.abs(bonus)}`)
 
+/** Formula from a dice pool ({6: 2, 8: 1} and a modifier → "2d6+1d8+3"), smallest die first. */
+export function poolFormula(pool: Record<number, number>, modifier = 0): string {
+  const dice = Object.keys(pool)
+    .map(Number)
+    .filter((d) => pool[d] > 0)
+    .sort((a, b) => a - b)
+    .map((d) => `${pool[d]}d${d}`)
+  if (!dice.length) return ''
+  const mod = modifier === 0 ? '' : modifier > 0 ? `+${modifier}` : `-${Math.abs(modifier)}`
+  return dice.join('+') + mod
+}
+
+/** "2d6+1d8-1" shown the Czech way with spaces: "2k6 + 1k8 − 1". */
+export const prettyFormula = (f: string) => f.replace(/d/gi, 'k').replace(/\+/g, ' + ').replace(/-/g, ' − ')
+
 /** Critical hit: double the dice, not the modifier ("1d12+3" → "2d12+3"). */
 export function critFormula(formula: string): string {
   return formula.replace(/(\d*)d(\d+)/gi, (_m, c: string, d: string) => `${(c === '' ? 1 : Number(c)) * 2}d${d}`)

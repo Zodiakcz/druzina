@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { HpDetail, Roll, RollDetail } from '@/lib/types'
+import { T } from '@/lib/cs'
 import { DetailText } from './Roller'
 
 const time = (iso: string) => new Date(iso).toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit' })
@@ -11,6 +12,20 @@ const EVENT_STYLE: Record<string, { sign: string; color: string }> = {
   temp: { sign: '+', color: 'text-sky-300' },
 }
 
+const TAG_CHIP: Partial<Record<NonNullable<RollDetail['tag']>, { text: string; cls: string }>> = {
+  attack: { text: T.tagAttack, cls: 'bg-amber-900/70 text-amber-300' },
+  damage: { text: T.tagDamage, cls: 'bg-red-900/70 text-red-300' },
+  crit: { text: T.tagCrit, cls: 'bg-orange-900/70 text-orange-300' },
+}
+
+function TagChip({ r }: { r: Roll }) {
+  if (r.kind && r.kind !== 'roll') return null
+  const tag = (r.detail as RollDetail | null)?.tag
+  const chip = tag && TAG_CHIP[tag]
+  if (!chip) return null
+  return <span className={`mr-1 rounded px-1 py-px align-middle text-[10px] font-semibold uppercase ${chip.cls}`}>{chip.text}</span>
+}
+
 function Total({ r }: { r: Roll }) {
   if (r.kind === 'rest') return <span className="text-xl text-zinc-400">☾</span>
   if (r.kind === 'item' || r.kind === 'gold') {
@@ -20,8 +35,10 @@ function Total({ r }: { r: Roll }) {
   }
   const ev = EVENT_STYLE[r.kind]
   if (ev) return <span className={ev.color}>{`${ev.sign}${r.total}`}</span>
-  const nat = (r.detail as RollDetail | null)?.nat
-  return <span className={nat === 20 ? 'text-amber-300' : nat === 1 ? 'text-red-400' : 'text-zinc-100'}>{r.total}</span>
+  const d = r.detail as RollDetail | null
+  const nat = d?.nat
+  const tone = d?.tag === 'damage' ? 'text-red-400' : d?.tag === 'crit' ? 'text-orange-400' : null
+  return <span className={tone ?? (nat === 20 ? 'text-amber-300' : nat === 1 ? 'text-red-400' : 'text-zinc-100')}>{r.total}</span>
 }
 
 function Sub({ r }: { r: Roll }) {
@@ -51,10 +68,11 @@ export function RollLog({ rolls, meId, hasMore, onLoadMore }: {
             </span>
             <span className="min-w-0 flex-1">
               <span className="block truncate text-sm text-zinc-100">
-                <span className="font-semibold">{r.who}</span> · {r.label}
+                <span className="font-semibold">{r.who}</span> · <TagChip r={r} />
+                {r.label}
                 {r.hidden && <span className="ml-1 rounded bg-zinc-700 px-1 text-[10px] uppercase text-zinc-300">skrytý</span>}
               </span>
-              <span className="block truncate text-xs text-zinc-500">
+              <span className="block text-xs leading-relaxed text-zinc-500">
                 <Sub r={r} />
               </span>
             </span>
