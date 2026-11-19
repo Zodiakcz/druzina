@@ -2,7 +2,7 @@ import { Router, type Request } from 'express'
 import { timingSafeEqual } from 'crypto'
 import { z } from 'zod'
 import { prisma, HttpError, newKey, resolveKey, publicCharacter, publicRoll, type Access } from './lib'
-import { sheetSchema, stateSchema, parseStatePatch, initialState, rollSchema } from './schema'
+import { sheetSchema, stateSchema, readState, parseStatePatch, initialState, rollSchema } from './schema'
 import { subscribe, publish } from './events'
 import { fetchDdb, mapCharacter, parseDdbId } from './ddb'
 import type { Sheet } from './schema'
@@ -151,7 +151,7 @@ r.put('/characters/:id/sheet', async (req, res) => {
   const c = await editable(a, req.params.id)
   const sheet = parse(sheetSchema, req.body.sheet)
   // Lowering max HP must not leave current HP above it.
-  const state = stateSchema.parse(JSON.parse(c.state))
+  const state = readState(c.state)
   if (state.hp > sheet.hpMax) state.hp = sheet.hpMax
   const ddbId = req.body.ddbId == null ? undefined : parse(z.number().int().positive(), req.body.ddbId)
   const updated = await prisma.character.update({
@@ -168,7 +168,7 @@ r.patch('/characters/:id/state', async (req, res) => {
   const a = await access(req)
   const c = await editable(a, req.params.id)
   const patch = parseStatePatch(req.body.patch)
-  const state = stateSchema.parse({ ...JSON.parse(c.state), ...patch })
+  const state = stateSchema.parse({ ...readState(c.state), ...patch })
   const updated = await prisma.character.update({ where: { id: c.id }, data: { state: JSON.stringify(state) } })
   publish(a.campaign.id, 'character', publicCharacter(updated))
   res.json(publicCharacter(updated, a.role === 'gm'))

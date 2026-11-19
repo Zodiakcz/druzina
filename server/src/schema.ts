@@ -95,9 +95,31 @@ export const stateSchema = z.object({
   death: z.object({ ok: int(0, 3), fail: int(0, 3) }).default({ ok: 0, fail: 0 }),
   concentration: text(80),
   /** Inventory: free-text items with a count. Changes go to the public log. */
-  items: z.array(z.object({ id, name: z.string().trim().min(1).max(80), qty: int(1, 9999) })).max(300).default([]),
-  /** Gold pieces (zl). Other coins, if any, are items ("Stříbrňáky"). */
-  gold: int(0, 10_000_000).default(0),
+  items: z.array(z.object({
+    id,
+    name: z.string().trim().min(1).max(80),
+    qty: int(1, 9999),
+    /** English original from an import. */
+    nameEn: text(80),
+    /** One summary line (type, rarity, damage, AC). */
+    info: text(160),
+    /** Pounds per piece. */
+    weight: z.number().min(0).max(10000).default(0),
+    /** Gold pieces per piece. */
+    cost: z.number().min(0).max(100_000_000).default(0),
+    equipped: z.boolean().default(false),
+    text: text(3000),
+    /** The player's own notes. */
+    notes: text(1000),
+  })).max(300).default([]),
+  /** Money. cp = měďáky, sp = stříbrňáky, ep = elektrum, gp = zlaťáky, pp = platina. */
+  coins: z.object({
+    cp: int(0, 10_000_000).default(0),
+    sp: int(0, 10_000_000).default(0),
+    ep: int(0, 10_000_000).default(0),
+    gp: int(0, 10_000_000).default(0),
+    pp: int(0, 10_000_000).default(0),
+  }).default({ cp: 0, sp: 0, ep: 0, gp: 0, pp: 0 }),
 })
 
 export const statePatchSchema = stateSchema.partial()
@@ -115,6 +137,28 @@ export function parseStatePatch(body: unknown): Partial<State> {
   }
   const sent = body && typeof body === 'object' ? Object.keys(body) : []
   return Object.fromEntries(Object.entries(res.data).filter(([k]) => sent.includes(k))) as Partial<State>
+}
+
+/**
+ * Parse a stored state, migrating rows from before coins existed: `gold` becomes gp and the
+ * items the importer used to create for other coins move into their coin.
+ */
+export function readState(json: string): State {
+  const raw = JSON.parse(json)
+  if (raw && typeof raw === 'object' && !('coins' in raw)) {
+    const coins = { cp: 0, sp: 0, ep: 0, gp: Number(raw.gold) || 0, pp: 0 }
+    const legacy: Record<string, keyof typeof coins> = { 'Elektrum (el)': 'ep', 'Stříbrňáky (st)': 'sp', 'Měďáky (md)': 'cp' }
+    const items = Array.isArray(raw.items) ? raw.items : []
+    raw.items = items.filter((i: { name?: string; qty?: number }) => {
+      const k = i && i.name ? legacy[i.name] : undefined
+      if (!k) return true
+      coins[k] += Number(i.qty) || 0
+      return false
+    })
+    raw.coins = coins
+  }
+  if (raw && typeof raw === 'object') delete raw.gold
+  return stateSchema.parse(raw)
 }
 
 export type Sheet = z.infer<typeof sheetSchema>

@@ -4,7 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useState, type React
 import { Link, Outlet, useNavigate, useParams } from 'react-router-dom'
 import { useSession, type DdbImport, type SessionApi } from '@/lib/session'
 import { rememberLink } from '@/lib/links'
-import { emptySheet, type Character, type RollDetail, type Session, type Sheet } from '@/lib/types'
+import { emptySheet, type Character, type RollDetail, type Session, type Sheet, type State } from '@/lib/types'
 import { RollerProvider, DiceBar } from '@/components/Roller'
 import { RollLog } from '@/components/RollLog'
 import { PartyCard } from '@/components/PartyCard'
@@ -206,11 +206,29 @@ export function GmCharacter() {
   )
 }
 
+/** Fills empty details of existing items from a re-import; quantities and notes stay. */
+function mergeItemDetails(current: State['items'], fresh: State['items']): State['items'] {
+  const by = (n: string) => n.toLowerCase()
+  return current.map((i) => {
+    const f = fresh.find((x) => by(x.name) === by(i.name) || (!!i.nameEn && by(x.nameEn || x.name) === by(i.nameEn)) || (!!x.nameEn && by(x.nameEn) === by(i.name)))
+    if (!f) return i
+    return {
+      ...i,
+      nameEn: i.nameEn || f.nameEn,
+      info: i.info || f.info,
+      weight: i.weight || f.weight,
+      cost: i.cost || f.cost,
+      equipped: i.equipped || f.equipped,
+      text: i.text || f.text,
+    }
+  })
+}
+
 export function GmEdit() {
   const c = useCharacter()
-  const { saveSheet, deleteCharacter, importDdb, base } = useCampaign()
+  const { saveSheet, deleteCharacter, importDdb, patchState, base } = useCampaign()
   const navigate = useNavigate()
-  const [reimport, setReimport] = useState<{ sheet: Sheet; warnings: string[]; n: number } | null>(null)
+  const [reimport, setReimport] = useState<{ sheet: Sheet; items: State['items']; warnings: string[]; n: number } | null>(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
   if (!c) return <p className="py-10 text-center text-zinc-500">Postava nenalezena.</p>
@@ -219,7 +237,7 @@ export function GmEdit() {
     setError(null)
     try {
       const r = await importDdb(String(c.ddbId), c.id)
-      setReimport((x) => ({ sheet: r.sheet, warnings: r.warnings, n: (x?.n ?? 0) + 1 }))
+      setReimport((x) => ({ sheet: r.sheet, items: r.state.items, warnings: r.warnings, n: (x?.n ?? 0) + 1 }))
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Import selhal')
     } finally {
@@ -244,6 +262,7 @@ export function GmEdit() {
         onCancel={() => navigate(-1)}
         onSave={async (s) => {
           await saveSheet(c.id, s)
+          if (reimport) await patchState(c.id, { items: mergeItemDetails(c.state.items, reimport.items) })
           navigate(`${base}/postava/${c.id}`)
         }}
         onDelete={async () => {
