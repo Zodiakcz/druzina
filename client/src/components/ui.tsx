@@ -118,6 +118,11 @@ export function Stat({ label, value, onClick, sub }: { label: string; value: Rea
   )
 }
 
+/** Text with the **bold** and _italic_ markers removed, for one-line previews. */
+export function plainText(text: string) {
+  return text.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/_([^_]+)_/g, '$1')
+}
+
 /** Paragraphs from plain text with blank-line or single-newline breaks; **bold** markers from Open5e kept as bold. */
 export function Prose({ text }: { text: string }) {
   return (

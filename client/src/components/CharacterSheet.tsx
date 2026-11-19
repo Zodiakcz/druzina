@@ -11,7 +11,7 @@ import { useRoller, DiceFab } from './Roller'
 import { RollLog } from './RollLog'
 import { InventoryTab } from './Inventory'
 import { HpBar, Portrait } from './PartyCard'
-import { Button, DieIcon, Modal, More, Pips, Prose, RollButton, Section, Stat } from './ui'
+import { Button, DieIcon, Modal, More, Pips, Prose, RollButton, Section, Stat, plainText } from './ui'
 import type { Roll } from '@/lib/types'
 
 type Tab = 'boj' | 'vlastnosti' | 'kouzla' | 'schopnosti' | 'vybava' | 'log'
@@ -64,7 +64,7 @@ export function CharacterSheet({ c, rolls, patch, log, onEdit, hasMoreRolls, onL
   })
 
   return (
-    <div className="min-h-[80vh] pb-36" {...swipe}>
+    <div className="mx-auto min-h-[80vh] max-w-2xl pb-40" {...swipe}>
       <Header c={c} patch={patch} onEdit={onEdit} />
       <div key={tab} className={`mt-3 space-y-3 ${dir > 0 ? 'animate-[slidein-r_.18s_ease-out]' : dir < 0 ? 'animate-[slidein-l_.18s_ease-out]' : ''}`}>
         {tab === 'boj' && <CombatTab c={c} patch={patch} log={log} read={read} />}
@@ -88,9 +88,12 @@ export function CharacterSheet({ c, rolls, patch, log, onEdit, hasMoreRolls, onL
             <button
               key={id}
               onClick={() => go(id)}
-              className={`min-w-0 flex-1 truncate px-0.5 py-3 text-[11px] font-semibold ${tab === id ? 'text-amber-300' : 'text-zinc-500'}`}
+              aria-current={tab === id ? 'page' : undefined}
+              className={`relative flex h-14 min-w-0 flex-1 flex-col items-center justify-center gap-0.5 px-0.5 text-[10.5px] font-semibold transition-colors ${tab === id ? 'text-amber-300' : 'text-zinc-500 active:text-zinc-300'}`}
             >
-              {label}
+              {tab === id && <span className="absolute inset-x-3 top-0 h-0.5 rounded-b bg-amber-400" />}
+              <TabIcon tab={id} />
+              <span className="max-w-full truncate">{label}</span>
             </button>
           ))}
         </div>
@@ -101,6 +104,23 @@ export function CharacterSheet({ c, rolls, patch, log, onEdit, hasMoreRolls, onL
         </Modal>
       )}
     </div>
+  )
+}
+
+const TAB_ICON: Record<Tab, string> = {
+  boj: 'M14.5 17.5 3 6V3h3l11.5 11.5M13 19l6-6M16 16l4 4M19 21l2-2',
+  vlastnosti: 'M5 21V11M12 21V3M19 21v-6M3 21h18',
+  kouzla: 'M11 3l1.8 4.9L17.7 9.7l-4.9 1.8L11 16.4l-1.8-4.9-4.9-1.8 4.9-1.8zM18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z',
+  schopnosti: 'M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5',
+  vybava: 'M6 9a6 6 0 0 1 12 0v11a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zM9.5 3.5V3h5v.5M9 14h6v3H9zM6 11h12',
+  log: 'M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01',
+}
+
+function TabIcon({ tab }: { tab: Tab }) {
+  return (
+    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d={TAB_ICON[tab]} />
+    </svg>
   )
 }
 
@@ -139,11 +159,11 @@ function Header({ c, patch, onEdit }: { c: Character; patch: Props['patch']; onE
     <div className="flex items-start gap-3">
       <Portrait c={c} size={64} />
       <div className="min-w-0 flex-1">
-        <h1 className="truncate font-display text-2xl text-zinc-50">{s.name}</h1>
-        <p className="truncate text-sm text-zinc-400">
+        <h1 className="truncate font-display text-2xl leading-tight text-zinc-50">{s.name}</h1>
+        <p className="line-clamp-2 text-sm leading-snug text-zinc-400">
           {s.species} · {R.classLine(s)}
         </p>
-        <div className="mt-1 flex flex-wrap gap-2">
+        <div className="mt-1.5 flex flex-wrap gap-2">
           <button
             onClick={() => patch({ heroic: !st.heroic })}
             className={`rounded-full border px-2 py-0.5 text-xs ${st.heroic ? 'border-amber-400 bg-amber-500/20 text-amber-200' : 'border-zinc-700 text-zinc-500'}`}
@@ -151,8 +171,15 @@ function Header({ c, patch, onEdit }: { c: Character; patch: Props['patch']; onE
             ★ {T.heroic}
           </button>
           {onEdit && (
-            <button onClick={onEdit} className="rounded-full border border-zinc-700 px-2 py-0.5 text-xs text-zinc-400">
-              Upravit kartu
+            <button
+              onClick={onEdit}
+              aria-label="Upravit kartu"
+              title="Upravit kartu"
+              className="flex h-6 w-6 items-center justify-center rounded-full border border-zinc-700 text-zinc-400 hover:text-zinc-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M17 3a2.8 2.8 0 0 1 4 4L7.5 20.5 2 22l1.5-5.5z" />
+              </svg>
             </button>
           )}
         </div>
@@ -433,7 +460,7 @@ function HpPanel({ c, patch, log }: { c: Character; patch: Props['patch']; log: 
       <div className="flex items-center gap-3">
         <div className="flex-1">
           <div className="text-4xl font-bold tabular-nums text-zinc-50">
-            {st.hp}
+            <span className={hpTone(st.hp, s.hpMax)}>{st.hp}</span>
             <span className="text-xl text-zinc-500"> / {s.hpMax}</span>
             {st.temp > 0 && <span className="ml-2 text-xl text-sky-300">+{st.temp}</span>}
           </div>
@@ -496,6 +523,13 @@ function HpPanel({ c, patch, log }: { c: Character; patch: Props['patch']; log: 
       )}
     </Section>
   )
+}
+
+/** Current HP colour: white when fine, amber under half, red under a quarter and at 0. */
+function hpTone(hp: number, max: number) {
+  if (hp <= 0 || hp * 4 <= max) return 'text-red-400'
+  if (hp * 2 <= max) return 'text-amber-300'
+  return ''
 }
 
 function DeathSaves({ c, patch, log }: { c: Character; patch: Props['patch']; log: LogEvent }) {
@@ -937,7 +971,7 @@ function FeaturesTab({ s, read }: { s: Sheet; read: (t: ReactNode, b: ReactNode)
                     <span className="block text-sm font-semibold text-zinc-100">
                       {f.name} {f.textEn && f.text === f.textEn && <span className="text-xs font-normal text-amber-500">zatím anglicky</span>}
                     </span>
-                    {f.text && <span className="line-clamp-2 block text-xs text-zinc-400">{f.text}</span>}
+                    {f.text && <span className="line-clamp-2 text-xs text-zinc-400">{plainText(f.text)}</span>}
                   </span>
                   <More />
                 </button>

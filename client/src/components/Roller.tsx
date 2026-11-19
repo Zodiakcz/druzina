@@ -175,7 +175,7 @@ function RollToast({ result, onReveal, onClose, onFollow }: {
     <div
       onClick={shown ? onClose : show}
       aria-live="polite"
-      className={`fixed inset-x-3 bottom-[calc(7.5rem+env(safe-area-inset-bottom))] z-40 mx-auto max-w-md cursor-pointer rounded-2xl border px-4 py-3 text-left shadow-2xl transition-colors duration-300 animate-[pop_.18s_ease-out] ${
+      className={`fixed inset-x-3 bottom-[calc(8.25rem+env(safe-area-inset-bottom))] z-40 mx-auto max-w-md cursor-pointer rounded-2xl border px-4 py-3 text-left shadow-2xl transition-colors duration-300 animate-[pop_.18s_ease-out] ${
         nat === 20 ? 'border-amber-400 bg-amber-950' : nat === 1 ? 'border-red-700 bg-red-950' : 'border-zinc-600 bg-zinc-900'
       }`}
     >
@@ -384,7 +384,7 @@ export function DiceFab() {
   return (
     <>
       {open && <div className="fixed inset-0 z-[44] bg-black/50" onClick={() => setOpen(false)} />}
-      <div className={`pointer-events-none fixed inset-x-0 bottom-[calc(44px+env(safe-area-inset-bottom))] ${open ? 'z-[45]' : 'z-30'}`}>
+      <div className={`pointer-events-none fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] ${open ? 'z-[45]' : 'z-30'}`}>
         <div className="mx-auto flex max-w-2xl flex-col items-end gap-2 px-3 pb-2">
           {open && (
             <div className="pointer-events-auto w-full rounded-2xl border border-zinc-700 bg-zinc-900 p-3 shadow-2xl animate-[pop_.18s_ease-out]">
