@@ -20,6 +20,8 @@ export interface Attack {
   damage: string
   damageType: string
   notes: string
+  /** The ability behind the attack, so an effect like Rage knows which attacks it touches. '' = unknown. */
+  ability?: Ability | ''
 }
 
 export interface Spell {
@@ -40,6 +42,34 @@ export interface Resource {
   reset: 'short' | 'long'
   /** D&D Beyond's name, to find the feature that explains it. */
   nameEn?: string
+}
+
+/** What an effect modifier changes. Dice bonuses work on rolls only; AC and speed take a number. */
+export type EffectOn = 'attack' | 'damage' | 'check' | 'save' | 'ac' | 'speed'
+
+export interface EffectMod {
+  on: EffectOn
+  /** Only rolls of this ability ('' = all). Attacks need their own `ability` set to match. */
+  ability: Ability | ''
+  /** "2", "-1", "1d4", "1d6+1"; '' = none. */
+  bonus: string
+  /** Advantage or disadvantage on attack, check or save rolls. */
+  mode: 'normal' | 'adv' | 'dis'
+}
+
+/** Something the player switches on mid-fight (Rage, Reckless Attack, Bless) that changes other rolls. */
+export interface Effect {
+  id: string
+  name: string
+  /** Spending a use of this resource switches the effect on ('' = none). */
+  resourceId: string
+  mods: EffectMod[]
+  /** Damage types it resists, free text ("drtivé, bodné, sečné"). */
+  resist: string
+  /** Rage: no spells, no concentration. */
+  noSpells: boolean
+  /** Anything else, shown as a reminder while it is on. */
+  text: string
 }
 
 export interface Feature {
@@ -79,6 +109,7 @@ export interface Sheet {
   } | null
   resources: Resource[]
   features: Feature[]
+  effects: Effect[]
 }
 
 export interface State {
@@ -93,6 +124,8 @@ export interface State {
   heroic: boolean
   death: { ok: number; fail: number }
   concentration: string
+  /** Ids of the effects that are on. Rests clear them. */
+  active: string[]
   items: InventoryItem[]
   coins: Coins
 }
@@ -189,6 +222,6 @@ export function emptySheet(): Sheet {
     name: '', player: '', species: '', background: '', classes: [{ name: '', subclass: '', level: 1 }], portrait: '',
     abilities: { str: 10, dex: 10, con: 10, int: 10, wis: 10, cha: 10 },
     saves: [], skills: {}, ac: 10, speed: 30, hpMax: 10, initiativeBonus: 0, hitDice: [{ die: 8, count: 1 }],
-    senses: '', proficiencies: '', notes: '', attacks: [], spellcasting: null, resources: [], features: [],
+    senses: '', proficiencies: '', notes: '', attacks: [], spellcasting: null, resources: [], features: [], effects: [],
   }
 }

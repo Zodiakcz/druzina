@@ -65,6 +65,7 @@ export const T = {
   proficiencies: 'Zdatnosti a jazyky',
   notes: 'Poznámky',
   resources: 'Zdroje',
+  effects: 'Efekty',
   advantage: 'Výhoda',
   disadvantage: 'Nevýhoda',
   normalRoll: 'Normálně',

@@ -1,10 +1,11 @@
 // The play sheet. Used by a player on their phone and by the GM for any character.
 import { useRef, useState, type ReactNode } from 'react'
-import type { Ability, Character, Sheet, Skill, State } from '@/lib/types'
+import type { Ability, Character, Effect, Sheet, Skill, State } from '@/lib/types'
 import { ABILITIES, SKILLS } from '@/lib/types'
 import { ABILITY, CONDITIONS, EXHAUSTION_TEXT, SKILL, T, signed } from '@/lib/cs'
 import * as R from '@/lib/rules'
-import { critFormula, d20 } from '@/lib/dice'
+import { addToFormula, critFormula, d20, type Mode } from '@/lib/dice'
+import { activeEffects, boost, labelWith, spendResource, toggleEffect, type Boost } from '@/lib/effects'
 import { SCHOOL, csMeta, useSpells, type SrdSpell } from '@/lib/srd'
 import { useRoller, DiceFab } from './Roller'
 import { RollLog } from './RollLog'
@@ -171,29 +172,39 @@ function CombatTab({ c, patch, log, read }: { c: Character; patch: Props['patch'
   const st = c.state
   const { rollAndLog } = useRoller()
   const pen = R.d20Penalty(st)
+  const acB = boost(s, st, 'ac')
+  const speedB = boost(s, st, 'speed')
   return (
     <>
       <HpPanel c={c} patch={patch} log={log} />
       <div className="grid grid-cols-3 gap-2">
-        <Stat label={T.ac} value={s.ac} />
-        <Stat label={T.speed} value={R.effectiveSpeed(s, st)} sub="stop" />
+        <Stat label={T.ac} value={s.ac + acB.flat} sub={acB.flat ? acB.names.join(', ') : undefined} />
+        <Stat label={T.speed} value={Math.max(0, R.effectiveSpeed(s, st) + speedB.flat)} sub="stop" />
         <Stat label={T.prof} value={signed(R.profBonus(s))} />
       </div>
       {st.hp <= 0 && <DeathSaves c={c} patch={patch} log={log} />}
+      {(s.effects ?? []).length > 0 && <Effects c={c} patch={patch} read={read} />}
 
       <Section title={T.attacks}>
         {s.attacks.length === 0 && <p className="text-sm text-zinc-500">Žádné útoky na kartě.</p>}
         <ul className="space-y-2">
           {s.attacks.map((a) => {
-            const hit = a.toHit === null ? null : a.toHit + pen
+            const hitB = boost(s, st, 'attack', a.ability)
+            const dmgB = boost(s, st, 'damage', a.ability)
+            const hit = a.toHit === null ? null : a.toHit + pen + hitB.flat
+            const hitFormula = hit === null ? '' : addToFormula(d20(hit), 0, hitB.dice)
+            const damage = a.damage ? addToFormula(a.damage, dmgB.flat, dmgB.dice) : ''
+            const boosted = [...new Set([...hitB.names, ...dmgB.names])]
             return (
               <li key={a.id} className="rounded-lg bg-zinc-900 p-2">
                 {(() => {
-                  const hasDice = /d/i.test(a.damage)
-                  const followUps = a.damage
+                  const hasDice = /d/i.test(damage)
+                  const dmgLabel = labelWith(`${a.name}: zranění`, dmgB)
+                  const critLabel = labelWith(`${a.name}: kritický zásah`, dmgB)
+                  const followUps = damage
                     ? [
-                        { label: T.damageShort, formula: a.damage, tag: 'damage' as const, rollLabel: `${a.name}: zranění` },
-                        ...(hasDice ? [{ label: T.critShort, formula: critFormula(a.damage), tag: 'crit' as const, rollLabel: `${a.name}: kritický zásah` }] : []),
+                        { label: T.damageShort, formula: damage, tag: 'damage' as const, rollLabel: dmgLabel },
+                        ...(hasDice ? [{ label: T.critShort, formula: critFormula(damage), tag: 'crit' as const, rollLabel: critLabel }] : []),
                       ]
                     : []
                   const head = (
@@ -201,7 +212,8 @@ function CombatTab({ c, patch, log, read }: { c: Character; patch: Props['patch'
                       <span className="min-w-0 flex-1">
                         <span className="block truncate font-semibold text-zinc-100">{a.name}</span>
                         <span className="block truncate text-xs text-zinc-500">
-                          {a.damage.replace(/d/g, 'k')} {a.damageType}
+                          {damage.replace(/d/g, 'k')} {a.damageType}
+                          {boosted.length > 0 && <span className="text-amber-400"> · {boosted.join(', ')}</span>}
                         </span>
                       </span>
                       {a.notes && <More />}
@@ -218,18 +230,26 @@ function CombatTab({ c, patch, log, read }: { c: Character; patch: Props['patch'
                       )}
                       <div className="mt-2 flex flex-wrap gap-2">
                         {hit !== null && (
-                          <RollButton caption={T.tagAttack} tone="amber" onClick={() => rollAndLog(`${a.name}: útok`, d20(hit), { tag: 'attack', followUps })}>
-                            {signed(hit)}
+                          <RollButton
+                            caption={T.tagAttack}
+                            tone="amber"
+                            onClick={() => rollAndLog(labelWith(`${a.name}: útok`, hitB), hitFormula, { tag: 'attack', followUps, mode: hitB.mode })}
+                          >
+                            <span className="flex items-center gap-1">
+                              <ModeMark mode={hitB.mode} />
+                              {signed(hit)}
+                              {hitB.dice && <span className="text-sm">{hitB.dice.replace(/d/g, 'k')}</span>}
+                            </span>
                           </RollButton>
                         )}
-                        {a.damage && (
-                          <RollButton caption={T.tagDamage} tone="red" onClick={() => rollAndLog(`${a.name}: zranění`, a.damage, { d20: false, tag: 'damage' })}>
-                            {a.damage.replace(/d/g, 'k')}
+                        {damage && (
+                          <RollButton caption={T.tagDamage} tone="red" onClick={() => rollAndLog(dmgLabel, damage, { d20: false, tag: 'damage' })}>
+                            {damage.replace(/d/g, 'k')}
                           </RollButton>
                         )}
                         {hasDice && (
-                          <RollButton caption={T.tagCrit} tone="crit" onClick={() => rollAndLog(`${a.name}: kritický zásah`, critFormula(a.damage), { d20: false, tag: 'crit' })}>
-                            {critFormula(a.damage).replace(/d/g, 'k')}
+                          <RollButton caption={T.tagCrit} tone="crit" onClick={() => rollAndLog(critLabel, critFormula(damage), { d20: false, tag: 'crit' })}>
+                            {critFormula(damage).replace(/d/g, 'k')}
                           </RollButton>
                         )}
                       </div>
@@ -305,11 +325,91 @@ function Resources({ c, patch, read }: { c: Character; patch: Props['patch']; re
               label={r.name}
               total={r.max}
               used={st.resources[r.id] ?? 0}
-              onChange={(used) => patch({ resources: { ...st.resources, [r.id]: used } })}
+              onChange={(used) => patch(spendResource(s, st, r.id, used))}
             />
           </li>
         ))}
       </ul>
+    </Section>
+  )
+}
+
+/** Small green V / red N next to a roll that an effect gives advantage or disadvantage. */
+function ModeMark({ mode }: { mode: Mode }) {
+  if (mode === 'normal') return null
+  return (
+    <span
+      title={mode === 'adv' ? T.advantage : T.disadvantage}
+      className={`rounded px-1 text-[10px] font-bold leading-4 text-white ${mode === 'adv' ? 'bg-emerald-700' : 'bg-red-800'}`}
+    >
+      {mode === 'adv' ? 'V' : 'N'}
+    </span>
+  )
+}
+
+const EFFECT_ON_CS = { attack: 'útok', damage: 'zranění', check: 'ověření', save: 'ZH', ac: 'TZ', speed: 'rychlost' } as const
+
+/** "zranění SIL +2 · ověření SIL výhoda · odolnost: drtivé, bodné, sečné" */
+function describeEffect(e: Effect): string {
+  const mods = e.mods.map((m) =>
+    [
+      EFFECT_ON_CS[m.on],
+      m.ability ? ABILITY[m.ability].short : '',
+      m.bonus ? (/^[-−]/.test(m.bonus) ? m.bonus : `+${m.bonus}`).replace(/d/g, 'k') : '',
+      m.mode === 'adv' ? 'výhoda' : m.mode === 'dis' ? 'nevýhoda' : '',
+    ]
+      .filter(Boolean)
+      .join(' ')
+  )
+  return [...mods, e.resist && `odolnost: ${e.resist}`, e.noSpells && 'bez kouzel a soustředění'].filter(Boolean).join(' · ')
+}
+
+const EFFECTS_HELP =
+  'Schopnosti, které na chvíli mění jiné hody (Zuřivost, Bezohledný útok, Požehnání). Klepnutím efekt zapneš a vypneš. Zapnutý efekt se sám přičte k útokům, zranění, ověřením a záchranným hodům, na které míří. Když je efekt navázaný na zdroj, zapnutí utratí jedno použití (a utracení použití ho zapne). Délku nehlídá: vypni ho, až skončí. Odpočinek vypne všechny.'
+
+function Effects({ c, patch, read }: { c: Character; patch: Props['patch']; read: (t: ReactNode, b: ReactNode) => void }) {
+  const s = c.sheet
+  const st = c.state
+  const on = activeEffects(s, st)
+  return (
+    <Section
+      title={T.effects}
+      right={
+        <button onClick={() => read(T.effects, <p>{EFFECTS_HELP}</p>)} aria-label="Co jsou efekty" className="h-6 w-6 rounded-full border border-zinc-700 text-xs text-zinc-400">
+          ?
+        </button>
+      }
+    >
+      <div className="flex flex-wrap gap-1.5">
+        {s.effects.map((e) => {
+          const active = on.includes(e)
+          const r = s.resources.find((x) => x.id === e.resourceId)
+          const left = r ? r.max - (st.resources[r.id] ?? 0) : null
+          return (
+            <button
+              key={e.id}
+              onClick={() => patch(toggleEffect(s, st, e.id))}
+              aria-pressed={active}
+              className={`rounded-full border px-3 py-1.5 text-sm font-semibold ${active ? 'border-amber-400 bg-amber-500 text-zinc-950' : 'border-zinc-700 text-zinc-300'}`}
+            >
+              {active ? '● ' : ''}
+              {e.name}
+              {left !== null && !active && <span className="ml-1 text-xs font-normal text-zinc-500">({left})</span>}
+              {active && ' ×'}
+            </button>
+          )
+        })}
+      </div>
+      {on.length > 0 && (
+        <ul className="mt-2 space-y-1">
+          {on.map((e) => (
+            <li key={e.id} className="text-xs text-amber-200/90">
+              <b>{e.name}:</b> {describeEffect(e)}
+              {e.text && <span className="block text-zinc-400">{e.text}</span>}
+            </li>
+          ))}
+        </ul>
+      )}
     </Section>
   )
 }
@@ -343,6 +443,7 @@ function HpPanel({ c, patch, log }: { c: Character; patch: Props['patch']; log: 
     setValue('')
     setMode(null)
   }
+  const resists = mode === 'damage' ? activeEffects(s, st).filter((e) => e.resist) : []
   const concentrationDc = mode === 'damage' && st.concentration ? Math.min(30, Math.max(10, Math.floor((parseInt(value, 10) || 0) / 2))) : null
   return (
     <Section title={T.hp}>
@@ -395,6 +496,14 @@ function HpPanel({ c, patch, log }: { c: Character; patch: Props['patch']; log: 
             />
           </form>
           {mode === 'temp' && <p className="mt-2 text-xs text-zinc-500">Dočasné životy se nesčítají, platí vyšší hodnota.</p>}
+          {resists.length > 0 && (
+            <div className="mt-2 flex items-center gap-2">
+              <p className="min-w-0 flex-1 text-sm text-amber-200">{resists.map((e) => `${e.name}: odolnost (${e.resist}), takové zranění je poloviční`).join('. ')}.</p>
+              <Button disabled={!(parseInt(value, 10) > 1)} onClick={() => setValue(String(Math.floor((parseInt(value, 10) || 0) / 2)))}>
+                ½
+              </Button>
+            </div>
+          )}
           {concentrationDc !== null && (
             <p className="mt-2 text-sm text-violet-300">
               Soustředíš se na {st.concentration}: záchranný hod Odolnosti SO {concentrationDc}.
@@ -615,20 +724,27 @@ function Rests({ c, patch, log }: { c: Character; patch: Props['patch']; log: Lo
 function AbilitiesTab({ s, st }: { s: Sheet; st: State }) {
   const { rollAndLog } = useRoller()
   const pen = R.d20Penalty(st)
+  // A d20 test with what the active effects add: bonus, extra dice, advantage, names in the label.
+  const rollD20 = (label: string, bonus: number, b: Boost) => rollAndLog(labelWith(label, b), addToFormula(d20(bonus), 0, b.dice), { mode: b.mode })
   return (
     <>
       <div className="grid grid-cols-3 gap-2">
         {ABILITIES.map((a: Ability) => {
-          const m = R.abilityMod(s, a) + pen
+          const b = boost(s, st, 'check', a)
+          const m = R.abilityMod(s, a) + pen + b.flat
           return (
             <button
               key={a}
-              onClick={() => rollAndLog(`${ABILITY[a].name}: ověření`, d20(m))}
+              onClick={() => rollD20(`${ABILITY[a].name}: ověření`, m, b)}
               className="relative rounded-xl border border-amber-700/70 bg-amber-950/40 p-2 text-center hover:border-amber-500 active:bg-amber-900/60"
             >
               <DieIcon className="absolute right-2 top-2 h-3.5 w-3.5 text-amber-500/80" />
               <div className="text-[11px] font-semibold uppercase tracking-wide text-amber-300/90">{ABILITY[a].name}</div>
-              <div className="text-3xl font-bold tabular-nums text-zinc-50">{signed(m)}</div>
+              <div className="flex items-center justify-center gap-1 text-3xl font-bold tabular-nums text-zinc-50">
+                <ModeMark mode={b.mode} />
+                {signed(m)}
+                {b.dice && <span className="text-sm">{b.dice.replace(/d/g, 'k')}</span>}
+              </div>
               <div className="text-xs text-zinc-500">{s.abilities[a]}</div>
             </button>
           )
@@ -637,25 +753,26 @@ function AbilitiesTab({ s, st }: { s: Sheet; st: State }) {
       <Section title={T.saves}>
         <div className="grid grid-cols-2 gap-1">
           {ABILITIES.map((a) => {
-            const b = R.saveBonus(s, a) + pen
-            return (
-              <RollRow key={a} label={ABILITY[a].name} bonus={b} prof={s.saves.includes(a) ? 1 : 0} onRoll={() => rollAndLog(`ZH ${ABILITY[a].name}`, d20(b))} />
-            )
+            const fx = boost(s, st, 'save', a)
+            const b = R.saveBonus(s, a) + pen + fx.flat
+            return <RollRow key={a} label={ABILITY[a].name} bonus={b} fx={fx} prof={s.saves.includes(a) ? 1 : 0} onRoll={() => rollD20(`ZH ${ABILITY[a].name}`, b, fx)} />
           })}
         </div>
       </Section>
       <Section title={T.skills}>
         <div className="grid grid-cols-1 gap-1 sm:grid-cols-2">
           {SKILLS.map((k: Skill) => {
-            const b = R.skillBonus(s, k) + pen
+            const fx = boost(s, st, 'check', R.SKILL_ABILITY[k])
+            const b = R.skillBonus(s, k) + pen + fx.flat
             return (
               <RollRow
                 key={k}
                 label={SKILL[k]}
                 hint={ABILITY[R.SKILL_ABILITY[k]].short}
                 bonus={b}
+                fx={fx}
                 prof={s.skills[k] ?? 0}
-                onRoll={() => rollAndLog(SKILL[k], d20(b))}
+                onRoll={() => rollD20(SKILL[k], b, fx)}
               />
             )
           })}
@@ -671,16 +788,18 @@ function AbilitiesTab({ s, st }: { s: Sheet; st: State }) {
   )
 }
 
-function RollRow({ label, hint, bonus, prof, onRoll }: { label: string; hint?: string; bonus: number; prof: number; onRoll: () => void }) {
+function RollRow({ label, hint, bonus, fx, prof, onRoll }: { label: string; hint?: string; bonus: number; fx?: Boost; prof: number; onRoll: () => void }) {
   return (
     <button onClick={onRoll} className="flex items-center gap-1.5 rounded-lg px-1.5 py-1.5 text-left hover:bg-zinc-800/60 active:bg-zinc-800">
       <span className={`h-2.5 w-2.5 shrink-0 rounded-full border ${prof >= 2 ? 'border-amber-300 bg-amber-300 ring-2 ring-amber-300/40' : prof >= 1 ? 'border-amber-400 bg-amber-400' : prof > 0 ? 'border-amber-400 bg-amber-400/40' : 'border-zinc-600'}`} />
       <span className="min-w-0 flex-1 truncate text-sm text-zinc-200">
         {label} {hint && <span className="text-xs text-zinc-600">{hint}</span>}
       </span>
-      <span className="flex w-12 shrink-0 items-center justify-center gap-0.5 rounded-md border border-amber-700/70 bg-amber-950/40 py-0.5 font-bold tabular-nums text-zinc-50">
+      {fx && <ModeMark mode={fx.mode} />}
+      <span className="flex min-w-12 shrink-0 items-center justify-center gap-0.5 rounded-md border border-amber-700/70 bg-amber-950/40 px-1 py-0.5 font-bold tabular-nums text-zinc-50">
         <DieIcon className="h-3 w-3 text-amber-500/80" />
         {signed(bonus)}
+        {fx?.dice && <span className="text-xs">{fx.dice.replace(/d/g, 'k')}</span>}
       </span>
     </button>
   )
@@ -696,7 +815,9 @@ function SpellsTab({ c, patch, read }: { c: Character; patch: Props['patch']; re
   const { rollAndLog } = useRoller()
   const [showAll, setShowAll] = useState(false)
   const dc = R.spellDc(s)!
-  const atk = R.spellAttack(s)! + R.d20Penalty(st)
+  const atkB = boost(s, st, 'attack', sc.ability)
+  const atk = R.spellAttack(s)! + R.d20Penalty(st) + atkB.flat
+  const blocked = activeEffects(s, st).find((e) => e.noSpells)
   const levels = [...new Set(sc.spells.map((x) => x.level))].sort((a, b) => a - b)
   const hasUnprepared = sc.spells.some((x) => !x.prepared && x.level > 0)
 
@@ -709,9 +830,18 @@ function SpellsTab({ c, patch, read }: { c: Character; patch: Props['patch']; re
     <>
       <div className="grid grid-cols-3 gap-2">
         <Stat label={T.spellDc} value={dc} />
-        <Stat label={T.spellAttack} value={signed(atk)} onClick={() => rollAndLog(T.spellAttack, d20(atk))} />
+        <Stat
+          label={T.spellAttack}
+          value={signed(atk) + atkB.dice.replace(/d/g, 'k')}
+          onClick={() => rollAndLog(labelWith(T.spellAttack, atkB), addToFormula(d20(atk), 0, atkB.dice), { mode: atkB.mode })}
+        />
         <Stat label="Vlastnost" value={ABILITY[sc.ability].short} />
       </div>
+      {blocked && (
+        <p className="rounded-lg border border-red-800 bg-red-950/50 px-3 py-2 text-sm text-red-200">
+          {blocked.name}: teď nemůžeš sesílat kouzla ani se soustředit.
+        </p>
+      )}
       <Section title={T.slots}>
         <div className="space-y-2">
           {sc.slots.map((n, i) =>

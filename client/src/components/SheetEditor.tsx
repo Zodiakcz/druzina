@@ -1,11 +1,12 @@
 // The form behind "Upravit kartu" and "Nová postava". Plain fields, no rules engine: whoever
 // fills it in copies numbers from D&D Beyond or the paper sheet.
 import { useMemo, useState, type ReactNode } from 'react'
-import type { Ability, Sheet, Skill, SkillLevel } from '@/lib/types'
+import type { Ability, Effect, EffectMod, Sheet, Skill, SkillLevel } from '@/lib/types'
 import { ABILITIES, SKILLS } from '@/lib/types'
 import { ABILITY, SKILL, T } from '@/lib/cs'
 import { mod } from '@/lib/rules'
 import { useFeatures, useSpells } from '@/lib/srd'
+import { PRESETS, fromPreset, suggestedPresets } from '@/lib/effects'
 import { Button, Section } from './ui'
 import { signed } from '@/lib/cs'
 
@@ -250,11 +251,21 @@ export function SheetEditor({ initial, onSave, onCancel, onDelete }: {
               />
               <input className={input} placeholder="Zranění, např. 1d12+3" value={a.damage} onChange={(e) => setA({ damage: e.target.value })} />
               <input className={input} placeholder="typ" value={a.damageType} onChange={(e) => setA({ damageType: e.target.value })} />
-              <input className={`${input} col-span-2`} placeholder="Poznámka (vlastnosti, mistrovství)" value={a.notes} onChange={(e) => setA({ notes: e.target.value })} />
+              <input className={input} placeholder="Poznámka (vlastnosti, mistrovství)" value={a.notes} onChange={(e) => setA({ notes: e.target.value })} />
+              <select className={input} value={a.ability ?? ''} onChange={(e) => setA({ ability: e.target.value as Ability | '' })} title="Vlastnost útoku">
+                <option value="">vlastnost?</option>
+                {ABILITIES.map((x) => (
+                  <option key={x} value={x}>
+                    {ABILITY[x].short}
+                  </option>
+                ))}
+              </select>
             </div>
           )}
         />
-        <p className="mt-2 text-xs text-zinc-500">Prázdný bonus k útoku = bez hodu na útok (kouzlo se záchranným hodem).</p>
+        <p className="mt-2 text-xs text-zinc-500">
+          Prázdný bonus k útoku = bez hodu na útok (kouzlo se záchranným hodem). Vlastnost útoku (SIL, OBR) potřebují efekty jako Zuřivost.
+        </p>
       </Section>
 
       <Section
@@ -298,6 +309,10 @@ export function SheetEditor({ initial, onSave, onCancel, onDelete }: {
             </div>
           )}
         />
+      </Section>
+
+      <Section title="Efekty">
+        <EffectsFields s={s} onChange={(effects) => set({ effects })} />
       </Section>
 
       <Section title={T.features}>
@@ -433,6 +448,106 @@ function SpellcastingFields({ sc, onChange, spellSearch, setSpellSearch, spellIn
             {!sp.srd && (
               <textarea className={`${input} col-span-2`} rows={2} placeholder="Text kouzla" value={sp.text} onChange={(e) => setSp({ text: e.target.value })} />
             )}
+          </div>
+        )}
+      />
+    </div>
+  )
+}
+
+const EFFECT_ON: [EffectMod['on'], string][] = [
+  ['attack', 'útok'],
+  ['damage', 'zranění'],
+  ['check', 'ověření'],
+  ['save', 'záchr. hod'],
+  ['ac', 'TZ'],
+  ['speed', 'rychlost'],
+]
+
+/** Effects the player switches on at the table (Rage...) and what each one changes. */
+function EffectsFields({ s, onChange }: { s: Sheet; onChange: (effects: Effect[]) => void }) {
+  const effects = s.effects ?? []
+  const suggested = suggestedPresets(s)
+  const add = (key: string) => {
+    const e = fromPreset(s, key, uid())
+    if (e) onChange([...effects, e])
+  }
+  return (
+    <div className="space-y-3">
+      <p className="text-xs text-zinc-500">
+        Hráč je na kartě zapíná a vypíná. Zapnutý efekt přičte bonus nebo výhodu k hodům, na které míří. Odpočinek je vypne.
+      </p>
+      <div className="flex flex-wrap gap-1.5">
+        {PRESETS.map((p) => (
+          <button
+            key={p.key}
+            onClick={() => add(p.key)}
+            className={`rounded-full border px-2.5 py-1 text-xs ${suggested.includes(p.key) ? 'border-amber-500 bg-amber-500/15 text-amber-100' : 'border-zinc-700 text-zinc-400'}`}
+          >
+            + {p.make(s).name}
+          </button>
+        ))}
+      </div>
+      {suggested.length > 0 && <p className="text-xs text-amber-500/80">Zvýrazněné odpovídají schopnostem nebo kouzlům na kartě.</p>}
+      <Rows
+        items={effects}
+        onChange={onChange}
+        blank={() => ({ id: uid(), name: '', resourceId: '', mods: [], resist: '', noSpells: false, text: '' })}
+        addLabel="vlastní efekt"
+        render={(e, setE) => (
+          <div className="space-y-2">
+            <div className="grid grid-cols-2 gap-2">
+              <input className={input} placeholder="Název" value={e.name} onChange={(ev) => setE({ name: ev.target.value })} />
+              <select className={input} value={e.resourceId} onChange={(ev) => setE({ resourceId: ev.target.value })} title="Zapnutí utratí použití zdroje">
+                <option value="">bez zdroje</option>
+                {s.resources.map((r) => (
+                  <option key={r.id} value={r.id}>
+                    zdroj: {r.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <Rows
+              items={e.mods}
+              onChange={(mods) => setE({ mods })}
+              blank={(): EffectMod => ({ on: 'attack', ability: '', bonus: '', mode: 'normal' })}
+              addLabel="co mění"
+              render={(m, setM) => (
+                <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-4">
+                  <select className={input} value={m.on} onChange={(ev) => setM({ on: ev.target.value as EffectMod['on'] })}>
+                    {EFFECT_ON.map(([v, l]) => (
+                      <option key={v} value={v}>
+                        {l}
+                      </option>
+                    ))}
+                  </select>
+                  <select className={input} value={m.ability} onChange={(ev) => setM({ ability: ev.target.value as Ability | '' })} disabled={m.on === 'ac' || m.on === 'speed'}>
+                    <option value="">vše</option>
+                    {ABILITIES.map((x) => (
+                      <option key={x} value={x}>
+                        {ABILITY[x].short}
+                      </option>
+                    ))}
+                  </select>
+                  <input
+                    className={input}
+                    placeholder={m.on === 'ac' || m.on === 'speed' ? '+2' : '+2, 1k4'}
+                    value={m.bonus.replace(/d/g, 'k')}
+                    onChange={(ev) => setM({ bonus: ev.target.value.replace(/k/gi, 'd').replace(/[^0-9d+\-]/g, '').slice(0, 20) })}
+                  />
+                  <select className={input} value={m.mode} onChange={(ev) => setM({ mode: ev.target.value as EffectMod['mode'] })} disabled={m.on === 'damage' || m.on === 'ac' || m.on === 'speed'}>
+                    <option value="normal">–</option>
+                    <option value="adv">výhoda</option>
+                    <option value="dis">nevýhoda</option>
+                  </select>
+                </div>
+              )}
+            />
+            <input className={input} placeholder="Odolnost vůči (např. drtivé, bodné, sečné)" value={e.resist} onChange={(ev) => setE({ resist: ev.target.value })} />
+            <label className="flex items-center gap-2 text-xs text-zinc-400">
+              <input type="checkbox" checked={e.noSpells} onChange={(ev) => setE({ noSpells: ev.target.checked })} /> nesmí sesílat kouzla ani se soustředit
+            </label>
+            <textarea className={input} rows={2} placeholder="Připomínka (co dalšího platí)" value={e.text} onChange={(ev) => setE({ text: ev.target.value })} />
           </div>
         )}
       />

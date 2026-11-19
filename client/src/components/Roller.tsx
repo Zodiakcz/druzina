@@ -6,7 +6,7 @@
 // `onReveal`, so nobody else sees the result before the roller does. A new roll, a tap on the
 // tumbling die, or leaving the page reveals a pending roll immediately, so none is ever lost.
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
-import { roll, poolFormula, prettyFormula, type Mode } from '@/lib/dice'
+import { combineMode, roll, poolFormula, prettyFormula, type Mode } from '@/lib/dice'
 import type { RollDetail } from '@/lib/types'
 import { T } from '@/lib/cs'
 import { DieIcon } from './ui'
@@ -44,6 +44,8 @@ interface RollOptions {
   tag?: RollDetail['tag']
   /** Buttons shown in the toast once the roll is revealed (damage and crit after an attack). */
   followUps?: FollowUp[]
+  /** Advantage from an active effect (Rage). Combined with the switch: both directions cancel out. */
+  mode?: Mode
 }
 
 interface Ctx {
@@ -88,7 +90,7 @@ export function RollerProvider({ children, onRoll }: {
   const rollAndLog = useCallback(
     (label: string, formula: string, opts: RollOptions = {}) => {
       const isD20 = opts.d20 ?? /^\s*1?d20/i.test(formula)
-      const r = roll(formula, isD20 ? mode : 'normal')
+      const r = roll(formula, isD20 ? combineMode(mode, opts.mode ?? 'normal') : 'normal')
       if (!r) return false
       if (isD20) setMode('normal')
       if (pending.current) reveal(pending.current)

@@ -120,8 +120,14 @@ function keepTranslations(next: Sheet, prev: Sheet): Sheet {
       return old ? { ...sp, name: old.name, text: old.text, prepared: sp.prepared } : sp
     }),
   }
+  // Effects are set up by hand: keep them, re-linked to the new id of the same resource.
+  const effects = prev.effects.map((e) => {
+    const was = prev.resources.find((r) => r.id === e.resourceId)
+    const now = was && next.resources.find((r) => (r.nameEn || r.name) === (was.nameEn || was.name))
+    return { ...e, resourceId: now?.id ?? '' }
+  })
   // Hand edits outside the import (notes, portrait) survive too.
-  return { ...next, features, spellcasting, notes: prev.notes || next.notes, portrait: prev.portrait || next.portrait }
+  return { ...next, features, spellcasting, effects, notes: prev.notes || next.notes, portrait: prev.portrait || next.portrait }
 }
 
 r.post('/characters', async (req, res) => {

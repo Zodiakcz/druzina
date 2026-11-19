@@ -70,7 +70,7 @@ export function hitDiceFormula(dice: { die: number; count: number }[], conMod: n
 export function shortRest(s: Sheet, st: State): Partial<State> {
   const resources = { ...st.resources }
   for (const r of s.resources) if (r.reset === 'short') resources[r.id] = 0
-  return { resources, pactUsed: 0 }
+  return { resources, pactUsed: 0, active: [] }
 }
 
 /** 2024 long rest: full HP, all hit dice back, all slots, one level of exhaustion off. */
@@ -85,5 +85,6 @@ export function longRest(s: Sheet, st: State): Partial<State> {
     exhaustion: Math.max(0, st.exhaustion - 1),
     death: { ok: 0, fail: 0 },
     concentration: '',
+    active: [],
   }
 }

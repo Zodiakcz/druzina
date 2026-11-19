@@ -20,6 +20,10 @@ the table needs it mid-session. Default answer: no; a free-text field beats a ru
   conditions), both JSON strings validated by zod in `server/src/schema.ts`. The types live in
   `client/src/lib/types.ts` and must match. Derived numbers (modifiers, proficiency bonus,
   passives, spell DC) are computed on the client in `client/src/lib/rules.ts`, never stored.
+- **Effects** (`sheet.effects`, on/off in `state.active`, logic in `client/src/lib/effects.ts`):
+  Rage, Reckless Attack, Bless... A small fixed vocabulary (bonus or advantage on attack, damage,
+  check, save; AC/speed bonus; resistance reminder; no spells). No durations: the player switches
+  it off, rests clear it. Attacks carry `ability` so "Strength attacks only" works.
 - **Roll**: the client rolls (crypto RNG), the server stores and broadcasts. Kept forever, the
   log shows the last 100.
 - **Live updates**: SSE at `/api/events` (key in `?key=`, EventSource cannot set headers).

@@ -99,3 +99,27 @@ export const prettyFormula = (f: string) => f.replace(/d/gi, 'k').replace(/\+/g,
 export function critFormula(formula: string): string {
   return formula.replace(/(\d*)d(\d+)/gi, (_m, c: string, d: string) => `${(c === '' ? 1 : Number(c)) * 2}d${d}`)
 }
+
+/** Advantage and disadvantage from two sources: either alone wins, both cancel out. */
+export function combineMode(a: Mode, b: Mode): Mode {
+  if (a === 'normal') return b
+  if (b === 'normal' || a === b) return a
+  return 'normal'
+}
+
+/**
+ * A formula with a flat bonus and extra dice added: "1d12+3" + 2 → "1d12+5",
+ * "1d20+4" + "+1d4" → "1d20+1d4+4". Dice first, the flat part folded into one number.
+ */
+export function addToFormula(formula: string, flat: number, dice = ''): string {
+  const terms = parseFormula(formula + dice)
+  if (!terms) return formula
+  let modifier = flat
+  let out = ''
+  for (const t of terms) {
+    if (t.kind === 'mod') modifier += t.value
+    else out += `${t.negative ? '-' : out ? '+' : ''}${t.count}d${t.die}`
+  }
+  if (!out) return String(modifier)
+  return modifier ? `${out}${modifier > 0 ? '+' : '-'}${Math.abs(modifier)}` : out
+}

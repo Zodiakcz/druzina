@@ -42,6 +42,8 @@ export const sheetSchema = z.object({
     damage: text(40),
     damageType: text(40),
     notes: text(300),
+    /** The ability behind the attack, so an effect like Rage knows which attacks it touches. */
+    ability: z.union([ability, z.literal('')]).default(''),
   })).max(30).default([]),
   spellcasting: z.object({
     ability,
@@ -78,6 +80,23 @@ export const sheetSchema = z.object({
     nameEn: text(120),
     textEn: text(12000),
   })).max(120).default([]),
+  /** Switchable effects (Rage, Reckless Attack, Bless) and what they change on other rolls. */
+  effects: z.array(z.object({
+    id,
+    name: z.string().max(60),
+    /** Spending a use of this resource switches the effect on. */
+    resourceId: text(40),
+    mods: z.array(z.object({
+      on: z.enum(['attack', 'damage', 'check', 'save', 'ac', 'speed']),
+      ability: z.union([ability, z.literal('')]).default(''),
+      /** "2", "1d4", "1d6+1". */
+      bonus: z.string().max(20).regex(/^[\s0-9dk+\-−]*$/i).default(''),
+      mode: z.enum(['normal', 'adv', 'dis']).default('normal'),
+    })).max(12).default([]),
+    resist: text(120),
+    noSpells: z.boolean().default(false),
+    text: text(1000),
+  })).max(20).default([]),
 })
 
 export const stateSchema = z.object({
@@ -94,6 +113,8 @@ export const stateSchema = z.object({
   heroic: z.boolean().default(false),
   death: z.object({ ok: int(0, 3), fail: int(0, 3) }).default({ ok: 0, fail: 0 }),
   concentration: text(80),
+  /** Ids of the effects that are on. */
+  active: z.array(z.string().max(40)).max(20).default([]),
   /** Inventory: free-text items with a count. Changes go to the public log. */
   items: z.array(z.object({
     id,

@@ -349,7 +349,8 @@ export function mapCharacter(c: Any): ImportResult {
     const d = i.definition
     const props: string[] = (d.properties ?? []).map((p: Any) => p.name)
     const ranged = d.attackType === 2
-    const ab = props.includes('Finesse') ? Math.max(mod(abilities.str), dex) : ranged ? dex : mod(abilities.str)
+    const useDex = props.includes('Finesse') ? dex > mod(abilities.str) : ranged
+    const ab = useDex ? dex : mod(abilities.str)
     const magic = (d.grantedModifiers ?? []).filter((g: Any) => g.type === 'bonus' && g.subType === 'magic').reduce((n: number, g: Any) => n + (g.value ?? 0), 0)
     const dmgBonus = ab + magic
     const dice = d.damage?.diceString ?? ''
@@ -367,10 +368,11 @@ export function mapCharacter(c: Any): ImportResult {
       damage: dice ? `${dice}${dmgBonus ? (dmgBonus > 0 ? '+' : '-') + Math.abs(dmgBonus) : ''}` : '',
       damageType: cs(d.damageType),
       notes: clampText(notes, 300),
+      ability: useDex ? ('dex' as const) : ('str' as const),
     }
   })
   const str = mod(abilities.str)
-  attacks.push({ id: nextId('a'), name: 'Úder beze zbraně', toHit: str + prof, damage: `${Math.max(1, 1 + str)}`, damageType: 'drtivé', notes: '' })
+  attacks.push({ id: nextId('a'), name: 'Úder beze zbraně', toHit: str + prof, damage: `${Math.max(1, 1 + str)}`, damageType: 'drtivé', notes: '', ability: 'str' })
 
   // Resources: limited-use actions (Rage, Bardic Inspiration, Channel Divinity...).
   const resources: Sheet['resources'] = []

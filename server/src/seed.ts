@@ -20,10 +20,26 @@ const barbar: Sheet = sheetSchema.parse({
   senses: 'Vidění ve tmě 60 stop',
   proficiencies: 'Jazyky: obecná řeč, orkština. Zbroje: lehké, střední, štíty. Zbraně: jednoduché, válečné.',
   attacks: [
-    { id: 'a1', name: 'Obouruční sekera', toHit: 6, damage: '1d12+3', damageType: 'sečné', notes: 'Mistrovství: rozetnutí. Těžká, obouruční.' },
-    { id: 'a2', name: 'Sekerka', toHit: 6, damage: '1d6+3', damageType: 'sečné', notes: 'Lehká, vrhací (20/60).' },
+    { id: 'a1', name: 'Obouruční sekera', toHit: 6, damage: '1d12+3', damageType: 'sečné', notes: 'Mistrovství: rozetnutí. Těžká, obouruční.', ability: 'str' },
+    { id: 'a2', name: 'Sekerka', toHit: 6, damage: '1d6+3', damageType: 'sečné', notes: 'Lehká, vrhací (20/60).', ability: 'str' },
   ],
   resources: [{ id: 'rage', name: 'Zuřivost', max: 3, reset: 'long' }],
+  effects: [
+    {
+      id: 'e-rage',
+      name: 'Zuřivost',
+      resourceId: 'rage',
+      mods: [
+        { on: 'damage', ability: 'str', bonus: '2' },
+        { on: 'check', ability: 'str', mode: 'adv' },
+        { on: 'save', ability: 'str', mode: 'adv' },
+      ],
+      resist: 'drtivé, bodné, sečné',
+      noSpells: true,
+      text: 'Skončí, když tvůj tah skončí bez útoku a bez utrženého zranění.',
+    },
+    { id: 'e-reckless', name: 'Bezohledný útok', mods: [{ on: 'attack', ability: 'str', mode: 'adv' }], text: 'Útoky proti tobě mají výhodu až do začátku tvého dalšího tahu.' },
+  ],
   features: [
     { id: 'f1', name: 'Zuřivost', source: 'Barbar 1', text: 'Bonusovou akcí. Výhoda k ověřením a záchranným hodům Síly, +2 ke zranění útoky Síly, rezistence vůči drtivému, bodnému a sečnému zranění. Nemůžeš sesílat kouzla ani se soustředit. Trvá do konce tvého dalšího tahu, prodlužuje se útokem, záchranným hodem nebo bonusovou akcí, nejvýš 10 minut. Krátký odpočinek vrátí jedno použití.' },
     { id: 'f2', name: 'Obrana bez zbroje', source: 'Barbar 1', text: 'Bez zbroje je tvá TZ 10 + OBR + ODL. Štít smíš mít.' },
