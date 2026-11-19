@@ -38,6 +38,8 @@ export interface Resource {
   name: string
   max: number
   reset: 'short' | 'long'
+  /** D&D Beyond's name, to find the feature that explains it. */
+  nameEn?: string
 }
 
 export interface Feature {

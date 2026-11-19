@@ -66,6 +66,8 @@ export const sheetSchema = z.object({
     name: z.string().max(60),
     max: int(0, 99),
     reset: z.enum(['short', 'long']),
+    /** D&D Beyond's name, to find the feature that explains it. */
+    nameEn: text(60),
   })).max(20).default([]),
   features: z.array(z.object({
     id,

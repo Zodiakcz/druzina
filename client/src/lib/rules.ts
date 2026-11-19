@@ -60,6 +60,13 @@ export function applyHealing(s: Sheet, st: State, amount: number): Partial<State
   return st.hp <= 0 && hp > 0 ? { hp, death: { ok: 0, fail: 0 } } : { hp }
 }
 
+/** Hit dice spent together: "2d8+1d10+6", the Con modifier once per die. */
+export function hitDiceFormula(dice: { die: number; count: number }[], conMod: number): string {
+  const n = dice.reduce((a, h) => a + h.count, 0)
+  const bonus = n * conMod
+  return dice.map((h) => `${h.count}d${h.die}`).join('+') + (bonus ? `${bonus > 0 ? '+' : '-'}${Math.abs(bonus)}` : '')
+}
+
 export function shortRest(s: Sheet, st: State): Partial<State> {
   const resources = { ...st.resources }
   for (const r of s.resources) if (r.reset === 'short') resources[r.id] = 0

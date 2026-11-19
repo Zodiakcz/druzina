@@ -50,3 +50,26 @@ button {
     opacity: 1;
   }
 }
+
+/* A tab sliding in after a swipe or a tap on the tab bar. */
+@keyframes slidein-r {
+  from {
+    transform: translateX(24px);
+    opacity: 0.4;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes slidein-l {
+  from {
+    transform: translateX(-24px);
+    opacity: 0.4;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}

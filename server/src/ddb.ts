@@ -357,7 +357,13 @@ export function mapCharacter(c: Any): ImportResult {
     if (max <= 0) continue
     seen.add(a.name)
     const id = nextId('r')
-    resources.push({ id, name: clampText(cs(a.name), 60), max: Math.min(99, max), reset: lu.resetType === 1 ? 'short' : 'long' })
+    resources.push({
+      id,
+      name: clampText(cs(a.name), 60),
+      nameEn: clampText(a.name ?? '', 60),
+      max: Math.min(99, max),
+      reset: lu.resetType === 1 ? 'short' : 'long',
+    })
     if (lu.numberUsed) resourcesUsed[id] = Math.min(max, lu.numberUsed)
   }
 
