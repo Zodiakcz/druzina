@@ -203,6 +203,34 @@ export async function fetchDdb(id: number): Promise<Any> {
 
 // ---------------------------------------------------------------- mapping
 
+const RARITY: Record<string, string> = {
+  Common: 'běžný', Uncommon: 'neobvyklý', Rare: 'vzácný', 'Very Rare': 'velmi vzácný', Legendary: 'legendární', Artifact: 'artefakt',
+}
+const ITEM_TYPE: Record<string, string> = {
+  Weapon: 'zbraň', Armor: 'zbroj', Potion: 'lektvar', Ring: 'prsten', Rod: 'žezlo', Scroll: 'svitek', Staff: 'hůl', Wand: 'hůlka',
+  'Wondrous item': 'zázračný předmět', 'Wondrous Item': 'zázračný předmět', 'Other Gear': 'vybavení',
+}
+const ARMOR_KIND: Record<number, string> = { 1: 'lehká zbroj', 2: 'střední zbroj', 3: 'těžká zbroj', 4: 'štít' }
+
+/** One Czech summary line for an item: type, rarity, damage or AC, properties. */
+function itemInfo(d: Any): string {
+  const parts: string[] = []
+  if (d.filterType === 'Armor' && ARMOR_KIND[d.armorTypeId]) parts.push(ARMOR_KIND[d.armorTypeId])
+  else if (d.filterType) parts.push(ITEM_TYPE[d.filterType] ?? String(d.filterType).toLowerCase())
+  if (d.rarity && d.rarity !== 'Common' && RARITY[d.rarity]) parts.push(RARITY[d.rarity])
+  else if (d.rarity === 'Common' && d.magic) parts.push(RARITY.Common)
+  if (d.filterType === 'Weapon') {
+    const dice = String(d.damage?.diceString ?? '').replace(/d/g, 'k')
+    const dmg = [dice, d.damageType ? cs(d.damageType) : ''].filter(Boolean).join(' ')
+    if (dmg) parts.push(dmg)
+    const props = (d.properties ?? []).map((p: Any) => cs(p.name)).filter(Boolean)
+    if (props.length) parts.push(props.join(', '))
+  } else if (d.filterType === 'Armor' && d.armorClass) {
+    parts.push(`OČ ${d.armorClass}`)
+  }
+  return clampText(parts.join(', '), 160)
+}
+
 export interface ImportResult {
   sheet: Sheet
   state: State
@@ -465,23 +493,38 @@ export function mapCharacter(c: Any): ImportResult {
     features: features.slice(0, 120),
   })
 
-  // Inventory: every item with its quantity, same names merged. Gold (and platinum as 10 gold)
-  // becomes the gold counter; silver, copper and electrum stay countable as items.
-  const items: { id: string; name: string; qty: number }[] = []
-  for (const i of [...(c.inventory ?? []), ...(c.customItems ?? [])]) {
-    const name = clampText(cs(i.definition?.name ?? i.name ?? ''), 80).trim()
-    if (!name) continue
+  // Inventory: every item with its quantity and details, same names merged (the first one's
+  // details stay). Currencies become the coins of the state.
+  const items: State['items'] = []
+  const addItem = (i: Any, custom: boolean) => {
+    const d = custom ? i : i.definition ?? {}
+    const nameEn = clampText(String(d.name ?? i.name ?? ''), 80).trim()
+    const name = clampText(cs(nameEn), 80).trim()
+    if (!name) return
     const qty = Math.max(1, Math.min(9999, i.quantity ?? 1))
     const same = items.find((x) => x.name === name)
-    if (same) same.qty = Math.min(9999, same.qty + qty)
-    else items.push({ id: nextId('i'), name, qty })
+    if (same) {
+      same.qty = Math.min(9999, same.qty + qty)
+      return
+    }
+    const num = (n: unknown, max: number) => (typeof n === 'number' && n > 0 ? Math.min(max, Math.round(n * 100) / 100) : 0)
+    items.push({
+      id: nextId('i'),
+      name,
+      qty,
+      nameEn: name !== nameEn ? nameEn : '',
+      info: custom ? '' : itemInfo(d),
+      weight: num(d.weight, 10000),
+      cost: num(d.cost, 100_000_000),
+      equipped: !custom && !!i.equipped,
+      text: clampText(htmlToText(d.description), 3000),
+      notes: custom ? clampText(htmlToText(i.notes), 1000) : '',
+    })
   }
+  for (const i of c.inventory ?? []) addItem(i, false)
+  for (const i of c.customItems ?? []) addItem(i, true)
   const cur = c.currencies ?? {}
-  for (const [n, label] of [['ep', 'Elektrum (el)'], ['sp', 'Stříbrňáky (st)'], ['cp', 'Měďáky (md)']] as const) {
-    if (cur[n] > 0) items.push({ id: nextId('i'), name: label, qty: Math.min(9999, cur[n]) })
-  }
-  const gold = Math.max(0, (cur.gp ?? 0) + 10 * (cur.pp ?? 0))
-  if (cur.pp > 0) warnings.push(`Platina převedena na zlato: ${cur.pp} pl = ${cur.pp * 10} zl.`)
+  const coin = (n: unknown) => Math.max(0, Math.min(10_000_000, Math.round(Number(n) || 0)))
 
   // State as it is in D&D Beyond right now, so the first session starts where they left off.
   const exhaustion = (c.conditions ?? []).find((x: Any) => x.id === 4)?.level ?? 0
@@ -496,7 +539,7 @@ export function mapCharacter(c: Any): ImportResult {
     heroic: !!c.inspiration,
     death: { ok: c.deathSaves?.successCount ?? 0, fail: c.deathSaves?.failCount ?? 0 },
     items: items.slice(0, 300),
-    gold: Math.min(10_000_000, gold),
+    coins: { cp: coin(cur.cp), sp: coin(cur.sp), ep: coin(cur.ep), gp: coin(cur.gp), pp: coin(cur.pp) },
   })
 
   const untranslated = features.length + (spellcasting?.spells.filter((s) => !s.srd).length ?? 0)

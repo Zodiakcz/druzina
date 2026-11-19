@@ -1,6 +1,6 @@
 import { randomBytes } from 'crypto'
 import { PrismaClient, type Campaign, type Character } from '@prisma/client'
-import { sheetSchema, stateSchema } from './schema'
+import { sheetSchema, readState } from './schema'
 
 export const prisma = new PrismaClient()
 
@@ -42,7 +42,7 @@ export function publicCharacter(c: Character, withKey = false) {
     ddbId: c.ddbId,
     updatedAt: c.updatedAt,
     sheet: sheetSchema.parse(JSON.parse(c.sheet)),
-    state: stateSchema.parse(JSON.parse(c.state)),
+    state: readState(c.state),
     ...(withKey ? { key: c.key } : {}),
   }
 }

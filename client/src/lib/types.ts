@@ -92,13 +92,29 @@ export interface State {
   death: { ok: number; fail: number }
   concentration: string
   items: InventoryItem[]
-  gold: number
+  coins: Coins
 }
+
+/** cp = měďáky, sp = stříbrňáky, ep = elektrum, gp = zlaťáky, pp = platina. */
+export type Coin = 'pp' | 'gp' | 'ep' | 'sp' | 'cp'
+export type Coins = Record<Coin, number>
 
 export interface InventoryItem {
   id: string
   name: string
   qty: number
+  /** English original from an import. */
+  nameEn: string
+  /** One summary line (type, rarity, damage, AC). */
+  info: string
+  /** Pounds per piece. */
+  weight: number
+  /** Gold pieces per piece. */
+  cost: number
+  equipped: boolean
+  text: string
+  /** The player's own notes. */
+  notes: string
 }
 
 export interface Character {
@@ -133,6 +149,8 @@ export interface RollDetail {
 export interface HpDetail {
   from: number
   to: number
+  /** Coin entries only; missing on old entries (zl). */
+  coin?: Coin
 }
 
 export type LogKind = 'roll' | 'damage' | 'heal' | 'temp' | 'rest' | 'item' | 'gold'

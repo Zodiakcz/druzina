@@ -11,12 +11,15 @@ const EVENT_STYLE: Record<string, { sign: string; color: string }> = {
   temp: { sign: '+', color: 'text-sky-300' },
 }
 
+const COIN_ABBR = { pp: 'pl', gp: 'zl', ep: 'el', sp: 'st', cp: 'md' }
+
 function Total({ r }: { r: Roll }) {
   if (r.kind === 'rest') return <span className="text-xl text-zinc-400">☾</span>
   if (r.kind === 'item' || r.kind === 'gold') {
     const d = r.detail as HpDetail | null
     const up = !d || d.to >= d.from
-    return <span className={`text-xl ${r.kind === 'gold' ? 'text-yellow-400' : 'text-amber-200'}`}>{`${up ? '+' : '−'}${r.total}`}</span>
+    const unit = r.kind === 'gold' ? ` ${COIN_ABBR[d?.coin ?? 'gp']}` : ''
+    return <span className={`text-xl ${r.kind === 'gold' ? 'text-yellow-400' : 'text-amber-200'}`}>{`${up ? '+' : '−'}${r.total}${unit}`}</span>
   }
   const ev = EVENT_STYLE[r.kind]
   if (ev) return <span className={ev.color}>{`${ev.sign}${r.total}`}</span>
@@ -28,7 +31,7 @@ function Sub({ r }: { r: Roll }) {
   if (!r.kind || r.kind === 'roll') return <DetailText detail={r.detail as RollDetail | null} formula={r.formula} />
   const hp = r.detail as HpDetail | null
   if (!hp || typeof hp.from !== 'number' || hp.from === hp.to) return null
-  if (r.kind === 'gold') return <>{`zlato ${hp.from} → ${hp.to} zl`}</>
+  if (r.kind === 'gold') return <>{`${hp.from} → ${hp.to} ${COIN_ABBR[hp.coin ?? 'gp']}`}</>
   if (r.kind === 'item') return hp.from === 0 ? <>nový předmět</> : hp.to === 0 ? <>odebráno</> : <>{`kusů ${hp.from} → ${hp.to}`}</>
   return <>{`životy ${hp.from} → ${hp.to}`}</>
 }
