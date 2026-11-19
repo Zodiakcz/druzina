@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "api-main",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-Command", "Set-Location server; $env:PORT='3190'; npm run dev"],
+      "port": 3190
+    },
+    {
+      "name": "client-main",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-Command", "Set-Location client; $env:API_PORT='3190'; npx vite --port 5190 --strictPort"],
+      "port": 5190
+    }
+  ]
+}

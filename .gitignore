@@ -9,3 +9,4 @@ deploy/.env
 *.tsbuildinfo
 data/srd-cs/_in/
 data/srd-cs/_out/
+.claude/worktrees/

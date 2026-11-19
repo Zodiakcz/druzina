@@ -651,12 +651,12 @@ function AbilitiesTab({ s, st }: { s: Sheet; st: State }) {
 
 function RollRow({ label, hint, bonus, prof, onRoll }: { label: string; hint?: string; bonus: number; prof: number; onRoll: () => void }) {
   return (
-    <button onClick={onRoll} className="flex items-center gap-2 rounded-lg px-2 py-1.5 text-left hover:bg-zinc-800/60 active:bg-zinc-800">
+    <button onClick={onRoll} className="flex items-center gap-1.5 rounded-lg px-1.5 py-1.5 text-left hover:bg-zinc-800/60 active:bg-zinc-800">
       <span className={`h-2.5 w-2.5 shrink-0 rounded-full border ${prof >= 2 ? 'border-amber-300 bg-amber-300 ring-2 ring-amber-300/40' : prof >= 1 ? 'border-amber-400 bg-amber-400' : prof > 0 ? 'border-amber-400 bg-amber-400/40' : 'border-zinc-600'}`} />
       <span className="min-w-0 flex-1 truncate text-sm text-zinc-200">
         {label} {hint && <span className="text-xs text-zinc-600">{hint}</span>}
       </span>
-      <span className="flex w-14 items-center justify-center gap-1 rounded-md border border-amber-700/70 bg-amber-950/40 py-0.5 font-bold tabular-nums text-zinc-50">
+      <span className="flex w-12 shrink-0 items-center justify-center gap-0.5 rounded-md border border-amber-700/70 bg-amber-950/40 py-0.5 font-bold tabular-nums text-zinc-50">
         <DieIcon className="h-3 w-3 text-amber-500/80" />
         {signed(bonus)}
       </span>
