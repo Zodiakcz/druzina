@@ -1,6 +1,14 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { parseFormula, roll, critFormula, d20 } from './dice.ts'
+import { parseFormula, roll, critFormula, d20, poolFormula, prettyFormula } from './dice.ts'
+
+test('pool formula', () => {
+  assert.equal(poolFormula({ 8: 1, 6: 2 }, 3), '2d6+1d8+3')
+  assert.equal(poolFormula({ 20: 1 }, -2), '1d20-2')
+  assert.equal(poolFormula({ 6: 0 }, 4), '')
+  assert.ok(parseFormula(poolFormula({ 4: 3, 100: 1 }, -1)))
+  assert.equal(prettyFormula('2d6+1d8-1'), '2k6 + 1k8 − 1')
+})
 
 // Deterministic "random": returns values from a list (0-based, so 19 means a natural 20).
 const seq = (...vals: number[]) => {

@@ -18,7 +18,8 @@ export interface DdbImport {
 type Pending = { id: string; patch: Partial<State> }
 
 const queueKey = (key: string) => `druzina.pending.${key.slice(0, 8)}`
-const cacheKey = (key: string) => `druzina.session.${key.slice(0, 8)}`
+// v2: state has coins instead of gold; an older cached copy would not render before the server answers.
+const cacheKey = (key: string) => `druzina.session.v2.${key.slice(0, 8)}`
 
 function loadQueue(key: string): Pending[] {
   try {

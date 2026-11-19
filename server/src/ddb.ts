@@ -226,7 +226,7 @@ function itemInfo(d: Any): string {
     const props = (d.properties ?? []).map((p: Any) => cs(p.name)).filter(Boolean)
     if (props.length) parts.push(props.join(', '))
   } else if (d.filterType === 'Armor' && d.armorClass) {
-    parts.push(`OČ ${d.armorClass}`)
+    parts.push(`TZ ${d.armorClass}`)
   }
   return clampText(parts.join(', '), 160)
 }

@@ -5,7 +5,7 @@ import { Link, Outlet, useNavigate, useParams } from 'react-router-dom'
 import { useSession, type DdbImport, type SessionApi } from '@/lib/session'
 import { rememberLink } from '@/lib/links'
 import { emptySheet, type Character, type RollDetail, type Session, type Sheet, type State } from '@/lib/types'
-import { RollerProvider, DiceBar } from '@/components/Roller'
+import { RollerProvider, AdvBar, DiceTray } from '@/components/Roller'
 import { RollLog } from '@/components/RollLog'
 import { PartyCard } from '@/components/PartyCard'
 import { CharacterSheet, type LogEvent } from '@/components/CharacterSheet'
@@ -160,9 +160,12 @@ export function GmHome() {
             ))}
           </div>
         </div>
-        <aside className="space-y-3">
+        <aside className="min-w-0 space-y-3">
           <Section title="Kostky PJ">
-            <DiceBar hidden={hidden} onHiddenChange={setHidden} />
+            <div className="space-y-2">
+              <AdvBar className="w-full" />
+              <DiceTray hidden={hidden} onHiddenChange={setHidden} />
+            </div>
           </Section>
           <Section title="Log">
             <div className="max-h-[70vh] overflow-y-auto pr-1">

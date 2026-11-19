@@ -6,7 +6,7 @@ import { ABILITY, CONDITIONS, EXHAUSTION_TEXT, SKILL, T, signed } from '@/lib/cs
 import * as R from '@/lib/rules'
 import { critFormula, d20 } from '@/lib/dice'
 import { SCHOOL, csMeta, useSpells, type SrdSpell } from '@/lib/srd'
-import { useRoller } from './Roller'
+import { useRoller, DiceFab } from './Roller'
 import { RollLog } from './RollLog'
 import { InventoryTab } from './Inventory'
 import { HpBar, Portrait } from './PartyCard'
@@ -76,6 +76,10 @@ export function CharacterSheet({ c, rolls, patch, log, onEdit, hasMoreRolls, onL
             <RollLog rolls={rolls} meId={c.id} hasMore={hasMoreRolls} onLoadMore={onLoadMore} />
           </Section>
         )}
+      </div>
+      {/* The dice bar is not a swipe area: dragging in the tray must not change the tab. */}
+      <div data-noswipe>
+        <DiceFab />
       </div>
       <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-zinc-800 bg-zinc-950/95 pb-[env(safe-area-inset-bottom)] backdrop-blur">
         <div className="mx-auto flex max-w-2xl">
@@ -184,37 +188,54 @@ function CombatTab({ c, patch, log, read }: { c: Character; patch: Props['patch'
             const hit = a.toHit === null ? null : a.toHit + pen
             return (
               <li key={a.id} className="rounded-lg bg-zinc-900 p-2">
-                <div className="flex items-center gap-2">
-                  <button className="min-w-0 flex-1 text-left" onClick={() => a.notes && read(a.name, <Prose text={a.notes} />)}>
-                    <span className="block truncate font-semibold text-zinc-100">{a.name}</span>
-                    <span className="block truncate text-xs text-zinc-500">
-                      {a.damage} {a.damageType}
-                      {a.notes ? ` · ${a.notes}` : ''}
-                    </span>
-                  </button>
-                  {hit !== null && (
-                    <button onClick={() => rollAndLog(`${a.name}: útok`, d20(hit))} className="rounded-lg border border-zinc-700 bg-zinc-800 px-3 py-2 font-bold tabular-nums">
-                      {signed(hit)}
-                    </button>
-                  )}
-                  {a.damage && (
-                    <button
-                      onClick={() => rollAndLog(`${a.name}: zranění`, a.damage, { d20: false })}
-                      className="rounded-lg border border-zinc-700 bg-zinc-800 px-3 py-2 text-sm"
-                    >
-                      {a.damage.replace(/d/g, 'k')}
-                    </button>
-                  )}
-                  {/d/i.test(a.damage) && (
-                    <button
-                      onClick={() => rollAndLog(`${a.name}: kritický zásah`, critFormula(a.damage), { d20: false })}
-                      className="rounded-lg border border-amber-800 px-2 py-2 text-xs text-amber-300"
-                      title="Kritický zásah"
-                    >
-                      ×2
-                    </button>
-                  )}
-                </div>
+                {(() => {
+                  const hasDice = /d/i.test(a.damage)
+                  const followUps = a.damage
+                    ? [
+                        { label: T.damageShort, formula: a.damage, tag: 'damage' as const, rollLabel: `${a.name}: zranění` },
+                        ...(hasDice ? [{ label: T.critShort, formula: critFormula(a.damage), tag: 'crit' as const, rollLabel: `${a.name}: kritický zásah` }] : []),
+                      ]
+                    : []
+                  const head = (
+                    <>
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate font-semibold text-zinc-100">{a.name}</span>
+                        <span className="block truncate text-xs text-zinc-500">
+                          {a.damage.replace(/d/g, 'k')} {a.damageType}
+                        </span>
+                      </span>
+                      {a.notes && <More />}
+                    </>
+                  )
+                  return (
+                    <>
+                      {a.notes ? (
+                        <button className="flex w-full items-center text-left" onClick={() => read(a.name, <Prose text={a.notes} />)}>
+                          {head}
+                        </button>
+                      ) : (
+                        <div className="flex items-center">{head}</div>
+                      )}
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {hit !== null && (
+                          <RollButton caption={T.tagAttack} tone="amber" onClick={() => rollAndLog(`${a.name}: útok`, d20(hit), { tag: 'attack', followUps })}>
+                            {signed(hit)}
+                          </RollButton>
+                        )}
+                        {a.damage && (
+                          <RollButton caption={T.tagDamage} tone="red" onClick={() => rollAndLog(`${a.name}: zranění`, a.damage, { d20: false, tag: 'damage' })}>
+                            {a.damage.replace(/d/g, 'k')}
+                          </RollButton>
+                        )}
+                        {hasDice && (
+                          <RollButton caption={T.tagCrit} tone="crit" onClick={() => rollAndLog(`${a.name}: kritický zásah`, critFormula(a.damage), { d20: false, tag: 'crit' })}>
+                            {critFormula(a.damage).replace(/d/g, 'k')}
+                          </RollButton>
+                        )}
+                      </div>
+                    </>
+                  )
+                })()}
               </li>
             )
           })}

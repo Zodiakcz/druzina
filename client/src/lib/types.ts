@@ -145,6 +145,8 @@ export interface RollDetail {
   mode: 'normal' | 'adv' | 'dis'
   /** Natural 20 or 1 on a kept d20. */
   nat?: 20 | 1
+  /** What the roll was for; old entries have none. */
+  tag?: 'attack' | 'damage' | 'crit' | 'check' | 'save' | 'init' | 'spell' | 'death' | 'heal'
 }
 
 /** Before and after (HP, item count or gold) for non-dice log entries. */
