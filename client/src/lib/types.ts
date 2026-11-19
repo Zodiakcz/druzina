@@ -70,6 +70,8 @@ export interface Effect {
   noSpells: boolean
   /** Anything else, shown as a reminder while it is on. */
   text: string
+  /** The preset it was made from, so numbers that grow with level (Rage damage) follow the sheet. '' = hand-made. */
+  preset?: string
 }
 
 export interface Feature {

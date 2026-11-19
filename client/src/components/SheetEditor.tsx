@@ -6,7 +6,7 @@ import { ABILITIES, SKILLS } from '@/lib/types'
 import { ABILITY, SKILL, T } from '@/lib/cs'
 import { mod } from '@/lib/rules'
 import { useFeatures, useSpells } from '@/lib/srd'
-import { PRESETS, fromPreset, suggestedPresets } from '@/lib/effects'
+import { PRESETS, describeEffect, fromPreset, suggestedPresets } from '@/lib/effects'
 import { Button, Section } from './ui'
 import { signed } from '@/lib/cs'
 
@@ -507,9 +507,14 @@ function EffectsFields({ s, onChange }: { s: Sheet; onChange: (effects: Effect[]
                 ))}
               </select>
             </div>
+            {e.preset && PRESETS.find((p) => p.key === e.preset)?.scale && (
+              <p className="text-xs text-amber-500/80">
+                Čísla podle úrovně se počítají sama (teď: {describeEffect(s, e)}). Úprava řádků níž efekt od předvolby odpojí.
+              </p>
+            )}
             <Rows
               items={e.mods}
-              onChange={(mods) => setE({ mods })}
+              onChange={(mods) => setE({ mods, preset: '' })}
               blank={(): EffectMod => ({ on: 'attack', ability: '', bonus: '', mode: 'normal' })}
               addLabel="co mění"
               render={(m, setM) => (

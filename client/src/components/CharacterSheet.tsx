@@ -1,11 +1,11 @@
 // The play sheet. Used by a player on their phone and by the GM for any character.
 import { useRef, useState, type ReactNode } from 'react'
-import type { Ability, Character, Effect, Sheet, Skill, State } from '@/lib/types'
+import type { Ability, Character, Sheet, Skill, State } from '@/lib/types'
 import { ABILITIES, SKILLS } from '@/lib/types'
 import { ABILITY, CONDITIONS, EXHAUSTION_TEXT, SKILL, T, signed } from '@/lib/cs'
 import * as R from '@/lib/rules'
 import { addToFormula, critFormula, d20, type Mode } from '@/lib/dice'
-import { activeEffects, boost, labelWith, spendResource, toggleEffect, type Boost } from '@/lib/effects'
+import { activeEffects, boost, describeEffect, labelWith, spendResource, toggleEffect, type Boost } from '@/lib/effects'
 import { SCHOOL, csMeta, useSpells, type SrdSpell } from '@/lib/srd'
 import { useRoller, DiceFab } from './Roller'
 import { RollLog } from './RollLog'
@@ -347,23 +347,6 @@ function ModeMark({ mode }: { mode: Mode }) {
   )
 }
 
-const EFFECT_ON_CS = { attack: 'útok', damage: 'zranění', check: 'ověření', save: 'ZH', ac: 'TZ', speed: 'rychlost' } as const
-
-/** "zranění SIL +2 · ověření SIL výhoda · odolnost: drtivé, bodné, sečné" */
-function describeEffect(e: Effect): string {
-  const mods = e.mods.map((m) =>
-    [
-      EFFECT_ON_CS[m.on],
-      m.ability ? ABILITY[m.ability].short : '',
-      m.bonus ? (/^[-−]/.test(m.bonus) ? m.bonus : `+${m.bonus}`).replace(/d/g, 'k') : '',
-      m.mode === 'adv' ? 'výhoda' : m.mode === 'dis' ? 'nevýhoda' : '',
-    ]
-      .filter(Boolean)
-      .join(' ')
-  )
-  return [...mods, e.resist && `odolnost: ${e.resist}`, e.noSpells && 'bez kouzel a soustředění'].filter(Boolean).join(' · ')
-}
-
 const EFFECTS_HELP =
   'Schopnosti, které na chvíli mění jiné hody (Zuřivost, Bezohledný útok, Požehnání). Klepnutím efekt zapneš a vypneš. Zapnutý efekt se sám přičte k útokům, zranění, ověřením a záchranným hodům, na které míří. Když je efekt navázaný na zdroj, zapnutí utratí jedno použití (a utracení použití ho zapne). Délku nehlídá: vypni ho, až skončí. Odpočinek vypne všechny.'
 
@@ -404,7 +387,7 @@ function Effects({ c, patch, read }: { c: Character; patch: Props['patch']; read
         <ul className="mt-2 space-y-1">
           {on.map((e) => (
             <li key={e.id} className="text-xs text-amber-200/90">
-              <b>{e.name}:</b> {describeEffect(e)}
+              <b>{e.name}:</b> {describeEffect(s, e)}
               {e.text && <span className="block text-zinc-400">{e.text}</span>}
             </li>
           ))}

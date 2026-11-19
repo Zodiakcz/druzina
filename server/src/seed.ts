@@ -28,6 +28,7 @@ const barbar: Sheet = sheetSchema.parse({
     {
       id: 'e-rage',
       name: 'Zuřivost',
+      preset: 'rage',
       resourceId: 'rage',
       mods: [
         { on: 'damage', ability: 'str', bonus: '2' },

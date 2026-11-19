@@ -1,8 +1,9 @@
 // Switchable effects (Rage, Reckless Attack, Bless): what is on, and what it adds to a roll.
 // Deliberately small: a bonus, advantage, a resistance reminder. No durations, no rounds; the
 // player switches an effect off, a rest clears it.
-import type { Ability, Effect, EffectOn, Sheet, State } from './types'
+import type { Ability, Effect, EffectMod, EffectOn, Sheet, State } from './types'
 import { parseFormula, type Mode } from './dice.ts'
+import { ABILITY } from './cs.ts'
 
 export const activeEffects = (s: Sheet, st: State): Effect[] =>
   (s.effects ?? []).filter((e) => (st.active ?? []).includes(e.id))
@@ -25,7 +26,7 @@ export function boost(s: Sheet, st: State, on: EffectOn, ability?: Ability | '')
   let dis = false
   const names = new Set<string>()
   for (const e of activeEffects(s, st)) {
-    for (const m of e.mods) {
+    for (const m of modsOf(s, e)) {
       if (m.on !== on || (m.ability && m.ability !== ability)) continue
       let used = false
       for (const t of parseFormula(m.bonus) ?? []) {
@@ -82,13 +83,17 @@ export function rageDamage(s: Sheet): number {
   return lvl >= 16 ? 4 : lvl >= 9 ? 3 : 2
 }
 
-type Draft = Omit<Effect, 'id' | 'resourceId'>
+type Draft = Omit<Effect, 'id' | 'resourceId' | 'preset'>
 
-/** Ready-made effects. `match` finds the feature, spell or resource each one belongs to. */
-export const PRESETS: { key: string; match: RegExp; make: (s: Sheet) => Draft }[] = [
+/**
+ * Ready-made effects. `match` finds the feature, spell or resource each one belongs to.
+ * `scale` gives the bonus of a modifier that grows with level, computed from the sheet on use.
+ */
+export const PRESETS: { key: string; match: RegExp; make: (s: Sheet) => Draft; scale?: (s: Sheet, m: EffectMod) => string | undefined }[] = [
   {
     key: 'rage',
     match: /^(rage|zuřivost)$/i,
+    scale: (s, m) => (m.on === 'damage' ? String(rageDamage(s)) : undefined),
     make: (s) => ({
       name: 'Zuřivost',
       mods: [
@@ -155,7 +160,34 @@ export function fromPreset(s: Sheet, key: string, id: string): Effect | null {
   const p = PRESETS.find((x) => x.key === key)
   if (!p) return null
   const r = s.resources.find((x) => p.match.test(x.name) || p.match.test(x.nameEn ?? ''))
-  return { id, resourceId: r?.id ?? '', ...p.make(s) }
+  return { id, resourceId: r?.id ?? '', preset: key, ...p.make(s) }
+}
+
+/** The modifiers as they apply now: a preset's level-based numbers follow the sheet. */
+export function modsOf(s: Sheet, e: Effect): EffectMod[] {
+  const p = e.preset ? PRESETS.find((x) => x.key === e.preset) : undefined
+  if (!p?.scale) return e.mods
+  return e.mods.map((m) => {
+    const bonus = p.scale!(s, m)
+    return bonus === undefined ? m : { ...m, bonus }
+  })
+}
+
+const EFFECT_ON_CS = { attack: 'útok', damage: 'zranění', check: 'ověření', save: 'ZH', ac: 'TZ', speed: 'rychlost' } as const
+
+/** "zranění SIL +2 · ověření SIL výhoda · odolnost: drtivé, bodné, sečné" */
+export function describeEffect(s: Sheet, e: Effect): string {
+  const mods = modsOf(s, e).map((m) =>
+    [
+      EFFECT_ON_CS[m.on],
+      m.ability ? ABILITY[m.ability].short : '',
+      m.bonus ? (/^[-−]/.test(m.bonus) ? m.bonus : `+${m.bonus}`).replace(/d/g, 'k') : '',
+      m.mode === 'adv' ? 'výhoda' : m.mode === 'dis' ? 'nevýhoda' : '',
+    ]
+      .filter(Boolean)
+      .join(' ')
+  )
+  return [...mods, e.resist && `odolnost: ${e.resist}`, e.noSpells && 'bez kouzel a soustředění'].filter(Boolean).join(' · ')
 }
 
 /** Presets that the sheet's features, spells or resources point to and that are not on it yet. */

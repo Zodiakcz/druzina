@@ -96,6 +96,8 @@ export const sheetSchema = z.object({
     resist: text(120),
     noSpells: z.boolean().default(false),
     text: text(1000),
+    /** The preset it was made from; numbers that grow with level follow the sheet. */
+    preset: text(20),
   })).max(20).default([]),
 })
 

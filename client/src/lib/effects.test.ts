@@ -53,6 +53,18 @@ test('rage: +3 to Strength damage, advantage on Strength checks, nothing for Dex
   assert.equal(boost(s, { ...st, active: [] }, 'damage', 'str').flat, 0)
 })
 
+test('preset rage follows the level; a hand-made copy keeps its number', () => {
+  const s = sheet()
+  s.classes = [{ name: 'Barbar', subclass: '', level: 5 }]
+  s.effects = [fromPreset(s, 'rage', 'e1')!]
+  const st = { ...state(), active: ['e1'] }
+  assert.equal(boost(s, st, 'damage', 'str').flat, 2)
+  s.classes = [{ name: 'Barbar', subclass: '', level: 16 }]
+  assert.equal(boost(s, st, 'damage', 'str').flat, 4)
+  s.effects = [{ ...s.effects[0], preset: '' }]
+  assert.equal(boost(s, st, 'damage', 'str').flat, 2)
+})
+
 test('bless adds a die to every attack', () => {
   const s = sheet()
   s.effects = [fromPreset(s, 'bless', 'b')!]
