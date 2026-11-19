@@ -39,17 +39,82 @@ export function Section({ title, right, children }: { title: ReactNode; right?: 
   )
 }
 
-export function Stat({ label, value, onClick, sub }: { label: string; value: ReactNode; onClick?: () => void; sub?: ReactNode }) {
-  const Tag = onClick ? 'button' : 'div'
+// The visual language for what can be tapped, used everywhere on the sheet:
+// - rolls dice: amber (or red/orange for damage) border, tinted fill and a die icon (RollButton, Stat with onClick)
+// - opens a text: a chevron at the end of the row (More)
+// - plain number: no border, flat (Stat without onClick)
+
+/** A small d20 outline. */
+export function DieIcon({ className = '' }: { className?: string }) {
   return (
-    <Tag
+    <svg viewBox="0 0 100 100" className={className} aria-hidden="true">
+      <polygon points="50,4 92,28 92,72 50,96 8,72 8,28" fill="none" stroke="currentColor" strokeWidth="8" strokeLinejoin="round" />
+      <polygon points="50,26 74,66 26,66" fill="currentColor" opacity=".85" />
+    </svg>
+  )
+}
+
+/** "Opens a detail" marker at the end of a tappable row. */
+export function More() {
+  return (
+    <span aria-hidden="true" className="shrink-0 pl-1 text-lg leading-none text-zinc-500">
+      ›
+    </span>
+  )
+}
+
+const ROLL_TONE = {
+  amber: 'border-amber-700/70 bg-amber-950/40 text-amber-50 hover:border-amber-500 active:bg-amber-900/60',
+  red: 'border-red-800/80 bg-red-950/50 text-red-50 hover:border-red-500 active:bg-red-900/60',
+  crit: 'border-orange-600/80 bg-orange-950/50 text-orange-100 hover:border-orange-400 active:bg-orange-900/60',
+  green: 'border-emerald-800/80 bg-emerald-950/50 text-emerald-50 hover:border-emerald-500 active:bg-emerald-900/60',
+}
+const ROLL_CAPTION = { amber: 'text-amber-400/90', red: 'text-red-300/90', crit: 'text-orange-300', green: 'text-emerald-300/90' }
+
+/** A button that rolls dice. `caption` says what the roll is ("útok", "zranění"). */
+export function RollButton({ onClick, caption, children, tone = 'amber', className = '', title }: {
+  onClick: () => void
+  caption?: string
+  children: ReactNode
+  tone?: keyof typeof ROLL_TONE
+  className?: string
+  title?: string
+}) {
+  return (
+    <button
       onClick={onClick}
-      className={`flex min-w-0 flex-col items-center rounded-lg border border-zinc-800 bg-zinc-900 px-2 py-2 ${onClick ? 'active:bg-zinc-800 hover:border-amber-700/60' : ''}`}
+      title={title}
+      className={`flex shrink-0 flex-col items-center justify-center rounded-lg border px-2.5 py-1 ${ROLL_TONE[tone]} ${className}`}
     >
+      {caption && <span className={`text-[9px] font-semibold uppercase leading-tight tracking-wide ${ROLL_CAPTION[tone]}`}>{caption}</span>}
+      <span className="flex items-center gap-1 font-bold tabular-nums">
+        <DieIcon className="h-3.5 w-3.5 opacity-70" />
+        {children}
+      </span>
+    </button>
+  )
+}
+
+export function Stat({ label, value, onClick, sub }: { label: string; value: ReactNode; onClick?: () => void; sub?: ReactNode }) {
+  if (onClick) {
+    return (
+      <button
+        onClick={onClick}
+        className="relative flex min-w-0 flex-col items-center rounded-lg border border-amber-700/70 bg-amber-950/40 px-2 py-2 hover:border-amber-500 active:bg-amber-900/60"
+      >
+        <DieIcon className="absolute right-1.5 top-1.5 h-3.5 w-3.5 text-amber-500/80" />
+        <span className="text-2xl font-bold tabular-nums text-zinc-50">{value}</span>
+        <span className="text-center text-[10px] font-semibold uppercase leading-tight tracking-wide text-amber-300/90">{label}</span>
+        {sub && <span className="text-[10px] text-zinc-500">{sub}</span>}
+      </button>
+    )
+  }
+  return (
+    <div className="flex min-w-0 flex-col items-center rounded-lg bg-zinc-900/40 px-2 py-2">
       <span className="text-2xl font-bold tabular-nums text-zinc-50">{value}</span>
       <span className="text-center text-[10px] font-semibold uppercase leading-tight tracking-wide text-zinc-400">{label}</span>
       {sub && <span className="text-[10px] text-zinc-500">{sub}</span>}
-    </Tag>
+    </div>
   )
 }
 
