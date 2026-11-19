@@ -130,7 +130,7 @@ export function Prose({ text }: { text: string }) {
             {p.split(/(\*\*[^*]+\*\*)/).map((part, j) =>
               part.startsWith('**') && part.endsWith('**') ? (
                 <strong key={j} className="text-zinc-50">
-                  {part.slice(2, -2)}
+                  {part.slice(2, -2).replace(/_([^_]+)_/g, '$1')}
                 </strong>
               ) : (
                 part.replace(/_([^_]+)_/g, '$1')

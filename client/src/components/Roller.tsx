@@ -378,10 +378,11 @@ export function DiceTray({ hidden, onHiddenChange, onRolled }: {
 /** Fixed bar above the bottom tab nav: advantage switch on the left, round d20 button opening the tray on the right. */
 export function DiceFab() {
   const [open, setOpen] = useState(false)
+  // Open, the tray sits above the result toast (z-40) so a fresh result never hides it.
   return (
     <>
-      {open && <div className="fixed inset-0 z-30 bg-black/50" onClick={() => setOpen(false)} />}
-      <div className="pointer-events-none fixed inset-x-0 bottom-[calc(44px+env(safe-area-inset-bottom))] z-30">
+      {open && <div className="fixed inset-0 z-[44] bg-black/50" onClick={() => setOpen(false)} />}
+      <div className={`pointer-events-none fixed inset-x-0 bottom-[calc(44px+env(safe-area-inset-bottom))] ${open ? 'z-[45]' : 'z-30'}`}>
         <div className="mx-auto flex max-w-2xl flex-col items-end gap-2 px-3 pb-2">
           {open && (
             <div className="pointer-events-auto w-full rounded-2xl border border-zinc-700 bg-zinc-900 p-3 shadow-2xl animate-[pop_.18s_ease-out]">
